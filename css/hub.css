@@ -424,6 +424,26 @@ a { text-decoration: none; color: inherit; }
   color: var(--gold-light);
 }
 
+.bio-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(232, 228, 220, 0.5);
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-top: 1.5rem;
+  transition: color var(--transition);
+}
+
+.bio-contact:hover {
+  color: var(--gold);
+}
+
+.bio-contact svg {
+  width: 18px;
+  height: 18px;
+}
+
 /* --- Footer --- */
 .footer {
   background: var(--green-deep);
