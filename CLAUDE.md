@@ -50,11 +50,12 @@ This file provides guidance to Claude Code when working with code in this reposi
 - Song: Amazon Music link (Grammy consideration track with Andy Narell)
 - Store: Facebook page for Aimee's Bohemian store
 
+**Amazon link:** Centralized in `i-am-tobago/js/main.js` as `AMAZON_URL` constant. All buy buttons use class `amazon-book-link` — change the URL in one place and it updates everywhere.
+
+**Reviews:** 5 real reviews in a horizontally scrollable carousel with "Read more" for long quotes.
+
 **Placeholder content still needed:**
-- Amazon purchase link (swap `#` on "Buy on Amazon" button)
 - Author photo (`i-am-tobago/images/author.jpg`)
-- Real reviewer names and quotes (3 review cards)
-- Page count (currently "TBD")
 - Site favicon (`images/favicon.png`)
 
 ---

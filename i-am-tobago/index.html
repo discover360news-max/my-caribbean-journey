@@ -32,8 +32,9 @@
   <!-- Navigation -->
   <nav class="nav" id="nav">
     <div class="nav-inner">
-      <a href="#" class="nav-logo">I Am Tobago</a>
+      <a href="/" class="nav-logo">I Am Tobago</a>
       <div class="nav-links">
+        <a href="/">All Books</a>
         <a href="#about">The Book</a>
         <a href="#author">The Author</a>
         <a href="#reviews">Reviews</a>
@@ -49,6 +50,7 @@
 
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobile-menu">
+    <a href="/">All Books</a>
     <a href="#about">The Book</a>
     <a href="#author">The Author</a>
     <a href="#reviews">Reviews</a>
@@ -64,12 +66,13 @@
         <p class="hero-subtitle">A Journey Through Folklore & Culture</p>
         <h1 class="hero-title">I Am <span class="text-gold">Tobago</span></h1>
         <p class="hero-description">
-          Step into the lush rainforests, listen to the whispers of ancient spirits,
-          and discover the untold stories that have shaped the soul of Tobago for centuries.
+          Legend has it that Betsey, the wife of the plantation's owner, was never in favour of slavery 
+          and it was her hope that it, and the suffering of slaves, would end.
         </p>
         <div class="hero-actions">
-          <a href="#buy" class="btn btn-primary">Get Your Copy</a>
+          <a href="#buy" class="btn btn-primary amazon-book-link" target="_blank" rel="noopener noreferrer">Get Your Copy</a>
           <a href="#about" class="btn btn-outline">Learn More</a>
+          <a href="mailto:booksbyquincy@gmail.com" class="btn btn-outline">Contact</a>
         </div>
       </div>
       <div class="hero-image">
@@ -208,7 +211,7 @@
             in Trinidad and Tobago. My work is rooted in the energy and culture that shaped me, guided by
             the belief that our stories deserve to be told with pride, beauty, and permanence.
           </p>
-          <a href="#buy" class="btn btn-primary">Get the Book</a>
+          <a href="#buy" class="btn btn-primary amazon-book-link" target="_blank" rel="noopener noreferrer">Get the Book</a>
         </div>
       </div>
     </div>
@@ -221,37 +224,75 @@
         <p class="section-label">What Readers Are Saying</p>
         <h2 class="section-title">Reviews</h2>
       </div>
-      <div class="reviews-grid">
-        <div class="review-card">
-          <div class="review-stars">
-            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+      <div class="reviews-carousel">
+        <button class="reviews-arrow reviews-arrow-left" aria-label="Scroll reviews left">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <div class="reviews-track">
+          <div class="review-card">
+            <div class="review-stars">
+              <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+            </div>
+            <div class="review-text" data-expandable>
+              <p>"I am Tobago" offers a vibrant immersion into a gem of an island. It is the perfect read aloud with a young child—the kind where both the adult reader and the child cozied up to listen will learn with wonder and awe. I bought it for my grandson and the way his eyes sparkled with the magic of discovery will be something I hold in my heart. The text and illustrations make I am Tobago a journey. Well done!</p>
+            </div>
+            <div class="reviewer">
+              <strong>Tia Levings</strong>
+              <span>NYT Bestselling author of A Well-Trained Wife</span>
+            </div>
           </div>
-          <p>"This book brought me back to my grandmother's porch in Speyside, listening to stories by lamplight. Absolutely beautiful."</p>
-          <div class="reviewer">
-            <strong>Placeholder Reviewer</strong>
-            <span>Tobago Native</span>
+          <div class="review-card">
+            <div class="review-stars">
+              <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+            </div>
+            <div class="review-text">
+              <p>'I am Tobago' is flat out awesome. Illustrations are gorgeous!</p>
+            </div>
+            <div class="reviewer">
+              <strong>Julianne</strong>
+              <span>North Carolina, USA</span>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">
+              <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+            </div>
+            <div class="review-text">
+              <p>Wow! Every page is suitable for framing. Quincy, it is exquisite!!! I give it 5 stars. It is a book which makes me want to go there.</p>
+            </div>
+            <div class="reviewer">
+              <strong>Gwyn</strong>
+              <span>Michigan, USA</span>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">
+              <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+            </div>
+            <div class="review-text" data-expandable>
+              <p>I got my book today - well done Quincy! I wasn't sure what to expect, but, your book makes me want to go back to visit with those I met and spend much more time there exploring the natural beauty of the island, the sites and sounds, the foods, and more.</p>
+            </div>
+            <div class="reviewer">
+              <strong>Mary</strong>
+              <span>Virginia, USA</span>
+            </div>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">
+              <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+            </div>
+            <div class="review-text" data-expandable>
+              <p>Got my hands on 'I am Tobago' and it's AMAZING! Learned a lot about Trinidad and Tobago. Great work Quincy!</p>
+            </div>
+            <div class="reviewer">
+              <strong>Michelle Hood-Juilen</strong>
+              <span>Author of "In Grenada, What do you see"</span>
+            </div>
           </div>
         </div>
-        <div class="review-card">
-          <div class="review-stars">
-            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
-          </div>
-          <p>"A must-read for anyone who wants to understand the real Tobago — beyond the beaches and resorts. The folklore chapters are mesmerizing."</p>
-          <div class="reviewer">
-            <strong>Placeholder Reviewer</strong>
-            <span>Caribbean Literature Enthusiast</span>
-          </div>
-        </div>
-        <div class="review-card">
-          <div class="review-stars">
-            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
-          </div>
-          <p>"The illustrations alone are worth the price. But the stories — the stories are what stay with you long after you close the book."</p>
-          <div class="reviewer">
-            <strong>Placeholder Reviewer</strong>
-            <span>Art & Culture Collector</span>
-          </div>
-        </div>
+        <button class="reviews-arrow reviews-arrow-right" aria-label="Scroll reviews right">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
       </div>
     </div>
   </section>
@@ -268,26 +309,26 @@
           <h2 class="section-title">Own a Piece of <span class="text-gold">Tobago</span></h2>
           <p class="buy-description">
             Whether you're a Tobagonian abroad missing home, a traveler captivated by the Caribbean,
-            or a lover of folklore and culture — this book was written for you.
+            or someone drawn to island history and culture, this book was written for you.
           </p>
           <div class="buy-details">
             <div class="buy-detail">
               <span class="detail-label">Format</span>
-              <span class="detail-value">Paperback / eBook</span>
+              <span class="detail-value">Paperback</span>
             </div>
             <div class="buy-detail">
               <span class="detail-label">Pages</span>
-              <span class="detail-value">TBD</span>
+              <span class="detail-value">40</span>
             </div>
             <div class="buy-detail">
               <span class="detail-label">Language</span>
               <span class="detail-value">English</span>
             </div>
           </div>
-          <a href="#" class="btn btn-primary btn-large" id="amazon-link" target="_blank" rel="noopener noreferrer">
+          <a href="#buy" class="btn btn-primary btn-large amazon-book-link" target="_blank" rel="noopener noreferrer">
             Buy on Amazon
           </a>
-          <p class="buy-note">Also available as an eBook</p>
+          <p class="buy-note">Get Your Copy Today</p>
         </div>
       </div>
     </div>
@@ -302,6 +343,7 @@
           <p class="footer-tagline">A Journey Through Folklore & Culture</p>
         </div>
         <div class="footer-links">
+          <a href="/">Home</a>
           <a href="#about">The Book</a>
           <a href="#author">The Author</a>
           <a href="#reviews">Reviews</a>

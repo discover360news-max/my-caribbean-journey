@@ -5,6 +5,13 @@
 (function () {
   'use strict';
 
+  // --- Book config (single source of truth) ---
+  var AMAZON_URL = 'https://www.amazon.com/I-Am-Tobago-Quincy-Yeates/dp/B0FYYVKKVT';
+
+  document.querySelectorAll('.amazon-book-link').forEach(function (el) {
+    el.href = AMAZON_URL;
+  });
+
   // --- Hero firefly light flares ---
   var canvas = document.getElementById('hero-fireflies');
   var ctx = canvas.getContext('2d');
@@ -193,6 +200,60 @@
 
   animatedElements.forEach(function (el) {
     observer.observe(el);
+  });
+
+  // --- Reviews carousel scroll ---
+  var reviewsTrack = document.querySelector('.reviews-track');
+  var arrowLeft = document.querySelector('.reviews-arrow-left');
+  var arrowRight = document.querySelector('.reviews-arrow-right');
+
+  if (reviewsTrack && arrowLeft && arrowRight) {
+    var scrollAmount = 360;
+
+    arrowLeft.addEventListener('click', function () {
+      reviewsTrack.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+
+    arrowRight.addEventListener('click', function () {
+      reviewsTrack.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+
+    function updateArrows() {
+      arrowLeft.disabled = reviewsTrack.scrollLeft <= 0;
+      arrowRight.disabled = reviewsTrack.scrollLeft + reviewsTrack.clientWidth >= reviewsTrack.scrollWidth - 1;
+    }
+
+    reviewsTrack.addEventListener('scroll', updateArrows, { passive: true });
+    updateArrows();
+  }
+
+  // --- Read more / truncation for long reviews ---
+  document.querySelectorAll('.review-text[data-expandable]').forEach(function (el) {
+    var p = el.querySelector('p');
+    if (!p) return;
+
+    // Only clamp if text is long enough to need it
+    if (p.textContent.length > 150) {
+      el.classList.add('clamped');
+
+      var btn = document.createElement('button');
+      btn.className = 'review-read-more';
+      btn.textContent = 'Read more';
+      el.parentNode.insertBefore(btn, el.nextSibling);
+
+      btn.addEventListener('click', function () {
+        var isClamped = el.classList.contains('clamped');
+        if (isClamped) {
+          el.classList.remove('clamped');
+          el.classList.add('expanded');
+          btn.textContent = 'Read less';
+        } else {
+          el.classList.add('clamped');
+          el.classList.remove('expanded');
+          btn.textContent = 'Read more';
+        }
+      });
+    }
   });
 
   // --- Smooth scroll for anchor links (fallback for older browsers) ---
