@@ -494,11 +494,201 @@ a { text-decoration: none; color: inherit; }
 
 /* --- Responsive --- */
 @media (max-width: 768px) {
-  .hero { min-height: 50vh; padding: 5rem 1.5rem 3rem; }
-  .about-layout { flex-direction: column; text-align: center; gap: 2rem; }
-  .about-icon { width: 90px; height: 90px; }
-  .about-icon svg { width: 40px; height: 40px; }
-  .bio { padding: 4rem 0; }
-  .footer-content { flex-direction: column; text-align: center; gap: 1rem; }
-  .footer-links { flex-wrap: wrap; justify-content: center; }
+  .container {
+    padding: 0 1rem;
+  }
+
+  .hero {
+    min-height: 50vh;
+    padding: 5rem 1rem 3rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .books {
+    padding: 3.5rem 0;
+  }
+
+  .books-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .book-card-image {
+    height: 280px;
+    padding: 1.5rem;
+  }
+
+  .book-card-body {
+    padding: 1.25rem;
+  }
+
+  .book-card-title {
+    font-size: 1.3rem;
+  }
+
+  .section-header {
+    margin-bottom: 2rem;
+  }
+
+  .about {
+    padding: 3.5rem 0;
+  }
+
+  .about-layout {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .about-icon {
+    width: 90px;
+    height: 90px;
+  }
+
+  .about-icon svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .about-text h2 {
+    font-size: 1.6rem;
+  }
+
+  .about-text p {
+    font-size: 0.95rem;
+  }
+
+  .bio {
+    padding: 3.5rem 0;
+  }
+
+  .bio-content p {
+    font-size: 0.95rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 4.5rem 0.75rem 2.5rem;
+  }
+
+  .hero-label {
+    font-size: 0.75rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .hero-actions .btn {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.85rem;
+  }
+
+  .books {
+    padding: 2.5rem 0;
+  }
+
+  .book-card-image {
+    height: 240px;
+    padding: 1rem;
+  }
+
+  .book-card-body {
+    padding: 1rem;
+  }
+
+  .book-card-title {
+    font-size: 1.15rem;
+  }
+
+  .book-card-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+
+  .section-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .about {
+    padding: 2.5rem 0;
+  }
+
+  .about-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .about-icon svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .about-text h2 {
+    font-size: 1.4rem;
+  }
+
+  .bio {
+    padding: 2.5rem 0;
+  }
+
+  .bio .section-title {
+    margin-bottom: 1.5rem;
+  }
+
+  .bio-content p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .bio-cta {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  .footer-logo {
+    font-size: 1.1rem;
+  }
+
+  .footer-links {
+    gap: 0.5rem;
+  }
+
+  .footer-links a {
+    font-size: 0.8rem;
+  }
 }
