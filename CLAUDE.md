@@ -20,8 +20,11 @@ This file provides guidance to Claude Code when working with code in this reposi
 
 ```
 / (root)
-  index.html                  ← Hub homepage (book collection grid)
+  index.html                  ← Hub homepage (hero reel, books, about, bio)
+  css/hub.css                 ← Hub homepage styles (extracted from inline)
+  js/hero-reel.js             ← Film reel flash effect for hub hero
   images/                     ← Shared site images (favicon, etc.)
+  images/hero/                ← Hub hero reel images (6 optimized JPEGs)
   i-am-tobago/                ← First book landing page
     index.html                ← Full landing page (hero, about, author, reviews, buy CTA)
     css/style.css             ← Book-specific styles
@@ -41,6 +44,11 @@ This file provides guidance to Claude Code when working with code in this reposi
 - **Author:** Quincy
 - **Amazon Link:** TBD (placeholder `#` in buy button)
 - **Status:** Landing page complete, awaiting Amazon link + real reviews
+
+**Author bio:** Real bio added (both hub homepage and book page)
+**External links:**
+- Song: Amazon Music link (Grammy consideration track with Andy Narell)
+- Store: Facebook page for Aimee's Bohemian store
 
 **Placeholder content still needed:**
 - Amazon purchase link (swap `#` on "Buy on Amazon" button)
@@ -75,6 +83,8 @@ This file provides guidance to Claude Code when working with code in this reposi
 - **Cards:** `border-radius: 20px`, subtle border, hover lift
 - **Sections:** Alternating `--warm-white` and `--cream` backgrounds
 - **Dark sections:** `--green-deep` gradient backgrounds
+- **Inline links (dark bg):** `bio-inline-link` (hub) / `bio-listen-link` (book pages) — gold, underlined
+- **CTA in dark sections:** `bio-cta` — gold button with glow shadow, external link icon
 
 ---
 
@@ -88,10 +98,16 @@ This file provides guidance to Claude Code when working with code in this reposi
 - `pointer-events: none` so clicks pass through to content below
 
 ### Hub Homepage
-- Hero with brand intro
+- **Hero film reel:** 6 book illustrations cycle with randomized flash timing (300ms–3.5s)
+  - White flash burst between transitions, dark overlay + green vignette for readability
+  - `prefers-reduced-motion` disables animation for accessibility
+  - Images: `images/hero/` (heritage-festival, folklore, bloody-bay, tambrin-scene, goat-race, coral)
+- **Hero CTAs:** Books, About, Bio — anchor links to sections below
 - Book collection grid (cards link to individual book pages)
 - "Coming Soon" placeholder card for future titles
-- About section explaining the brand mission
+- About section with Quincy's brand mission copy
+- **Bio section:** Full author biography (dark background), Amazon Music CTA, Bohemian store link
+- CSS extracted to `css/hub.css` (keeps HTML under 500 lines)
 
 ---
 
@@ -113,7 +129,9 @@ python3 -m http.server 8888
 - Each book gets its own folder at root level
 - Book folders are self-contained (own CSS, JS, images)
 - Hub homepage (`index.html`) references book folders for images and links
+- Hub styles in `css/hub.css`, hub scripts in `js/hero-reel.js`
 - All styles use CSS custom properties from the shared palette
+- Keep files under 500 lines — extract CSS/JS to separate files when needed
 
 ---
 

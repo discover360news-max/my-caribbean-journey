@@ -595,6 +595,18 @@ a {
   font-size: 1.05rem;
 }
 
+.bio-listen-link {
+  color: var(--gold);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition);
+}
+
+.bio-listen-link:hover {
+  color: var(--gold-light);
+}
+
 /* --- Reviews Section --- */
 .reviews {
   background: var(--warm-white);
