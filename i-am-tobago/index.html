@@ -25,37 +25,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="/shared/shared.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav class="nav" id="nav">
-    <div class="nav-inner">
-      <a href="/" class="nav-logo">I Am Tobago</a>
-      <div class="nav-links">
-        <a href="/">All Books</a>
-        <a href="#about">The Book</a>
-        <a href="#author">The Author</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#buy" class="nav-cta">Get Your Copy</a>
-      </div>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </nav>
-
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="/">All Books</a>
-    <a href="#about">The Book</a>
-    <a href="#author">The Author</a>
-    <a href="#reviews">Reviews</a>
-    <a href="#buy" class="nav-cta">Get Your Copy</a>
-  </div>
+  <div id="site-nav"></div>
 
   <!-- Hero Section -->
   <header class="hero" id="hero">
@@ -63,11 +38,11 @@
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <div class="hero-text">
-        <p class="hero-subtitle">A Journey Through Folklore & Culture</p>
+        <p class="hero-subtitle">A Journey Through Culture & Heritage</p>
         <h1 class="hero-title">I Am <span class="text-gold">Tobago</span></h1>
         <p class="hero-description">
-          Legend has it that Betsey, the wife of the plantation's owner, was never in favour of slavery 
-          and it was her hope that it, and the suffering of slaves, would end.
+          Step into lush rainforests, listen to the whispers of generations past, 
+          and experience the stories that have shaped Tobago for centuries.
         </p>
         <div class="hero-actions">
           <a href="#buy" class="btn btn-primary amazon-book-link" target="_blank" rel="noopener noreferrer">Get Your Copy</a>
@@ -127,7 +102,7 @@
       </div>
       <div class="about-excerpt">
         <blockquote>
-          "The old woman leaned closer, her voice dropping to a whisper. 'You see that silk cotton tree? Don't pass it after midnight. That is where they gather — the spirits who remember when this island had a different name...'"
+          "Legend has it that Betsey, the wife of the plantation's owner, was never in favour of slavery and it was her hope that it, and the suffering of slaves, would end...'"
         </blockquote>
         <p class="excerpt-note">— Excerpt from <em>I Am Tobago</em></p>
       </div>
@@ -238,7 +213,7 @@
             </div>
             <div class="reviewer">
               <strong>Tia Levings</strong>
-              <span>NYT Bestselling author of A Well-Trained Wife</span>
+              <span>NYT Bestselling author of <span><strong>"A Well-Trained Wife"</strong></span></span>
             </div>
           </div>
           <div class="review-card">
@@ -314,11 +289,11 @@
           <div class="buy-details">
             <div class="buy-detail">
               <span class="detail-label">Format</span>
-              <span class="detail-value">Paperback</span>
+              <span class="detail-value">Hardcover</span>
             </div>
             <div class="buy-detail">
               <span class="detail-label">Pages</span>
-              <span class="detail-value">40</span>
+              <span class="detail-value">36</span>
             </div>
             <div class="buy-detail">
               <span class="detail-label">Language</span>
@@ -334,29 +309,29 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-brand">
-          <p class="footer-logo">I Am Tobago</p>
-          <p class="footer-tagline">A Journey Through Folklore & Culture</p>
-        </div>
-        <div class="footer-links">
-          <a href="/">Home</a>
-          <a href="#about">The Book</a>
-          <a href="#author">The Author</a>
-          <a href="#reviews">Reviews</a>
-          <a href="#buy">Buy Now</a>
-          <a href="mailto:booksbyquincy@gmail.com">Contact</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 I Am Tobago. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+  <div id="site-footer"></div>
 
+  <script src="/shared/components.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    SiteComponents.init({
+      navLinks: [
+        { label: 'Home', href: '/' },
+        { label: 'The Book', href: '#about' },
+        { label: 'The Author', href: '#author' },
+        { label: 'Reviews', href: '#reviews' },
+        { label: 'Tobago Guide', href: '/my-tobago-guide/' },
+        { label: 'Get Your Copy', href: '#buy', cta: true }
+      ],
+      footerLinks: [
+        { label: 'Home', href: '/' },
+        { label: 'The Book', href: '#about' },
+        { label: 'The Author', href: '#author' },
+        { label: 'Reviews', href: '#reviews' },
+        { label: 'Tobago Guide', href: '/my-tobago-guide/' },
+        { label: 'Contact', href: 'mailto:booksbyquincy@gmail.com' }
+      ]
+    });
+  </script>
 </body>
 </html>

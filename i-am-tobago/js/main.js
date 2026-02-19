@@ -138,44 +138,8 @@
   }, { threshold: 0 });
   heroObserver.observe(heroEl);
 
-  // --- Navbar scroll effect ---
-  const nav = document.getElementById('nav');
-
-  function handleNavScroll() {
-    if (window.scrollY > 50) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
-    }
-  }
-
-  window.addEventListener('scroll', handleNavScroll, { passive: true });
-  handleNavScroll();
-
-  // --- Mobile menu toggle ---
-  const navToggle = document.getElementById('nav-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  let menuOpen = false;
-
-  navToggle.addEventListener('click', function () {
-    menuOpen = !menuOpen;
-    if (menuOpen) {
-      mobileMenu.classList.add('open');
-      navToggle.setAttribute('aria-expanded', 'true');
-    } else {
-      mobileMenu.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', 'false');
-    }
-  });
-
-  // Close mobile menu when a link is clicked
-  mobileMenu.querySelectorAll('a').forEach(function (link) {
-    link.addEventListener('click', function () {
-      menuOpen = false;
-      mobileMenu.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', 'false');
-    });
-  });
+  // --- Navbar scroll effect (handled by shared components.js) ---
+  // Legacy nav code removed — shared SiteComponents handles nav behavior
 
   // --- Scroll-based fade-in animations ---
   var animatedElements = document.querySelectorAll(

@@ -1,0 +1,23 @@
+{
+  "name": "ui-styles-project",
+  "version": "1.0.0",
+  "description": "A project showcasing global CSS styles, button designs, and card designs.",
+  "main": "src/index.html",
+  "scripts": {
+    "start": "live-server src",
+    "build": "echo 'Build step not defined'",
+    "test": "echo 'Test step not defined'"
+  },
+  "keywords": [
+    "css",
+    "styles",
+    "buttons",
+    "cards"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}
