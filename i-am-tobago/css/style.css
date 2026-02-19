@@ -233,6 +233,14 @@
   color: var(--text-muted);
 }
 
+.about-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: var(--space-lg);
+  flex-wrap: wrap;
+}
+
 /* --- Features Section --- */
 .features {
   background: var(--green-deep);
@@ -351,6 +359,17 @@
   color: var(--text-muted);
   margin-bottom: var(--space-md);
   font-size: 1.05rem;
+}
+
+.author-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: var(--space-md);
+}
+
+.btn-firefly {
+  position: relative;
 }
 
 .bio-listen-link {
@@ -567,6 +586,208 @@
   margin-top: var(--space-sm);
   font-size: 0.9rem;
   color: rgba(232, 228, 220, 0.5);
+}
+
+/* --- Find It In a Store Section --- */
+.stores {
+  background: var(--cream);
+  position: relative;
+}
+
+.stores-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.stores-toggle-left {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.stores-toggle-icon {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--green-deep), var(--green-mid));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+}
+
+.stores-toggle .section-label {
+  text-align: left;
+}
+
+.stores-toggle-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  color: var(--green-deep);
+  line-height: 1.2;
+}
+
+.stores-toggle-chevron {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  color: var(--green-mid);
+  transition: transform var(--transition);
+}
+
+.stores-toggle[aria-expanded="true"] .stores-toggle-chevron {
+  transform: rotate(180deg);
+}
+
+.stores-content {
+  padding-top: var(--space-lg);
+}
+
+.stores-subtitle {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  max-width: 640px;
+  margin-bottom: var(--space-lg);
+  line-height: 1.7;
+}
+
+.stores-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: var(--space-lg);
+}
+
+.store-nation-btn {
+  padding: 0.5rem 1.25rem;
+  border-radius: 20px;
+  border: 1px solid rgba(26, 74, 46, 0.15);
+  background: white;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.store-nation-btn:hover:not(.active) {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.store-nation-btn.active {
+  background: var(--green-deep);
+  color: var(--cream);
+  border-color: var(--green-deep);
+}
+
+.stores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.stores-empty {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* --- Store Card --- */
+.store-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  border: 1px solid rgba(26, 74, 46, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.store-card-nation {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: rgba(26, 74, 46, 0.08);
+  color: var(--green-mid);
+  width: fit-content;
+  margin-bottom: 0.25rem;
+}
+
+.store-card-name {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--green-deep);
+  margin-bottom: 0.25rem;
+}
+
+.store-card-address {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.store-card-detail {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a.store-card-detail:hover {
+  color: var(--gold);
+}
+
+.store-card-detail svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  color: var(--green-mid);
+}
+
+.store-card-socials {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.store-card-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: rgba(26, 74, 46, 0.06);
+  color: var(--green-mid);
+  transition: background var(--transition), color var(--transition);
+}
+
+.store-card-social:hover {
+  background: var(--gold);
+  color: var(--green-deep);
+}
+
+.store-card-social svg {
+  width: 16px;
+  height: 16px;
 }
 
 /* --- Responsive --- */

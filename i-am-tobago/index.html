@@ -118,6 +118,10 @@
         </blockquote>
         <p class="excerpt-note">— Excerpt from <em>I Am Tobago</em></p>
       </div>
+      <div class="about-actions">
+        <a href="#buy" class="btn btn-primary amazon-book-link" target="_blank" rel="noopener noreferrer">Buy Online</a>
+        <a href="#stores" class="btn btn-outline-dark btn-firefly">Find In Store</a>
+      </div>
     </div>
   </section>
 
@@ -198,7 +202,10 @@
             in Trinidad and Tobago. My work is rooted in the energy and culture that shaped me, guided by
             the belief that our stories deserve to be told with pride, beauty, and permanence.
           </p>
-          <a href="#buy" class="btn btn-primary amazon-book-link" target="_blank" rel="noopener noreferrer">Get the Book</a>
+          <div class="author-actions">
+            <a href="#buy" class="btn btn-primary amazon-book-link" target="_blank" rel="noopener noreferrer">Get the Book</a>
+            <a href="#stores" class="btn btn-outline-dark btn-firefly">Find In Store</a>
+          </div>
         </div>
       </div>
     </div>
@@ -321,9 +328,40 @@
     </div>
   </section>
 
+  <!-- Find It In a Store -->
+  <section class="section stores" id="stores">
+    <div class="container">
+      <button class="stores-toggle" id="stores-toggle" aria-expanded="false" aria-controls="stores-content">
+        <div class="stores-toggle-left">
+          <div class="stores-toggle-icon">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 7 8 11.7z"/>
+              <circle cx="12" cy="10" r="3"/>
+              <path d="M8 17.5c-1.5.5-2.5 1.2-2.5 2 0 1.4 3 2.5 6.5 2.5s6.5-1.1 6.5-2.5c0-.8-1-1.5-2.5-2" stroke-opacity="0.4"/>
+            </svg>
+          </div>
+          <div>
+            <p class="section-label">In Person</p>
+            <h2 class="stores-toggle-title">Find It In a Store</h2>
+          </div>
+        </div>
+        <svg class="stores-toggle-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="stores-content" id="stores-content" hidden>
+        <p class="stores-subtitle">Available at independent bookstores and retailers near you. Pick it up in person and support local.</p>
+        <div class="stores-filters" id="stores-filters"></div>
+        <div class="stores-grid" id="stores-grid"></div>
+      </div>
+    </div>
+  </section>
+
   <div id="site-footer"></div>
 
   <script src="/shared/components.js"></script>
+  <script src="js/store-data.js"></script>
+  <script src="js/stores.js"></script>
   <script src="js/main.js"></script>
   <script>
     SiteComponents.init({

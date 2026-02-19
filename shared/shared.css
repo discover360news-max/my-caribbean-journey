@@ -96,6 +96,17 @@ a { text-decoration: none; color: inherit; }
   color: var(--gold);
 }
 
+.btn-outline-dark {
+  background: transparent;
+  color: var(--green-deep);
+  border: 2px solid rgba(13, 31, 18, 0.25);
+}
+
+.btn-outline-dark:hover {
+  border-color: var(--green-deep);
+  background: rgba(13, 31, 18, 0.06);
+}
+
 .btn-large {
   padding: 1.1rem 3rem;
   font-size: 1.15rem;

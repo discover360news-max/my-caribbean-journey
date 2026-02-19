@@ -220,8 +220,119 @@
     }
   });
 
+  // --- Firefly hover effect on .btn-firefly buttons ---
+  function spawnBtnFirefly(btn, delay) {
+    setTimeout(function () {
+      var dot = document.createElement('span');
+      var size = 4 + Math.random() * 4;
+      var startX = Math.random() * btn.offsetWidth;
+      var startY = Math.random() * btn.offsetHeight;
+      var driftX = (Math.random() - 0.5) * 30;
+      var driftY = -(15 + Math.random() * 25);
+      var palettes = [
+        'rgba(212, 160, 48, 0.9)',
+        'rgba(232, 184, 74, 0.85)',
+        'rgba(45, 107, 69, 0.7)'
+      ];
+      var color = palettes[Math.floor(Math.random() * palettes.length)];
+
+      dot.style.cssText = [
+        'position: absolute',
+        'pointer-events: none',
+        'border-radius: 50%',
+        'width: ' + size + 'px',
+        'height: ' + size + 'px',
+        'left: ' + startX + 'px',
+        'top: ' + startY + 'px',
+        'background: ' + color,
+        'box-shadow: 0 0 ' + (size * 2.5) + 'px ' + color,
+        'transform: translate(-50%, -50%) scale(1)',
+        'opacity: 0.9',
+        'transition: transform 0.9s ease-out, opacity 0.9s ease-out'
+      ].join('; ');
+
+      btn.appendChild(dot);
+
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          dot.style.transform = 'translate(calc(-50% + ' + driftX + 'px), calc(-50% + ' + driftY + 'px)) scale(0.1)';
+          dot.style.opacity = '0';
+        });
+      });
+
+      setTimeout(function () {
+        if (dot.parentNode) dot.parentNode.removeChild(dot);
+      }, 1000);
+    }, delay);
+  }
+
+  document.querySelectorAll('.btn-firefly').forEach(function (btn) {
+    btn.addEventListener('mouseenter', function () {
+      for (var i = 0; i < 6; i++) {
+        spawnBtnFirefly(btn, i * 80);
+      }
+    });
+  });
+
+  // --- Ambient fireflies on the stores section ---
+  var storesSection = document.getElementById('stores');
+  var storeFireflyInterval = null;
+
+  if (storesSection) {
+    storesSection.addEventListener('mouseenter', function () {
+      storeFireflyInterval = setInterval(function () {
+        var dot = document.createElement('span');
+        var size = 4 + Math.random() * 5;
+        var startX = Math.random() * storesSection.offsetWidth;
+        var startY = Math.random() * storesSection.offsetHeight;
+        var driftX = (Math.random() - 0.5) * 40;
+        var driftY = -(20 + Math.random() * 40);
+        var palettes = [
+          'rgba(212, 160, 48, 0.85)',
+          'rgba(232, 184, 74, 0.8)',
+          'rgba(45, 107, 69, 0.65)'
+        ];
+        var color = palettes[Math.floor(Math.random() * palettes.length)];
+
+        dot.style.cssText = [
+          'position: absolute',
+          'pointer-events: none',
+          'border-radius: 50%',
+          'z-index: 5',
+          'width: ' + size + 'px',
+          'height: ' + size + 'px',
+          'left: ' + startX + 'px',
+          'top: ' + startY + 'px',
+          'background: ' + color,
+          'box-shadow: 0 0 ' + (size * 3) + 'px ' + color,
+          'transform: translate(-50%, -50%) scale(1)',
+          'opacity: 0.85',
+          'transition: transform 1.2s ease-out, opacity 1.2s ease-out'
+        ].join('; ');
+
+        storesSection.appendChild(dot);
+
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            dot.style.transform = 'translate(calc(-50% + ' + driftX + 'px), calc(-50% + ' + driftY + 'px)) scale(0.1)';
+            dot.style.opacity = '0';
+          });
+        });
+
+        setTimeout(function () {
+          if (dot.parentNode) dot.parentNode.removeChild(dot);
+        }, 1300);
+      }, 180);
+    });
+
+    storesSection.addEventListener('mouseleave', function () {
+      clearInterval(storeFireflyInterval);
+      storeFireflyInterval = null;
+    });
+  }
+
   // --- Newsletter form --- replace URL with your Mailchimp form action ---
-  var MAILCHIMP_URL_BOOK = 'REPLACE_WITH_YOUR_MAILCHIMP_FORM_ACTION_URL';
+  var MAILCHIMP_URL_BOOK = 'http://eepurl.com/jzTWJk';
   var newsletterForm = document.getElementById('newsletter-form-book');
   var newsletterSuccess = document.getElementById('newsletter-success-book');
 
@@ -262,6 +373,21 @@
     });
   }
 
+  // --- Auto-expand stores section when navigated to ---
+  function openStoresSection() {
+    var storesToggle = document.getElementById('stores-toggle');
+    var storesContent = document.getElementById('stores-content');
+    if (storesToggle && storesContent && storesToggle.getAttribute('aria-expanded') !== 'true') {
+      storesToggle.setAttribute('aria-expanded', 'true');
+      storesContent.removeAttribute('hidden');
+    }
+  }
+
+  // Handle direct page load with #stores hash (e.g. shared link)
+  if (window.location.hash === '#stores') {
+    openStoresSection();
+  }
+
   // --- Smooth scroll for anchor links (fallback for older browsers) ---
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
@@ -271,6 +397,7 @@
       var target = document.querySelector(targetId);
       if (target) {
         e.preventDefault();
+        if (targetId === '#stores') openStoresSection();
         var offset = 70; // nav height
         var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
         window.scrollTo({ top: top, behavior: 'smooth' });
