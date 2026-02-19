@@ -254,6 +254,32 @@
   box-shadow: 0 0 0 1px var(--gold-glow);
 }
 
+/* --- Card Actions (multi-link cards e.g. radio) --- */
+.guide-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.guide-card-action-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: var(--green-mid);
+  transition: color var(--transition), gap var(--transition);
+}
+
+.guide-card-action-link:hover {
+  color: var(--gold);
+  gap: 0.75rem;
+}
+
+.guide-card-action-link svg {
+  width: 16px;
+  height: 16px;
+}
+
 /* --- Empty State --- */
 .guide-empty {
   display: none;

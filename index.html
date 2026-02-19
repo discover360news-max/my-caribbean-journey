@@ -53,6 +53,18 @@
         <a href="#author" class="btn btn-outline">Bio</a>
         <a href="mailto:booksbyquincy@gmail.com" class="btn btn-outline">Contact</a>
       </div>
+      <div class="hero-newsletter">
+        <p class="hero-newsletter-label">Join the Journey</p>
+        <p class="hero-newsletter-desc">Island stories, new guides, and upcoming releases — straight to your inbox.</p>
+        <form class="hero-newsletter-form" id="newsletter-form-hub">
+          <div class="hero-newsletter-fields">
+            <input type="text" name="FNAME" placeholder="Your name" autocomplete="given-name" required>
+            <input type="email" name="EMAIL" placeholder="Your email address" autocomplete="email" required>
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </div>
+          <p class="hero-newsletter-success" id="newsletter-success-hub" hidden>You're in! Welcome to the journey.</p>
+        </form>
+      </div>
     </div>
   </header>
 
@@ -212,6 +224,50 @@
 
   <script src="/shared/components.js"></script>
   <script src="js/hero-reel.js"></script>
+  <script>
+    // Newsletter form — replace URL with your Mailchimp form action
+    (function () {
+      var MAILCHIMP_URL = 'REPLACE_WITH_YOUR_MAILCHIMP_FORM_ACTION_URL';
+      var form = document.getElementById('newsletter-form-hub');
+      var success = document.getElementById('newsletter-success-hub');
+      if (!form) return;
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var btn = form.querySelector('button[type="submit"]');
+        var originalText = btn.textContent;
+        var fname = form.querySelector('[name="FNAME"]').value.trim();
+        var email = form.querySelector('[name="EMAIL"]').value.trim();
+
+        btn.disabled = true;
+        btn.textContent = 'Subscribing…';
+
+        var callbackName = 'mc_cb_' + Date.now();
+        var params = 'FNAME=' + encodeURIComponent(fname) + '&EMAIL=' + encodeURIComponent(email);
+        var url = MAILCHIMP_URL.replace('/post?', '/post-json?') + '&' + params + '&c=' + callbackName;
+
+        var script = document.createElement('script');
+        window[callbackName] = function (data) {
+          delete window[callbackName];
+          document.head.removeChild(script);
+          if (data.result === 'success') {
+            form.style.display = 'none';
+            success.removeAttribute('hidden');
+          } else {
+            btn.disabled = false;
+            btn.textContent = originalText;
+            var msg = (data.msg || '').replace(/<[^>]+>/g, '');
+            success.textContent = msg.indexOf('already subscribed') !== -1
+              ? 'You\'re already on the list!'
+              : 'Something went wrong. Please try again.';
+            success.removeAttribute('hidden');
+          }
+        };
+        script.src = url;
+        document.head.appendChild(script);
+      });
+    })();
+  </script>
   <script>
     SiteComponents.init({
       navLinks: [

@@ -100,13 +100,14 @@
 
         if (link.embedPage) {
           // render a non-anchor card so we can include separate "Visit" and "Stream" links
+          var arrowSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>';
           html += '<div class="guide-card' + featuredClass + '">' +
             '<span class="guide-card-category">' + cat.label + '</span>' +
             '<h3 class="guide-card-title">' + link.title + '</h3>' +
             '<p class="guide-card-description">' + link.description + '</p>' +
             '<div class="guide-card-actions">' +
-              '<a class="btn btn-primary" href="' + (link.url || '#') + '" target="_blank" rel="noopener noreferrer">Visit</a> ' +
-              '<a class="btn btn-outline" href="' + (link.embedPage || link.url || '#') + '" target="_blank" rel="noopener noreferrer">Stream</a>' +
+              '<a class="guide-card-action-link" href="' + (link.url || '#') + '" target="_blank" rel="noopener noreferrer">Visit ' + arrowSvg + '</a>' +
+              '<a class="guide-card-action-link" href="' + (link.embedPage || link.url || '#') + '" target="_blank" rel="noopener noreferrer">Stream ' + arrowSvg + '</a>' +
             '</div>' +
           '</div>';
         } else {

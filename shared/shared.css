@@ -294,6 +294,79 @@ a { text-decoration: none; color: inherit; }
   color: rgba(232, 228, 220, 0.3);
 }
 
+/* --- Hero Newsletter Signup --- */
+.hero-newsletter {
+  margin-top: 2rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid rgba(232, 228, 220, 0.1);
+}
+
+.hero-newsletter-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.35rem;
+}
+
+.hero-newsletter-desc {
+  font-size: 0.9rem;
+  color: rgba(232, 228, 220, 0.55);
+  line-height: 1.5;
+  margin-bottom: 0.9rem;
+}
+
+.hero-newsletter-fields {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.hero-newsletter-fields input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(232, 228, 220, 0.15);
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  transition: border-color var(--transition);
+}
+
+.hero-newsletter-fields input::placeholder {
+  color: rgba(232, 228, 220, 0.35);
+}
+
+.hero-newsletter-fields input:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.hero-newsletter-fields .btn {
+  flex-shrink: 0;
+  padding: 0.7rem 1.25rem;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.hero-newsletter-success {
+  font-size: 0.875rem;
+  color: var(--gold);
+  margin-top: 0.6rem;
+}
+
+@media (max-width: 560px) {
+  .hero-newsletter-fields {
+    flex-direction: column;
+  }
+
+  .hero-newsletter-fields .btn {
+    width: 100%;
+  }
+}
+
 /* --- Animations --- */
 .fade-in {
   opacity: 0;

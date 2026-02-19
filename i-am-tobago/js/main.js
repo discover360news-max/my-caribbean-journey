@@ -220,6 +220,48 @@
     }
   });
 
+  // --- Newsletter form --- replace URL with your Mailchimp form action ---
+  var MAILCHIMP_URL_BOOK = 'REPLACE_WITH_YOUR_MAILCHIMP_FORM_ACTION_URL';
+  var newsletterForm = document.getElementById('newsletter-form-book');
+  var newsletterSuccess = document.getElementById('newsletter-success-book');
+
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var btn = newsletterForm.querySelector('button[type="submit"]');
+      var originalText = btn.textContent;
+      var fname = newsletterForm.querySelector('[name="FNAME"]').value.trim();
+      var email = newsletterForm.querySelector('[name="EMAIL"]').value.trim();
+
+      btn.disabled = true;
+      btn.textContent = 'Subscribing…';
+
+      var callbackName = 'mc_cb_' + Date.now();
+      var params = 'FNAME=' + encodeURIComponent(fname) + '&EMAIL=' + encodeURIComponent(email);
+      var url = MAILCHIMP_URL_BOOK.replace('/post?', '/post-json?') + '&' + params + '&c=' + callbackName;
+
+      var script = document.createElement('script');
+      window[callbackName] = function (data) {
+        delete window[callbackName];
+        document.head.removeChild(script);
+        if (data.result === 'success') {
+          newsletterForm.style.display = 'none';
+          newsletterSuccess.removeAttribute('hidden');
+        } else {
+          btn.disabled = false;
+          btn.textContent = originalText;
+          var msg = (data.msg || '').replace(/<[^>]+>/g, '');
+          newsletterSuccess.textContent = msg.indexOf('already subscribed') !== -1
+            ? 'You\'re already on the list!'
+            : 'Something went wrong. Please try again.';
+          newsletterSuccess.removeAttribute('hidden');
+        }
+      };
+      script.src = url;
+      document.head.appendChild(script);
+    });
+  }
+
   // --- Smooth scroll for anchor links (fallback for older browsers) ---
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
