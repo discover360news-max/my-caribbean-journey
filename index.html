@@ -20,9 +20,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="/shared/shared.css">
   <link rel="stylesheet" href="css/hub.css">
 </head>
 <body>
+
+  <div id="site-nav"></div>
 
   <!-- Hero -->
   <header class="hero">
@@ -41,14 +44,26 @@
       <h1 class="hero-title">My Caribbean <span class="text-gold">Journey</span></h1>
       <p class="hero-description">
         A collection of beautifully illustrated books celebrating the culture, history,
-        and spirit of the Caribbean islands. Each title invites you to step into stories
-        shaped by courage, resilience, and creativity.
+        and spirit of the Caribbean islands. <br>Each title invites you to step into stories
+        shaped by courage, resilience, and creativity.</br>
       </p>
       <div class="hero-actions">
         <a href="#books" class="btn btn-primary">Books</a>
         <a href="#about" class="btn btn-outline">About</a>
         <a href="#author" class="btn btn-outline">Bio</a>
         <a href="mailto:booksbyquincy@gmail.com" class="btn btn-outline">Contact</a>
+      </div>
+      <div class="hero-newsletter">
+        <p class="hero-newsletter-label">Join the Journey</p>
+        <p class="hero-newsletter-desc">Island stories, new guides, and upcoming releases — straight to your inbox.</p>
+        <form class="hero-newsletter-form" id="newsletter-form-hub">
+          <div class="hero-newsletter-fields">
+            <input type="text" name="FNAME" placeholder="Your name" autocomplete="given-name" required>
+            <input type="email" name="EMAIL" placeholder="Your email address" autocomplete="email" required>
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </div>
+          <p class="hero-newsletter-success" id="newsletter-success-hub" hidden>You're in! Welcome to the journey.</p>
+        </form>
       </div>
     </div>
   </header>
@@ -120,6 +135,39 @@
     </div>
   </section>
 
+  <!-- Explore the Caribbean -->
+  <section class="explore" id="explore">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Island Guides</p>
+        <h2 class="section-title">Explore the Caribbean</h2>
+        <p class="explore-subtitle">Curated resources for visitors, expats, and curious souls — hand-picked by Quincy.</p>
+      </div>
+      <div class="explore-grid">
+
+        <!-- My Tobago Guide -->
+        <a href="/my-tobago-guide/" class="explore-card">
+          <div class="explore-card-icon">
+            <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="10" r="3"/>
+              <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 7 8 11.7z"/>
+            </svg>
+          </div>
+          <div class="explore-card-body">
+            <span class="explore-card-badge">New</span>
+            <h3 class="explore-card-title">My Tobago Guide</h3>
+            <p class="explore-card-description">The best resources, businesses, and hidden gems for visitors and expats in Tobago — handpicked and curated.</p>
+            <span class="explore-card-link">
+              Explore the guide
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
   <!-- Bio -->
   <section class="bio" id="author">
     <div class="container">
@@ -172,28 +220,72 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div>
-          <p class="footer-logo">My Caribbean Journey</p>
-          <p class="footer-tagline">Stories from the islands</p>
-        </div>
-        <div class="footer-links">
-          <a href="#books">Books</a>
-          <a href="#about">About</a>
-          <a href="#author">The Author</a>
-          <a href="/i-am-tobago/">I Am Tobago</a>
-          <a href="mailto:booksbyquincy@gmail.com">Contact</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 My Caribbean Journey. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+  <div id="site-footer"></div>
 
+  <script src="/shared/components.js"></script>
   <script src="js/hero-reel.js"></script>
+  <script>
+    // Newsletter form — replace URL with your Mailchimp form action
+    (function () {
+      var MAILCHIMP_URL = 'REPLACE_WITH_YOUR_MAILCHIMP_FORM_ACTION_URL';
+      var form = document.getElementById('newsletter-form-hub');
+      var success = document.getElementById('newsletter-success-hub');
+      if (!form) return;
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var btn = form.querySelector('button[type="submit"]');
+        var originalText = btn.textContent;
+        var fname = form.querySelector('[name="FNAME"]').value.trim();
+        var email = form.querySelector('[name="EMAIL"]').value.trim();
+
+        btn.disabled = true;
+        btn.textContent = 'Subscribing…';
+
+        var callbackName = 'mc_cb_' + Date.now();
+        var params = 'FNAME=' + encodeURIComponent(fname) + '&EMAIL=' + encodeURIComponent(email);
+        var url = MAILCHIMP_URL.replace('/post?', '/post-json?') + '&' + params + '&c=' + callbackName;
+
+        var script = document.createElement('script');
+        window[callbackName] = function (data) {
+          delete window[callbackName];
+          document.head.removeChild(script);
+          if (data.result === 'success') {
+            form.style.display = 'none';
+            success.removeAttribute('hidden');
+          } else {
+            btn.disabled = false;
+            btn.textContent = originalText;
+            var msg = (data.msg || '').replace(/<[^>]+>/g, '');
+            success.textContent = msg.indexOf('already subscribed') !== -1
+              ? 'You\'re already on the list!'
+              : 'Something went wrong. Please try again.';
+            success.removeAttribute('hidden');
+          }
+        };
+        script.src = url;
+        document.head.appendChild(script);
+      });
+    })();
+  </script>
+  <script>
+    SiteComponents.init({
+      navLinks: [
+        { label: 'Books', href: '#books' },
+        { label: 'Explore', href: '#explore' },
+        { label: 'About', href: '#about' },
+        { label: 'Bio', href: '#author' },
+        { label: 'Contact', href: 'mailto:booksbyquincy@gmail.com' }
+      ],
+      footerLinks: [
+        { label: 'Books', href: '#books' },
+        { label: 'About', href: '#about' },
+        { label: 'The Author', href: '#author' },
+        { label: 'I Am Tobago', href: '/i-am-tobago/' },
+        { label: 'Tobago Guide', href: '/my-tobago-guide/' },
+        { label: 'Contact', href: 'mailto:booksbyquincy@gmail.com' }
+      ]
+    });
+  </script>
 </body>
 </html>

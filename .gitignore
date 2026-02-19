@@ -1,0 +1,16 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Browser automation artifacts
+.playwright-mcp/
+playwright-report/
+
+# Node / npm (not used in this project, but just in case)
+node_modules/
+npm-debug.log*
+
+# Editor
+.vscode/
+.idea/
+*.swp
