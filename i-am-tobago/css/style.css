@@ -588,6 +588,40 @@
   color: rgba(232, 228, 220, 0.5);
 }
 
+/* --- Reviews CTA --- */
+.reviews-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.reviews-cta-label {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--green-deep);
+  margin: 0;
+}
+
+/* --- Book Newsletter Section --- */
+.book-newsletter {
+  background: linear-gradient(135deg, var(--green-deep) 0%, #0a2e15 50%, var(--green-dark) 100%);
+  padding: var(--space-xl) 0;
+  text-align: center;
+}
+
+.book-newsletter .container {
+  max-width: 600px;
+}
+
+.book-newsletter .hero-newsletter-label,
+.book-newsletter .hero-newsletter-desc {
+  text-align: center;
+}
+
 /* --- Find It In a Store Section --- */
 .stores {
   background: var(--cream);
@@ -700,6 +734,22 @@
 .stores-empty {
   color: var(--text-muted);
   font-size: 1rem;
+}
+
+.stores-carry {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid rgba(26, 74, 46, 0.1);
+  flex-wrap: wrap;
+}
+
+.stores-carry-label {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin: 0;
 }
 
 /* --- Store Card --- */

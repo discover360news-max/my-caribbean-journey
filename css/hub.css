@@ -381,6 +381,10 @@
   margin-bottom: 1rem;
 }
 
+.about-cta {
+  margin-top: 1.5rem;
+}
+
 /* --- Bio Section --- */
 .bio {
   background: linear-gradient(135deg, var(--green-deep) 0%, #0a2e15 50%, var(--green-dark) 100%);

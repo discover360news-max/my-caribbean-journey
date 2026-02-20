@@ -293,6 +293,42 @@
   display: block;
 }
 
+/* --- Book Cross-sell --- */
+.guide-book-promo {
+  background: linear-gradient(135deg, var(--green-deep) 0%, #0a2e15 50%, var(--green-dark) 100%);
+  padding: 4rem 0;
+}
+
+.guide-book-promo-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.guide-book-promo-text .section-label {
+  color: var(--gold);
+  text-align: left;
+}
+
+.guide-book-promo-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.guide-book-promo-desc {
+  color: rgba(232, 228, 220, 0.7);
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 500px;
+  margin: 0;
+}
+
 /* --- Responsive --- */
 @media (max-width: 768px) {
   .guide-hero {
@@ -328,6 +364,19 @@
 
   .guide-grid {
     grid-template-columns: 1fr;
+  }
+
+  .guide-book-promo-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .guide-book-promo-text .section-label {
+    text-align: center;
+  }
+
+  .guide-book-promo-desc {
+    max-width: 100%;
   }
 }
 
