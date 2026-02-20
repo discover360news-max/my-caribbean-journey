@@ -11,17 +11,19 @@
   var rightSide = document.querySelector('.palm-side--right');
   if (!leftSide || !rightSide) return;
 
-  var SCROLL_RANGE = 450; // px of scroll to reach full reveal
   var target  = 0;
   var current = 0;
   var raf     = null;
 
+  function getMaxScroll() {
+    return document.documentElement.scrollHeight - window.innerHeight;
+  }
+
   function apply(p) {
-    var opacity = Math.min(p * 1.6, 1);
     var dx = (1 - p) * 65;
-    leftSide.style.opacity  = opacity;
+    leftSide.style.opacity  = p;
     leftSide.style.transform  = 'translateX(' + (-dx) + 'px)';
-    rightSide.style.opacity = opacity;
+    rightSide.style.opacity = p;
     rightSide.style.transform = 'translateX(' + dx + 'px)';
   }
 
@@ -37,7 +39,8 @@
   }
 
   window.addEventListener('scroll', function () {
-    target = Math.min(window.scrollY / SCROLL_RANGE, 1);
+    var maxScroll = getMaxScroll();
+    target = maxScroll > 0 ? window.scrollY / maxScroll : 0;
     if (!raf) raf = requestAnimationFrame(tick);
   }, { passive: true });
 
