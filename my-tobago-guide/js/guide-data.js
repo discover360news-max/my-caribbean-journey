@@ -121,14 +121,14 @@ var GUIDE_DATA = {
     {
       title: "Tobago Events and Festivals",
       description: 'Discover the vibrant cultural events and festivals that take place throughout Tobago.',
-      url: 'https://www.facebook.com/THCStobago',
+      url: 'https://tobagofestivalscommission.com/',
       category: 'culture-history',
       featured: false
     },
     {
       title: "Tobago Heritage Conservation Society",
       description: 'Preserving and promoting Tobago’s cultural and natural heritage.',
-      url: 'https://tobagohcs.org/',
+      url: 'https://www.facebook.com/THCStobago',
       category: 'culture-history',
       featured: false
     },
