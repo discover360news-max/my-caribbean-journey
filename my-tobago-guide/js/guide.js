@@ -82,6 +82,8 @@
       var items = grouped[cat.id];
       if (!items || items.length === 0) return;
 
+      html += '<div class="guide-category-group">';
+
       // Category heading (only when showing "All")
       if (activeCategory === 'all') {
         html += '<div class="guide-category-heading">' +
@@ -93,6 +95,8 @@
       if (cat.note) {
         html += '<div class="guide-category-note">' + cat.note + '</div>';
       }
+
+      html += '<div class="guide-category-cards">';
 
       // Cards
       items.forEach(function (link) {
@@ -127,6 +131,9 @@
           '</a>';
         }
       });
+
+      html += '</div>'; // .guide-category-cards
+      html += '</div>'; // .guide-category-group
     });
 
     grid.innerHTML = html;
