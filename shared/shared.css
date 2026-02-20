@@ -234,12 +234,14 @@ a { text-decoration: none; color: inherit; }
   z-index: 99;
   transform: translateY(-10px);
   opacity: 0;
+  pointer-events: none;
   transition: transform var(--transition), opacity var(--transition);
 }
 
 .site-mobile-menu.open {
   transform: translateY(0);
   opacity: 1;
+  pointer-events: auto;
 }
 
 .site-mobile-menu a {
