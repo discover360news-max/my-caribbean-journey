@@ -82,7 +82,7 @@ Base class is always `.btn`. Combine with a variant. Defined in `/shared/shared.
 ## Section Patterns
 
 ### Dark section
-Used for: hero, features, buy CTA, bio, footer.
+Used for: hero, features, buy CTA, bio, book newsletter, guide book promo, footer.
 ```css
 background: linear-gradient(135deg, var(--green-deep) 0%, #0a2e15 50%, var(--green-dark) 100%);
 color: var(--cream);
@@ -90,7 +90,7 @@ color: var(--cream);
 Use `.btn-outline` here. Section label colour: `--gold`.
 
 ### Light section
-Used for: about, explore, reviews, stores, guide results.
+Used for: about, author, reviews, stores, guide results.
 ```css
 background: var(--warm-white); /* alternate with var(--cream) */
 ```
