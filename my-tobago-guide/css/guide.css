@@ -401,3 +401,41 @@
     font-size: 1.25rem;
   }
 }
+
+/* --- Palm frond decorations (scroll-driven) --- */
+.palm-side {
+  position: fixed;
+  top: 0;
+  height: 30vh;
+  pointer-events: none;
+  z-index: 3;
+  overflow: hidden;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.palm-side--left  { left: 0;  width: 200px; }
+.palm-side--right { right: 0; width: 200px; }
+
+.palm-side svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .palm-side--left,
+  .palm-side--right { width: 110px; }
+}
+
+/* Mobile: clamp to text padding so fronds never overlap content */
+@media (max-width: 768px) {
+  .palm-side--left,
+  .palm-side--right { width: 32px; }
+}
+
+/* Very small screens: hide entirely */
+@media (max-width: 480px) {
+  .palm-side { display: none; }
+}
