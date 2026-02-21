@@ -1,48 +1,72 @@
 /* ===========================================
    MY CARIBBEAN JOURNEY — Blog Styles
+   Warm & editorial — literary magazine feel
    Shared design tokens live in /shared/shared.css
    =========================================== */
 
-/* --- Blog Hero (index page header) --- */
+/* ==========================================
+   BLOG INDEX — Listing Page
+   ========================================== */
+
+/* --- Hero --- */
 
 .blog-hero {
-  background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-mid) 100%);
-  padding: 6rem 0 4rem;
+  background: linear-gradient(160deg, var(--green-deep) 0%, #0a2e15 50%, var(--green-mid) 100%);
+  padding: 6rem 0 4.5rem;
   text-align: center;
   color: var(--text-light);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative quote mark behind the title */
+.blog-hero::before {
+  content: '\201C';
+  font-family: var(--font-display);
+  font-size: 28rem;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.03);
+  position: absolute;
+  top: -4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  user-select: none;
 }
 
 .blog-hero .section-label {
   color: var(--gold);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   margin-bottom: 0.75rem;
 }
 
 .blog-hero .section-title {
   font-family: var(--font-display);
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-size: clamp(2.4rem, 5vw, 3.75rem);
   font-weight: 700;
   color: var(--cream);
-  line-height: 1.15;
+  line-height: 1.1;
   margin-bottom: 1.25rem;
 }
 
 .blog-intro {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: var(--text-light);
-  max-width: 52ch;
+  max-width: 50ch;
   margin: 0 auto;
-  opacity: 0.85;
+  opacity: 0.8;
+  font-style: italic;
+  font-family: var(--font-display);
 }
 
-/* --- Blog Post List --- */
+/* --- Post Grid --- */
 
 .blog-posts {
   padding: var(--space-xl) 0;
-  background: var(--warm-white);
+  background: var(--cream);
 }
 
 .post-grid {
@@ -51,83 +75,37 @@
   gap: 2rem;
 }
 
+/* --- Post Cards --- */
+
 .post-card {
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.07);
+  background: var(--warm-white);
+  border: 1px solid rgba(212, 160, 48, 0.12);
+  border-left: 3px solid var(--gold);
   border-radius: var(--radius-lg);
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  transition: transform var(--transition), box-shadow var(--transition);
+  gap: 0.65rem;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
 }
 
 .post-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 16px 48px rgba(26, 74, 46, 0.1);
+  border-left-color: var(--gold-light);
 }
 
-.post-card .post-date {
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--gold);
-}
-
-.post-card-title {
-  font-family: var(--font-display);
-  font-size: 1.35rem;
-  font-weight: 700;
-  line-height: 1.3;
-  margin: 0;
-}
-
-.post-card-title a {
-  color: var(--text-dark);
-  transition: color var(--transition);
-}
-
-.post-card-title a:hover {
-  color: var(--green-mid);
-}
-
-.post-excerpt {
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  line-height: 1.65;
-  flex: 1;
-}
-
-.post-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--green-mid);
-  margin-top: 0.5rem;
-  transition: gap var(--transition), color var(--transition);
-}
-
-.post-link:hover {
-  gap: 0.65rem;
-  color: var(--green-light);
-}
-
-.post-link svg {
-  width: 16px;
-  height: 16px;
-  flex-shrink: 0;
-}
-
-/* Post card with featured image */
+/* Cards with featured images lose the left border — image takes over */
 .post-card.has-image {
   padding: 0;
+  border-left: 1px solid rgba(212, 160, 48, 0.12);
 }
 
 .post-card.has-image .post-card-body {
   padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
 }
 
 .post-card-image {
@@ -141,7 +119,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s ease;
+  transition: transform 0.5s ease;
 }
 
 .post-card:hover .post-card-image img {
@@ -149,8 +127,8 @@
 }
 
 .post-card.is-featured {
-  border-color: var(--gold);
-  box-shadow: 0 0 0 1px var(--gold);
+  border-left-color: var(--gold);
+  box-shadow: 0 4px 20px rgba(212, 160, 48, 0.15);
 }
 
 /* Category + featured badges */
@@ -159,16 +137,15 @@
   align-items: center;
   gap: 0.5rem;
   flex-wrap: wrap;
-  margin-bottom: 0.5rem;
 }
 
 .post-category-badge {
   display: inline-block;
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 0.2rem 0.6rem;
+  padding: 0.2rem 0.55rem;
   border-radius: 4px;
   background: var(--green-mid);
   color: var(--cream);
@@ -176,48 +153,170 @@
 
 .post-featured-badge {
   display: inline-block;
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 0.2rem 0.6rem;
+  padding: 0.2rem 0.55rem;
   border-radius: 4px;
   background: var(--gold);
   color: var(--green-deep);
 }
 
+.post-card .post-date {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.post-card-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.post-card-title a {
+  color: var(--green-deep);
+  transition: color var(--transition);
+}
+
+.post-card-title a:hover {
+  color: var(--green-mid);
+}
+
+.post-excerpt {
+  font-size: 0.93rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  flex: 1;
+}
+
+.post-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--green-mid);
+  margin-top: 0.25rem;
+  transition: gap var(--transition), color var(--transition);
+}
+
+.post-link:hover {
+  gap: 0.65rem;
+  color: var(--gold);
+}
+
+.post-link svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
 .no-posts {
   color: var(--text-muted);
-  font-size: 1rem;
+  font-style: italic;
   padding: 2rem 0;
 }
 
-/* --- Individual Blog Post --- */
+/* ==========================================
+   INDIVIDUAL BLOG POST
+   ========================================== */
 
-/* Post meta (category + date + author) */
+/* --- Post Header (dark hero) --- */
+
+.blog-post .post-header {
+  background: linear-gradient(160deg, var(--green-deep) 0%, #071a0c 55%, var(--green-dark) 100%);
+  padding: 5rem 0 4rem;
+  color: var(--text-light);
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.8;
+  transition: opacity var(--transition), gap var(--transition);
+}
+
+.back-link:hover {
+  opacity: 1;
+  gap: 0.65rem;
+}
+
+.back-link svg {
+  flex-shrink: 0;
+}
+
+/* Post meta row: category · date · author */
 .post-meta {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.9rem;
   flex-wrap: wrap;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .post-meta .post-category-badge {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.1);
   color: var(--gold);
-  border: 1px solid rgba(212, 160, 48, 0.4);
+  border: 1px solid rgba(212, 160, 48, 0.35);
+}
+
+.post-header .post-date {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(232, 228, 220, 0.55);
 }
 
 .post-author {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: rgba(232, 228, 220, 0.6);
+  font-size: 0.82rem;
+  color: rgba(232, 228, 220, 0.5);
 }
 
-/* Featured image between header and body */
+.post-author::before {
+  content: '·';
+  margin-right: 0.9rem;
+  color: rgba(232, 228, 220, 0.25);
+}
+
+/* Title */
+.post-header .post-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--cream);
+  max-width: 20ch;
+  margin-bottom: 1.5rem;
+}
+
+/* Excerpt / standfirst */
+.post-excerpt-lead {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-style: italic;
+  color: rgba(232, 228, 220, 0.75);
+  max-width: 56ch;
+  line-height: 1.65;
+}
+
+/* --- Featured Image --- */
+
 .post-featured-image {
-  max-height: 480px;
+  max-height: 520px;
   overflow: hidden;
 }
 
@@ -228,96 +327,93 @@
   display: block;
 }
 
-
-
-.blog-post .post-header {
-  background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-dark) 60%, var(--green-mid) 100%);
-  padding: 5rem 0 3.5rem;
-  color: var(--text-light);
-}
-
-.back-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--gold);
-  margin-bottom: 2rem;
-  letter-spacing: 0.03em;
-  transition: gap var(--transition);
-}
-
-.back-link:hover {
-  gap: 0.65rem;
-}
-
-.back-link svg {
-  flex-shrink: 0;
-}
-
-.post-header .post-date {
-  display: block;
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 1rem;
-}
-
-.post-header .post-title {
-  font-family: var(--font-display);
-  font-size: clamp(1.9rem, 4.5vw, 3rem);
-  font-weight: 700;
-  line-height: 1.2;
-  color: var(--cream);
-  max-width: 22ch;
-  margin-bottom: 1.25rem;
-}
-
-.post-excerpt-lead {
-  font-size: 1.15rem;
-  color: var(--text-light);
-  max-width: 60ch;
-  line-height: 1.7;
-  opacity: 0.85;
-}
-
-/* --- Post Body & Prose --- */
+/* --- Post Body --- */
 
 .post-body {
   background: var(--warm-white);
-  padding: var(--space-xl) 0;
+  padding: var(--space-xl) 0 calc(var(--space-xl) * 1.5);
 }
+
+/* ==========================================
+   PROSE — Typography for post body
+   ========================================== */
 
 .prose {
   max-width: 68ch;
   margin: 0 auto;
-  font-size: 1.05rem;
-  line-height: 1.8;
+  font-size: 1.075rem;
+  line-height: 1.85;
   color: var(--text-dark);
 }
 
+/* Opening paragraph — slightly larger */
+.prose > p:first-of-type {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #2a2a22;
+}
+
+/* Drop cap on the very first letter */
+.prose > p:first-of-type::first-letter {
+  font-family: var(--font-display);
+  font-size: 4.5rem;
+  font-weight: 700;
+  float: left;
+  line-height: 0.82;
+  padding-right: 0.1em;
+  padding-top: 0.08em;
+  color: var(--green-deep);
+}
+
+/* --- Headings --- */
+
 .prose h2 {
   font-family: var(--font-display);
-  font-size: 1.65rem;
+  font-size: 1.75rem;
   font-weight: 700;
   color: var(--green-deep);
-  margin: 2.5rem 0 0.75rem;
-  line-height: 1.25;
+  margin: 3.25rem 0 1rem;
+  line-height: 1.2;
+  padding-bottom: 0.7rem;
+  /* Double line: subtle full-width + short gold accent */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.prose h2::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 2.75rem;
+  height: 2px;
+  background: var(--gold);
+  border-radius: 2px;
 }
 
 .prose h3 {
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: var(--green-mid);
+  margin: 2.5rem 0 0.65rem;
+  line-height: 1.3;
+}
+
+.prose h4 {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--green-mid);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
   margin: 2rem 0 0.5rem;
 }
 
+/* --- Paragraphs & inline --- */
+
 .prose p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.6rem;
 }
 
 .prose p:last-child {
@@ -333,59 +429,89 @@
   font-style: italic;
 }
 
+/* --- Lists --- */
+
 .prose ul,
 .prose ol {
-  margin: 0 0 1.5rem 1.5rem;
+  margin: 0 0 1.6rem 1.6rem;
 }
 
 .prose li {
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.75;
 }
 
+/* --- Pull Quote (blockquote) --- */
+
 .prose blockquote {
-  border-left: 4px solid var(--gold);
-  margin: 2rem 0;
-  padding: 1rem 1.5rem;
-  background: var(--cream);
-  border-radius: 0 var(--radius) var(--radius) 0;
+  border-left: none;
+  border-top: 2px solid var(--gold);
+  border-bottom: 1px solid rgba(212, 160, 48, 0.25);
+  border-radius: 0;
+  background: transparent;
+  margin: 3rem 0;
+  padding: 1.75rem 1.5rem;
+  text-align: center;
 }
 
 .prose blockquote p {
-  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
   font-style: italic;
-  color: var(--text-muted);
+  color: var(--green-deep);
+  line-height: 1.55;
+  margin: 0;
 }
+
+/* --- Links --- */
 
 .prose a {
   color: var(--green-mid);
   text-decoration: underline;
   text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
 }
 
 .prose a:hover {
   color: var(--green-light);
 }
 
+/* --- HR --- */
+
 .prose hr {
   border: none;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  margin: 2.5rem 0;
+  text-align: center;
+  margin: 3rem 0;
+  overflow: visible;
+}
+
+.prose hr::after {
+  content: '✦  ✦  ✦';
+  color: var(--gold);
+  font-size: 0.75rem;
+  letter-spacing: 0.5em;
 }
 
 /* --- Post Footer --- */
 
 .post-footer {
   max-width: 68ch;
-  margin: 3rem auto 0;
+  margin: 3.5rem auto 0;
   padding-top: 2rem;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-/* --- Responsive --- */
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
 
 @media (max-width: 640px) {
   .blog-hero {
     padding: 5rem 0 3rem;
+  }
+
+  .blog-hero::before {
+    font-size: 16rem;
   }
 
   .blog-posts {
@@ -397,6 +523,28 @@
   }
 
   .post-header .post-title {
-    font-size: 1.75rem;
+    font-size: 1.85rem;
+    max-width: none;
+  }
+
+  .prose > p:first-of-type::first-letter {
+    font-size: 3.5rem;
+  }
+
+  .prose blockquote {
+    margin: 2rem 0;
+    padding: 1.25rem 1rem;
+  }
+
+  .prose blockquote p {
+    font-size: 1.1rem;
+  }
+
+  .prose h2 {
+    font-size: 1.5rem;
+  }
+
+  .prose h3 {
+    font-size: 1.25rem;
   }
 }
