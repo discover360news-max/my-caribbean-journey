@@ -10,13 +10,21 @@ layout: blog-base.njk
         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 5-7 7 7 7"/></svg>
         All Posts
       </a>
-      <time class="post-date" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+      <div class="post-meta">
+        {% if category %}<span class="post-category-badge">{{ category | categoryLabel }}</span>{% endif %}
+        <time class="post-date" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+        {% if author %}<span class="post-author">By {{ author }}</span>{% endif %}
+      </div>
       <h1 class="post-title">{{ title }}</h1>
-      {% if excerpt %}
-      <p class="post-excerpt-lead">{{ excerpt }}</p>
-      {% endif %}
+      {% if excerpt %}<p class="post-excerpt-lead">{{ excerpt }}</p>{% endif %}
     </div>
   </header>
+
+  {% if featuredImage %}
+  <div class="post-featured-image">
+    <img src="{{ featuredImage }}" alt="{{ title }}" loading="eager">
+  </div>
+  {% endif %}
 
   <div class="post-body">
     <div class="container">

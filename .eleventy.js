@@ -12,6 +12,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("i-am-tobago");
   eleventyConfig.addPassthroughCopy("my-tobago-guide");
   eleventyConfig.addPassthroughCopy("admin");
+  eleventyConfig.addPassthroughCopy("blog/images");
 
   // ----------------------------------------
   // Date filters (used in blog templates)
@@ -28,6 +29,35 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("htmlDateString", function (dateObj) {
     return new Date(dateObj).toISOString().split("T")[0];
+  });
+
+  // ----------------------------------------
+  // Category label filter
+  // ----------------------------------------
+  const CATEGORY_LABELS = {
+    culture: "Culture & Heritage",
+    history: "History",
+    travel:  "Travel & Expat",
+    food:    "Food & Traditions",
+    music:   "Music & Arts",
+    news:    "News & Updates",
+  };
+
+  eleventyConfig.addFilter("categoryLabel", function (value) {
+    return CATEGORY_LABELS[value] || value;
+  });
+
+  // ----------------------------------------
+  // Collections — exclude drafts, featured first
+  // ----------------------------------------
+  eleventyConfig.addCollection("post", function (api) {
+    return api.getFilteredByTag("post")
+      .filter(item => !item.data.draft)
+      .sort((a, b) => {
+        if (a.data.featured && !b.data.featured) return -1;
+        if (!a.data.featured && b.data.featured) return 1;
+        return b.date - a.date;
+      });
   });
 
   // ----------------------------------------

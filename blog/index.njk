@@ -5,7 +5,7 @@ description: Stories, history, and dispatches from the Caribbean islands — wri
 permalink: /blog/
 ---
 
-{% set posts = collections.post | reverse %}
+{% set posts = collections.post %}
 
 <section class="blog-hero">
   <div class="container">
@@ -21,18 +21,29 @@ permalink: /blog/
     {% if posts.length %}
     <div class="post-grid">
       {% for post in posts %}
-      <article class="post-card">
-        <time class="post-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
-        <h2 class="post-card-title">
-          <a href="{{ post.url }}">{{ post.data.title }}</a>
-        </h2>
-        {% if post.data.excerpt %}
-        <p class="post-excerpt">{{ post.data.excerpt }}</p>
-        {% endif %}
-        <a href="{{ post.url }}" class="post-link">
-          Read more
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      <article class="post-card{% if post.data.featuredImage %} has-image{% endif %}{% if post.data.featured %} is-featured{% endif %}">
+        {% if post.data.featuredImage %}
+        <a href="{{ post.url }}" class="post-card-image" tabindex="-1" aria-hidden="true">
+          <img src="{{ post.data.featuredImage }}" alt="{{ post.data.title }}" loading="lazy">
         </a>
+        {% endif %}
+        <div class="post-card-body">
+          <div class="post-card-meta">
+            {% if post.data.category %}<span class="post-category-badge">{{ post.data.category | categoryLabel }}</span>{% endif %}
+            {% if post.data.featured %}<span class="post-featured-badge">Featured</span>{% endif %}
+          </div>
+          <time class="post-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+          <h2 class="post-card-title">
+            <a href="{{ post.url }}">{{ post.data.title }}</a>
+          </h2>
+          {% if post.data.excerpt %}
+          <p class="post-excerpt">{{ post.data.excerpt }}</p>
+          {% endif %}
+          <a href="{{ post.url }}" class="post-link">
+            Read more
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
       </article>
       {% endfor %}
     </div>
