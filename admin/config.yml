@@ -8,13 +8,15 @@ backend:
 media_folder: "blog/images"
 public_folder: "/blog/images"
 
+# Shared field definitions (referenced below)
+# Both collections use identical fields — only the type default differs.
+
 collections:
 
   # ----------------------------------------
   # Blog Posts — general writing, news, etc.
-  # To move a post to Island Stories: change
-  # the "Collection Type" field to Island Story
-  # and save — it will appear there instead.
+  # To move to Island Stories: change
+  # "Collection Type" to Island Story and save.
   # ----------------------------------------
   - name: "posts"
     label: "Blog Posts"
@@ -30,8 +32,9 @@ collections:
         default: "post"
         hint: "Change this to move the post into a different collection."
         options:
-          - { label: "Blog Post",     value: "post"  }
-          - { label: "Island Story",  value: "story" }
+          - { label: "Blog Post",    value: "post"  }
+          - { label: "Island Story", value: "story" }
+
       - label: "Title"
         name: "title"
         widget: "string"
@@ -55,11 +58,11 @@ collections:
         required: false
         options:
           - { label: "Culture & Heritage", value: "culture" }
-          - { label: "History",             value: "history" }
-          - { label: "Travel & Expat",      value: "travel"  }
-          - { label: "Food & Traditions",   value: "food"    }
-          - { label: "Music & Arts",        value: "music"   }
-          - { label: "News & Updates",      value: "news"    }
+          - { label: "History",            value: "history" }
+          - { label: "Travel & Expat",     value: "travel"  }
+          - { label: "Food & Traditions",  value: "food"    }
+          - { label: "Music & Arts",       value: "music"   }
+          - { label: "News & Updates",     value: "news"    }
 
       - label: "Featured Image"
         name: "featuredImage"
@@ -90,11 +93,16 @@ collections:
         name: "body"
         widget: "markdown"
 
+      - label: "References & Further Reading"
+        name: "references"
+        widget: "markdown"
+        required: false
+        hint: "Sources, citations, or further reading — displayed at the bottom of the post. Use numbered lists, links, or any format you like."
+
   # ----------------------------------------
   # Island Stories — longer narrative writing
-  # To move a story to Blog Posts: change
-  # the "Collection Type" field to Blog Post
-  # and save — it will appear there instead.
+  # To move to Blog Posts: change
+  # "Collection Type" to Blog Post and save.
   # ----------------------------------------
   - name: "stories"
     label: "Island Stories"
@@ -110,8 +118,9 @@ collections:
         default: "story"
         hint: "Change this to move the post into a different collection."
         options:
-          - { label: "Blog Post",     value: "post"  }
-          - { label: "Island Story",  value: "story" }
+          - { label: "Blog Post",    value: "post"  }
+          - { label: "Island Story", value: "story" }
+
       - label: "Title"
         name: "title"
         widget: "string"
@@ -157,3 +166,9 @@ collections:
       - label: "Body"
         name: "body"
         widget: "markdown"
+
+      - label: "References & Further Reading"
+        name: "references"
+        widget: "markdown"
+        required: false
+        hint: "Sources, citations, or further reading — displayed at the bottom of the post. Use numbered lists, links, or any format you like."

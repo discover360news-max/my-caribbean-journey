@@ -13,7 +13,7 @@ layout: blog-base.njk
       <div class="post-meta">
         {% if category %}<span class="post-category-badge">{{ category | categoryLabel }}</span>{% endif %}
         <time class="post-date" datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
-        {% if author %}<span class="post-author">By {{ author }}</span>{% endif %}
+        {% if author %}<span class="post-author">{{ author }}</span>{% endif %}
       </div>
       <h1 class="post-title">{{ title }}</h1>
       {% if excerpt %}<p class="post-excerpt-lead">{{ excerpt }}</p>{% endif %}
@@ -31,6 +31,16 @@ layout: blog-base.njk
       <div class="prose">
         {{ content | safe }}
       </div>
+
+      {% if references %}
+      <div class="post-references">
+        <h2 class="references-heading">References &amp; Further Reading</h2>
+        <div class="prose prose-references">
+          {{ references | markdownify | safe }}
+        </div>
+      </div>
+      {% endif %}
+
       <div class="post-footer">
         <a href="/blog/" class="back-link">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 5-7 7 7 7"/></svg>

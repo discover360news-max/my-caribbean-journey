@@ -1,4 +1,14 @@
+const markdownIt = require("markdown-it");
+
+// Configure markdown-it:
+//   breaks: true  — single Enter becomes <br>, matching what you type in the CMS
+//   html: true    — allow raw HTML in posts if needed
+const md = markdownIt({ html: true, breaks: true, linkify: false });
+
 module.exports = function (eleventyConfig) {
+
+  // Use the configured markdown-it instance
+  eleventyConfig.setLibrary("md", md);
 
   // ----------------------------------------
   // Pass-through: all existing site files
@@ -45,6 +55,12 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("categoryLabel", function (value) {
     return CATEGORY_LABELS[value] || value;
+  });
+
+  // Render a markdown string from frontmatter (used for references field)
+  eleventyConfig.addFilter("markdownify", function (content) {
+    if (!content) return "";
+    return md.render(String(content));
   });
 
   // ----------------------------------------
