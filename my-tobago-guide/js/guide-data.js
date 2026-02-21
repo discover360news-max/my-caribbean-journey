@@ -66,6 +66,13 @@ var GUIDE_DATA = {
       featured: false
     },
     {
+      title: 'Tobago Chocolate Delights',
+      description: "Tobago Chocolate Delight’s is the only bean to bar “Artisan Chocolate Shop” in Tobago.",
+      url: 'https://www.facebook.com/tobagochocolatedelights/',
+      category: 'food-recipes',
+      featured: true
+    },
+    {
       title: "Kerry’s Nice & Sweet Treats",
       description: 'Delicious homemade treats and baked goods from a local Tobagonian family. A sweet taste of home.',
       url: 'https://kerrysniceandsweettreats.com/',
