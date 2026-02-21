@@ -529,6 +529,57 @@
   height: 18px;
 }
 
+/* --- Blog Promo Section --- */
+.blog-promo {
+  background: var(--cream);
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.blog-promo-content {
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.blog-promo-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--green-mid), var(--green-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  margin: 0 auto 1.75rem;
+}
+
+.blog-promo-icon svg {
+  width: 36px;
+  height: 36px;
+}
+
+.blog-promo .section-label {
+  color: var(--green-mid);
+}
+
+.blog-promo .section-title {
+  margin-bottom: 1.25rem;
+}
+
+.blog-promo-desc {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.blog-promo-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 /* --- Responsive --- */
 @media (max-width: 768px) {
   .hero {
