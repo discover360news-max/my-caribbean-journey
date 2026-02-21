@@ -13,7 +13,6 @@
 .blog-hero {
   background: linear-gradient(160deg, var(--green-deep) 0%, #0a2e15 50%, var(--green-mid) 100%);
   padding: 6rem 0 4.5rem;
-  text-align: center;
   color: var(--text-light);
   position: relative;
   overflow: hidden;
@@ -56,7 +55,6 @@
   font-size: 1.1rem;
   color: var(--text-light);
   max-width: 50ch;
-  margin: 0 auto;
   opacity: 0.8;
   font-style: italic;
   font-family: var(--font-display);
@@ -540,6 +538,114 @@
   margin: 3.5rem auto 0;
   padding-top: 2rem;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* ==========================================
+   SHARE BUTTONS
+   ========================================== */
+
+.post-share {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.post-share-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+/* Header variant — sits on dark green */
+.post-share--header {
+  margin-top: 2rem;
+}
+
+.post-share--header .post-share-label {
+  color: rgba(232, 228, 220, 0.45);
+}
+
+/* Footer variant — sits on warm white */
+.post-share--footer {
+  max-width: 68ch;
+  margin: 2.5rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.post-share--footer .post-share-label {
+  color: var(--text-muted);
+}
+
+/* Individual share buttons */
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  transition: opacity var(--transition), transform var(--transition);
+  white-space: nowrap;
+}
+
+.share-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.share-btn svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+/* Platform colours */
+.share-x        { background: #000;     color: #fff; }
+.share-facebook { background: #1877F2;  color: #fff; }
+.share-whatsapp { background: #25D366;  color: #fff; }
+.share-copy     { background: var(--green-mid); color: var(--cream); }
+
+/* Header variant: slightly translucent so they don't overpower the title */
+.post-share--header .share-btn {
+  opacity: 0.85;
+  font-size: 0.75rem;
+  padding: 0.35rem 0.75rem;
+}
+
+.post-share--header .share-btn:hover {
+  opacity: 1;
+}
+
+/* Copied feedback */
+.share-copy-feedback {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--green-mid);
+}
+
+.post-share--header .share-copy-feedback {
+  color: var(--gold);
+}
+
+/* Instagram note */
+.share-instagram-note {
+  width: 100%;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.post-share--header .share-instagram-note {
+  color: rgba(232, 228, 220, 0.35);
 }
 
 /* ==========================================
