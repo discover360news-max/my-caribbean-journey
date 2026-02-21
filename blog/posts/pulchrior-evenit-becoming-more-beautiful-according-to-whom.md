@@ -15,35 +15,28 @@ references: >-
   ### Historical Context
 
 
-  > ### *Pulchrior Evenit*
+  * ### *Pulchrior Evenit*
 
-  >
 
-  > Latin for “She becomes more beautiful.”
+  Latin for “She becomes more beautiful.”
 
-  >
 
-  > ### **\*** *1814*
+  * ### **\*** *1814*
 
-  >
 
-  > Under the Treaty of Paris, Tobago was formally ceded to Britain following the Napoleonic Wars.
+  Under the Treaty of Paris, Tobago was formally ceded to Britain following the Napoleonic Wars.
 
-  >
 
-  > ### **\*** *1816*
+  * ### **\*** *1816*
 
-  >
 
-  > British administrative control was consolidated. Governance structures were reorganized and public spaces in Scarborough were reshaped.
+  British administrative control was consolidated. Governance structures were reorganized and public spaces in Scarborough were reshaped.
 
-  >
 
-  > ### *19th Century Economy*
+  * ### *19th Century Economy*
 
-  >
 
-  > Tobago’s plantation economy struggled with soil exhaustion, falling sugar prices, hurricanes and the aftershocks of emancipation.
+  Tobago’s plantation economy struggled with soil exhaustion, falling sugar prices, hurricanes and the aftershocks of emancipation.
 ---
 In 1816, Tobago adopted a simple Latin phrase as its civic motto: Pulchrior Evenit.
 
