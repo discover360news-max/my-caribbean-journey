@@ -1,6 +1,7 @@
 ---
 title: "Pulchrior Evenit: Becoming More Beautiful According to Whom?"
 date: 2026-02-21
+type: post
 category: culture
 excerpt: >-
   When Tobago adopted the motto Pulchrior Evenit - "She becomes more beautiful"
