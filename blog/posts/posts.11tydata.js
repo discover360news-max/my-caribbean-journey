@@ -1,6 +1,7 @@
 module.exports = {
   layout: "blog-post.njk",
   tags: "post",
+  type: "post",
   author: "Quincy",
   featured: false,
   draft: false,

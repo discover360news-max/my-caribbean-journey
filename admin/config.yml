@@ -12,6 +12,9 @@ collections:
 
   # ----------------------------------------
   # Blog Posts — general writing, news, etc.
+  # To move a post to Island Stories: change
+  # the "Collection Type" field to Island Story
+  # and save — it will appear there instead.
   # ----------------------------------------
   - name: "posts"
     label: "Blog Posts"
@@ -19,7 +22,16 @@ collections:
     folder: "blog/posts"
     create: true
     slug: "{{slug}}"
+    filter: {field: "type", value: "post"}
     fields:
+      - label: "Collection Type"
+        name: "type"
+        widget: "select"
+        default: "post"
+        hint: "Change this to move the post into a different collection."
+        options:
+          - { label: "Blog Post",     value: "post"  }
+          - { label: "Island Story",  value: "story" }
       - label: "Title"
         name: "title"
         widget: "string"
@@ -80,14 +92,26 @@ collections:
 
   # ----------------------------------------
   # Island Stories — longer narrative writing
+  # To move a story to Blog Posts: change
+  # the "Collection Type" field to Blog Post
+  # and save — it will appear there instead.
   # ----------------------------------------
   - name: "stories"
     label: "Island Stories"
     label_singular: "Island Story"
-    folder: "blog/stories"
+    folder: "blog/posts"
     create: true
     slug: "{{slug}}"
+    filter: {field: "type", value: "story"}
     fields:
+      - label: "Collection Type"
+        name: "type"
+        widget: "select"
+        default: "story"
+        hint: "Change this to move the post into a different collection."
+        options:
+          - { label: "Blog Post",     value: "post"  }
+          - { label: "Island Story",  value: "story" }
       - label: "Title"
         name: "title"
         widget: "string"
