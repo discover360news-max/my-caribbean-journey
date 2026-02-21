@@ -227,6 +227,12 @@
 
 /* --- Post Header (dark hero) --- */
 
+.post-header-inner {
+  max-width: 68ch;
+  margin: 0 auto;
+  font-size: 1.075rem; /* matches .prose so ch unit resolves to the same width */
+}
+
 .blog-post .post-header {
   background: linear-gradient(160deg, var(--green-deep) 0%, #071a0c 55%, var(--green-dark) 100%);
   padding: 5rem 0 5rem;
