@@ -11,6 +11,39 @@ excerpt: >-
 
 
   Explore the shift from imposed symmetry to the true beauty of resilience, and how a phrase born of administration became a testament to survival.
+references: >-
+  ### Historical Context
+
+
+  > ### *Pulchrior Evenit*
+
+  >
+
+  > Latin for “She becomes more beautiful.”
+
+  >
+
+  > ### **\*** *1814*
+
+  >
+
+  > Under the Treaty of Paris, Tobago was formally ceded to Britain following the Napoleonic Wars.
+
+  >
+
+  > ### **\*** *1816*
+
+  >
+
+  > British administrative control was consolidated. Governance structures were reorganized and public spaces in Scarborough were reshaped.
+
+  >
+
+  > ### *19th Century Economy*
+
+  >
+
+  > Tobago’s plantation economy struggled with soil exhaustion, falling sugar prices, hurricanes and the aftershocks of emancipation.
 ---
 In 1816, Tobago adopted a simple Latin phrase as its civic motto: Pulchrior Evenit.
 
@@ -71,21 +104,3 @@ Perhaps that is the deeper truth embedded in the Latin. Becoming is not somethin
 Tobago was never simply an island to be refined. She was, and remains, a living story. And every chapter of endurance adds to her beauty.
 
 #### **She becomes more beautiful still.**
-
-### Historical Context
-
-> *Pulchrior Evenit*
->
-> Latin for “She becomes more beautiful.”
->
-> #### **\* 1814**
->
-> Under the Treaty of Paris, Tobago was formally ceded to Britain following the Napoleonic Wars.
->
-> #### **\* 1816**
->
-> British administrative control was consolidated. Governance structures were reorganized and public spaces in Scarborough were reshaped.
->
-> #### **19th Century Economy**
->
-> Tobago’s plantation economy struggled with soil exhaustion, falling sugar prices, hurricanes and the aftershocks of emancipation.
