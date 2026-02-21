@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} — My Caribbean Journey</title>
+  <meta name="description" content="{{ excerpt or description or 'Stories, culture, and history from the Caribbean islands.' }}">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{ title }} — My Caribbean Journey">
+  <meta property="og:description" content="{{ excerpt or description or 'Stories, culture, and history from the Caribbean islands.' }}">
+  <meta property="og:type" content="article">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/shared/shared.css">
+  <link rel="stylesheet" href="/css/blog.css">
+</head>
+<body>
+
+  <div id="site-nav"></div>
+
+  {{ content | safe }}
+
+  <div id="site-footer"></div>
+
+  <script src="/shared/components.js"></script>
+  <script>
+    SiteComponents.init({
+      navLinks: [
+        { label: 'Home', href: '/' },
+        { label: 'Blog', href: '/blog/' },
+        { label: 'Tobago Guide', href: '/my-tobago-guide/' },
+        { label: 'I Am Tobago', href: '/i-am-tobago/', cta: true }
+      ],
+      footerLinks: [
+        { label: 'Home', href: '/' },
+        { label: 'Blog', href: '/blog/' },
+        { label: 'I Am Tobago', href: '/i-am-tobago/' },
+        { label: 'Tobago Guide', href: '/my-tobago-guide/' },
+        { label: 'Contact', href: 'mailto:booksbyquincy@gmail.com' }
+      ]
+    });
+  </script>
+
+</body>
+</html>

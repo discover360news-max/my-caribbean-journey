@@ -1,0 +1,13 @@
+# Project docs — not pages
+CLAUDE.md
+DESIGN.md
+README.md
+
+# Build output
+_site/
+
+# Dependencies
+node_modules/
+
+# Cloudflare Functions (not Eleventy templates)
+functions/

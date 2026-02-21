@@ -6,9 +6,10 @@ Thumbs.db
 .playwright-mcp/
 playwright-report/
 
-# Node / npm (not used in this project, but just in case)
+# Node / Eleventy
 node_modules/
 npm-debug.log*
+_site/
 
 # Editor
 .vscode/

@@ -1,0 +1,37 @@
+backend:
+  name: github
+  repo: discover360news-max/my-caribbean-journey
+  branch: main
+  # Points to your Cloudflare Pages Function OAuth proxy
+  base_url: https://mycaribbeanjourney.com
+  auth_endpoint: /api/auth
+
+# Where uploaded images are stored in the repo
+media_folder: "blog/images"
+# Public URL path for those images
+public_folder: "/blog/images"
+
+collections:
+  - name: "posts"
+    label: "Blog Posts"
+    folder: "blog/posts"
+    create: true
+    # Slug is derived from the post title
+    slug: "{{slug}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        default: ""
+      - label: "Excerpt"
+        name: "excerpt"
+        widget: "text"
+        hint: "A short summary shown on the blog listing page (1–2 sentences)."
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
