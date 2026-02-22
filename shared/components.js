@@ -76,6 +76,10 @@ var SiteComponents = (function () {
       var target = link.external ? ' target="_blank" rel="noopener noreferrer"' : '';
       linksHtml += '<a href="' + link.href + '"' + target + '>' + link.label + '</a>';
     });
+    // Privacy Policy always present in footer
+    if (window.location.pathname !== '/privacy-policy/') {
+      linksHtml += '<a href="/privacy-policy/">Privacy Policy</a>';
+    }
 
     return (
       '<footer class="site-footer">' +
@@ -297,6 +301,103 @@ var SiteComponents = (function () {
     }
   }
 
+  // ----------------------------------------
+  // Music Toast — first-visit nudge toward player
+  // ----------------------------------------
+  function initMusicToast() {
+    var TOAST_KEY = 'mcj_toast_seen';
+    var TOAST_TTL = 30 * 24 * 60 * 60 * 1000; // 30 days
+    var DELAY_MS  = 4000;
+
+    var seen = localStorage.getItem(TOAST_KEY);
+    if (seen && Date.now() - parseInt(seen, 10) < TOAST_TTL) return;
+
+    // Inject toast HTML
+    var el = document.createElement('div');
+    el.id = 'mcj-music-toast';
+    el.className = 'music-toast';
+    el.setAttribute('role', 'status');
+    el.innerHTML =
+      '<button class="music-toast-close" aria-label="Close">&times;</button>' +
+      '<div class="music-toast-body">' +
+        '<span class="music-toast-icon">\u266a</span>' +
+        '<p class="music-toast-text">' +
+          'Set the mood \u2014 listen to <strong>Jamboul\u00e9</strong> by Ramajay Intercoastal while you browse.' +
+          '<span class="music-toast-cue">\u2191 Playing now at the top of the page</span>' +
+        '</p>' +
+      '</div>';
+    document.body.appendChild(el);
+
+    var interacted = false;
+    var playBtn = document.getElementById('mcj-play-btn');
+    var muteBtn = document.getElementById('mcj-mute-btn');
+    function markInteracted() { interacted = true; }
+    if (playBtn) playBtn.addEventListener('click', markInteracted, { once: true });
+    if (muteBtn) muteBtn.addEventListener('click', markInteracted, { once: true });
+
+    function hideToast() {
+      el.classList.remove('visible');
+    }
+
+    function highlightPlayer() {
+      var player = document.getElementById('mcj-music-player');
+      if (!player) return;
+      player.classList.remove('highlight');
+      // Force reflow so animation restarts cleanly
+      void player.offsetWidth;
+      player.classList.add('highlight');
+      player.addEventListener('animationend', function () {
+        player.classList.remove('highlight');
+      }, { once: true });
+    }
+
+    setTimeout(function () {
+      if (interacted) return;
+      el.classList.add('visible');
+      localStorage.setItem(TOAST_KEY, String(Date.now()));
+
+      // Close button
+      el.querySelector('.music-toast-close').addEventListener('click', function (e) {
+        e.stopPropagation();
+        hideToast();
+      });
+
+      // Click body: highlight player then dismiss
+      el.addEventListener('click', function () {
+        highlightPlayer();
+        hideToast();
+      });
+    }, DELAY_MS);
+  }
+
+  // ----------------------------------------
+  // GDPR Banner — one-time cookie/data notice
+  // ----------------------------------------
+  function initGdprBanner() {
+    var GDPR_KEY = 'mcj_gdpr_accepted';
+    if (localStorage.getItem(GDPR_KEY)) return;
+
+    var banner = document.createElement('div');
+    banner.id = 'mcj-gdpr-banner';
+    banner.className = 'gdpr-banner';
+    banner.setAttribute('role', 'region');
+    banner.setAttribute('aria-label', 'Cookie notice');
+    banner.innerHTML =
+      '<p class="gdpr-text">' +
+        'We use local storage to remember your music preferences, and load fonts via Google Fonts. ' +
+        'Our newsletter is powered by Mailchimp. No tracking or ad cookies are used. ' +
+        '<a href="/privacy-policy/">Privacy Policy</a>' +
+      '</p>' +
+      '<button id="mcj-gdpr-accept" class="gdpr-accept">Got it</button>';
+    document.body.appendChild(banner);
+
+    document.getElementById('mcj-gdpr-accept').addEventListener('click', function () {
+      localStorage.setItem(GDPR_KEY, '1');
+      banner.classList.add('dismissed');
+      setTimeout(function () { banner.remove(); }, 350);
+    });
+  }
+
   function highlightEmDashes() {
     // Skip blog post pages — prose content handles its own rhythm
     if (document.querySelector('.prose')) return;
@@ -366,6 +467,12 @@ var SiteComponents = (function () {
 
     // Music player notch
     initMusicPlayer();
+
+    // First-visit music toast
+    initMusicToast();
+
+    // GDPR notice
+    initGdprBanner();
   }
 
   return { init: init };
