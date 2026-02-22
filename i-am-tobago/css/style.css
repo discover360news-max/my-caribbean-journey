@@ -611,59 +611,6 @@
   margin: 0;
 }
 
-/* --- Charity Callout Section --- */
-.charity {
-  background: var(--warm-white);
-  text-align: center;
-}
-
-.charity-inner {
-  max-width: 640px;
-  margin: 0 auto;
-}
-
-.charity-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--gold), var(--gold-light));
-  color: var(--green-deep);
-  margin-bottom: 1.25rem;
-}
-
-.charity .section-label {
-  color: var(--green-mid);
-}
-
-.charity-heading {
-  font-family: var(--font-display);
-  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-  font-weight: 400;
-  font-style: italic;
-  color: var(--text-muted);
-  margin-bottom: 0.5rem;
-  line-height: 1.4;
-}
-
-.charity-name {
-  font-family: var(--font-display);
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
-  font-weight: 700;
-  color: var(--green-deep);
-  margin-bottom: 0.75rem;
-  line-height: 1.2;
-}
-
-.charity-desc {
-  font-size: 1.05rem;
-  color: var(--text-muted);
-  line-height: 1.7;
-  margin-bottom: 2rem;
-}
-
 /* --- Book Newsletter Section --- */
 .book-newsletter {
   background: linear-gradient(135deg, var(--green-deep) 0%, #0a2e15 50%, var(--green-dark) 100%);

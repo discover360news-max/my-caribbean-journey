@@ -6,6 +6,18 @@
 var SiteComponents = (function () {
   'use strict';
 
+  // ----------------------------------------
+  // Charity data — update once, reflects everywhere
+  // ----------------------------------------
+  var CHARITY = {
+    label:   'Giving Back',
+    heading: 'A portion of proceeds from book sales is donated to',
+    name:    'Charity Begins at Home',
+    desc:    'Supplying book supplies to underprivileged kids of the Caribbean.',
+    url:     'https://www.facebook.com/charitybeginsathomeandendsabroad/',
+    cta:     'Learn About the Cause'
+  };
+
   function renderNav(config) {
     var links = config.navLinks || [];
     var linksHtml = '';
@@ -140,6 +152,27 @@ var SiteComponents = (function () {
     }
   }
 
+  function renderCharity() {
+    return (
+      '<section class="site-charity">' +
+        '<div class="container">' +
+          '<div class="site-charity-inner">' +
+            '<div class="site-charity-icon" aria-hidden="true">' +
+              '<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">' +
+                '<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>' +
+              '</svg>' +
+            '</div>' +
+            '<p class="section-label">' + CHARITY.label + '</p>' +
+            '<h2 class="site-charity-heading">' + CHARITY.heading + '</h2>' +
+            '<p class="site-charity-name">' + CHARITY.name + '</p>' +
+            '<p class="site-charity-desc">' + CHARITY.desc + '</p>' +
+            '<a href="' + CHARITY.url + '" class="btn btn-primary" target="_blank" rel="noopener noreferrer">' + CHARITY.cta + '</a>' +
+          '</div>' +
+        '</div>' +
+      '</section>'
+    );
+  }
+
   function highlightEmDashes() {
     // Skip blog post pages — prose content handles its own rhythm
     if (document.querySelector('.prose')) return;
@@ -193,6 +226,12 @@ var SiteComponents = (function () {
     var footerSlot = document.getElementById('site-footer');
     if (footerSlot) {
       footerSlot.innerHTML = renderFooter(config);
+    }
+
+    // Render charity callout
+    if (config.showCharity) {
+      var charitySlot = document.getElementById('site-charity');
+      if (charitySlot) charitySlot.innerHTML = renderCharity();
     }
 
     // Attach behavior
