@@ -60,6 +60,11 @@
       });
     }
 
+    // Filter out listings marked live: false (no confidence in the listing)
+    filtered = filtered.filter(function (link) {
+      return link.live !== false;
+    });
+
     // Filter by search
     if (query) {
       filtered = filtered.filter(function (link) {

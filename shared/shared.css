@@ -860,3 +860,43 @@ a { text-decoration: none; color: inherit; }
     width: auto;
   }
 }
+
+/* --- Disabled links + Coming soon tooltip --- */
+/* Apply data-tooltip="..." to any link to show a hover tooltip */
+/* Use .btn-disabled to visually mute a button that's temporarily offline */
+
+.btn-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: auto; /* keep pointer events so tooltip works on hover */
+}
+
+[data-tooltip] {
+  position: relative;
+}
+
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--green-deep);
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 100;
+  border: 1px solid rgba(212, 160, 48, 0.2);
+}
+
+[data-tooltip]:hover::after,
+[data-tooltip]:focus::after {
+  opacity: 1;
+}

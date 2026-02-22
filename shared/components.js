@@ -7,6 +7,38 @@ var SiteComponents = (function () {
   'use strict';
 
   // ----------------------------------------
+  // Disabled link label — one place, used everywhere
+  // ----------------------------------------
+  var DISABLED_LABEL = 'Coming soon';
+
+  // ----------------------------------------
+  // Site-wide CTAs — centralized name + link registry
+  // Add a CTA here once; reference it from any page with SiteComponents.cta('key')
+  // Set live: false to silently kill a link site-wide
+  // ----------------------------------------
+  var SITE_CTAS = {
+    'i-am-tobago': {
+      label:    'I Am Tobago',
+      href:     '/i-am-tobago/',
+      live:     true,
+      cta:      true
+    },
+    'i-am-tobago-buy': {
+      label:    'Get Your Copy',
+      href:     'https://www.amazon.com/I-Am-Tobago-Quincy-Yeates/dp/B0FYYVKKVT',
+      live:     true,
+      cta:      true,
+      external: true
+    },
+    'tobago-guide': {
+      label:    'Tobago Guide',
+      href:     '/my-tobago-guide/',
+      live:     true,
+      cta:      false
+    }
+  };
+
+  // ----------------------------------------
   // Charity data — update once, reflects everywhere
   // ----------------------------------------
   var CHARITY = {
@@ -14,8 +46,9 @@ var SiteComponents = (function () {
     heading: 'A portion of proceeds from book sales is donated to',
     name:    'Charity Begins at Home',
     desc:    'Supplying book supplies to underprivileged kids of the Caribbean.',
-    url:     '#', // temporarily disabled — restore original URL when resolved: https://www.facebook.com/charitybeginsathomeandendsabroad/
-    cta:     'Learn About the Cause'
+    url:     'https://www.facebook.com/charitybeginsathomeandendsabroad/',
+    cta:     'Learn About the Cause',
+    live:    false  // set to true to re-enable the charity link
   };
 
   function renderHeader(config) {
@@ -190,7 +223,9 @@ var SiteComponents = (function () {
             '<h2 class="site-charity-heading">' + CHARITY.heading + '</h2>' +
             '<p class="site-charity-name">' + CHARITY.name + '</p>' +
             '<p class="site-charity-desc">' + CHARITY.desc + '</p>' +
-            '<a href="' + CHARITY.url + '" class="btn btn-primary" target="_blank" rel="noopener noreferrer">' + CHARITY.cta + '</a>' +
+            (CHARITY.live
+              ? '<a href="' + CHARITY.url + '" class="btn btn-primary" target="_blank" rel="noopener noreferrer">' + CHARITY.cta + '</a>'
+              : '<a href="#" class="btn btn-primary btn-disabled" aria-disabled="true" data-tooltip="' + DISABLED_LABEL + '">' + CHARITY.cta + '</a>') +
           '</div>' +
         '</div>' +
       '</section>'
@@ -450,6 +485,23 @@ var SiteComponents = (function () {
     });
   }
 
+  // ----------------------------------------
+  // getCTA — look up a named CTA from SITE_CTAS
+  // Returns an object usable directly as a navLinks entry
+  // When live: false, href becomes '#' automatically
+  // ----------------------------------------
+  function getCTA(key) {
+    var c = SITE_CTAS[key];
+    if (!c) return null;
+    return {
+      label:    c.label,
+      href:     c.live ? c.href : '#',
+      cta:      c.cta      || false,
+      external: c.external || false,
+      live:     c.live
+    };
+  }
+
   function init(config) {
     config = config || {};
 
@@ -487,5 +539,5 @@ var SiteComponents = (function () {
     initGdprBanner();
   }
 
-  return { init: init };
+  return { init: init, cta: getCTA, disabledLabel: DISABLED_LABEL };
 })();

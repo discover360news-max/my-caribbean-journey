@@ -168,6 +168,63 @@ Defined in `/shared/shared.css` under `.hero-newsletter`. Dark section context o
 
 ---
 
+## Link Management — Live / Disabled Pattern
+
+### The rule
+Every link that could need to go offline has a `live: true/false` toggle. One change, instant effect across every page it appears on. No hunting through HTML.
+
+### Site-wide CTAs — `SITE_CTAS` in `shared/components.js`
+Named CTA registry. Each entry has:
+
+```js
+'key-name': {
+  label:    'Button label',
+  href:     'https://example.com',
+  live:     true,       // false = href becomes '#', tooltip shown
+  cta:      true,       // true = styled as a nav CTA button
+  external: true        // true = opens in new tab
+}
+```
+
+**To use in a page's `SiteComponents.init()` config:**
+```js
+navLinks: [
+  { label: 'About', href: '#about' },
+  SiteComponents.cta('i-am-tobago')   // pulls label, href, cta flag from registry
+]
+```
+
+**To kill a CTA site-wide:** set `live: false` in the registry. `SiteComponents.cta()` returns `href: '#'` automatically.
+
+**To add a new CTA:** add one entry to `SITE_CTAS`. Reference it from any page.
+
+### Buy buttons — `SITE_CTAS['i-am-tobago-buy']`
+Book buy buttons use `.amazon-book-link` class. `main.js` reads `SiteComponents.cta('i-am-tobago-buy')` and applies the url. When `live: false`, all buy buttons become dead + show tooltip.
+
+### Charity component — `CHARITY.live` in `shared/components.js`
+```js
+var CHARITY = { ..., live: false };
+```
+- `live: true` — button links to the charity page, opens in new tab
+- `live: false` — button stays visible but goes to `#` with a "Coming soon" tooltip
+
+### Guide directory cards — `live` field in `guide-data.js`
+```js
+{ title: 'Business Name', url: 'https://...', category: 'food-recipes', live: false }
+```
+- `live: true` (or omitted) — card renders normally
+- `live: false` — card is hidden entirely (no confidence in the listing)
+
+### Tooltip
+One site-wide label defined as `DISABLED_LABEL` in `shared/components.js`. Change it once, updates everywhere. Currently: `'Coming soon'`.
+
+CSS lives in `shared/shared.css` under `[data-tooltip]`. Tooltip appears above the element on hover/focus.
+
+### `.btn-disabled` class
+Applies `opacity: 0.6` and `cursor: not-allowed`. Combined with `data-tooltip` and `href="#"` for the full disabled button treatment.
+
+---
+
 ## Rules
 - Always use tokens — never hardcode hex values in page CSS
 - `.btn-outline` on dark backgrounds only; `.btn-outline-dark` on light backgrounds only

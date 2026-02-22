@@ -5,11 +5,18 @@
 (function () {
   'use strict';
 
-  // --- Book config (single source of truth) ---
-  var AMAZON_URL = 'https://www.amazon.com/I-Am-Tobago-Quincy-Yeates/dp/B0FYYVKKVT';
+  // --- Book buy config (edit url + live in shared/components.js → SITE_CTAS['i-am-tobago-buy']) ---
+  var buyCTA = SiteComponents.cta('i-am-tobago-buy');
 
   document.querySelectorAll('.amazon-book-link').forEach(function (el) {
-    el.href = AMAZON_URL;
+    el.href = buyCTA.href;
+    if (!buyCTA.live) {
+      el.setAttribute('aria-disabled', 'true');
+      el.setAttribute('data-tooltip', SiteComponents.disabledLabel);
+      el.classList.add('btn-disabled');
+      el.removeAttribute('target');
+      el.removeAttribute('rel');
+    }
   });
 
   // --- Hero firefly light flares ---
