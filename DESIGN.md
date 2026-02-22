@@ -96,6 +96,9 @@ background: var(--warm-white); /* alternate with var(--cream) */
 ```
 Use `.btn-outline-dark` here. Section label colour: `--green-mid`.
 
+### Hub page container width
+All sections on the hub (`index.html`) override the shared container to `max-width: 1100px` via `hub.css`. Any new section added to the hub must be included in that override rule to stay consistent. The shared default is `1200px`.
+
 ### Standard section header
 ```html
 <div class="section-header">
@@ -112,6 +115,7 @@ Use `.btn-outline-dark` here. Section label colour: `--green-mid`.
 - White bg, `--radius-lg`, green gradient image panel on top
 - Hover: `translateY(-6px)` + shadow lift
 - Link footer: arrow SVG, green → gold on hover
+- Grid: `repeat(auto-fill, minmax(300px, 480px))`, `justify-content: center` — cards cap at 480px and centre; row fills naturally as titles are added
 
 ### Guide / Store card
 - White bg, `--radius-lg`, `display: flex; flex-direction: column`
@@ -124,6 +128,7 @@ Use `.btn-outline-dark` here. Section label colour: `--green-mid`.
 - Horizontal flex, white bg, left green border (`border-left: 4px solid --green-mid`)
 - Icon block: 68×68, `border-radius: 14px`, green gradient bg, gold icon
 - Hover lifts and turns link gold
+- Grid: `repeat(auto-fill, minmax(340px, 520px))`, `justify-content: center` — cards cap at 520px and centre; row fills naturally as guides are added
 
 ### Store card
 - White bg, `--radius-lg`, `display: flex; flex-direction: column; gap: 0.5rem`
