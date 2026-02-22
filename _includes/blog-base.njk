@@ -5,11 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }} — My Caribbean Journey</title>
   <meta name="description" content="{{ excerpt or description or 'Stories, culture, and history from the Caribbean islands.' }}">
+  <link rel="canonical" href="https://mycaribbeanjourney.com{{ page.url }}">
 
   <!-- Open Graph -->
   <meta property="og:title" content="{{ title }} — My Caribbean Journey">
   <meta property="og:description" content="{{ excerpt or description or 'Stories, culture, and history from the Caribbean islands.' }}">
   <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mycaribbeanjourney.com{{ page.url }}">
+  <meta property="og:image" content="{% if featuredImage %}https://mycaribbeanjourney.com{{ featuredImage }}{% else %}https://mycaribbeanjourney.com/images/hero/heritage-festival.jpg{% endif %}">
+  <meta property="og:site_name" content="My Caribbean Journey">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title }} — My Caribbean Journey">
+  <meta name="twitter:description" content="{{ excerpt or description or 'Stories, culture, and history from the Caribbean islands.' }}">
+  <meta name="twitter:image" content="{% if featuredImage %}https://mycaribbeanjourney.com{{ featuredImage }}{% else %}https://mycaribbeanjourney.com/images/hero/heritage-festival.jpg{% endif %}">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": {{ title | dump | safe }},
+    "description": {{ (excerpt or description or "") | dump | safe }},
+    "url": "https://mycaribbeanjourney.com{{ page.url }}",
+    "datePublished": "{{ page.date | htmlDateString }}",
+    "author": {
+      "@type": "Person",
+      "name": "{{ author or 'Quincy' }}"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "My Caribbean Journey",
+      "url": "https://mycaribbeanjourney.com"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://mycaribbeanjourney.com{{ page.url }}"
+    }
+  }
+  </script>
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/images/favicon.png">
