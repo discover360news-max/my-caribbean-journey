@@ -302,9 +302,82 @@ a { text-decoration: none; color: inherit; }
 }
 
 .site-footer-bottom {
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 0.8rem;
   color: rgba(232, 228, 220, 0.3);
+}
+
+/* --- Footer Support Link --- */
+.footer-support {
+  font-size: 0.75rem;
+  color: rgba(232, 228, 220, 0.35);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.footer-support:hover {
+  color: var(--gold);
+}
+
+/* --- Buy Me a Coffee Floating Button --- */
+.support-float {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 900;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background: var(--green-deep);
+  border: 1px solid rgba(212, 160, 48, 0.25);
+  border-radius: 50px;
+  text-decoration: none;
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1.2;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  pointer-events: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.support-float--visible {
+  opacity: 0.85;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.support-float:hover {
+  opacity: 1;
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+}
+
+.support-float-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.support-float-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.support-float-sub {
+  font-size: 0.65rem;
+  opacity: 0.55;
+  font-weight: 400;
 }
 
 /* --- Hero Newsletter Signup --- */
@@ -420,6 +493,12 @@ a { text-decoration: none; color: inherit; }
     flex-wrap: wrap;
     justify-content: center;
     gap: var(--space-sm);
+  }
+
+  .site-footer-bottom {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
   }
 
   .section-title {

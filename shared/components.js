@@ -38,6 +38,8 @@ var SiteComponents = (function () {
     var links = config.footerLinks || [];
     var linksHtml = '';
     var year = new Date().getFullYear();
+    var isTobago = window.location.pathname.toLowerCase().indexOf('tobago') !== -1;
+    var supportLabel = isTobago ? '&#9749; Buy me some Blue Food' : '&#9749; Buy me a coffee';
 
     links.forEach(function (link) {
       var target = link.external ? ' target="_blank" rel="noopener noreferrer"' : '';
@@ -56,6 +58,7 @@ var SiteComponents = (function () {
           '</div>' +
           '<div class="site-footer-bottom">' +
             '<p>&copy; ' + year + ' My Caribbean Journey. All rights reserved.</p>' +
+            '<a href="https://buymeacoffee.com/mycaribbeanjourney" class="footer-support" target="_blank" rel="noopener noreferrer">' + supportLabel + '</a>' +
           '</div>' +
         '</div>' +
       '</footer>'
