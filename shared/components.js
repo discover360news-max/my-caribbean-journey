@@ -335,39 +335,43 @@ var SiteComponents = (function () {
     if (playBtn) playBtn.addEventListener('click', markInteracted, { once: true });
     if (muteBtn) muteBtn.addEventListener('click', markInteracted, { once: true });
 
-    function hideToast() {
-      el.classList.remove('visible');
-    }
+    function hideToast() { el.classList.remove('visible'); }
 
     function highlightPlayer() {
       var player = document.getElementById('mcj-music-player');
       if (!player) return;
       player.classList.remove('highlight');
-      // Force reflow so animation restarts cleanly
-      void player.offsetWidth;
+      void player.offsetWidth; // force reflow so animation restarts cleanly
       player.classList.add('highlight');
       player.addEventListener('animationend', function () {
         player.classList.remove('highlight');
       }, { once: true });
     }
 
-    setTimeout(function () {
-      if (interacted) return;
-      el.classList.add('visible');
-      localStorage.setItem(TOAST_KEY, String(Date.now()));
+    function scheduleToast() {
+      setTimeout(function () {
+        if (interacted) return;
+        el.classList.add('visible');
+        localStorage.setItem(TOAST_KEY, String(Date.now()));
 
-      // Close button
-      el.querySelector('.music-toast-close').addEventListener('click', function (e) {
-        e.stopPropagation();
-        hideToast();
-      });
+        el.querySelector('.music-toast-close').addEventListener('click', function (e) {
+          e.stopPropagation();
+          hideToast();
+        });
 
-      // Click body: highlight player then dismiss
-      el.addEventListener('click', function () {
-        highlightPlayer();
-        hideToast();
-      });
-    }, DELAY_MS);
+        el.addEventListener('click', function () {
+          highlightPlayer();
+          hideToast();
+        });
+      }, DELAY_MS);
+    }
+
+    // If GDPR hasn't been accepted yet, wait until it is before showing toast
+    if (!localStorage.getItem('mcj_gdpr_accepted')) {
+      document.addEventListener('mcj:gdpr-accepted', scheduleToast, { once: true });
+    } else {
+      scheduleToast();
+    }
   }
 
   // ----------------------------------------
@@ -376,6 +380,10 @@ var SiteComponents = (function () {
   function initGdprBanner() {
     var GDPR_KEY = 'mcj_gdpr_accepted';
     if (localStorage.getItem(GDPR_KEY)) return;
+
+    // Hide Buy Me a Coffee bubble while banner is active
+    var supportFloat = document.querySelector('.support-float');
+    if (supportFloat) supportFloat.style.visibility = 'hidden';
 
     var banner = document.createElement('div');
     banner.id = 'mcj-gdpr-banner';
@@ -394,6 +402,10 @@ var SiteComponents = (function () {
     document.getElementById('mcj-gdpr-accept').addEventListener('click', function () {
       localStorage.setItem(GDPR_KEY, '1');
       banner.classList.add('dismissed');
+      // Restore Buy Me a Coffee bubble
+      if (supportFloat) supportFloat.style.visibility = '';
+      // Signal toast it can now schedule itself
+      document.dispatchEvent(new Event('mcj:gdpr-accepted'));
       setTimeout(function () { banner.remove(); }, 350);
     });
   }
