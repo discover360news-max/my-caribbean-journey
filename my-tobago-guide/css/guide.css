@@ -11,7 +11,7 @@
   justify-content: center;
   text-align: center;
   background: linear-gradient(135deg, var(--green-deep) 0%, #0a2e15 40%, #132e1a 70%, #1a3520 100%);
-  padding: 7rem var(--space-md) 4rem;
+  padding: 9rem var(--space-md) 4rem;
   overflow: hidden;
 }
 
@@ -342,7 +342,7 @@
 @media (max-width: 768px) {
   .guide-hero {
     min-height: auto;
-    padding: 6rem var(--space-sm) 3rem;
+    padding: 7rem var(--space-sm) 3rem;
   }
 
   .guide-hero-description {
@@ -422,7 +422,7 @@
 
 @media (max-width: 480px) {
   .guide-hero {
-    padding: 5rem var(--space-sm) 2rem;
+    padding: 6.5rem var(--space-sm) 2rem;
   }
 
   .guide-hero-title {

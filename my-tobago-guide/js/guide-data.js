@@ -164,6 +164,13 @@ var GUIDE_DATA = {
       category: 'activities-tours',
       featured: true
     },
+    {
+      title: "Island Girl Tours",
+      description: 'Experience pristine beaches, remarkable waterfalls, stunning nature hikes, bird watching, diving, water sports and activities, local cuisine and a vibrant nightlife….there is something for everyone.',
+      url: 'https://islandgirltours.com/',
+      category: 'activities-tours',
+      featured: false
+    },
 
     // Radio
     {

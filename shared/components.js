@@ -18,7 +18,7 @@ var SiteComponents = (function () {
     cta:     'Learn About the Cause'
   };
 
-  function renderNav(config) {
+  function renderHeader(config) {
     var links = config.navLinks || [];
     var linksHtml = '';
     var mobileLinksHtml = '';
@@ -30,16 +30,35 @@ var SiteComponents = (function () {
       mobileLinksHtml += '<a href="' + link.href + '"' + cssClass + target + '>' + link.label + '</a>';
     });
 
+    var playIcon  = '<svg id="mcj-icon-play" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>';
+    var pauseIcon = '<svg id="mcj-icon-pause" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" style="display:none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>';
+    var mutedIcon = '<svg id="mcj-icon-muted" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="17" y1="9" x2="23" y2="15" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>';
+    var soundIcon = '<svg id="mcj-icon-sound" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>';
+
     return (
-      '<nav class="site-nav" id="site-nav-bar">' +
-        '<div class="site-nav-inner">' +
-          '<a href="/" class="site-nav-logo">My Caribbean Journey</a>' +
-          '<div class="site-nav-links">' + linksHtml + '</div>' +
-          '<button class="site-nav-toggle" id="site-nav-toggle" aria-label="Toggle menu">' +
-            '<span></span><span></span><span></span>' +
-          '</button>' +
+      '<header class="site-header" id="site-header">' +
+        '<nav class="site-nav" id="site-nav-bar">' +
+          '<div class="site-nav-inner">' +
+            '<a href="/" class="site-nav-logo">My Caribbean Journey</a>' +
+            '<div class="site-nav-links">' + linksHtml + '</div>' +
+            '<button class="site-nav-toggle" id="site-nav-toggle" aria-label="Toggle menu">' +
+              '<span></span><span></span><span></span>' +
+            '</button>' +
+          '</div>' +
+        '</nav>' +
+        '<div id="mcj-music-player" class="music-player">' +
+          '<span class="music-player-note" id="mcj-music-note">\u266a</span>' +
+          '<span class="music-player-title">Jamboul\u00e9 \u2014 Ramajay Intercoastal</span>' +
+          '<div class="music-player-controls">' +
+            '<button class="music-player-btn" id="mcj-play-btn" aria-label="Play">' +
+              playIcon + pauseIcon +
+            '</button>' +
+            '<button class="music-player-btn" id="mcj-mute-btn" aria-label="Unmute">' +
+              mutedIcon + soundIcon +
+            '</button>' +
+          '</div>' +
         '</div>' +
-      '</nav>' +
+      '</header>' +
       '<div class="site-mobile-menu" id="site-mobile-menu">' +
         mobileLinksHtml +
       '</div>'
@@ -78,17 +97,18 @@ var SiteComponents = (function () {
   }
 
   function attachNavBehavior() {
-    var nav = document.getElementById('site-nav-bar');
+    var header = document.getElementById('site-header');
+    var nav    = document.getElementById('site-nav-bar');
     var toggle = document.getElementById('site-nav-toggle');
     var mobileMenu = document.getElementById('site-mobile-menu');
-    if (!nav) return;
+    if (!header) return;
 
-    // Scroll effect
+    // Scroll effect — on the header so both nav and notch transition together
     function handleScroll() {
       if (window.scrollY > 50) {
-        nav.classList.add('scrolled');
+        header.classList.add('scrolled');
       } else {
-        nav.classList.remove('scrolled');
+        header.classList.remove('scrolled');
       }
     }
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -173,6 +193,110 @@ var SiteComponents = (function () {
     );
   }
 
+  // ----------------------------------------
+  // Music Player — audio logic (HTML lives in renderHeader)
+  // ----------------------------------------
+  function initMusicPlayer() {
+    var STORAGE_KEY = 'mcj_music_session';
+    var TARGET_VOL  = 0.45;
+    var FADE_MS     = 3500;
+
+    // Start muted + silent — satisfies browser autoplay policy
+    var audio = document.createElement('audio');
+    audio.src = '/shared/audio/jamboule.mp3';
+    audio.loop = true;
+    audio.volume = 0;
+    audio.muted  = true;
+    audio.preload = 'auto';
+    document.body.appendChild(audio);
+
+    var isPlaying = false;
+    var isMuted   = false;
+
+    function fadeIn() {
+      audio.muted = false;
+      var steps    = 40;
+      var stepSize = TARGET_VOL / steps;
+      var stepMs   = FADE_MS / steps;
+      var timer = setInterval(function () {
+        audio.volume = Math.min(audio.volume + stepSize, TARGET_VOL);
+        if (audio.volume >= TARGET_VOL) clearInterval(timer);
+      }, stepMs);
+    }
+
+    function setPlayState(playing) {
+      isPlaying = playing;
+      var iconPlay  = document.getElementById('mcj-icon-play');
+      var iconPause = document.getElementById('mcj-icon-pause');
+      var note      = document.getElementById('mcj-music-note');
+      if (iconPlay)  iconPlay.style.display  = playing ? 'none' : '';
+      if (iconPause) iconPause.style.display = playing ? ''     : 'none';
+      if (note) {
+        if (playing) note.classList.add('playing');
+        else         note.classList.remove('playing');
+      }
+    }
+
+    function setMuteState(muted) {
+      isMuted     = muted;
+      audio.muted = muted;
+      if (!muted && audio.volume === 0) audio.volume = TARGET_VOL;
+      var iconMuted = document.getElementById('mcj-icon-muted');
+      var iconSound = document.getElementById('mcj-icon-sound');
+      var btn       = document.getElementById('mcj-mute-btn');
+      if (iconMuted) iconMuted.style.display = muted ? ''     : 'none';
+      if (iconSound) iconSound.style.display = muted ? 'none' : '';
+      if (btn) btn.setAttribute('aria-label', muted ? 'Unmute' : 'Mute');
+    }
+
+    // Wire play/pause button
+    var playBtn = document.getElementById('mcj-play-btn');
+    if (playBtn) {
+      playBtn.addEventListener('click', function () {
+        if (isPlaying) {
+          audio.pause();
+          setPlayState(false);
+        } else {
+          audio.muted  = isMuted;
+          audio.volume = isMuted ? 0 : TARGET_VOL;
+          audio.play();
+          setPlayState(true);
+          sessionStorage.setItem(STORAGE_KEY, 'started');
+        }
+      });
+    }
+
+    // Wire mute button
+    var muteBtn = document.getElementById('mcj-mute-btn');
+    if (muteBtn) {
+      muteBtn.addEventListener('click', function () {
+        setMuteState(!isMuted);
+      });
+    }
+
+    // Show sound icon on load (playing unmuted after fade)
+    setMuteState(false);
+
+    // Autoplay on first session visit; pause on subsequent pages
+    var hasStarted = sessionStorage.getItem(STORAGE_KEY);
+    if (!hasStarted) {
+      audio.play().then(function () {
+        setPlayState(true);
+        sessionStorage.setItem(STORAGE_KEY, 'started');
+        fadeIn();
+      }).catch(function () {
+        // Autoplay blocked — ready to play when user presses play
+        audio.muted  = false;
+        audio.volume = TARGET_VOL;
+        setPlayState(false);
+      });
+    } else {
+      audio.muted  = false;
+      audio.volume = TARGET_VOL;
+      setPlayState(false);
+    }
+  }
+
   function highlightEmDashes() {
     // Skip blog post pages — prose content handles its own rhythm
     if (document.querySelector('.prose')) return;
@@ -187,7 +311,7 @@ var SiteComponents = (function () {
           if (!el || !el.tagName) return NodeFilter.FILTER_REJECT;
           var tag = el.tagName.toLowerCase();
           if (['script', 'style', 'a', 'button'].indexOf(tag) !== -1) return NodeFilter.FILTER_REJECT;
-          if (el.closest('.site-nav, .site-nav-links, .site-mobile-menu, .site-footer')) return NodeFilter.FILTER_REJECT;
+          if (el.closest('.site-nav, .site-nav-links, .site-mobile-menu, .site-footer, .music-player')) return NodeFilter.FILTER_REJECT;
           return NodeFilter.FILTER_ACCEPT;
         }
       }
@@ -216,10 +340,10 @@ var SiteComponents = (function () {
   function init(config) {
     config = config || {};
 
-    // Render nav
+    // Render header (nav + music player notch)
     var navSlot = document.getElementById('site-nav');
     if (navSlot) {
-      navSlot.innerHTML = renderNav(config);
+      navSlot.innerHTML = renderHeader(config);
     }
 
     // Render footer
@@ -239,6 +363,9 @@ var SiteComponents = (function () {
 
     // Gold em dashes on static pages
     highlightEmDashes();
+
+    // Music player notch
+    initMusicPlayer();
   }
 
   return { init: init };

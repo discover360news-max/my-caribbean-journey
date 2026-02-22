@@ -20,7 +20,7 @@
   justify-content: center;
   text-align: center;
   background: linear-gradient(135deg, var(--green-deep) 0%, #0a2e15 40%, #132e1a 70%, #1a3520 100%);
-  padding: 6rem 1.5rem 4rem;
+  padding: 8rem 1.5rem 4rem;
   overflow: hidden;
 }
 
@@ -527,7 +527,7 @@
 @media (max-width: 768px) {
   .hero {
     min-height: 50vh;
-    padding: 5rem 1rem 3rem;
+    padding: 7rem 1rem 3rem;
   }
 
   .hero-description {
@@ -622,7 +622,7 @@
 @media (max-width: 480px) {
   .hero {
     min-height: auto;
-    padding: 4.5rem 0.75rem 2.5rem;
+    padding: 6.5rem 0.75rem 2.5rem;
   }
 
   .hero-label {
