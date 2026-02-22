@@ -140,6 +140,46 @@ var SiteComponents = (function () {
     }
   }
 
+  function highlightEmDashes() {
+    // Skip blog post pages — prose content handles its own rhythm
+    if (document.querySelector('.prose')) return;
+
+    var walker = document.createTreeWalker(
+      document.body,
+      NodeFilter.SHOW_TEXT,
+      {
+        acceptNode: function (node) {
+          if (node.nodeValue.indexOf('\u2014') === -1) return NodeFilter.FILTER_REJECT;
+          var el = node.parentNode;
+          if (!el || !el.tagName) return NodeFilter.FILTER_REJECT;
+          var tag = el.tagName.toLowerCase();
+          if (['script', 'style', 'a', 'button'].indexOf(tag) !== -1) return NodeFilter.FILTER_REJECT;
+          if (el.closest('.site-nav, .site-nav-links, .site-mobile-menu, .site-footer')) return NodeFilter.FILTER_REJECT;
+          return NodeFilter.FILTER_ACCEPT;
+        }
+      }
+    );
+
+    var nodes = [];
+    while (walker.nextNode()) { nodes.push(walker.currentNode); }
+
+    nodes.forEach(function (node) {
+      var parts = node.nodeValue.split('\u2014');
+      if (parts.length < 2) return;
+      var frag = document.createDocumentFragment();
+      parts.forEach(function (part, i) {
+        frag.appendChild(document.createTextNode(part));
+        if (i < parts.length - 1) {
+          var span = document.createElement('span');
+          span.className = 'text-gold';
+          span.textContent = '\u2014';
+          frag.appendChild(span);
+        }
+      });
+      node.parentNode.replaceChild(frag, node);
+    });
+  }
+
   function init(config) {
     config = config || {};
 
@@ -157,6 +197,9 @@ var SiteComponents = (function () {
 
     // Attach behavior
     attachNavBehavior();
+
+    // Gold em dashes on static pages
+    highlightEmDashes();
   }
 
   return { init: init };
