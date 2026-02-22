@@ -1,10 +1,11 @@
 ---
+type: post
 title: The Soul of the Caribbean — History Written in Wind and Sea
 date: 2026-02-21
-type: post
-excerpt: From ancient Amerindian settlements to the rhythms of steel pan and calypso, the Caribbean's history is a story of resilience, culture, and identity forged across centuries of fire and sea.
+excerpt: From ancient Amerindian settlements to the rhythms of steel pan and
+  calypso, the Caribbean's history is a story of resilience, culture, and
+  identity forged across centuries of fire and sea.
 ---
-
 The Caribbean was already old before Columbus arrived.
 
 For thousands of years before any European ship crested the horizon, these islands were alive with the Arawak and Taíno peoples — farmers, fishermen, and storytellers who had been navigating this sea in dugout canoes long before it had a name on any European map. They grew cassava and sweet potato in mounded earthworks called *conucos*. They played a ball game called *batey* on ceremonial courts. They passed their cosmologies down through generations of ceremony and song.
@@ -49,7 +50,7 @@ I am a musician first. So when I think about Caribbean history, I think about mu
 
 Calypso emerged in Trinidad in the nineteenth century as a form of social commentary, a way of speaking truth to power in song when other forms of speech were dangerous. The great calypsonians — Mighty Sparrow, Lord Kitchener, Calypso Rose — were not merely entertainers. They were journalists, philosophers, and political theorists. Their art required wit, memory, and courage.
 
-And then there is the steel pan. Born in Trinidad in the 1930s and 40s, the steelpan is the only acoustic instrument invented in the twentieth century. It grew out of tamboo bamboo music, out of African drumming traditions, out of the colonial government's attempts to suppress Black cultural expression by banning drums. When drums were banned, people beat biscuit tins and garbage cans. When those were banned, they began shaping the bottoms of oil drums — the detritus of the petroleum industry that had recently come to Trinidad — into tuned instruments of extraordinary range and beauty.
+And then there is the steel pan. Born in Trinidad in the 1930s and 40s, the steelpan is the only acoustic instrument invented in the twentieth century. It grew out of tamboo bamboo music, out of African drumming traditions, out of the colonial government's attempts to suppress Black cultural expression by banning drums. When drums were banned, people beat biscuit tins and garbage cans. When those were banned, they began shaping the bottoms of discarded oil drums  - made widely available during the United States military presence in Trinidad during World War II - into tuned instruments of extraordinary range and beauty.
 
 The steelpan is the Caribbean in miniature: it takes the materials of oppression and makes something transcendent from them. It is the sound of what I mean when I say resilience.
 
