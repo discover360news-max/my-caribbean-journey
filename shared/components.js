@@ -14,7 +14,7 @@ var SiteComponents = (function () {
     heading: 'A portion of proceeds from book sales is donated to',
     name:    'Charity Begins at Home',
     desc:    'Supplying book supplies to underprivileged kids of the Caribbean.',
-    url:     'https://www.facebook.com/charitybeginsathomeandendsabroad/',
+    url:     '#', // temporarily disabled — restore original URL when resolved: https://www.facebook.com/charitybeginsathomeandendsabroad/
     cta:     'Learn About the Cause'
   };
 
