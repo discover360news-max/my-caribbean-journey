@@ -221,6 +221,92 @@
   padding: 2rem 0;
 }
 
+/* --- Filter Bar --- */
+
+.post-filters {
+  margin-bottom: 2rem;
+}
+
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filter-section-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.filter-section-label:not(:first-child) {
+  margin-left: 0.5rem;
+  padding-left: 0.75rem;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.8rem;
+  border-radius: 100px;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid rgba(212, 160, 48, 0.35);
+  background: transparent;
+  color: var(--green-deep);
+  transition: all var(--transition);
+}
+
+.filter-chip:hover {
+  border-color: var(--gold);
+  background: rgba(212, 160, 48, 0.08);
+}
+
+.filter-chip.is-active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--green-deep);
+}
+
+/* --- Tag Pills (post page) --- */
+
+.post-tags {
+  max-width: 68ch;
+  margin: 2rem auto 0;
+  font-size: 1.075rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.post-tags-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.post-tag {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  border-radius: 100px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  background: rgba(212, 160, 48, 0.1);
+  color: var(--green-mid);
+  border: 1px solid rgba(212, 160, 48, 0.25);
+}
+
 /* ==========================================
    INDIVIDUAL BLOG POST
    ========================================== */
@@ -235,7 +321,7 @@
 
 .blog-post .post-header {
   background: linear-gradient(160deg, var(--green-deep) 0%, #071a0c 55%, var(--green-dark) 100%);
-  padding: 5rem 0 5rem;
+  padding: 5rem 0 10rem;
   color: var(--text-light);
 }
 
@@ -323,6 +409,12 @@
 .post-featured-image {
   max-height: 520px;
   overflow: hidden;
+  max-width: 68ch;
+  font-size: 1.075rem; /* ch resolves at same size as .prose */
+  margin: -7rem auto 0;
+  border-radius: var(--radius-lg);
+  position: relative;
+  box-shadow: 0 12px 56px rgba(0, 0, 0, 0.45);
 }
 
 .post-featured-image img {

@@ -82,6 +82,12 @@ collections:
         required: false
         hint: "Pin this post to the top of the blog listing."
 
+      - label: "Tags"
+        name: "postTags"
+        widget: "list"
+        required: false
+        hint: "Specific keywords like 'tobago', 'history', 'folklore'. One word per tag, lowercase. Press Enter to add each one."
+
       - label: "Save as Draft"
         name: "draft"
         widget: "boolean"
@@ -138,6 +144,18 @@ collections:
         default: "Quincy"
         required: false
 
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        required: false
+        options:
+          - { label: "Culture & Heritage", value: "culture" }
+          - { label: "History",            value: "history" }
+          - { label: "Travel & Expat",     value: "travel"  }
+          - { label: "Food & Traditions",  value: "food"    }
+          - { label: "Music & Arts",       value: "music"   }
+          - { label: "News & Updates",     value: "news"    }
+
       - label: "Featured Image"
         name: "featuredImage"
         widget: "image"
@@ -155,6 +173,12 @@ collections:
         default: false
         required: false
         hint: "Pin this story to the top of the blog listing."
+
+      - label: "Tags"
+        name: "postTags"
+        widget: "list"
+        required: false
+        hint: "Specific keywords like 'tobago', 'history', 'folklore'. One word per tag, lowercase. Press Enter to add each one."
 
       - label: "Save as Draft"
         name: "draft"

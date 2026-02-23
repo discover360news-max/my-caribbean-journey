@@ -4,6 +4,11 @@ title: "Pulchrior Evenit: Becoming More Beautiful According to Whom?"
 date: 2026-02-21
 author: Quincy Yeates
 featuredImage: /blog/images/p.evenit.webp
+category: culture
+postTags:
+  - tobago
+  - history
+  - colonialism
 excerpt: >-
   When Tobago adopted the motto Pulchrior Evenit - "She becomes more beautiful"
   - in 1816, it was a statement of colonial order and imperial confidence. But
@@ -37,7 +42,6 @@ references: >-
 
 
   Tobago’s plantation economy struggled with soil exhaustion, falling sugar prices, hurricanes and the aftershocks of emancipation.
-category: culture
 ---
 In 1816, Tobago adopted a simple Latin phrase as its civic motto: Pulchrior Evenit.
 

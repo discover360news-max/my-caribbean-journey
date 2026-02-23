@@ -66,6 +66,15 @@ layout: blog-base.njk
       </div>
       {% endif %}
 
+      {% if postTags and postTags.length %}
+      <div class="post-tags">
+        <span class="post-tags-label">Tags</span>
+        {% for tag in postTags %}
+        <span class="post-tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+
       <!-- Share — bottom -->
       <div class="post-share post-share--footer">
         <span class="post-share-label">Share this post</span>
