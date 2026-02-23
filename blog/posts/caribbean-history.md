@@ -3,13 +3,13 @@ type: post
 title: The Soul of the Caribbean — History Written in Wind and Sea
 date: 2026-02-21
 category: culture
-featuredImage: /blog/images/p.evenit.webp
-postTags:
-  - tobago
-  - history
+featuredImage: ""
 excerpt: From ancient Amerindian settlements to the rhythms of steel pan and
   calypso, the Caribbean's history is a story of resilience, culture, and
   identity forged across centuries of fire and sea.
+postTags:
+  - tobago
+  - history
 ---
 The Caribbean was already old before Columbus arrived.
 
