@@ -404,7 +404,7 @@ a { text-decoration: none; color: inherit; }
 
 /* --- Charity Callout Component --- */
 .site-charity {
-  background: var(--warm-white);
+  background: var(--cream);
   padding: var(--space-xl) 0;
   text-align: center;
 }
