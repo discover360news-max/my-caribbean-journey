@@ -150,8 +150,22 @@ var GUIDE_DATA = {
     },
     {
       title: "Pint-Size Paradise",
+      description: 'A charming and cozy alternative to traditional Tobago hotels.',
+      url: 'https://castararetreats.com/',
+      category: 'accommodation',
+      featured: false
+    },
+    {
+      title: "Castara Retreats",
       description: 'A charming and cozy accommodation in Tobago with a unique character.',
       url: 'https://pintsizeparadise.com/',
+      category: 'accommodation',
+      featured: false
+    },
+    {
+      title: "Kariwak Village Holistic Haven",
+      description: 'A peaceful oasis in the heart of Crown Point, a stones throw from the beach.',
+      url: 'https://kariwak.com/',
       category: 'accommodation',
       featured: false
     },

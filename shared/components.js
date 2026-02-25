@@ -100,33 +100,42 @@ var SiteComponents = (function () {
 
   function renderFooter(config) {
     var links = config.footerLinks || [];
-    var linksHtml = '';
     var year = new Date().getFullYear();
     var isTobago = window.location.pathname.toLowerCase().indexOf('tobago') !== -1;
     var supportLabel = isTobago ? '&#9749; Buy me some Blue Food' : '&#9749; Buy me a coffee';
 
-    links.forEach(function (link) {
-      var target = link.external ? ' target="_blank" rel="noopener noreferrer"' : '';
-      linksHtml += '<a href="' + link.href + '"' + target + '>' + link.label + '</a>';
-    });
-    // Privacy Policy always present in footer
+    // Build the full links list (Privacy Policy always appended)
+    var allLinks = links.slice();
     if (window.location.pathname !== '/privacy-policy/') {
-      linksHtml += '<a href="/privacy-policy/">Privacy Policy</a>';
+      allLinks.push({ label: 'Privacy Policy', href: '/privacy-policy/' });
+    }
+
+    // Split evenly across two columns; odd totals give the extra link to col 2
+    var mid = Math.ceil(allLinks.length / 2);
+    var col2Links = allLinks.slice(0, mid);
+    var col3Links = allLinks.slice(mid);
+
+    function buildColHtml(linkList) {
+      var html = '';
+      linkList.forEach(function (link) {
+        var target = link.external ? ' target="_blank" rel="noopener noreferrer"' : '';
+        html += '<a href="' + link.href + '"' + target + '>' + link.label + '</a>';
+      });
+      return html;
     }
 
     return (
       '<footer class="site-footer">' +
         '<div class="container">' +
           '<div class="site-footer-content">' +
-            '<div>' +
+            '<div class="site-footer-col site-footer-col--brand">' +
               '<p class="site-footer-logo">My Caribbean Journey</p>' +
               '<p class="site-footer-tagline">Stories from the islands</p>' +
+              '<p class="site-footer-copy">&copy; ' + year + ' My Caribbean Journey. All rights reserved.</p>' +
+              '<a href="https://buymeacoffee.com/mycaribbeanjourney" class="footer-support" target="_blank" rel="noopener noreferrer">' + supportLabel + '</a>' +
             '</div>' +
-            '<div class="site-footer-links">' + linksHtml + '</div>' +
-          '</div>' +
-          '<div class="site-footer-bottom">' +
-            '<p>&copy; ' + year + ' My Caribbean Journey. All rights reserved.</p>' +
-            '<a href="https://buymeacoffee.com/mycaribbeanjourney" class="footer-support" target="_blank" rel="noopener noreferrer">' + supportLabel + '</a>' +
+            '<div class="site-footer-col site-footer-links">' + buildColHtml(col2Links) + '</div>' +
+            '<div class="site-footer-col site-footer-links">' + buildColHtml(col3Links) + '</div>' +
           '</div>' +
         '</div>' +
       '</footer>'

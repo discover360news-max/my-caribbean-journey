@@ -8,6 +8,7 @@
 .books .container,
 .about .container,
 .bio .container,
+.island-sound .container,
 .explore .container,
 .blog-promo .container {
   max-width: 1100px;
@@ -341,6 +342,55 @@
   color: rgba(232, 228, 220, 0.3);
 }
 
+/* --- Island Sound (Video) Section --- */
+.island-sound {
+  background: linear-gradient(135deg, var(--green-deep) 0%, #0a2e15 50%, var(--green-dark) 100%);
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.island-sound .section-label {
+  color: var(--gold);
+}
+
+.island-sound .section-title {
+  color: var(--cream);
+  margin-bottom: 2.5rem;
+}
+
+.island-sound-embed {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  max-width: 860px;
+  margin: 0 auto 1.5rem;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6);
+}
+
+.island-sound-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.island-sound-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: rgba(232, 228, 220, 0.4);
+  font-size: 0.875rem;
+  transition: color var(--transition);
+}
+
+.island-sound-link:hover {
+  color: var(--gold);
+}
+
 /* --- About Section --- */
 .about {
   background: var(--cream);
@@ -566,6 +616,14 @@
   }
 
   .books .section-header {
+    margin-bottom: 2rem;
+  }
+
+  .island-sound {
+    padding: 3.5rem 0;
+  }
+
+  .island-sound .section-title {
     margin-bottom: 2rem;
   }
 
