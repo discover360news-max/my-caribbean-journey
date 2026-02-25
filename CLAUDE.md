@@ -155,6 +155,19 @@ Filter buttons and category headings are auto-generated from the data.
 - **Body:** Inter (sans-serif) — paragraphs, UI text
 - **Source:** Google Fonts (external link in each page's `<head>`)
 
+### Icons
+- **Library:** [Lucide Icons](https://lucide.dev/icons) — browse and copy SVG code directly
+- **Standard attributes:** `width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"`
+- Always normalise pasted Lucide SVGs to `width="40" height="40"` and `stroke-width="1.5"` to match the site style
+
+### Hero Sections
+- **Default style:** `min-height: 100vh`, full screen
+- **Scroll indicator:** Add `<div class="hero-scroll"><span>Scroll to explore</span><div class="scroll-arrow"></div></div>` as last child of the hero — styles live in `shared.css`
+
+### Footer
+- **Layout:** 3-column CSS grid (`1.5fr 1fr 1fr`) — brand/copyright in col 1, footer links split evenly across cols 2 & 3
+- Links are passed via `footerLinks` config array in each page's `SiteComponents.init()` call — split logic is automatic in `renderFooter()`
+
 ### Component Patterns
 - **Buttons:** `btn btn-primary` (gold bg), `btn btn-outline` (transparent, border), `btn btn-large`
 - **Cards:** `border-radius: 20px`, subtle border, hover lift
@@ -162,6 +175,7 @@ Filter buttons and category headings are auto-generated from the data.
 - **Dark sections:** `--green-deep` gradient backgrounds
 - **Inline links (dark bg):** `bio-inline-link` (hub) / `bio-listen-link` (book pages) — gold, underlined
 - **CTA in dark sections:** `bio-cta` — gold button with glow shadow, external link icon
+- **Section icons:** 80px circle, `linear-gradient(135deg, var(--green-mid), var(--green-light))`, gold icon colour — see `.blog-promo-icon` in `hub.css` as the reference pattern
 
 ---
 
