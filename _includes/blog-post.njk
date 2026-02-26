@@ -108,6 +108,24 @@ layout: blog-base.njk
   </div>
 
   <script>
+  // Wrap each table in .prose with a .table-wrapper div so border-radius
+  // and overflow: hidden clip the corners correctly. Also pulls any
+  // preceding .table-caption paragraph into the wrapper.
+  (function () {
+    document.querySelectorAll('.prose table').forEach(function (table) {
+      var prev = table.previousElementSibling;
+      var wrapper = document.createElement('div');
+      wrapper.className = 'table-wrapper';
+      table.parentNode.insertBefore(wrapper, table);
+      wrapper.appendChild(table);
+      if (prev && prev.classList.contains('table-caption')) {
+        wrapper.insertBefore(prev, table);
+      }
+    });
+  })();
+  </script>
+
+  <script>
   (function () {
     var url = window.location.href;
     var titleEl = document.querySelector('.post-title');

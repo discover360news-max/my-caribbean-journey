@@ -747,6 +747,84 @@
 }
 
 /* ==========================================
+   TABLES
+   ========================================== */
+
+/* Caption sits above the table wrapper */
+.prose .table-caption {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  margin: 0 0 0.6rem !important;
+}
+
+/* Wrapper added by JS — handles rounding + horizontal scroll on mobile */
+.table-wrapper {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 160, 48, 0.25);
+  box-shadow: 0 2px 16px rgba(13, 31, 18, 0.06);
+  margin: 2.5rem 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin: 0; /* wrapper handles margin */
+}
+
+/* Header row */
+.prose thead {
+  background: linear-gradient(135deg, var(--green-mid), var(--green-light));
+}
+
+.prose th {
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.1rem;
+  text-align: left;
+  white-space: nowrap;
+}
+
+/* Body cells */
+.prose td {
+  padding: 0.7rem 1.1rem;
+  color: var(--text-dark);
+  border-bottom: 1px solid rgba(212, 160, 48, 0.12);
+  vertical-align: top;
+}
+
+.prose tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Alternating row tint */
+.prose tbody tr:nth-child(even) {
+  background: rgba(212, 160, 48, 0.04);
+}
+
+.prose tbody tr:hover {
+  background: rgba(212, 160, 48, 0.09);
+  transition: background 0.15s ease;
+}
+
+/* First column emphasis */
+.prose td:first-child {
+  font-weight: 600;
+  color: var(--green-deep);
+}
+
+/* ==========================================
    RESPONSIVE
    ========================================== */
 
