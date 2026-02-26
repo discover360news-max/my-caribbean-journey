@@ -140,6 +140,150 @@ CMS.registerEditorComponent({
 
 
 // -------------------------------------------------------------
+// CALLOUT BOX
+// Adds a "Callout" toolbar button. Choose a type (Tip, Fun Fact,
+// Note, Warning) and write the content. Renders as a styled
+// coloured box with a label and icon.
+// -------------------------------------------------------------
+CMS.registerEditorComponent({
+  id: 'callout',
+  label: 'Callout',
+
+  fields: [
+    {
+      name: 'type',
+      label: 'Type',
+      widget: 'select',
+      options: [
+        { label: '💡 Tip',       value: 'tip'     },
+        { label: '⭐ Fun Fact',  value: 'fact'    },
+        { label: '📌 Note',      value: 'note'    },
+        { label: '⚠️ Warning',   value: 'warning' }
+      ],
+      default: 'tip'
+    },
+    {
+      name: 'content',
+      label: 'Content',
+      widget: 'text',
+      hint: 'Keep it brief — one or two sentences works best.'
+    }
+  ],
+
+  pattern: /^<div class="callout callout-(tip|fact|note|warning)"><p><strong>[^<]+<\/strong> ([\s\S]*?)<\/p><\/div>$/,
+
+  fromBlock: function (match) {
+    return {
+      type:    match[1] || 'tip',
+      content: (match[2] || '').replace(/<br>/g, '\n')
+    };
+  },
+
+  toBlock: function (data) {
+    var labels = { tip: '💡 Tip', fact: '⭐ Fun Fact', note: '📌 Note', warning: '⚠️ Warning' };
+    var type    = data.type || 'tip';
+    var label   = labels[type] || 'Tip';
+    var content = (data.content || '').replace(/\n/g, '<br>');
+    return '<div class="callout callout-' + type + '"><p><strong>' + label + '</strong> ' + content + '</p></div>';
+  },
+
+  toPreview: function (data) {
+    var labels = { tip: '💡 Tip', fact: '⭐ Fun Fact', note: '📌 Note', warning: '⚠️ Warning' };
+    var colors = {
+      tip:     { bg: 'rgba(45,107,69,0.08)',    border: '#1a4a2e' },
+      fact:    { bg: 'rgba(212,160,48,0.10)',   border: '#d4a030' },
+      note:    { bg: 'rgba(212,160,48,0.05)',   border: 'rgba(212,160,48,0.5)' },
+      warning: { bg: 'rgba(232,101,42,0.08)',   border: '#e8652a' }
+    };
+    var type   = data.type || 'tip';
+    var label  = labels[type] || 'Tip';
+    var color  = colors[type] || colors.tip;
+    var content = (data.content || '').replace(/\n/g, '<br>');
+
+    return '<div style="background:' + color.bg + ';border-left:4px solid ' + color.border + ';border-radius:12px;padding:1.1rem 1.4rem;margin:1rem 0;font-family:Inter,sans-serif;font-size:0.95rem;line-height:1.7;">'
+      + '<p style="margin:0;"><strong style="color:' + color.border + ';">' + label + '</strong> ' + content + '</p></div>';
+  }
+});
+
+
+// -------------------------------------------------------------
+// YOUTUBE EMBED
+// Adds a "YouTube" toolbar button. Paste any YouTube URL
+// (youtube.com/watch?v=..., youtu.be/...) and optionally a title.
+// Renders as a responsive 16:9 iframe.
+// -------------------------------------------------------------
+CMS.registerEditorComponent({
+  id: 'youtube',
+  label: 'YouTube',
+
+  fields: [
+    {
+      name: 'url',
+      label: 'YouTube URL',
+      widget: 'string',
+      hint: 'Paste the full video URL — e.g. https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+    },
+    {
+      name: 'title',
+      label: 'Video title (for accessibility)',
+      widget: 'string',
+      required: false,
+      hint: 'Describe the video — e.g. "Tobago Heritage Festival 2023"'
+    }
+  ],
+
+  pattern: /^<div class="youtube-embed"><iframe src="https:\/\/www\.youtube\.com\/embed\/([a-zA-Z0-9_-]+)" title="([^"]*)" allowfullscreen loading="lazy"><\/iframe><\/div>$/,
+
+  fromBlock: function (match) {
+    return {
+      url:   'https://www.youtube.com/watch?v=' + match[1],
+      title: match[2] || ''
+    };
+  },
+
+  toBlock: function (data) {
+    var url   = data.url || '';
+    var title = data.title || '';
+    var id    = null;
+
+    // Extract video ID from any common YouTube URL format
+    var patterns = [
+      /[?&]v=([a-zA-Z0-9_-]{11})/,
+      /youtu\.be\/([a-zA-Z0-9_-]{11})/,
+      /youtube\.com\/embed\/([a-zA-Z0-9_-]{11})/
+    ];
+    for (var i = 0; i < patterns.length; i++) {
+      var m = url.match(patterns[i]);
+      if (m) { id = m[1]; break; }
+    }
+
+    if (!id) return '<!-- Invalid YouTube URL -->';
+    return '<div class="youtube-embed"><iframe src="https://www.youtube.com/embed/' + id + '" title="' + title + '" allowfullscreen loading="lazy"></iframe></div>';
+  },
+
+  toPreview: function (data) {
+    var url = data.url || '';
+    var id  = null;
+    var patterns = [
+      /[?&]v=([a-zA-Z0-9_-]{11})/,
+      /youtu\.be\/([a-zA-Z0-9_-]{11})/,
+      /youtube\.com\/embed\/([a-zA-Z0-9_-]{11})/
+    ];
+    for (var i = 0; i < patterns.length; i++) {
+      var m = url.match(patterns[i]);
+      if (m) { id = m[1]; break; }
+    }
+
+    if (!id) return '<p style="color:#e8652a;font-family:Inter,sans-serif;font-size:0.9rem;">⚠️ Paste a valid YouTube URL above to see a preview.</p>';
+
+    return '<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;margin:1rem 0;">'
+      + '<iframe src="https://www.youtube.com/embed/' + id + '" title="' + (data.title || '') + '" allowfullscreen loading="lazy" '
+      + 'style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;border-radius:12px;"></iframe></div>';
+  }
+});
+
+
+// -------------------------------------------------------------
 // Add new components below this line.
-// Copy the block above as a template.
+// Copy a block above as a template.
 // -------------------------------------------------------------
