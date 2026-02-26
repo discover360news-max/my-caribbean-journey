@@ -7,13 +7,13 @@ category: history
 featuredImage: /blog/images/villagelife.webp
 excerpt: The history of Tobago’s first peoples represents a tragic yet resilient
   arc of human migration, cultural richness, and fierce resistance. Long before
-  the island became a pawn in European colonial struggles—changing hands a
-  record 33 times—it was home to diverse indigenous groups who migrated from the
-  South American mainland. These peoples, primarily the Ortoiroid, Saladoid, and
-  later the Kalinago (Carib) and Lokono (Arawak), established complex societies
-  deeply connected to the island's natural resources. This report explores their
-  origins, their spiritual and social frameworks, and the multifaceted causes of
-  their eventual decline.
+  the island became a pawn in European colonial struggles - changing hands a
+  record 33 times - it was home to diverse indigenous groups who migrated from
+  the South American mainland. These peoples, primarily the Ortoiroid, Saladoid,
+  and later the Kalinago (Carib) and Lokono (Arawak), established complex
+  societies deeply connected to the island's natural resources. This report
+  explores their origins, their spiritual and social frameworks, and the
+  multifaceted causes of their eventual decline.
 featured: false
 postTags:
   - tobago
