@@ -751,6 +751,99 @@
 }
 
 /* ==========================================
+   PULL QUOTES
+   ========================================== */
+
+.prose .pull-quote {
+  margin: 3.5rem 0;
+  padding: 1.75rem 1.5rem;
+  text-align: center;
+  border-top: 2px solid var(--gold);
+  border-bottom: 1px solid rgba(212, 160, 48, 0.25);
+  position: relative;
+}
+
+/* Large decorative opening quote mark */
+.prose .pull-quote::before {
+  content: '\201C';
+  font-family: var(--font-display);
+  font-size: 7rem;
+  line-height: 0;
+  color: var(--gold);
+  opacity: 0.15;
+  position: absolute;
+  top: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.prose .pull-quote p {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.5vw, 1.45rem);
+  font-style: italic;
+  color: var(--green-deep);
+  line-height: 1.55;
+  margin: 0 0 0.75rem;
+  position: relative; /* sits above ::before */
+}
+
+.prose .pull-quote cite {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-style: normal;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+
+.prose .pull-quote cite::before {
+  content: '\2014\00A0'; /* em dash + non-breaking space */
+}
+
+/* ==========================================
+   DEFINITION BOXES
+   ========================================== */
+
+.prose .definition-box {
+  border-left: 3px solid var(--green-mid);
+  background: rgba(45, 107, 69, 0.06);
+  border-radius: 0 10px 10px 0;
+  padding: 1rem 1.25rem;
+  margin: 2rem 0;
+}
+
+.prose .definition-term {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--green-deep);
+  margin-bottom: 0.2rem;
+}
+
+.prose .definition-lang {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #9a7020;
+  background: rgba(212, 160, 48, 0.12);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.prose .definition-box p {
+  margin: 0.4rem 0 0;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  line-height: 1.7;
+}
+
+/* ==========================================
    CALLOUT BOXES
    ========================================== */
 

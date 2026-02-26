@@ -284,6 +284,137 @@ CMS.registerEditorComponent({
 
 
 // -------------------------------------------------------------
+// PULL QUOTE
+// Adds a "Pull Quote" toolbar button. Highlights a key sentence
+// from the article in large italic type. Optional attribution.
+// Visually distinct from blockquote — use for standout lines.
+// -------------------------------------------------------------
+CMS.registerEditorComponent({
+  id: 'pull-quote',
+  label: 'Pull Quote',
+
+  fields: [
+    {
+      name: 'quote',
+      label: 'Quote',
+      widget: 'text',
+      hint: 'A standout line from the article — keep it punchy, one or two sentences.'
+    },
+    {
+      name: 'attribution',
+      label: 'Attribution (optional)',
+      widget: 'string',
+      required: false,
+      hint: 'Who said it — e.g. "Quincy" or "Tobagonian proverb"'
+    }
+  ],
+
+  pattern: /^<div class="pull-quote"><p>([\s\S]*?)<\/p>(?:<cite>([\s\S]*?)<\/cite>)?<\/div>$/,
+
+  fromBlock: function (match) {
+    return {
+      quote:       (match[1] || '').replace(/<br>/g, '\n'),
+      attribution: match[2] || ''
+    };
+  },
+
+  toBlock: function (data) {
+    var quote = (data.quote || '').replace(/\n/g, '<br>');
+    var out   = '<div class="pull-quote"><p>' + quote + '</p>';
+    if (data.attribution) out += '<cite>' + data.attribution + '</cite>';
+    out += '</div>';
+    return out;
+  },
+
+  toPreview: function (data) {
+    var quote = (data.quote || '').replace(/\n/g, '<br>');
+    var style = [
+      'margin:2rem 0',
+      'padding:1.75rem 1.5rem',
+      'text-align:center',
+      'border-top:2px solid #d4a030',
+      'border-bottom:1px solid rgba(212,160,48,0.25)',
+      'font-family:Georgia,serif'
+    ].join(';');
+    var pStyle  = 'font-size:1.4rem;font-style:italic;color:#0d1f12;line-height:1.55;margin:0 0 0.75rem;';
+    var ctStyle = 'font-size:0.8rem;font-style:normal;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#7a7a6a;';
+
+    var html = '<div style="' + style + '"><p style="' + pStyle + '">\u201C' + quote + '\u201D</p>';
+    if (data.attribution) html += '<cite style="' + ctStyle + '">\u2014 ' + data.attribution + '</cite>';
+    html += '</div>';
+    return html;
+  }
+});
+
+
+// -------------------------------------------------------------
+// DEFINITION BOX
+// Adds a "Definition" toolbar button. Renders a term with its
+// explanation — ideal for patois, historical terms, folklore
+// vocabulary. Optional language/origin label.
+// -------------------------------------------------------------
+CMS.registerEditorComponent({
+  id: 'definition',
+  label: 'Definition',
+
+  fields: [
+    {
+      name: 'term',
+      label: 'Term',
+      widget: 'string',
+      hint: 'The word or phrase — e.g. "Canboulay" or "Jab Jab"'
+    },
+    {
+      name: 'language',
+      label: 'Language / Origin (optional)',
+      widget: 'string',
+      required: false,
+      hint: 'e.g. "Trinidadian Creole" or "French Patois"'
+    },
+    {
+      name: 'definition',
+      label: 'Definition',
+      widget: 'text',
+      hint: 'Explain the term in plain language.'
+    }
+  ],
+
+  pattern: /^<div class="definition-box"><strong class="definition-term">([^<]+)<\/strong>(?:<span class="definition-lang">([^<]*)<\/span>)?<p>([\s\S]*?)<\/p><\/div>$/,
+
+  fromBlock: function (match) {
+    return {
+      term:       match[1] || '',
+      language:   match[2] || '',
+      definition: (match[3] || '').replace(/<br>/g, '\n')
+    };
+  },
+
+  toBlock: function (data) {
+    var def = (data.definition || '').replace(/\n/g, '<br>');
+    var out = '<div class="definition-box">'
+      + '<strong class="definition-term">' + (data.term || '') + '</strong>';
+    if (data.language) out += '<span class="definition-lang">' + data.language + '</span>';
+    out += '<p>' + def + '</p></div>';
+    return out;
+  },
+
+  toPreview: function (data) {
+    var def      = (data.definition || '').replace(/\n/g, '<br>');
+    var wrapStyle = 'border-left:3px solid #1a4a2e;background:rgba(45,107,69,0.06);border-radius:0 10px 10px 0;padding:1rem 1.25rem;margin:1rem 0;font-family:Inter,sans-serif;';
+    var termStyle = 'display:block;font-size:1.1rem;font-weight:700;color:#0d1f12;margin-bottom:0.2rem;';
+    var langStyle = 'display:inline-block;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#9a7020;background:rgba(212,160,48,0.12);padding:0.15rem 0.5rem;border-radius:4px;margin-bottom:0.5rem;';
+    var defStyle  = 'margin:0.4rem 0 0;font-size:0.95rem;color:#1a1a1a;line-height:1.7;';
+
+    var html = '<div style="' + wrapStyle + '">'
+      + '<strong style="' + termStyle + '">' + (data.term || '') + '</strong>';
+    if (data.language) html += '<span style="' + langStyle + '">' + data.language + '</span>';
+    html += '<p style="' + defStyle + '">' + def + '</p></div>';
+    return html;
+  }
+});
+
+
+// -------------------------------------------------------------
 // Add new components below this line.
 // Copy a block above as a template.
 // -------------------------------------------------------------
