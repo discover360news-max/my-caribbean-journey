@@ -415,6 +415,148 @@ CMS.registerEditorComponent({
 
 
 // -------------------------------------------------------------
+// IMAGE + CAPTION
+// Adds an "Image" toolbar button. Upload or select an image and
+// write a caption. Renders as a <figure> with <figcaption> below.
+// Use this instead of the plain markdown image syntax when you
+// need a visible caption.
+// -------------------------------------------------------------
+CMS.registerEditorComponent({
+  id: 'image-caption',
+  label: 'Image',
+
+  fields: [
+    {
+      name: 'src',
+      label: 'Image',
+      widget: 'image',
+      hint: 'Upload or select from the media library'
+    },
+    {
+      name: 'alt',
+      label: 'Alt text',
+      widget: 'string',
+      hint: 'Describe the image — shown to screen readers and if the image fails to load'
+    },
+    {
+      name: 'caption',
+      label: 'Caption (optional)',
+      widget: 'string',
+      required: false,
+      hint: 'Short caption shown below the image'
+    }
+  ],
+
+  pattern: /^<figure class="post-figure"><img src="([^"]*)" alt="([^"]*)">(?:<figcaption>([\s\S]*?)<\/figcaption>)?<\/figure>$/,
+
+  fromBlock: function (match) {
+    return {
+      src:     match[1] || '',
+      alt:     match[2] || '',
+      caption: match[3] || ''
+    };
+  },
+
+  toBlock: function (data) {
+    var out = '<figure class="post-figure">'
+      + '<img src="' + (data.src || '') + '" alt="' + (data.alt || '') + '">';
+    if (data.caption) out += '<figcaption>' + data.caption + '</figcaption>';
+    out += '</figure>';
+    return out;
+  },
+
+  toPreview: function (data) {
+    if (!data.src) return '<p style="color:#7a7a6a;font-family:Inter,sans-serif;font-size:0.9rem;">Select an image above to see a preview.</p>';
+
+    var figStyle  = 'margin:1.5rem 0;font-family:Inter,sans-serif;';
+    var imgStyle  = 'width:100%;border-radius:12px;display:block;';
+    var capStyle  = 'font-size:0.82rem;color:#5a5a52;text-align:center;margin-top:0.65rem;font-style:italic;line-height:1.5;';
+
+    var html = '<figure style="' + figStyle + '">'
+      + '<img src="' + data.src + '" alt="' + (data.alt || '') + '" style="' + imgStyle + '">';
+    if (data.caption) html += '<figcaption style="' + capStyle + '">' + data.caption + '</figcaption>';
+    html += '</figure>';
+    return html;
+  }
+});
+
+
+// -------------------------------------------------------------
+// BUTTON / CTA
+// Adds a "Button" toolbar button. Insert a styled link button
+// inline — useful for mid-post CTAs like "Get the book" or
+// linking to a guide. Choose gold (primary) or bordered style.
+// -------------------------------------------------------------
+CMS.registerEditorComponent({
+  id: 'cta-button',
+  label: 'Button',
+
+  fields: [
+    {
+      name: 'text',
+      label: 'Button text',
+      widget: 'string',
+      hint: 'e.g. "Get the book", "Explore the guide"'
+    },
+    {
+      name: 'url',
+      label: 'URL',
+      widget: 'string',
+      hint: 'Full URL or internal path — e.g. https://amazon.com/... or /my-tobago-guide/'
+    },
+    {
+      name: 'style',
+      label: 'Style',
+      widget: 'select',
+      options: [
+        { label: 'Primary — gold fill',    value: 'primary'      },
+        { label: 'Outline — bordered',     value: 'outline-dark'  }
+      ],
+      default: 'primary'
+    },
+    {
+      name: 'newTab',
+      label: 'Open in new tab',
+      widget: 'boolean',
+      default: true,
+      required: false
+    }
+  ],
+
+  pattern: /^<p class="post-cta"><a href="([^"]+)" class="btn btn-(primary|outline-dark)"(?: target="_blank" rel="noopener noreferrer")?>([^<]+)<\/a><\/p>$/,
+
+  fromBlock: function (match) {
+    return {
+      url:    match[1] || '',
+      style:  match[2] || 'primary',
+      newTab: match[0].indexOf('target="_blank"') !== -1,
+      text:   match[3] || ''
+    };
+  },
+
+  toBlock: function (data) {
+    var attrs = data.newTab ? ' target="_blank" rel="noopener noreferrer"' : '';
+    return '<p class="post-cta">'
+      + '<a href="' + (data.url || '#') + '" class="btn btn-' + (data.style || 'primary') + '"' + attrs + '>'
+      + (data.text || 'Read more')
+      + '</a></p>';
+  },
+
+  toPreview: function (data) {
+    var isPrimary = (data.style || 'primary') === 'primary';
+    var btnStyle  = isPrimary
+      ? 'display:inline-block;padding:0.8rem 2rem;background:#d4a030;color:#0d1f12;font-weight:700;border-radius:8px;text-decoration:none;font-family:Inter,sans-serif;font-size:0.95rem;'
+      : 'display:inline-block;padding:0.8rem 2rem;background:transparent;color:#1a4a2e;border:2px solid #1a4a2e;font-weight:700;border-radius:8px;text-decoration:none;font-family:Inter,sans-serif;font-size:0.95rem;';
+
+    return '<p style="text-align:center;margin:1.5rem 0;">'
+      + '<a href="' + (data.url || '#') + '" style="' + btnStyle + '">'
+      + (data.text || 'Button text')
+      + '</a></p>';
+  }
+});
+
+
+// -------------------------------------------------------------
 // Add new components below this line.
 // Copy a block above as a template.
 // -------------------------------------------------------------
