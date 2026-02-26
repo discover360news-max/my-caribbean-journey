@@ -60,6 +60,14 @@ module.exports = function (eleventyConfig) {
     return CATEGORY_LABELS[value] || value;
   });
 
+  // Truncate a string to N words, appending an ellipsis if trimmed
+  eleventyConfig.addFilter("truncateWords", function (str, count) {
+    if (!str) return '';
+    var words = str.trim().split(/\s+/);
+    if (words.length <= count) return str;
+    return words.slice(0, count).join(' ') + '\u2026';
+  });
+
   // Render a markdown string from frontmatter (used for references field)
   eleventyConfig.addFilter("markdownify", function (content) {
     if (!content) return "";
