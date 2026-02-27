@@ -96,6 +96,6 @@ By the late eighteenth century, British control was firmly established. The rema
 
 While their independent political presence in Tobago ended in the eighteenth century, the legacy of the first peoples remains embedded in the island’s identity.
 
-Archaeological sites across the island continue to yield artifacts that reflect their craftsmanship and patterns of settlement. Linguistically, the name Tobago itself stands as a permanent reminder of earlier Indigenous names and traditions.
+Archaeological sites across the island continue to yield [artifacts](https://www.facebook.com/THCStobago) that reflect their craftsmanship and patterns of settlement. Linguistically, the name Tobago itself stands as a permanent reminder of earlier Indigenous names and traditions.
 
 Today, the Santa Rosa First Peoples Community in Arima, Trinidad, serves as a custodian of this heritage, representing descendants of those who survived the colonial era.
