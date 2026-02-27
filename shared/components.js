@@ -45,10 +45,10 @@ var SiteComponents = (function () {
     label:   'Giving Back',
     heading: 'A portion of proceeds from book sales is donated to',
     name:    'Charity Begins at Home',
-    desc:    'Supplying book supplies to underprivileged kids of the Caribbean.',
-    url:     'https://www.facebook.com/charitybeginsathomeandendsabroad/',
-    cta:     'Learn About the Cause',
-    live:    false  // set to true to re-enable the charity link
+    desc:    'School Supplies for Success — Enriching Caribbean Education — One Child at a Time.',
+    url:     'https://www.facebook.com/charitybeginswithus',
+    cta:     'Learn More',
+    live:    true
   };
 
   function renderHeader(config) {

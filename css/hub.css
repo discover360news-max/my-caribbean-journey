@@ -355,7 +355,24 @@
 
 .island-sound .section-title {
   color: var(--cream);
+  margin-bottom: 0.75rem;
+}
+
+.island-sound-credit {
+  font-size: 0.8rem;
+  color: rgba(232, 228, 220, 0.45);
   margin-bottom: 2.5rem;
+}
+
+.island-sound-credit a {
+  color: var(--gold-light);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition);
+}
+
+.island-sound-credit a:hover {
+  color: #fff;
 }
 
 .island-sound-embed {
