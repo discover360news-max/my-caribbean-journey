@@ -11,9 +11,9 @@ excerpt: The history of Tobago’s first peoples represents a tragic yet resilie
   record 33 times - it was home to diverse indigenous groups who migrated from
   the South American mainland. These peoples, primarily the Ortoiroid, Saladoid,
   and later the Kalinago (Carib) and Lokono (Arawak), established complex
-  societies deeply connected to the island's natural resources. This explores
-  their origins, their spiritual and social frameworks, and the multifaceted
-  causes of their eventual decline.
+  societies deeply connected to the island's natural resources. This piece
+  explores their origins, their spiritual and social frameworks, and the
+  multifaceted causes of their eventual decline.
 featured: false
 postTags:
   - tobago
@@ -38,14 +38,14 @@ The settlement of Tobago occurred in several distinct waves, primarily originati
 
 Rather than representing isolated populations, these periods reflect overlapping waves of migration and cultural development. Movement through the southern Caribbean followed a “stepping stone” pattern from the South American coast to Trinidad, then to Tobago, and further north into the Antillean archipelago.
 
-The island carried Indigenous names long before it was called Tobago. Some sources record Tavaco, possibly linked to a Y-shaped smoking pipe used in ritual practice. Others reference Aloubaéra or Urupina. Within this regional network, Tobago functioned as both a strategic position and an agricultural hub.
+The island carried Indigenous names long before it was called Tobago. Some sources record Tavaco, possibly linked to a Y-shaped smoking pipe used in ritual practice. Others reference Aloubaéra or Urupaina. Within this regional network, Tobago functioned as both a strategic position and an agricultural hub.
 
 ## Culture and Social Structure
 
 Indigenous societies in Tobago were organized into autonomous villages, typically led by a chief. Among the Lokono, often referred to by Europeans as “Arawaks,” this leader was known as a cacique. Among the Kalinago, leadership structures differed but were similarly organized around recognized authority.
 
 * **Daily Life**
-  Their economy combined conuco agriculture, or mound farming, with fishing and hunting. They were skilled maritime navigators, constructing large dugout canoes capable of traveling between islands and the mainland.
+  Their economy combined conuco agriculture *(mound farming)*, with fishing and hunting. They were skilled maritime navigators, constructing large dugout canoes capable of traveling between islands and the mainland.
 * **Tobacco**
   Tobacco held a central place in their culture. It was used for recreation and in sacred rituals. The island’s modern name preserves a linguistic trace of this practice.
 * **Social Organization**
@@ -70,7 +70,7 @@ Key elements of their belief system included:
 
 Tobago’s Indigenous population did not disappear quietly. Unlike many other Caribbean islands where Indigenous societies were rapidly subdued, the peoples of Tobago resisted European settlement for more than two centuries.
 
-In 1637, both British and Dutch attempts to establish permanent settlements were violently repelled. A Zeeland warship in 1628 reportedly lost fifty-four men in a single encounter with Tobago’s defenders.
+In 1637, both British and Dutch attempts to establish permanent settlements were violently repelled. A Zeeland warship *(Dutch)* in 1628 reportedly lost fifty-four men in a single encounter with Tobago’s defenders.
 
 Strategic alliances were formed when necessary. The Kalinago proved adept at leveraging European rivalries, at times aligning with French or Dutch interests to counter English expansion.
 
