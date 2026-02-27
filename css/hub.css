@@ -329,7 +329,7 @@
 
 /* --- Coming Soon Card --- */
 .book-card.coming-soon .book-card-image {
-  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  background: linear-gradient(135deg, var(--gold), var(--orange));
   position: relative;
 }
 
