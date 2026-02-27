@@ -34,6 +34,7 @@ permalink: /blog/
         {% endif %}
         <div class="post-card-body">
           <div class="post-card-meta">
+            {% if loop.first %}<span class="post-new-badge">New</span>{% endif %}
             {% if post.data.category %}<span class="post-category-badge">{{ post.data.category | categoryLabel }}</span>{% endif %}
             {% if post.data.featured %}<span class="post-featured-badge">Featured</span>{% endif %}
           </div>

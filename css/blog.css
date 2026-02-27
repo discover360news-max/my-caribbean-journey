@@ -141,6 +141,18 @@
   flex-wrap: wrap;
 }
 
+.post-new-badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  background: linear-gradient(135deg, var(--gold), var(--orange));
+  color: var(--green-deep);
+}
+
 .post-category-badge {
   display: inline-block;
   font-size: 0.68rem;

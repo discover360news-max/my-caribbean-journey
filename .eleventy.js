@@ -14,7 +14,7 @@ module.exports = function (eleventyConfig) {
   // Pass-through: all existing site files
   // Eleventy only builds the blog and admin.
   // ----------------------------------------
-  eleventyConfig.addPassthroughCopy("index.html");
+  // index.html removed — now index.njk, processed as an Eleventy template
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("js");
   eleventyConfig.addPassthroughCopy("images");
