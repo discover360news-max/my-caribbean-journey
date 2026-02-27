@@ -62,7 +62,11 @@
   font-family: var(--font-body);
   font-size: 0.95rem;
   font-weight: 500;
-  color: var(--gold);
+  /* color: var(--gold); */
+  background: linear-gradient(135deg, var(--gold), var(--orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   margin-bottom: var(--space-sm);
@@ -79,7 +83,8 @@
 
 .hero-title .text-gold {
   display: block;
-  text-shadow: 0 0 40px var(--gold-glow), 0 0 80px rgba(212, 160, 48, 0.2);
+  /* text-shadow: 0 0 40px var(--gold-glow), 0 0 80px rgba(212, 160, 48, 0.2); */
+  /* removed: text-shadow is incompatible with gradient text (transparent fill) */
 }
 
 .hero-description {
@@ -135,7 +140,8 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  /* background: linear-gradient(135deg, var(--gold), var(--gold-light)); */
+  background: linear-gradient(135deg, var(--gold), var(--orange));
   display: flex;
   align-items: center;
   justify-content: center;

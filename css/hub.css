@@ -86,7 +86,11 @@
 .hero-label {
   font-size: 0.9rem;
   font-weight: 500;
-  color: var(--gold);
+  /* color: var(--gold); */
+  background: linear-gradient(135deg, var(--gold), var(--orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   margin-bottom: 1rem;
@@ -172,7 +176,8 @@
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: var(--gold);
+  /* background: var(--gold); */
+  background: linear-gradient(135deg, var(--gold), var(--orange));
   color: var(--green-deep);
   font-size: 0.75rem;
   font-weight: 700;
@@ -280,7 +285,8 @@
 
 .explore-card-badge {
   display: inline-block;
-  background: var(--gold);
+  /* background: var(--gold); */
+  background: linear-gradient(135deg, var(--gold), var(--orange));
   color: var(--green-deep);
   font-size: 0.7rem;
   font-weight: 700;
@@ -350,7 +356,11 @@
 }
 
 .island-sound .section-label {
-  color: var(--gold);
+  /* color: var(--gold); */
+  background: linear-gradient(135deg, var(--gold), var(--orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .island-sound .section-title {
@@ -464,7 +474,11 @@
 }
 
 .bio .section-label {
-  color: var(--gold);
+  /* color: var(--gold); */
+  background: linear-gradient(135deg, var(--gold), var(--orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   text-align: center;
 }
 
@@ -490,7 +504,8 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--gold);
+  /* background: var(--gold); */
+  background: linear-gradient(135deg, var(--gold), var(--orange));
   color: var(--green-deep);
   padding: 0.75rem 1.5rem;
   border-radius: 10px;
@@ -501,7 +516,8 @@
 }
 
 .bio-cta:hover {
-  background: var(--gold-light);
+  /* background: var(--gold-light); */
+  background: linear-gradient(135deg, var(--gold-light), #f0814a);
   transform: translateY(-2px);
   box-shadow: 0 6px 30px var(--gold-glow);
 }
