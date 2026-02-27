@@ -20,9 +20,6 @@ postTags:
   - history
 draft: false
 references: >-
-  #### Sources and Further Reading
-
-
   * Beckles, Hilary. *Kalinago (Carib) Resistance to European Colonisation.*
 
   * National Library and Information System Authority (NALIS). *Celebrating the First Peoples of Trinidad and Tobago.*
