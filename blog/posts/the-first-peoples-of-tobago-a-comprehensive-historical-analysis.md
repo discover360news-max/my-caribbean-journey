@@ -26,7 +26,7 @@ references: >-
 
   * Cultural Survival Quarterly. *The Indigenous People of the Caribbean.*
 ---
-### Origins and Migration Patterns
+## Origins and Migration Patterns
 
 The settlement of Tobago occurred in several distinct waves, primarily originating from the **Orinoco River delta** in modern-day Venezuela.
 
@@ -40,7 +40,7 @@ Rather than representing isolated populations, these periods reflect overlapping
 
 The island carried Indigenous names long before it was called Tobago. Some sources record Tavaco, possibly linked to a Y-shaped smoking pipe used in ritual practice. Others reference Aloubaéra or Urupina. Within this regional network, Tobago functioned as both a strategic position and an agricultural hub.
 
-### Culture and Social Structure
+## Culture and Social Structure
 
 Indigenous societies in Tobago were organized into autonomous villages, typically led by a chief. Among the Lokono, often referred to by Europeans as “Arawaks,” this leader was known as a cacique. Among the Kalinago, leadership structures differed but were similarly organized around recognized authority.
 
@@ -51,7 +51,7 @@ Indigenous societies in Tobago were organized into autonomous villages, typicall
 * **Social Organization**
   Historical accounts suggest that Lokono communities tended toward more sedentary and hierarchical structures, while Kalinago societies were often more egalitarian during peacetime but highly structured during conflict.
 
-### Spiritual Beliefs and Cosmology
+## Spiritual Beliefs and Cosmology
 
 The spiritual world of Tobago’s first peoples was populated by ancestral forces and spiritual beings. Their religious life was polytheistic and animistic, centered on the concept of Zemis.
 
@@ -66,7 +66,7 @@ Key elements of their belief system included:
 * **Afterlife**
   They believed in life beyond death. The virtuous were thought to journey to a peaceful realm, while the wicked were condemned to wander.
 
-### The European Encounter and Resistance
+## The European Encounter and Resistance
 
 Tobago’s Indigenous population did not disappear quietly. Unlike many other Caribbean islands where Indigenous societies were rapidly subdued, the peoples of Tobago resisted European settlement for more than two centuries.
 
@@ -76,7 +76,7 @@ Strategic alliances were formed when necessary. The Kalinago proved adept at lev
 
 For much of the seventeenth century, Tobago was considered too dangerous for sustained European settlement. At various points it was declared neutral territory due to persistent Indigenous resistance.
 
-### The Full Arc: Decline and Extinction
+## The Full Arc: Decline and Extinction
 
 The decline of Tobago’s first peoples was not the result of a single event but of compounding forces.
 
@@ -92,7 +92,7 @@ Many were captured and transported to other colonies. Some were sold into labor 
 **Colonial Consolidation**
 By the late eighteenth century, British control was firmly established. The remaining Indigenous population was gradually absorbed into the expanding society of enslaved Africans and European settlers or marginalized to the point that an independent Indigenous presence on the island effectively ended.
 
-### Legacy
+## Legacy
 
 While their independent political presence in Tobago ended in the eighteenth century, the legacy of the first peoples remains embedded in the island’s identity.
 
