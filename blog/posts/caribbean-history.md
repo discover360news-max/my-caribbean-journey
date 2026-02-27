@@ -1,6 +1,6 @@
 ---
 type: post
-title: The Soul of the Caribbean — History Written in Wind and Sea
+title: The Soul of the Caribbean - History Written in Wind and Sea
 date: 2026-02-21
 category: culture
 featuredImage: /blog/images/listen-to-my-stories.webp
