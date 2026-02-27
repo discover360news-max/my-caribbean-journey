@@ -72,7 +72,7 @@ var SiteComponents = (function () {
       '<header class="site-header" id="site-header">' +
         '<nav class="site-nav" id="site-nav-bar">' +
           '<div class="site-nav-inner">' +
-            '<a href="/" class="site-nav-logo"><img src="/images/my-caribbean-journey-tpbg.png" alt="" class="site-nav-logo-img" aria-hidden="true">My Caribbean Journey</a>' +
+            '<a href="/" class="site-nav-logo"><img src="/images/my-caribbean-journey-tpbg-sm.png" alt="" class="site-nav-logo-img" aria-hidden="true">My Caribbean Journey</a>' +
             '<div class="site-nav-links">' + linksHtml + '</div>' +
             '<button class="site-nav-toggle" id="site-nav-toggle" aria-label="Toggle menu">' +
               '<span></span><span></span><span></span>' +
