@@ -72,7 +72,6 @@
   background: white;
   border-radius: 16px;
   box-shadow: 0 8px 40px rgba(0,0,0,0.12);
-  overflow: hidden;
   border: 1px solid rgba(26, 74, 46, 0.08);
 }
 
@@ -132,8 +131,9 @@
   font-family: var(--font-body);
   font-weight: 700;
   font-size: 0.95rem;
-  padding: 0 2rem;
-  height: 64px;
+  padding: 0.65rem 1.5rem;
+  margin-right: 1.25rem;
+  border-radius: 10px;
   cursor: pointer;
   white-space: nowrap;
   transition: opacity var(--transition);
@@ -145,7 +145,7 @@
 /* --- Browse by Category Section --- */
 .guide-browse {
   background: var(--warm-white);
-  padding: 3rem 0 1rem;
+  padding: 6rem 0 1rem;
 }
 
 /* --- Category Cards Grid --- */
@@ -159,11 +159,11 @@
 .guide-cat-card {
   background: white;
   border-radius: 16px;
-  padding: 2rem 1.5rem;
+  padding: 4rem 1.5rem;
   border: 1px solid rgba(26, 74, 46, 0.08);
   cursor: pointer;
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
-  text-align: left;
+  text-align: center;
 }
 
 .guide-cat-card:hover {
@@ -185,7 +185,7 @@
   align-items: center;
   justify-content: center;
   color: var(--gold);
-  margin-bottom: 1rem;
+  margin: 0 auto 1rem;
 }
 
 .guide-cat-card-name {
@@ -197,14 +197,18 @@
 }
 
 .guide-cat-card-count {
-  display: inline-block;
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
   background: var(--warm-white);
   border: 1px solid rgba(26, 74, 46, 0.1);
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem auto 0;
+  font-size: 1rem;
+  font-weight: 700;
   color: var(--text-muted);
-  padding: 0.2rem 0.75rem;
 }
 
 .guide-cat-card.is-active .guide-cat-card-count {
@@ -217,6 +221,7 @@
 .guide-cat-pills {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.6rem;
   padding-bottom: 0.5rem;
 }
@@ -225,27 +230,28 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.45rem 1.1rem;
-  border-radius: 20px;
-  border: 1px solid rgba(26, 74, 46, 0.15);
-  background: white;
+  padding: 0.3rem 0.5rem;
+  border: none;
+  background: none;
   font-family: var(--font-body);
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--text-dark);
+  color: var(--text-muted);
   cursor: pointer;
-  transition: all var(--transition);
+  transition: color var(--transition);
+}
+
+.guide-cat-pill svg {
+  color: inherit;
 }
 
 .guide-cat-pill:hover {
-  border-color: var(--gold);
   color: var(--green-deep);
 }
 
 .guide-cat-pill.is-active {
-  background: var(--green-deep);
-  color: var(--cream);
-  border-color: var(--green-deep);
+  color: var(--green-deep);
+  font-weight: 600;
 }
 
 /* --- Results Grid --- */
@@ -307,14 +313,85 @@
   position: relative;
   background: white;
   border-radius: var(--radius-lg);
-  padding: 1.75rem;
   border: 1px solid rgba(26, 74, 46, 0.08);
   transition: transform var(--transition), box-shadow var(--transition);
   display: flex;
   flex-direction: column;
   text-decoration: none;
   color: inherit;
-  overflow: visible;
+  overflow: hidden;
+}
+
+/* --- Card image banner --- */
+.guide-card-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* --- Card body (wraps text content) --- */
+.guide-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.75rem;
+}
+
+/* --- Heart button --- */
+.guide-card-heart {
+  position: absolute;
+  top: 1.75rem;
+  right: 1.75rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  color: rgba(0, 0, 0, 0.3);
+  transition: color var(--transition), background var(--transition), transform var(--transition);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.guide-card-heart:hover {
+  color: #e8652a;
+  transform: scale(1.15);
+}
+
+.guide-card-heart svg {
+  fill: none;
+  transition: fill var(--transition);
+}
+
+.guide-card-heart.is-active {
+  color: #e8652a;
+}
+
+.guide-card-heart.is-active svg {
+  fill: #e8652a;
+}
+
+/* Heart sits in image corner when a photo is present */
+.guide-card:has(.guide-card-image) .guide-card-heart {
+  top: 0.75rem;
+  right: 0.75rem;
+}
+
+/* --- Favourites pill variant --- */
+.guide-cat-pill--fav {
+  gap: 0.4rem;
+}
+
+.guide-cat-pill--fav-active {
+  color: #e8652a;
+  font-weight: 600;
 }
 
 .guide-card:hover {
@@ -477,10 +554,10 @@
   .guide-search-divider { display: none; }
 
   .guide-search-btn {
-    width: 100%;
+    width: calc(100% - 2.5rem);
     justify-content: center;
-    height: 52px;
-    border-radius: 0 0 12px 12px;
+    margin: 0 1.25rem 1rem;
+    border-radius: 10px;
   }
 
   .guide-cat-cards {
@@ -549,7 +626,7 @@
     font-size: 0.9rem;
   }
 
-  .guide-card {
+  .guide-card-body {
     padding: 1.25rem;
   }
 

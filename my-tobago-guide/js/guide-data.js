@@ -1,6 +1,17 @@
 // ===========================================
 // MY TOBAGO GUIDE - Directory Data
 // Add new links and categories here.
+//
+// Link fields:
+//   title       (required) Display name
+//   description (required) Short description
+//   url         (required) External link
+//   category    (required) Must match a category id
+//   area        (required) e.g. 'island-wide', 'scarborough', 'crown-point'
+//   featured    (optional) true = gold border highlight
+//   image       (optional) Path relative to /my-tobago-guide/ e.g. 'images/this-bago-girl.jpg'
+//   embedPage   (optional) Secondary stream/embed URL (adds Visit + Stream buttons)
+//   live        (optional) false = hidden from directory
 // ===========================================
 
 var GUIDE_DATA = {
