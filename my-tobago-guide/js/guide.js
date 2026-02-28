@@ -65,14 +65,30 @@
     }).length;
   }
 
+  // --- Build a single searchable string for a link (title + description + tags) ---
+  function searchableText(link) {
+    return [
+      link.title,
+      link.description,
+      (link.tags || []).join(' ')
+    ].join(' ').toLowerCase();
+  }
+
+  // --- Test a link against the active keyword (multi-word AND logic) ---
+  function matchesKeyword(link, keyword) {
+    if (!keyword) return true;
+    var text = searchableText(link);
+    var words = keyword.split(/\s+/).filter(Boolean);
+    return words.every(function (word) { return text.indexOf(word) !== -1; });
+  }
+
   // --- Count live links for a category respecting active keyword + area filters ---
   function getFilteredCountForCategory(catId) {
     return GUIDE_DATA.links.filter(function (link) {
       if (link.live === false) return false;
       if (link.category !== catId) return false;
       if (activeArea && link.area !== activeArea && link.area !== 'island-wide') return false;
-      if (activeKeyword && link.title.toLowerCase().indexOf(activeKeyword) === -1 &&
-          link.description.toLowerCase().indexOf(activeKeyword) === -1) return false;
+      if (!matchesKeyword(link, activeKeyword)) return false;
       return true;
     }).length;
   }
@@ -311,10 +327,7 @@
     }
 
     if (activeKeyword) {
-      filtered = filtered.filter(function (link) {
-        return link.title.toLowerCase().indexOf(activeKeyword) !== -1 ||
-               link.description.toLowerCase().indexOf(activeKeyword) !== -1;
-      });
+      filtered = filtered.filter(function (link) { return matchesKeyword(link, activeKeyword); });
     }
 
     // Group by category for display
