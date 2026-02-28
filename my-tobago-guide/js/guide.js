@@ -17,6 +17,24 @@
   var resultsBar        = document.getElementById('guide-results-bar');
   var resultsFooter     = document.getElementById('guide-results-footer');
 
+  // --- Area display labels ---
+  var AREA_LABELS = {
+    'island-wide':   'Island-wide',
+    'crown-point':   'Crown Point',
+    'scarborough':   'Scarborough',
+    'charlotteville':'Charlotteville',
+    'castara':       'Castara',
+    'speyside':      'Speyside'
+  };
+
+  var pinSvg = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>';
+
+  function locationHtml(area) {
+    if (!area) return '';
+    var label = AREA_LABELS[area] || area;
+    return '<span class="guide-card-location">' + pinSvg + label + '</span>';
+  }
+
   // --- Featured category IDs (big cards) ---
   var FEATURED_CATS = ['food-recipes', 'beaches-nature', 'accommodation', 'activities-tours'];
 
@@ -390,9 +408,12 @@
               '<h3 class="guide-card-title">' + link.title + '</h3>' +
               '<p class="guide-card-description">' + link.description + '</p>' +
               '<button class="guide-card-more" type="button">More info</button>' +
-              '<div class="guide-card-actions">' +
-                '<a class="guide-card-action-link" href="' + (link.url || '#') + '" target="_blank" rel="noopener noreferrer">Visit ' + arrowSvg + '</a>' +
-                '<a class="guide-card-action-link" href="' + (link.embedPage || link.url || '#') + '" target="_blank" rel="noopener noreferrer">Stream ' + arrowSvg + '</a>' +
+              '<div class="guide-card-footer">' +
+                locationHtml(link.area) +
+                '<div class="guide-card-actions">' +
+                  '<a class="guide-card-action-link" href="' + (link.url || '#') + '" target="_blank" rel="noopener noreferrer">Visit ' + arrowSvg + '</a>' +
+                  '<a class="guide-card-action-link" href="' + (link.embedPage || link.url || '#') + '" target="_blank" rel="noopener noreferrer">Stream ' + arrowSvg + '</a>' +
+                '</div>' +
               '</div>' +
             '</div>' +
           '</div>';
@@ -405,7 +426,10 @@
               '<h3 class="guide-card-title">' + link.title + '</h3>' +
               '<p class="guide-card-description">' + link.description + '</p>' +
               '<button class="guide-card-more" type="button">More info</button>' +
-              '<span class="guide-card-link">Visit' + arrowSvg + '</span>' +
+              '<div class="guide-card-footer">' +
+                locationHtml(link.area) +
+                '<span class="guide-card-link">Visit' + arrowSvg + '</span>' +
+              '</div>' +
             '</div>' +
           '</a>';
         }
