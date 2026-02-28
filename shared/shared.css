@@ -562,14 +562,20 @@ a { text-decoration: none; color: inherit; }
   transform: translateY(0);
 }
 
-/* --- Breadcrumb --- */
-.site-breadcrumb { margin-bottom: 1.25rem; }
+/* --- Breadcrumb (inside fixed header, below nav row) --- */
+.site-nav-crumb-bar {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md) 0.55rem;
+}
+
+.site-breadcrumb { margin: 0; }
 
 .site-bc-list {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0.4rem;
+  gap: 0.35rem;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -577,28 +583,29 @@ a { text-decoration: none; color: inherit; }
 
 .site-bc-item {
   font-family: var(--font-body);
-  font-size: 0.78rem;
+  font-size: 0.67rem;
   font-weight: 500;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
 .site-bc-link {
-  color: rgba(245, 240, 232, 0.45);
+  color: rgba(245, 240, 232, 0.4);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
-.site-bc-link:hover { color: rgba(245, 240, 232, 0.85); }
+.site-bc-link:hover { color: rgba(245, 240, 232, 0.75); }
 
 .site-bc-sep {
-  color: rgba(245, 240, 232, 0.25);
-  font-size: 0.7rem;
+  color: rgba(245, 240, 232, 0.2);
+  font-size: 0.58rem;
   user-select: none;
 }
 
 .site-bc-item--current {
   color: var(--gold);
+  opacity: 0.85;
   font-weight: 600;
 }
 

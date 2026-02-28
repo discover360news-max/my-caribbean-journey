@@ -68,6 +68,11 @@ var SiteComponents = (function () {
     var mutedIcon = '<svg id="mcj-icon-muted" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="17" y1="9" x2="23" y2="15" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>';
     var soundIcon = '<svg id="mcj-icon-sound" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>';
 
+    var crumbs = config.breadcrumbs || window._mcjCrumbs || null;
+    var crumbBar = (crumbs && crumbs.length > 1)
+      ? '<div class="site-nav-crumb-bar">' + renderBreadcrumb(crumbs) + '</div>'
+      : '';
+
     return (
       '<header class="site-header" id="site-header">' +
         '<nav class="site-nav" id="site-nav-bar">' +
@@ -78,6 +83,7 @@ var SiteComponents = (function () {
               '<span></span><span></span><span></span>' +
             '</button>' +
           '</div>' +
+        crumbBar +
         '</nav>' +
         '<div id="mcj-music-player" class="music-player">' +
           '<span class="music-player-note" id="mcj-music-note">\u266a</span>' +
@@ -550,12 +556,6 @@ var SiteComponents = (function () {
     var footerSlot = document.getElementById('site-footer');
     if (footerSlot) {
       footerSlot.innerHTML = renderFooter(config);
-    }
-
-    // Render breadcrumb
-    if (config.breadcrumbs) {
-      var bcSlot = document.getElementById('site-breadcrumb');
-      if (bcSlot) bcSlot.innerHTML = renderBreadcrumb(config.breadcrumbs);
     }
 
     // Render charity callout
