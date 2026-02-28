@@ -200,7 +200,7 @@
     var iframe = document.createElement('iframe');
     // Inline styles applied before DOM insertion — prevents flash at default
     // 300×150 size on cold-cache first load before external CSS is parsed.
-    iframe.style.cssText = 'position:absolute;top:50%;left:50%;width:100%;height:56.25vw;min-height:100%;transform:translate(-50%,-50%);pointer-events:none;border:none;';
+    iframe.style.cssText = 'position:absolute;top:50%;left:50%;width:max(100%,177.78vh);height:max(56.25vw,100%);transform:translate(-50%,-50%);pointer-events:none;border:none;';
     iframe.setAttribute('frameborder', '0');
     iframe.setAttribute('allow', 'autoplay; encrypted-media');
     iframe.setAttribute('title', '');
