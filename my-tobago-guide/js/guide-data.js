@@ -179,7 +179,7 @@ var GUIDE_DATA = {
     },
     {
       title: 'Shurland Nature Park',
-      description: 'A beautiful nature park with walking trails and scenic views.',
+      description: 'A hidden gem tucked in the hills — hike trails, a natural spring path, waterfall, fruit trees, and stunning views. Watch hummingbirds feed up close and spot parrots in the wild. Local food on site including pelau and fish, plus homemade desserts.',
       url: 'https://www.tripadvisor.com/Attraction_Review-g147392-d12918544-Reviews-Shurland_Nature_Park-Tobago_Trinidad_and_Tobago.html',
       category: 'beaches-nature',
       area: 'scarborough',
