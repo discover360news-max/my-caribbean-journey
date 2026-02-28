@@ -69,6 +69,7 @@
 
   <!-- Hero -->
   <header class="guide-hero">
+    <div class="guide-hero-video-bg" id="guide-hero-video-bg"></div>
     <div class="container">
       <p class="guide-hero-label">Quincy's Curated Picks</p>
       <h1 class="guide-hero-title">My Tobago <span class="text-gold">Guide</span></h1>
@@ -172,6 +173,33 @@
   </section>
 
   <div id="site-footer"></div>
+
+  <!-- Hero background video (desktop only; mobile falls back to gradient) -->
+  <script>
+  (function () {
+    if (window.innerWidth < 768) return;
+    var tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    document.head.appendChild(tag);
+    window.onYouTubeIframeAPIReady = function () {
+      new YT.Player('guide-hero-video-bg', {
+        videoId: 'YzkYR-ArAcY',
+        host: 'https://www.youtube-nocookie.com',
+        playerVars: {
+          autoplay: 1, mute: 1, loop: 1, playlist: 'YzkYR-ArAcY',
+          controls: 0, rel: 0, showinfo: 0, iv_load_policy: 3,
+          modestbranding: 1, playsinline: 1, disablekb: 1, fs: 0
+        },
+        events: {
+          onReady: function (e) { e.target.playVideo(); },
+          onStateChange: function (e) {
+            if (e.data === YT.PlayerState.ENDED) e.target.playVideo();
+          }
+        }
+      });
+    };
+  })();
+  </script>
 
   <script src="/shared/components.js"></script>
   <script src="/shared/support.js"></script>

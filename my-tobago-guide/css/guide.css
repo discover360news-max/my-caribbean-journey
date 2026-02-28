@@ -15,19 +15,44 @@
   overflow: hidden;
 }
 
+/* Dark tint + decorative radials — sits above the video, below content */
 .guide-hero::before {
   content: '';
   position: absolute;
   inset: 0;
+  z-index: 1;
   background:
-    radial-gradient(ellipse at 30% 60%, rgba(26, 74, 46, 0.4) 0%, transparent 60%),
-    radial-gradient(ellipse at 70% 30%, rgba(212, 160, 48, 0.08) 0%, transparent 50%);
+    radial-gradient(ellipse at 30% 60%, rgba(26, 74, 46, 0.3) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 30%, rgba(212, 160, 48, 0.06) 0%, transparent 50%),
+    linear-gradient(rgba(13, 31, 18, 0.72), rgba(9, 22, 14, 0.8));
   pointer-events: none;
+}
+
+/* YouTube background video (desktop) */
+.guide-hero-video-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.guide-hero-video-bg iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* Scale to cover while maintaining 16:9 */
+  width: 177.78vh;
+  height: 56.25vw;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border: none;
 }
 
 .guide-hero .container {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   max-width: 700px;
 }
 
