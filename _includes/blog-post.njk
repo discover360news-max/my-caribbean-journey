@@ -7,6 +7,15 @@ layout: blog-base.njk
   <header class="post-header">
     <div class="container">
       <div class="post-header-inner">
+        <nav class="site-breadcrumb" aria-label="Breadcrumb">
+          <ol class="site-bc-list">
+            <li class="site-bc-item"><a href="/" class="site-bc-link">Home</a></li>
+            <li class="site-bc-sep" aria-hidden="true">/</li>
+            <li class="site-bc-item"><a href="/blog/" class="site-bc-link">Blog</a></li>
+            <li class="site-bc-sep" aria-hidden="true">/</li>
+            <li class="site-bc-item site-bc-item--current" aria-current="page">{{ title }}</li>
+          </ol>
+        </nav>
         <a href="/blog/" class="back-link">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 5-7 7 7 7"/></svg>
           All Posts

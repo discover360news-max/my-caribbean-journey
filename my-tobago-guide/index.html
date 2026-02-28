@@ -70,6 +70,7 @@
   <!-- Hero -->
   <header class="guide-hero">
     <div class="container">
+      <div id="site-breadcrumb"></div>
       <p class="guide-hero-label">Quincy's Curated Picks</p>
       <h1 class="guide-hero-title">My Tobago <span class="text-gold">Guide</span></h1>
       <p class="guide-hero-description">
@@ -180,6 +181,10 @@
   <script src="js/guide-effects.js"></script>
   <script>
     SiteComponents.init({
+      breadcrumbs: [
+        { label: 'Home', href: '/' },
+        { label: 'My Tobago Guide' }
+      ],
       navLinks: [
         { label: 'Home', href: '/' },
         { label: 'Blog', href: '/blog/' },

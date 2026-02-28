@@ -23,13 +23,31 @@
   // --- Pill category IDs ---
   var PILL_CATS = ['culture-history', 'radio', 'practical-info'];
 
-  // --- Lucide SVG icons for featured category cards ---
+  // --- Lucide SVG icon paths for all categories (used on category cards + listing card badges) ---
   var CAT_ICONS = {
     'food-recipes':     '<path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/>',
     'beaches-nature':   '<path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1C7 13 7 11 9.5 11c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1C7 19 7 17 9.5 17c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/>',
     'accommodation':    '<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>',
-    'activities-tours': '<circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>'
+    'activities-tours': '<circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>',
+    'culture-history':  '<path d="m20 13.7-2.1-2.1a2 2 0 0 0-2.8 0L9.7 17"/><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/><circle cx="10" cy="8" r="2"/>',
+    'radio':            '<path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/>',
+    'practical-info':   '<circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/>'
   };
+
+  // --- Inline SVG icon for headings and pills (no background box) ---
+  function catIconInline(catId, size) {
+    var icon = CAT_ICONS[catId] || '';
+    var s = size || 18;
+    return '<svg width="' + s + '" height="' + s + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">' + icon + '</svg>';
+  }
+
+  // --- Build the category icon badge HTML for a listing card ---
+  function catIconBadge(catId) {
+    var icon = CAT_ICONS[catId] || '';
+    return '<div class="guide-card-cat-icon">' +
+      '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">' + icon + '</svg>' +
+    '</div>';
+  }
 
   var HEART_SVG = '<svg width="15" height="15" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>';
 
@@ -235,7 +253,7 @@
       var cat = getCategoryById(catId);
       var activeClass = activeCategory === catId ? ' is-active' : '';
       html += '<button class="guide-cat-pill' + activeClass + '" data-cat="' + catId + '">' +
-        cat.icon + ' ' + cat.label +
+        catIconInline(catId, 15) + ' ' + cat.label +
       '</button>';
     });
 
@@ -347,7 +365,7 @@
       html += '<div class="guide-category-group">';
 
       if (activeCategory === 'all' && !activeFavouritesOnly) {
-        html += '<div class="guide-category-heading"><h2>' + cat.icon + ' ' + cat.label + '</h2></div>';
+        html += '<div class="guide-category-heading"><h2>' + catIconInline(cat.id, 22) + ' ' + cat.label + '</h2></div>';
       }
 
       if (cat.note) {
@@ -367,10 +385,11 @@
           html += '<div class="guide-card' + featuredClass + '">' +
             imageHtml +
             heartBtn(link.url) +
+            catIconBadge(cat.id) +
             '<div class="guide-card-body' + bodyClass + '">' +
-              '<span class="guide-card-category">' + cat.label + '</span>' +
               '<h3 class="guide-card-title">' + link.title + '</h3>' +
               '<p class="guide-card-description">' + link.description + '</p>' +
+              '<button class="guide-card-more" type="button">More info</button>' +
               '<div class="guide-card-actions">' +
                 '<a class="guide-card-action-link" href="' + (link.url || '#') + '" target="_blank" rel="noopener noreferrer">Visit ' + arrowSvg + '</a>' +
                 '<a class="guide-card-action-link" href="' + (link.embedPage || link.url || '#') + '" target="_blank" rel="noopener noreferrer">Stream ' + arrowSvg + '</a>' +
@@ -381,10 +400,11 @@
           html += '<a href="' + link.url + '" class="guide-card' + featuredClass + '" target="_blank" rel="noopener noreferrer">' +
             imageHtml +
             heartBtn(link.url) +
+            catIconBadge(cat.id) +
             '<div class="guide-card-body' + bodyClass + '">' +
-              '<span class="guide-card-category">' + cat.label + '</span>' +
               '<h3 class="guide-card-title">' + link.title + '</h3>' +
               '<p class="guide-card-description">' + link.description + '</p>' +
+              '<button class="guide-card-more" type="button">More info</button>' +
               '<span class="guide-card-link">Visit' + arrowSvg + '</span>' +
             '</div>' +
           '</a>';
@@ -400,7 +420,26 @@
     emptyState.classList.toggle('visible', filtered.length === 0);
     renderResultsBar(filtered.length);
     updateCategoryCardCounts();
+
+    // Hide "More info" buttons on descriptions that aren't actually truncated
+    grid.querySelectorAll('.guide-card-description').forEach(function (desc) {
+      var more = desc.nextElementSibling;
+      if (more && more.classList.contains('guide-card-more')) {
+        more.style.display = desc.scrollHeight <= desc.clientHeight + 2 ? 'none' : '';
+      }
+    });
   }
+
+  // --- "More info" expand/collapse delegation ---
+  grid.addEventListener('click', function (e) {
+    var btn = e.target.closest('.guide-card-more');
+    if (!btn) return;
+    e.preventDefault();
+    e.stopPropagation();
+    var desc = btn.previousElementSibling;
+    var expanded = desc.classList.toggle('is-expanded');
+    btn.textContent = expanded ? 'Less' : 'More info';
+  });
 
   // --- Heart button delegation (works after every re-render) ---
   grid.addEventListener('click', function (e) {

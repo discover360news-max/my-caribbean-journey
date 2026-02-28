@@ -511,6 +511,32 @@ var SiteComponents = (function () {
     };
   }
 
+  // ----------------------------------------
+  // Breadcrumb — rendered into #site-breadcrumb inside each hero
+  // Pass breadcrumbs: [{ label, href }, ..., { label }] via SiteComponents.init()
+  // Last item has no href — it is the current page, shown in gold
+  // ----------------------------------------
+  function renderBreadcrumb(crumbs) {
+    if (!crumbs || crumbs.length === 0) return '';
+
+    var items = '';
+    crumbs.forEach(function (crumb, i) {
+      var isLast = i === crumbs.length - 1;
+      if (isLast) {
+        items += '<li class="site-bc-item site-bc-item--current" aria-current="page">' + crumb.label + '</li>';
+      } else {
+        items += '<li class="site-bc-item"><a href="' + crumb.href + '" class="site-bc-link">' + crumb.label + '</a></li>';
+        items += '<li class="site-bc-sep" aria-hidden="true">/</li>';
+      }
+    });
+
+    return (
+      '<nav class="site-breadcrumb" aria-label="Breadcrumb">' +
+        '<ol class="site-bc-list">' + items + '</ol>' +
+      '</nav>'
+    );
+  }
+
   function init(config) {
     config = config || {};
 
@@ -524,6 +550,12 @@ var SiteComponents = (function () {
     var footerSlot = document.getElementById('site-footer');
     if (footerSlot) {
       footerSlot.innerHTML = renderFooter(config);
+    }
+
+    // Render breadcrumb
+    if (config.breadcrumbs) {
+      var bcSlot = document.getElementById('site-breadcrumb');
+      if (bcSlot) bcSlot.innerHTML = renderBreadcrumb(config.breadcrumbs);
     }
 
     // Render charity callout

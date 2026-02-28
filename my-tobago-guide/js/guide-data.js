@@ -73,6 +73,7 @@ var GUIDE_DATA = {
       category: 'food-recipes',
       area: 'island-wide',
       featured: true,
+      image: '../images/hero/heritage-festival.jpg', // TEMP — replace with real card photo
       tags: [
         'recipes', 'cooking', 'local food', 'tobagonian cuisine', 'food culture', 'home cooking',
         'blog', 'crab and dumpling', 'pelau', 'callaloo', 'provisions', 'creole', 'traditional',

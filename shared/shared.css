@@ -562,6 +562,46 @@ a { text-decoration: none; color: inherit; }
   transform: translateY(0);
 }
 
+/* --- Breadcrumb --- */
+.site-breadcrumb { margin-bottom: 1.25rem; }
+
+.site-bc-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site-bc-item {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.site-bc-link {
+  color: rgba(245, 240, 232, 0.45);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.site-bc-link:hover { color: rgba(245, 240, 232, 0.85); }
+
+.site-bc-sep {
+  color: rgba(245, 240, 232, 0.25);
+  font-size: 0.7rem;
+  user-select: none;
+}
+
+.site-bc-item--current {
+  color: var(--gold);
+  font-weight: 600;
+}
+
 /* --- Hero Scroll Indicator (shared default) --- */
 .hero-scroll {
   position: absolute;
