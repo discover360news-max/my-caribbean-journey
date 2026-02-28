@@ -198,13 +198,17 @@
     var wrap = document.getElementById('guide-hero-video-bg');
     if (!wrap) return;
     var iframe = document.createElement('iframe');
+    // Inline styles applied before DOM insertion — prevents flash at default
+    // 300×150 size on cold-cache first load before external CSS is parsed.
+    iframe.style.cssText = 'position:absolute;top:50%;left:50%;width:100%;height:56.25vw;min-height:100%;transform:translate(-50%,-50%);pointer-events:none;border:none;';
+    iframe.setAttribute('frameborder', '0');
+    iframe.setAttribute('allow', 'autoplay; encrypted-media');
+    iframe.setAttribute('title', '');
+    // src set last so the network request starts only after all attributes are set
     iframe.src = 'https://www.youtube-nocookie.com/embed/YzkYR-ArAcY' +
       '?autoplay=1&mute=1&loop=1&playlist=YzkYR-ArAcY' +
       '&controls=0&rel=0&iv_load_policy=3&modestbranding=1' +
       '&playsinline=1&disablekb=1&fs=0&cc_load_policy=0';
-    iframe.setAttribute('frameborder', '0');
-    iframe.setAttribute('allow', 'autoplay; encrypted-media');
-    iframe.setAttribute('title', '');
     wrap.appendChild(iframe);
   })();
   </script>
