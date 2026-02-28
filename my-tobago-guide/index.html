@@ -69,7 +69,11 @@
 
   <!-- Hero -->
   <header class="guide-hero">
-    <div class="guide-hero-video-bg" id="guide-hero-video-bg"></div>
+    <div class="guide-hero-video-bg">
+      <video autoplay muted loop playsinline>
+        <source src="/my-tobago-guide/hero-bg.mp4" type="video/mp4">
+      </video>
+    </div>
     <div class="container">
       <p class="guide-hero-label">Quincy's Curated Picks</p>
       <h1 class="guide-hero-title">My Tobago <span class="text-gold">Guide</span></h1>
@@ -147,6 +151,7 @@
   <section class="guide-browse">
     <div class="container">
       <div class="guide-cat-cards" id="guide-cat-cards"></div>
+      <button class="guide-cat-expand" id="guide-cat-expand" type="button">See all</button>
       <div class="guide-cat-pills" id="guide-cat-pills"></div>
     </div>
   </section>
@@ -190,27 +195,6 @@
   </section>
 
   <div id="site-footer"></div>
-
-  <!-- Hero background video (desktop only; mobile falls back to gradient) -->
-  <script>
-  (function () {
-    var wrap = document.getElementById('guide-hero-video-bg');
-    if (!wrap) return;
-    var iframe = document.createElement('iframe');
-    // Inline styles applied before DOM insertion — prevents flash at default
-    // 300×150 size on cold-cache first load before external CSS is parsed.
-    iframe.style.cssText = 'position:absolute;top:50%;left:50%;width:max(100%,177.78vh);height:max(56.25vw,100%);transform:translate(-50%,-50%);pointer-events:none;border:none;';
-    iframe.setAttribute('frameborder', '0');
-    iframe.setAttribute('allow', 'autoplay; encrypted-media');
-    iframe.setAttribute('title', '');
-    // src set last so the network request starts only after all attributes are set
-    iframe.src = 'https://www.youtube-nocookie.com/embed/YzkYR-ArAcY' +
-      '?autoplay=1&mute=1&loop=1&playlist=YzkYR-ArAcY' +
-      '&controls=0&rel=0&iv_load_policy=3&modestbranding=1' +
-      '&playsinline=1&disablekb=1&fs=0&cc_load_policy=0';
-    wrap.appendChild(iframe);
-  })();
-  </script>
 
   <script src="/shared/components.js"></script>
   <script src="/shared/support.js"></script>

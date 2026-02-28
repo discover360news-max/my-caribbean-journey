@@ -541,6 +541,15 @@
   searchBtn.addEventListener('click', closeSearchTray);
   keywordInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') closeSearchTray(); });
 
+  // --- Mobile category expand toggle ---
+  var catExpandBtn = document.getElementById('guide-cat-expand');
+  if (catExpandBtn) {
+    catExpandBtn.addEventListener('click', function () {
+      var expanded = catCardsContainer.classList.toggle('is-expanded');
+      catExpandBtn.textContent = expanded ? 'Show less' : 'See all';
+    });
+  }
+
   // --- Initial render ---
   populateCategorySelect();
   renderCategoryCards();

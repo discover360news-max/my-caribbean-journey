@@ -37,7 +37,7 @@
   overflow: hidden;
 }
 
-.guide-hero-video-bg iframe {
+.guide-hero-video-bg video {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -49,7 +49,6 @@
   height: max(56.25vw, 100%);
   transform: translate(-50%, -50%);
   pointer-events: none;
-  border: none;
 }
 
 .guide-hero .container {
@@ -350,6 +349,11 @@ body.guide-tray-closing .guide-tray-backdrop {
   background: linear-gradient(135deg, var(--gold), var(--orange));
   color: var(--green-deep);
   border-color: transparent;
+}
+
+/* --- Category expand toggle (mobile only) --- */
+.guide-cat-expand {
+  display: none;
 }
 
 /* --- Category Pills --- */
@@ -1119,8 +1123,102 @@ body.guide-tray-closing .guide-tray-backdrop {
     font-size: 1rem;
   }
 
+  /* Category cards: 2-col flex on mobile */
   .guide-cat-cards {
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Cards 1 & 2: keep full card styling, sized to fill 2 columns */
+  .guide-cat-card {
+    flex: 0 0 calc(50% - 0.625rem);
+  }
+
+  /* Cards 3 & 4: pill style, hidden by default */
+  .guide-cat-card:nth-child(n+3) {
+    display: none;
+    flex: 0 0 auto;
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 0.3rem 0.5rem;
+    box-shadow: none;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-muted);
+  }
+
+  .guide-cat-card:nth-child(n+3):hover {
+    transform: none;
+    box-shadow: none;
+    color: var(--green-deep);
+  }
+
+  .guide-cat-card:nth-child(n+3).is-active {
+    border-color: transparent;
+    box-shadow: none;
+    color: var(--green-deep);
+    font-weight: 600;
+  }
+
+  .guide-cat-card:nth-child(n+3) .guide-cat-card-icon {
+    width: auto;
+    height: auto;
+    background: none;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    color: inherit;
+    margin: 0;
+  }
+
+  .guide-cat-card:nth-child(n+3) .guide-cat-card-icon svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .guide-cat-card:nth-child(n+3) .guide-cat-card-count {
+    display: none;
+  }
+
+  .guide-cat-card:nth-child(n+3) .guide-cat-card-name {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: inherit;
+    color: inherit;
+    margin: 0;
+  }
+
+  /* Show pills when expanded */
+  .guide-cat-cards.is-expanded .guide-cat-card:nth-child(n+3) {
+    display: inline-flex;
+  }
+
+  /* Expand / collapse toggle — centered */
+  .guide-cat-expand {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0.3rem 0.5rem;
+    border: none;
+    background: none;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--gold);
+    cursor: pointer;
+    transition: color var(--transition);
+    margin-bottom: 0.25rem;
+  }
+
+  .guide-cat-expand:hover {
+    color: var(--gold-light);
   }
 
   .guide-category-group {
