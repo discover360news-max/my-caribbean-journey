@@ -504,6 +504,43 @@
   searchBtn.addEventListener('click', applySearch);
   keywordInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') applySearch(); });
 
+  // --- Mobile search tray ---
+  var mobileSearchTrigger = document.getElementById('guide-search-mobile-trigger');
+  var trayBackdrop        = document.getElementById('guide-tray-backdrop');
+  var trayClose           = document.getElementById('guide-tray-close');
+  var trayCloseTimer      = null;
+
+  function openSearchTray() {
+    // Cancel any in-progress close animation
+    if (trayCloseTimer) {
+      clearTimeout(trayCloseTimer);
+      trayCloseTimer = null;
+      document.body.classList.remove('guide-tray-closing');
+    }
+    document.body.classList.add('guide-tray-open');
+    document.body.style.overflow = 'hidden';
+    setTimeout(function () { if (keywordInput) keywordInput.focus(); }, 360);
+  }
+
+  function closeSearchTray() {
+    // Play exit animation first, then remove open class
+    document.body.classList.add('guide-tray-closing');
+    trayCloseTimer = setTimeout(function () {
+      document.body.classList.remove('guide-tray-open');
+      document.body.classList.remove('guide-tray-closing');
+      document.body.style.overflow = '';
+      trayCloseTimer = null;
+    }, 300);
+  }
+
+  if (mobileSearchTrigger) mobileSearchTrigger.addEventListener('click', openSearchTray);
+  if (trayBackdrop)        trayBackdrop.addEventListener('click', closeSearchTray);
+  if (trayClose)           trayClose.addEventListener('click', closeSearchTray);
+
+  // Close tray after search is submitted
+  searchBtn.addEventListener('click', closeSearchTray);
+  keywordInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') closeSearchTray(); });
+
   // --- Initial render ---
   populateCategorySelect();
   renderCategoryCards();
