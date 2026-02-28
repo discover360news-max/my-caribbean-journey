@@ -107,10 +107,64 @@
   cursor: pointer;
 }
 
-.guide-search-field input::placeholder { color: var(--text-muted); }
-.guide-search-field select { color: var(--text-muted); appearance: none; -webkit-appearance: none; }
+.guide-search-field input::placeholder { color: transparent; } /* label replaces placeholder */
+.guide-search-field select { color: transparent; appearance: none; -webkit-appearance: none; }
 .guide-search-field select:focus,
 .guide-search-field input:focus { color: var(--text-dark); }
+.guide-search-field.has-value select,
+.guide-search-field.has-value input { color: var(--text-dark); }
+
+/* --- Floating label wrapper --- */
+.guide-field-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.guide-field-label {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  pointer-events: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  transition: top 0.2s ease, transform 0.2s ease, font-size 0.2s ease, color 0.2s ease, font-weight 0.2s ease;
+}
+
+/* Float label up on focus or when field has a value */
+.guide-search-field:focus-within .guide-field-label,
+.guide-search-field.has-value .guide-field-label {
+  top: 11px;
+  transform: translateY(0);
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.04em;
+}
+
+/* Push input/select down to sit below the floated label */
+.guide-search-field:focus-within input,
+.guide-search-field.has-value input,
+.guide-search-field:focus-within select,
+.guide-search-field.has-value select {
+  padding-top: 14px;
+}
+
+/* Subtle background tint on the active field */
+.guide-search-field:focus-within {
+  background: rgba(212, 160, 48, 0.025);
+  border-radius: 12px;
+}
 
 /* --- Divider --- */
 .guide-search-divider {
@@ -252,6 +306,126 @@
 .guide-cat-pill.is-active {
   color: var(--green-deep);
   font-weight: 600;
+}
+
+/* --- Results Bar (active filter status + clear) --- */
+.guide-results-bar {
+  display: none;
+  margin-bottom: 1.5rem;
+}
+
+.guide-results-bar.is-active {
+  display: block;
+}
+
+.guide-results-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  background: white;
+  border: 1px solid rgba(212, 160, 48, 0.25);
+  border-radius: 12px;
+  padding: 0.75rem 1.25rem;
+}
+
+.guide-results-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.guide-results-bar-count {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--green-deep);
+}
+
+.guide-results-bar-sep {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.guide-filter-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.65rem;
+  background: rgba(26, 74, 46, 0.07);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--green-mid);
+}
+
+.guide-clear-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.85rem;
+  border: 1.5px solid rgba(212, 160, 48, 0.5);
+  border-radius: 20px;
+  background: none;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gold);
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.guide-clear-btn:hover {
+  background: var(--gold);
+  color: var(--green-deep);
+  border-color: var(--gold);
+}
+
+/* --- Results Footer (centered filter status, sits between search bar and category cards) --- */
+.guide-results-footer {
+  display: none;
+  text-align: center;
+  padding: 1rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  background: var(--warm-white);
+}
+
+.guide-results-footer.is-active {
+  display: flex;
+}
+
+.guide-results-footer-count {
+  font-weight: 700;
+  color: var(--green-deep);
+}
+
+.guide-clear-btn-text {
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--gold);
+  cursor: pointer;
+  padding: 0;
+  transition: opacity var(--transition);
+}
+
+.guide-clear-btn-text:hover {
+  opacity: 0.75;
+}
+
+/* --- Category card — dimmed when filter yields 0 results --- */
+.guide-cat-card.is-empty {
+  opacity: 0.45;
+  pointer-events: none;
 }
 
 /* --- Results Grid --- */

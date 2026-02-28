@@ -14,6 +14,8 @@
   var catPillsContainer = document.getElementById('guide-cat-pills');
   var grid              = document.getElementById('guide-grid');
   var emptyState        = document.getElementById('guide-empty');
+  var resultsBar        = document.getElementById('guide-results-bar');
+  var resultsFooter     = document.getElementById('guide-results-footer');
 
   // --- Featured category IDs (big cards) ---
   var FEATURED_CATS = ['food-recipes', 'beaches-nature', 'accommodation', 'activities-tours'];
@@ -56,16 +58,117 @@
     return null;
   }
 
-  // --- Count live links for a given category ---
+  // --- Count live links for a given category (unfiltered, for initial render) ---
   function countLinksForCategory(catId) {
     return GUIDE_DATA.links.filter(function (link) {
       return link.live !== false && link.category === catId;
     }).length;
   }
 
+  // --- Count live links for a category respecting active keyword + area filters ---
+  function getFilteredCountForCategory(catId) {
+    return GUIDE_DATA.links.filter(function (link) {
+      if (link.live === false) return false;
+      if (link.category !== catId) return false;
+      if (activeArea && link.area !== activeArea && link.area !== 'island-wide') return false;
+      if (activeKeyword && link.title.toLowerCase().indexOf(activeKeyword) === -1 &&
+          link.description.toLowerCase().indexOf(activeKeyword) === -1) return false;
+      return true;
+    }).length;
+  }
+
+  // --- Check if any filter is currently active ---
+  function isAnyFilterActive() {
+    return activeKeyword !== '' || activeCategory !== 'all' || activeArea !== '' || activeFavouritesOnly;
+  }
+
+  // --- Clear all filters and reset UI ---
+  function clearAllFilters() {
+    activeKeyword        = '';
+    activeCategory       = 'all';
+    activeArea           = '';
+    activeFavouritesOnly = false;
+
+    keywordInput.value    = '';
+    categorySelect.value  = '';
+    areaSelect.value      = '';
+
+    // Reset floating label state on all search fields
+    document.querySelectorAll('#guide-search-form .guide-search-field').forEach(function (f) {
+      f.classList.remove('has-value');
+    });
+
+    updateCardActiveStates();
+    updateCategoryCardCounts();
+    updatePillActiveStates();
+    renderCards();
+  }
+
+  // --- Update the count badges on category cards without full re-render ---
+  function updateCategoryCardCounts() {
+    var filtered = isAnyFilterActive();
+    catCardsContainer.querySelectorAll('.guide-cat-card').forEach(function (card) {
+      var catId    = card.getAttribute('data-cat');
+      var count    = filtered ? getFilteredCountForCategory(catId) : countLinksForCategory(catId);
+      var countEl  = card.querySelector('.guide-cat-card-count');
+      if (countEl) countEl.textContent = filtered ? String(count) : (count + '+');
+      card.classList.toggle('is-empty', filtered && count === 0);
+    });
+  }
+
+  // --- Render the results status bar (top) and footer (bottom, centered) ---
+  function renderResultsBar(count) {
+    if (!isAnyFilterActive()) {
+      resultsBar.innerHTML = '';
+      resultsBar.classList.remove('is-active');
+      resultsFooter.innerHTML = '';
+      resultsFooter.classList.remove('is-active');
+      return;
+    }
+
+    var chips = '';
+    if (activeKeyword) {
+      chips += '<span class="guide-filter-chip">"' + activeKeyword + '"</span>';
+    }
+    if (activeCategory !== 'all') {
+      var cat = getCategoryById(activeCategory);
+      if (cat) chips += '<span class="guide-filter-chip">' + cat.label + '</span>';
+    }
+    if (activeArea) {
+      var areaLabel = areaSelect.options[areaSelect.selectedIndex] ? areaSelect.options[areaSelect.selectedIndex].text : activeArea;
+      chips += '<span class="guide-filter-chip">' + areaLabel + '</span>';
+    }
+    if (activeFavouritesOnly) {
+      chips += '<span class="guide-filter-chip">My Favourites</span>';
+    }
+
+    var countLabel = count === 1 ? '1 result' : count + ' results';
+
+    // Top bar
+    resultsBar.classList.add('is-active');
+    resultsBar.innerHTML =
+      '<div class="guide-results-bar-inner">' +
+        '<div class="guide-results-bar-left">' +
+          '<span class="guide-results-bar-count">' + countLabel + '</span>' +
+          (chips ? '<span class="guide-results-bar-sep">·</span>' + chips : '') +
+        '</div>' +
+        '<button class="guide-clear-btn" id="guide-clear-btn" type="button">Clear filters</button>' +
+      '</div>';
+    document.getElementById('guide-clear-btn').addEventListener('click', clearAllFilters);
+
+    // Bottom footer (centered, text only)
+    resultsFooter.classList.add('is-active');
+    resultsFooter.innerHTML =
+      '<span class="guide-results-footer-count">' + countLabel + '</span>' +
+      (chips ? '<span class="guide-results-bar-sep">·</span>' + chips : '') +
+      '<span class="guide-results-bar-sep">·</span>' +
+      '<button class="guide-clear-btn-text" id="guide-clear-btn-footer" type="button">Clear filters</button>';
+    document.getElementById('guide-clear-btn-footer').addEventListener('click', clearAllFilters);
+  }
+
   // --- Populate the category <select> in the search bar ---
   function populateCategorySelect() {
-    var html = '<option value="">Category</option>';
+    var html = '<option value=""></option>';
     GUIDE_DATA.categories.forEach(function (cat) {
       html += '<option value="' + cat.id + '">' + cat.label + '</option>';
     });
@@ -282,6 +385,8 @@
     grid.innerHTML = html;
 
     emptyState.classList.toggle('visible', filtered.length === 0);
+    renderResultsBar(filtered.length);
+    updateCategoryCardCounts();
   }
 
   // --- Heart button delegation (works after every re-render) ---
@@ -307,11 +412,21 @@
     if (activeFavouritesOnly) renderCards();
   });
 
+  // --- Floating label: has-value state (visual feedback only, not search) ---
+  keywordInput.addEventListener('input', function () {
+    this.closest('.guide-search-field').classList.toggle('has-value', this.value.trim() !== '');
+  });
+  categorySelect.addEventListener('change', function () {
+    this.closest('.guide-search-field').classList.toggle('has-value', this.value !== '');
+  });
+  areaSelect.addEventListener('change', function () {
+    this.closest('.guide-search-field').classList.toggle('has-value', this.value !== '');
+  });
+
   // --- Wire up search events ---
+  // Dropdowns do NOT auto-fire — user must press Search or Enter to apply
   searchBtn.addEventListener('click', applySearch);
   keywordInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') applySearch(); });
-  categorySelect.addEventListener('change', applySearch);
-  areaSelect.addEventListener('change', applySearch);
 
   // --- Initial render ---
   populateCategorySelect();
