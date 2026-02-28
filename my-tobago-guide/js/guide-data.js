@@ -141,10 +141,10 @@ var GUIDE_DATA = {
       featured: false,
       tags: [
         'restaurant', 'dining', 'local food', 'charlotteville', 'recommended', 'authentic',
-        'friendly', 'homestyle', 'north east tobago', 'lunch', 'dinner', 'creole'
+        'friendly', 'homestyle', 'north east tobago', 'lunch', 'dinner', 'creole',
+        'seafood', 'shrimp', 'prawns', 'fish', 'bbq', 'bbq chicken', 'grilled chicken',
+        'fries', 'view', 'scenic', 'ocean view', 'sea view', 'casual dining'
       ]
-      // ⚠️ FLAG FOR QUINCY: Not sure of the specific cuisine type here — seafood? creole? mixed?
-      // Please confirm so we can add more specific tags (e.g. 'seafood', 'fish', 'crab')
     },
 
     // ─── Beaches & Nature ─────────────────────────────────────────────
@@ -185,11 +185,13 @@ var GUIDE_DATA = {
       area: 'scarborough',
       featured: false,
       tags: [
-        'nature', 'hiking', 'trails', 'walking', 'scenic', 'views', 'park', 'outdoors',
-        'birdwatching', 'flora', 'fauna', 'peaceful', 'scarborough', 'green', 'garden'
+        'nature', 'hiking', 'hike', 'trails', 'walking', 'scenic', 'views', 'viewpoint',
+        'park', 'outdoors', 'birdwatching', 'birding', 'hummingbird', 'hummingbird feeding',
+        'parrot', 'parrot viewing', 'flora', 'fauna', 'peaceful', 'scarborough',
+        'waterfall', 'spring', 'river', 'river path', 'stream', 'fruit trees', 'local food',
+        'pelau', 'fish', 'local desserts', 'food', 'family friendly', 'eco', 'nature walk',
+        'lush', 'green', 'rainforest', 'photography', 'hidden gem', 'off the beaten track'
       ]
-      // ⚠️ FLAG FOR QUINCY: Limited info on this one — is it good for birdwatching specifically?
-      // Any standout features worth tagging (waterfall, lookout point, etc.)?
     },
     {
       title: 'Corbin Local Wildlife',
@@ -246,11 +248,13 @@ var GUIDE_DATA = {
       area: 'island-wide',
       featured: false,
       tags: [
-        'luxury', 'upscale', 'high end', 'views', 'premium', 'holiday rental',
-        'vacation rental', 'amenities', 'pool', 'modern', 'stylish'
+        'luxury', 'villa', 'large villa', 'upscale', 'high end', 'premium', 'stylish', 'modern',
+        'holiday rental', 'vacation rental', 'self catering', 'amenities', 'pool',
+        'group accommodation', 'sleeps 8', 'large group', 'family', 'multiple rooms',
+        'crown point', 'buccoo', 'shirvan road', 'topaz', 'sapphire', 'opal', 'citrine', 'diamond',
+        'studio', 'apartment', 'multiple locations', 'island wide', 'hotel style',
+        'air conditioning', 'wifi', 'kitchen', 'private', 'spacious'
       ]
-      // ⚠️ FLAG FOR QUINCY: Is LuxStay a villa rental platform, a boutique hotel, or apartments?
-      // Tagging more precisely (e.g. 'villa', 'hotel', 'self catering') would help a lot here
     },
     {
       title: 'Pint-Size Paradise',
@@ -260,11 +264,11 @@ var GUIDE_DATA = {
       area: 'island-wide',
       featured: false,
       tags: [
-        'boutique', 'cozy', 'charming', 'small', 'intimate', 'unique', 'affordable',
-        'holiday rental', 'vacation rental', 'alternative', 'guesthouse', 'peaceful'
+        'airbnb', 'airbnb style', 'holiday rental', 'vacation rental', 'self catering',
+        'multiple properties', 'island wide', 'large group', 'family', 'sleeps 5', 'bedrooms',
+        'villa', 'house rental', 'home rental', 'private', 'spacious', 'affordable',
+        'charming', 'cozy', 'unique', 'alternative', 'kitchen', 'wifi', 'flexible'
       ]
-      // ⚠️ FLAG FOR QUINCY: What type of accommodation exactly — guesthouse, villa, studio, cabin?
-      // And is it island-wide (multiple properties) or one specific location?
     },
     {
       title: 'Castara Retreats',
