@@ -101,9 +101,9 @@ collections:
 
       - label: "References & Further Reading"
         name: "references"
-        widget: "markdown"
+        widget: "text"
         required: false
-        hint: "Sources, citations, or further reading — displayed at the bottom of the post. Use numbered lists, links, or any format you like."
+        hint: "Sources, citations, or further reading. Write in plain markdown — e.g. '1. [Title](url)' for numbered links. Renders automatically on the live post."
 
   # ----------------------------------------
   # Island Stories — longer narrative writing
@@ -193,6 +193,6 @@ collections:
 
       - label: "References & Further Reading"
         name: "references"
-        widget: "markdown"
+        widget: "text"
         required: false
-        hint: "Sources, citations, or further reading — displayed at the bottom of the post. Use numbered lists, links, or any format you like."
+        hint: "Sources, citations, or further reading. Write in plain markdown — e.g. '1. [Title](url)' for numbered links. Renders automatically on the live post."
