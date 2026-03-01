@@ -47,7 +47,8 @@ layout: blog-base.njk
 
   {% if featuredImage %}
   <div class="post-featured-image">
-    <img src="{{ featuredImage }}" alt="{{ title }}" loading="eager">
+    <img src="{{ featuredImage }}" alt="{{ title }}" loading="eager"
+      onerror="(function(img,c){c.style.display='none';var r=0;(function a(){if(r>=3)return;r++;setTimeout(function(){img.src=img.src.split('?')[0]+'?r='+r;img.addEventListener('load',function(){c.style.display='';},{once:true});img.addEventListener('error',a,{once:true});},6000*r);})();})(this,this.closest('.post-featured-image'))">
   </div>
   {% endif %}
 
