@@ -15,6 +15,90 @@ permalink: /blog/
   </div>
 </section>
 
+<script>
+// Word pool baked in at build time from post titles + tags.
+// Regenerates automatically on every deploy (including new posts).
+(function () {
+  if (window.innerWidth < 768) return;
+
+  var raw = [
+    {%- for post in posts -%}
+      {%- for word in post.data.title.split(' ') -%}
+        {{ word | replace('"', '') | replace("'", '') | trim | dump | safe }},
+      {%- endfor -%}
+      {%- if post.data.postTags -%}
+        {%- for tag in post.data.postTags -%}
+          {{ tag | dump | safe }},
+        {%- endfor -%}
+      {%- endif -%}
+    {%- endfor -%}
+  ];
+
+  // Deduplicate, strip short/empty words and common stop words
+  var STOP = ['the','a','an','and','or','of','in','on','at','to','is','it','by','for','with','as','was','be','from','this','that','are','were','have','has','had','but','not','so','its'];
+  var words = [];
+  raw.forEach(function (w) {
+    if (!w || w.length < 3) return;
+    if (STOP.indexOf(w.toLowerCase()) !== -1) return;
+    if (words.indexOf(w) === -1) words.push(w);
+  });
+
+  if (words.length < 4) return;
+
+  var hero   = document.querySelector('.blog-hero');
+  var SLOTS  = 10;   // concurrent words on screen
+  var SPEED  = [70, 130];   // ms per character
+  var HOLD   = [2500, 5000]; // ms to hold after typing finishes
+  var FADE   = 700;          // ms fade-out
+
+  function rand(a, b)    { return Math.random() * (b - a) + a; }
+  function randInt(a, b) { return Math.floor(rand(a, b)); }
+  function pick()        { return words[randInt(0, words.length)]; }
+
+  function run(el, delay) {
+    setTimeout(function () {
+      // Random position — keep away from the left 40% where text lives
+      el.style.left      = rand(42, 88) + '%';
+      el.style.top       = rand(12, 78) + '%';
+      el.style.fontSize  = rand(0.7, 1.15) + 'rem';
+      el.style.transform = 'rotate(' + rand(-10, 10) + 'deg)';
+      el.style.opacity   = rand(0.12, 0.22);
+      el.textContent     = '';
+
+      var word  = pick();
+      var i     = 0;
+      var speed = randInt(SPEED[0], SPEED[1]);
+
+      function type() {
+        if (i < word.length) {
+          el.textContent += word[i++];
+          setTimeout(type, speed);
+        } else {
+          // Hold, then fade out and restart
+          setTimeout(function () {
+            el.style.transition = 'opacity ' + FADE + 'ms ease';
+            el.style.opacity    = 0;
+            setTimeout(function () {
+              el.style.transition = '';
+              run(el, 0);
+            }, FADE + 50);
+          }, randInt(HOLD[0], HOLD[1]));
+        }
+      }
+
+      type();
+    }, delay);
+  }
+
+  for (var s = 0; s < SLOTS; s++) {
+    var el = document.createElement('span');
+    el.className = 'blog-hero-word';
+    hero.appendChild(el);
+    run(el, s * 350 + randInt(0, 200));
+  }
+}());
+</script>
+
 <section class="blog-posts">
   <div class="container">
 

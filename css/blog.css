@@ -37,6 +37,18 @@
   padding-top: 3rem;
 }
 
+.blog-hero-word {
+  position: absolute;
+  font-family: 'Courier New', Courier, monospace;
+  color: var(--cream);
+  letter-spacing: 0.08em;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  opacity: 0;
+  white-space: nowrap;
+}
+
 .blog-hero .section-label {
   color: var(--gold);
   font-size: 0.82rem;
