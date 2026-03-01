@@ -11,9 +11,26 @@ postTags:
   - pride
   - culture
 draft: false
-references: "- Drewett, P. L. Excavations at Heywoods, Barbados, and the
-  Economic Basis of the Suazoid Period in the Lesser Antilles. Proceedings of
-  the Prehistoric Society. Click Here"
+references: >-
+  - Drewett, P. L. Excavations at Heywoods, Barbados, and the Economic Basis of
+  the Suazoid Period in the Lesser Antilles. Proceedings of the Prehistoric
+  Society. [Click
+  Here](https://www.cambridge.org/core/journals/proceedings-of-the-prehistoric-society/article/excavations-at-heywoods-barbados-and-the-economic-basis-of-the-suazoid-period-in-the-lesser-antilles/782D09FCEE01AD9705320BA5FC375A49)
+
+
+  - Hofman, C. L., & Bright, A. J. From Suazoid to Folk Pottery: Pottery Manufacturing Traditions in a Changing Social and Cultural Environment on St. Lucia. New West Indian Guide. [Click Here](https://brill.com/view/journals/nwig/78/1-2/article-p73_3.xml)
+
+
+  - Lenik, S. Carib as a Colonial Category: Comparing Ethnohistoric and Archaeological Evidence in the Lesser Antilles. Ethnohistory. [Click Here](https://tiboko.com/wp-content/uploads/2023/07/Carib_as_a_Colonial_Category_Comparing_E.pdf)
+
+
+  - Hofman, C. L., Martin, J. A., Boomert, A., & Manem, S. Reimagining Creolization: The Deep History of Cultural Interactions in the Windward Islands. Latin American Antiquity. [Click Here](https://www.cambridge.org/core/journals/latin-american-antiquity/article/reimagining-creolization-the-deep-history-of-cultural-interactions-in-the-windward-islands-lesser-antilles-through-the-lens-of-material-culture/F57E4C86854638C17A5EA612D5634D98)
+
+
+  - Bullen, R. P. Archaeological Chronology of Grenada. American Antiquity. [Click Here](https://www.jstor.org/stable/2693990)
+
+
+  - Steadman, D. W., & Jones, S. Long-Term Trends in Prehistoric Fishing and Hunting on Tobago, West Indies. Latin American Antiquity. [Click Here](https://www.cambridge.org/core/journals/latin-american-antiquity/article/longterm-trends-in-prehistoric-fishing-and-hunting-on-tobago-west-indies/B138A54903118CAC98CA197C4179167E)
 ---
 When Europeans first reached Tobago, they described encountering Kalinago communities. Archaeologists, however, identify the pre-contact material record on the island as belonging to what they call the Suazey tradition. Whether the Suazoid people were the direct ancestors of those Kalinago communities, or whether cultural shifts occurred in the centuries before contact, remains debated.
 
