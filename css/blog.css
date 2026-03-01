@@ -337,7 +337,7 @@
 
 .blog-post .post-header {
   background: linear-gradient(160deg, var(--green-deep) 0%, #071a0c 55%, var(--green-dark) 100%);
-  padding: 5rem 0 10rem;
+  padding: 7rem 0 10rem;
   color: var(--text-light);
 }
 
@@ -1066,6 +1066,10 @@
 
   .post-grid {
     grid-template-columns: 1fr;
+  }
+
+  .blog-post .post-header {
+    padding-top: 9rem;
   }
 
   .post-header .post-title {
