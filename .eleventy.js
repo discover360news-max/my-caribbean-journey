@@ -24,6 +24,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("admin");
   eleventyConfig.addPassthroughCopy("privacy-policy");
   eleventyConfig.addPassthroughCopy("robots.txt");
+  eleventyConfig.addPassthroughCopy("_headers");
   eleventyConfig.addPassthroughCopy("shared/support.js");
   eleventyConfig.addPassthroughCopy("blog/images");
 

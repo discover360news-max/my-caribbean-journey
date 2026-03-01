@@ -1,0 +1,28 @@
+# Cloudflare Pages response headers
+#
+# This site uses fixed filenames (no content hashing), so HTML/CSS/JS
+# must always be revalidated. Cloudflare returns a 304 Not Modified
+# when nothing has changed — fast, but deploys are immediately visible.
+#
+# Images and video are safe for long cache: new uploads always get new
+# filenames from the CMS, and video is replaced in-place rarely.
+#
+# Rules: last matching path wins.
+
+/*
+  Cache-Control: no-cache
+
+/images/*
+  Cache-Control: public, max-age=2592000
+
+/blog/images/*
+  Cache-Control: public, max-age=2592000
+
+/my-tobago-guide/images/*
+  Cache-Control: public, max-age=2592000
+
+/i-am-tobago/images/*
+  Cache-Control: public, max-age=2592000
+
+/my-tobago-guide/hero-bg.mp4
+  Cache-Control: public, max-age=2592000
