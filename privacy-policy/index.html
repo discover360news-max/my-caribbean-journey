@@ -19,12 +19,25 @@
 
   <style>
     .privacy-page {
-      padding: 8rem 0 5rem;
+      padding: 12rem 0 5rem;
       min-height: 60vh;
+      position: relative;
+    }
+
+    .privacy-page::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 18rem;
+      background: linear-gradient(to bottom, var(--green-deep) 0%, transparent 100%);
+      pointer-events: none;
+      z-index: 0;
     }
 
     .privacy-page .container {
       max-width: 720px;
+      position: relative;
+      z-index: 1;
     }
 
     .privacy-label {
@@ -184,7 +197,7 @@
 
       <div class="privacy-contact">
         <h2>Contact</h2>
-        <p>Questions about this policy? Reach us at <a href="mailto:booksbyquincy@gmail.com">booksbyquincy@gmail.com</a></p>
+        <p>Questions about this policy? <a href="/contact/">Use our contact form</a> or email <a href="mailto:booksbyquincy@gmail.com">booksbyquincy@gmail.com</a> directly.</p>
       </div>
 
     </div>
@@ -195,14 +208,19 @@
   <script src="/shared/components.js"></script>
   <script>
     SiteComponents.init({
+      breadcrumbs: [
+        { label: 'Home', href: '/' },
+        { label: 'Privacy Policy' }
+      ],
       navLinks: [
         { label: 'Home',         href: '/' },
         { label: 'I Am Tobago',  href: '/i-am-tobago/' },
-        { label: 'Tobago Guide', href: '/my-tobago-guide/' }
+        { label: 'Tobago Guide', href: '/my-tobago-guide/' },
+        { label: 'Contact',      href: '/contact/' }
       ],
       footerLinks: [
         { label: 'Home',    href: '/' },
-        { label: 'Contact', href: 'mailto:booksbyquincy@gmail.com' }
+        { label: 'Contact', href: '/contact/' }
       ]
     });
   </script>

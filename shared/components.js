@@ -474,7 +474,7 @@ var SiteComponents = (function () {
           if (!el || !el.tagName) return NodeFilter.FILTER_REJECT;
           var tag = el.tagName.toLowerCase();
           if (['script', 'style', 'a', 'button'].indexOf(tag) !== -1) return NodeFilter.FILTER_REJECT;
-          if (el.closest('.site-nav, .site-nav-links, .site-mobile-menu, .site-footer, .music-player')) return NodeFilter.FILTER_REJECT;
+          if (el.closest('.site-nav, .site-nav-links, .site-mobile-menu, .site-footer')) return NodeFilter.FILTER_REJECT;
           return NodeFilter.FILTER_ACCEPT;
         }
       }

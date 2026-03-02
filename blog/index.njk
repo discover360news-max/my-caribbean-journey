@@ -253,6 +253,11 @@ permalink: /blog/
   }
 
   // Build tag chips
+  if (tags.length && categories.length) {
+    var rowBreak = document.createElement('div');
+    rowBreak.className = 'filter-row-break';
+    container.appendChild(rowBreak);
+  }
   if (tags.length) {
     var tagSep = document.createElement('span');
     tagSep.className = 'filter-section-label';

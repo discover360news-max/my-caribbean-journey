@@ -272,9 +272,9 @@ body.guide-tray-closing .guide-tray-backdrop {
   white-space: nowrap;
   transition: opacity var(--transition);
   flex-shrink: 0;
-}
 
-.guide-search-btn:hover { opacity: 0.9; }
+  &:hover { opacity: 0.9; }
+}
 
 /* --- Browse by Category Section --- */
 .guide-browse {
@@ -298,16 +298,22 @@ body.guide-tray-closing .guide-tray-backdrop {
   cursor: pointer;
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
   text-align: center;
-}
 
-.guide-cat-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(26, 74, 46, 0.1);
-}
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(26, 74, 46, 0.1);
+  }
 
-.guide-cat-card.is-active {
-  border-color: var(--gold);
-  box-shadow: 0 0 0 2px var(--gold-glow), 0 12px 32px rgba(26, 74, 46, 0.1);
+  &.is-active {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 2px var(--gold-glow), 0 12px 32px rgba(26, 74, 46, 0.1);
+
+    .guide-cat-card-count {
+      background: linear-gradient(135deg, var(--gold), var(--orange));
+      color: var(--green-deep);
+      border-color: transparent;
+    }
+  }
 }
 
 .guide-cat-card-icon {
@@ -345,11 +351,6 @@ body.guide-tray-closing .guide-tray-backdrop {
   color: var(--text-muted);
 }
 
-.guide-cat-card.is-active .guide-cat-card-count {
-  background: linear-gradient(135deg, var(--gold), var(--orange));
-  color: var(--green-deep);
-  border-color: transparent;
-}
 
 /* --- Category expand toggle (mobile only) --- */
 .guide-cat-expand {
@@ -378,29 +379,18 @@ body.guide-tray-closing .guide-tray-backdrop {
   color: var(--text-muted);
   cursor: pointer;
   transition: color var(--transition);
-}
 
-.guide-cat-pill svg {
-  color: inherit;
-}
-
-.guide-cat-pill:hover {
-  color: var(--green-deep);
-}
-
-.guide-cat-pill.is-active {
-  color: var(--green-deep);
-  font-weight: 600;
+  svg { color: inherit; }
+  &:hover { color: var(--green-deep); }
+  &.is-active { color: var(--green-deep); font-weight: 600; }
 }
 
 /* --- Results Bar (active filter status + clear) --- */
 .guide-results-bar {
   display: none;
   margin-bottom: 1.5rem;
-}
 
-.guide-results-bar.is-active {
-  display: block;
+  &.is-active { display: block; }
 }
 
 .guide-results-bar-inner {
@@ -460,12 +450,12 @@ body.guide-tray-closing .guide-tray-backdrop {
   transition: background var(--transition), color var(--transition), border-color var(--transition);
   white-space: nowrap;
   flex-shrink: 0;
-}
 
-.guide-clear-btn:hover {
-  background: var(--gold);
-  color: var(--green-deep);
-  border-color: var(--gold);
+  &:hover {
+    background: var(--gold);
+    color: var(--green-deep);
+    border-color: var(--gold);
+  }
 }
 
 /* --- Results Footer (centered filter status, sits between search bar and category cards) --- */
@@ -480,10 +470,8 @@ body.guide-tray-closing .guide-tray-backdrop {
   flex-wrap: wrap;
   gap: 0.5rem;
   background: var(--warm-white);
-}
 
-.guide-results-footer.is-active {
-  display: flex;
+  &.is-active { display: flex; }
 }
 
 .guide-results-footer-count {
@@ -501,10 +489,8 @@ body.guide-tray-closing .guide-tray-backdrop {
   cursor: pointer;
   padding: 0;
   transition: opacity var(--transition);
-}
 
-.guide-clear-btn-text:hover {
-  opacity: 0.75;
+  &:hover { opacity: 0.75; }
 }
 
 /* --- Category card — dimmed when filter yields 0 results --- */
@@ -538,6 +524,12 @@ body.guide-tray-closing .guide-tray-backdrop {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem;
+  container-type: inline-size;
+}
+
+@container (max-width: 340px) {
+  .guide-card-body { padding: 1.25rem; }
+  .guide-card-title { font-size: 1.1rem; }
 }
 
 /* --- Category Heading --- */
@@ -579,6 +571,21 @@ body.guide-tray-closing .guide-tray-backdrop {
   text-decoration: none;
   color: inherit;
   overflow: hidden;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(26, 74, 46, 0.1);
+
+    .guide-card-link {
+      color: var(--gold);
+      gap: 0.5rem;
+    }
+  }
+
+  &.featured {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 1px var(--gold-glow);
+  }
 }
 
 /* --- Card image banner --- */
@@ -623,12 +630,12 @@ body.guide-tray-closing .guide-tray-backdrop {
 }
 
 /* Extra top padding on card body to clear the overlapping badge */
-.guide-card-body.has-image {
+.guide-card:has(.guide-card-image) .guide-card-body {
   padding-top: 2.25rem;
 }
 
 /* No-image cards: push content below the icon badge (top: 1.25rem + 48px height + gap) */
-.guide-card-body:not(.has-image) {
+.guide-card:not(:has(.guide-card-image)) .guide-card-body {
   padding-top: 5rem;
 }
 
@@ -651,24 +658,22 @@ body.guide-tray-closing .guide-tray-backdrop {
   transition: color var(--transition), background var(--transition), transform var(--transition);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-}
 
-.guide-card-heart:hover {
-  color: #e8652a;
-  transform: scale(1.15);
-}
+  &:hover {
+    color: #e8652a;
+    transform: scale(1.15);
+  }
 
-.guide-card-heart svg {
-  fill: none;
-  transition: fill var(--transition);
-}
+  svg {
+    fill: none;
+    transition: fill var(--transition);
+  }
 
-.guide-card-heart.is-active {
-  color: #e8652a;
-}
+  &.is-active {
+    color: #e8652a;
 
-.guide-card-heart.is-active svg {
-  fill: #e8652a;
+    svg { fill: #e8652a; }
+  }
 }
 
 /* Heart sits in image corner when a photo is present */
@@ -687,10 +692,6 @@ body.guide-tray-closing .guide-tray-backdrop {
   font-weight: 600;
 }
 
-.guide-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(26, 74, 46, 0.1);
-}
 
 .guide-card-category {
   display: inline-block;
@@ -727,11 +728,11 @@ body.guide-tray-closing .guide-tray-backdrop {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-}
 
-.guide-card-description.is-expanded {
-  display: block;
-  overflow: visible;
+  &.is-expanded {
+    display: block;
+    overflow: visible;
+  }
 }
 
 /* "More info" expand toggle */
@@ -749,9 +750,9 @@ body.guide-tray-closing .guide-tray-backdrop {
   text-decoration: underline;
   text-underline-offset: 2px;
   transition: color var(--transition);
-}
 
-.guide-card-more:hover { color: var(--gold); }
+  &:hover { color: var(--gold); }
+}
 
 /* --- Card footer (location + visit link row) --- */
 .guide-card-footer {
@@ -790,19 +791,9 @@ body.guide-tray-closing .guide-tray-backdrop {
   transition: color var(--transition), gap var(--transition);
 }
 
-.guide-card:hover .guide-card-link {
-  color: var(--gold);
-  gap: 0.5rem;
-}
-
 .guide-card-link svg {
   width: 12px;
   height: 12px;
-}
-
-.guide-card.featured {
-  border-color: var(--gold);
-  box-shadow: 0 0 0 1px var(--gold-glow);
 }
 
 /* --- Card Actions (multi-link cards e.g. radio) --- */
@@ -819,16 +810,16 @@ body.guide-tray-closing .guide-tray-backdrop {
   font-weight: 600;
   color: var(--green-mid);
   transition: color var(--transition), gap var(--transition);
-}
 
-.guide-card-action-link:hover {
-  color: var(--gold);
-  gap: 0.75rem;
-}
+  &:hover {
+    color: var(--gold);
+    gap: 0.75rem;
+  }
 
-.guide-card-action-link svg {
-  width: 16px;
-  height: 16px;
+  svg {
+    width: 16px;
+    height: 16px;
+  }
 }
 
 /* --- Empty State --- */
@@ -838,10 +829,8 @@ body.guide-tray-closing .guide-tray-backdrop {
   padding: 4rem 1rem;
   color: var(--text-muted);
   font-size: 1.1rem;
-}
 
-.guide-empty.visible {
-  display: block;
+  &.visible { display: block; }
 }
 
 /* --- Book Cross-sell --- */
@@ -909,11 +898,11 @@ body.guide-tray-closing .guide-tray-backdrop {
     color: var(--green-deep);
     cursor: pointer;
     transition: box-shadow var(--transition), transform var(--transition);
-  }
 
-  .guide-search-mobile-trigger:hover {
-    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.28);
-    transform: translateY(-1px);
+    &:hover {
+      box-shadow: 0 6px 30px rgba(0, 0, 0, 0.28);
+      transform: translateY(-1px);
+    }
   }
 
   .guide-search-trigger-arrow {
@@ -1025,10 +1014,8 @@ body.guide-tray-closing .guide-tray-backdrop {
     width: 32px;
     height: 32px;
     transition: background var(--transition);
-  }
 
-  .guide-tray-close:hover {
-    background: rgba(0, 0, 0, 0.1);
+    &:hover { background: rgba(0, 0, 0, 0.1); }
   }
 
   /* Individual field cards in tray */
@@ -1215,10 +1202,8 @@ body.guide-tray-closing .guide-tray-backdrop {
     cursor: pointer;
     transition: color var(--transition);
     margin-bottom: 0.25rem;
-  }
 
-  .guide-cat-expand:hover {
-    color: var(--gold-light);
+    &:hover { color: var(--gold-light); }
   }
 
   .guide-category-group {

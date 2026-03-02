@@ -1,0 +1,193 @@
+/* ===========================================
+   MY CARIBBEAN JOURNEY — Contact Page
+   =========================================== */
+
+/* --- Hero --- */
+.contact-hero {
+  background: linear-gradient(135deg, var(--green-deep) 0%, #0a2e15 40%, #132e1a 70%, #1a3520 100%);
+  padding: 9rem 0 5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse at 30% 60%, rgba(26, 74, 46, 0.35) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 30%, rgba(212, 160, 48, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.contact-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.contact-hero .section-label {
+  color: var(--gold);
+}
+
+.contact-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  text-wrap: balance;
+}
+
+.contact-hero-desc {
+  font-size: 1.1rem;
+  color: rgba(232, 228, 220, 0.75);
+  max-width: 48ch;
+  margin: 0 auto;
+  line-height: 1.7;
+  text-wrap: balance;
+}
+
+/* --- Form Section --- */
+.contact-body {
+  background: var(--warm-white);
+  padding: 4rem 0 5rem;
+}
+
+.contact-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(212, 160, 48, 0.15);
+  padding: 3rem;
+  max-width: 560px;
+  margin: 0 auto;
+  box-shadow: 0 4px 32px rgba(13, 31, 18, 0.07);
+}
+
+/* --- Form Fields --- */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.contact-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.contact-input {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text-dark);
+  background: var(--warm-white);
+  border: 1.5px solid rgba(26, 74, 46, 0.15);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  width: 100%;
+
+  &::placeholder { color: rgba(90, 90, 82, 0.45); }
+
+  &:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px var(--gold-glow);
+  }
+}
+
+.contact-textarea {
+  resize: vertical;
+  min-height: 140px;
+  line-height: 1.6;
+}
+
+.contact-field-error {
+  font-size: 0.8rem;
+  color: #c0392b;
+  min-height: 1.1em;
+}
+
+.contact-form-error {
+  font-size: 0.85rem;
+  color: #c0392b;
+  text-align: center;
+  min-height: 1.2em;
+}
+
+.contact-submit {
+  margin-top: 0.5rem;
+  width: 100%;
+
+  &:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+  }
+}
+
+/* --- Success State --- */
+.contact-success {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.contact-success-icon {
+  font-size: 2.5rem;
+  color: var(--gold);
+  margin-bottom: 1.25rem;
+}
+
+.contact-success-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--green-deep);
+  margin-bottom: 0.75rem;
+}
+
+.contact-success-desc {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  text-wrap: balance;
+}
+
+/* --- Alt email fallback --- */
+.contact-alt {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.contact-alt-link {
+  color: var(--green-mid);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition);
+
+  &:hover { color: var(--gold); }
+}
+
+/* --- Responsive --- */
+@media (max-width: 640px) {
+  .contact-hero {
+    padding: 8rem 0 4rem;
+  }
+
+  .contact-card {
+    padding: 2rem 1.5rem;
+  }
+}

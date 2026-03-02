@@ -225,6 +225,152 @@ Applies `opacity: 0.6` and `cursor: not-allowed`. Combined with `data-tooltip` a
 
 ---
 
+## Modern CSS
+
+Four progressive-enhancement features are used across the codebase. They are zero-JS, forward-compatible, and do not change the visual design — they improve code quality and robustness.
+
+---
+
+### @layer (cascade layers)
+
+**File:** `/shared/shared.css`
+
+**Why:** Locks the shared/page-override hierarchy into the spec. Page CSS always wins over shared components even at equal specificity — no guessing about load order.
+
+**Layer declaration (top of shared.css):**
+```css
+@layer reset, base, components;
+```
+
+| Layer | Contents |
+|-------|----------|
+| `reset` | Universal box-sizing reset |
+| `base` | `:root` tokens + `html`, `body`, `img`, `a` base styles |
+| `components` | Everything else — utilities, buttons, nav, footer, animations, etc. |
+
+Page-specific CSS files (`hub.css`, `guide.css`, `style.css`, `blog.css`) are **unlayered** — unlayered styles always beat any `@layer`, so page overrides continue to work at lower specificity.
+
+**Rule for new pages:** Keep page CSS unlayered (no `@layer` wrapper). Only shared.css uses layers.
+
+---
+
+### text-wrap
+
+**Files:** `/shared/shared.css`, `/css/blog.css`
+
+**Why:** Eliminates awkward single-word orphan lines with zero JS.
+
+| Rule | Value | Effect |
+|------|-------|--------|
+| `body` | `text-wrap: pretty` | Avoids orphans in all body text (inherited) |
+| `h1–h5` | `text-wrap: balance` | Even line lengths across all headings |
+| `.post-card-title` | `text-wrap: balance` | Card titles in the blog listing |
+
+**Rule for new pages:** No action needed — `body` and heading rules inherit automatically from `shared.css`.
+
+---
+
+### Container Queries
+
+**Why:** Cards adapt to their container width, not the viewport — components are portable to any layout context.
+
+| File | Selector with `container-type` | `@container` query |
+|------|---------------------------------|--------------------|
+| `hub.css` | `.books-grid` | `max-width: 340px` → reduce `.book-card-image` height |
+| `hub.css` | `.explore-grid` | (declared; no query yet — future-proofing) |
+| `guide.css` | `.guide-category-cards` | `max-width: 340px` → compact card body padding + title size |
+| `blog.css` | `.post-grid` | `max-width: 360px` → compact post card padding + title size |
+
+**Rule for new card grids:** Add `container-type: inline-size` to the grid wrapper. Place `@container` queries immediately after the wrapper rule or in a grouped section at the end of the relevant selector block.
+
+---
+
+### Scroll-Driven Animations
+
+**File:** `/shared/shared.css` (animations section)
+
+**Why:** Replaces the JS `IntersectionObserver` → `.fade-in` / `.visible` class toggle with native CSS `animation-timeline: view()` in supporting browsers.
+
+**How the two systems coexist:**
+- JS still adds `.fade-in` (opacity: 0) on load and `.visible` on intersection — this is the fallback for all browsers.
+- The `@supports (animation-timeline: view())` block adds a CSS `animation` to `.fade-in` elements. In supporting browsers, the `animation` property takes precedence over the `transition` for `opacity` and `transform`.
+- `animation-fill-mode: both` + `animation-range: entry 0% entry 25%` means elements above the fold at load time are held at `opacity: 1` — no flash.
+
+```css
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .fade-in {
+      animation: fade-in-up 0.6s ease both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 25%;
+    }
+  }
+}
+```
+
+**Rule for new pages:** Apply `.fade-in` to elements as before — JS adds the class, shared.css handles both the transition fallback and the scroll-driven enhancement automatically. No additional setup needed.
+
+---
+
+## Non-Hero Pages (transparent nav treatment)
+
+Pages without a full-screen hero (e.g. Privacy Policy, Contact) need a green gradient at the top so nav text is legible against the transparent header on load.
+
+**Pattern:** Add a `::before` pseudo-element to the page's main wrapper:
+
+```css
+.privacy-page {
+  position: relative;
+}
+
+.privacy-page::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 18rem;
+  background: linear-gradient(to bottom, var(--green-deep) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Lift content above the gradient */
+.privacy-page .container {
+  position: relative;
+  z-index: 1;
+}
+```
+
+**Top padding:** `12rem` on the page's main wrapper aligns the first content element with the same distance from the header as the blog listing hero (`9rem` hero padding + `3rem` container padding-top).
+
+---
+
+## Music Player Pill
+
+The music player hangs below the fixed header as a centred pill (`position: absolute; bottom: -22px; left: 50%`).
+
+**States:**
+- **Unscrolled:** fully transparent background, invisible border — blends into whatever hero is behind it
+- **Scrolled (`.scrolled` on `.site-header`):** semi-transparent dark green + `backdrop-filter: blur(12px)` — matches the header's frosted-glass treatment
+
+```css
+/* Base — transparent */
+.music-player {
+  background: transparent;
+  backdrop-filter: none;
+  border: 1px solid rgba(212, 160, 48, 0);
+  border-radius: 100px;
+}
+
+/* Scrolled — blur pill */
+.site-header.scrolled .music-player {
+  background: rgba(13, 31, 18, 0.6);
+  backdrop-filter: blur(12px);
+  border-color: rgba(212, 160, 48, 0.22);
+}
+```
+
+---
+
 ## Rules
 - Always use tokens — never hardcode hex values in page CSS
 - `.btn-outline` on dark backgrounds only; `.btn-outline-dark` on light backgrounds only
