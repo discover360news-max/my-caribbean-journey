@@ -639,39 +639,30 @@
 .stores-toggle {
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   background: none;
   border: none;
   padding: 0;
   cursor: pointer;
-  text-align: left;
+  text-align: center;
+  gap: 0.35rem;
 
   &[aria-expanded="true"] .stores-toggle-chevron {
     transform: rotate(180deg);
   }
 }
 
-.stores-toggle-left {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-}
-
 .stores-toggle-icon {
-  flex-shrink: 0;
-  width: 60px;
-  height: 60px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, var(--green-deep), var(--green-mid));
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--green-mid), var(--green-light));
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--gold);
-}
-
-.stores-toggle .section-label {
-  text-align: left;
+  margin-bottom: 0.75rem;
 }
 
 .stores-toggle-title {
@@ -680,13 +671,20 @@
   font-weight: 700;
   color: var(--green-deep);
   line-height: 1.2;
+  text-wrap: balance;
+}
+
+.stores-toggle-tip {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.1rem;
 }
 
 .stores-toggle-chevron {
-  width: 32px;
-  height: 32px;
-  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
   color: var(--green-mid);
+  margin-top: 0.5rem;
   transition: transform var(--transition);
 }
 
@@ -700,6 +698,7 @@
   max-width: 640px;
   margin-bottom: var(--space-lg);
   line-height: 1.7;
+  text-wrap: balance;
 }
 
 .stores-filters {
@@ -736,7 +735,8 @@
 .stores-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
+  gap: 2rem;
+  container-type: inline-size;
 }
 
 .stores-empty {
@@ -762,48 +762,113 @@
 
 /* --- Store Card --- */
 .store-card {
-  background: white;
+  background: var(--warm-white);
+  border: 1px solid rgba(212, 160, 48, 0.12);
   border-radius: var(--radius-lg);
-  padding: 1.75rem;
-  border: 1px solid rgba(26, 74, 46, 0.08);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  transition: transform var(--transition), box-shadow var(--transition);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(26, 74, 46, 0.15);
+  }
 }
 
-.store-card-nation {
+/* Gradient image area */
+.store-card-image {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(145deg, var(--green-deep) 0%, #0a2e15 60%, #1a3520 100%);
+  overflow: hidden;
+}
+
+/* Gradient overlay — lifts text off the background */
+.store-card-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.0) 0%,
+    rgba(0, 0, 0, 0.05) 30%,
+    rgba(13, 31, 18, 0.55) 60%,
+    rgba(13, 31, 18, 0.88) 100%
+  );
+  pointer-events: none;
+}
+
+/* Nation badge — top right */
+.store-card-nation-badge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 2;
   display: inline-block;
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.75rem;
+  font-size: 0.6rem;
   font-weight: 600;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  background: rgba(26, 74, 46, 0.08);
-  color: var(--green-mid);
-  width: fit-content;
-  margin-bottom: 0.25rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: rgba(232, 228, 220, 0.7);
+}
+
+/* Name + city overlay at bottom */
+.store-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.25rem 1.1rem 1rem;
+  z-index: 2;
 }
 
 .store-card-name {
   font-family: var(--font-display);
   font-size: 1.2rem;
   font-weight: 700;
-  color: var(--green-deep);
-  margin-bottom: 0.25rem;
+  line-height: 1.25;
+  color: var(--cream);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0 0 0.2rem;
+  text-wrap: balance;
+}
+
+.store-card-city {
+  font-size: 0.8rem;
+  color: rgba(232, 228, 220, 0.7);
+  margin: 0;
+}
+
+/* Body strip */
+.store-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.85rem 1.1rem 1rem;
+  border-top: 1px solid rgba(212, 160, 48, 0.1);
 }
 
 .store-card-address {
-  font-size: 0.9rem;
+  font-size: 0.82rem;
   color: var(--text-muted);
   line-height: 1.5;
+  margin: 0;
 }
 
 .store-card-detail {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
+  gap: 0.45rem;
+  font-size: 0.82rem;
   color: var(--text-muted);
   text-decoration: none;
   transition: color var(--transition);
@@ -814,25 +879,35 @@ a.store-card-detail:hover {
 }
 
 .store-card-detail svg {
-  width: 15px;
-  height: 15px;
+  width: 13px;
+  height: 13px;
   flex-shrink: 0;
   color: var(--green-mid);
 }
 
+/* Foot row: socials + directions — always locked to bottom */
+.store-card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 0.65rem;
+  border-top: 1px solid rgba(212, 160, 48, 0.08);
+}
+
 .store-card-socials {
   display: flex;
-  gap: 0.75rem;
-  margin-top: 0.5rem;
+  gap: 0.5rem;
 }
 
 .store-card-social {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
   background: rgba(26, 74, 46, 0.06);
   color: var(--green-mid);
   transition: background var(--transition), color var(--transition);
@@ -843,8 +918,28 @@ a.store-card-detail:hover {
   }
 
   svg {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.store-card-directions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--green-mid);
+  white-space: nowrap;
+  margin-left: auto;
+  transition: color var(--transition);
+
+  &:hover { color: var(--gold); }
+
+  svg {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
   }
 }
 

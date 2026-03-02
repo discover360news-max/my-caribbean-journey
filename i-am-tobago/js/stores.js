@@ -37,6 +37,7 @@
     phone:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>',
     globe:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20A14.5 14.5 0 0 0 12 2"/><path d="M2 12h20"/></svg>',
     clock:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>',
+    map:     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>',
     instagram: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>',
     facebook:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>'
   };
@@ -80,21 +81,30 @@
       var nation = getNation(store.nation);
       html += '<div class="store-card">';
 
-      // Nation badge
+      // --- Image / gradient area ---
+      html += '<div class="store-card-image">';
+
+      // Nation badge — top right
       if (nation) {
-        html += '<span class="store-card-nation">' + nation.flag + ' ' + nation.label + '</span>';
+        html += '<span class="store-card-nation-badge">' + nation.flag + ' ' + nation.label + '</span>';
       }
 
-      // Name
+      // Name + city overlay at bottom
+      html += '<div class="store-card-overlay">';
       html += '<h3 class="store-card-name">' + store.name + '</h3>';
+      if (store.city) {
+        html += '<p class="store-card-city">' + store.city + '</p>';
+      }
+      html += '</div>'; // .store-card-overlay
 
-      // Address
-      if (store.address || store.city) {
-        html += '<p class="store-card-address">';
-        if (store.address) html += store.address;
-        if (store.address && store.city) html += '<br>';
-        if (store.city) html += store.city;
-        html += '</p>';
+      html += '</div>'; // .store-card-image
+
+      // --- Body strip ---
+      html += '<div class="store-card-body">';
+
+      // Address (without city — city is in overlay)
+      if (store.address) {
+        html += '<p class="store-card-address">' + store.address + '</p>';
       }
 
       // Phone
@@ -116,19 +126,35 @@
           ICONS.clock + store.hours + '</p>';
       }
 
-      // Socials
-      if (store.instagram || store.facebook) {
-        html += '<div class="store-card-socials">';
-        if (store.instagram) {
-          html += '<a class="store-card-social" href="' + store.instagram + '" target="_blank" rel="noopener noreferrer" aria-label="Instagram">' + ICONS.instagram + '</a>';
+      // Foot row: socials + Get Directions
+      var hasSocials = store.instagram || store.facebook;
+      var hasDirections = store.plusCode;
+      if (hasSocials || hasDirections) {
+        html += '<div class="store-card-foot">';
+
+        if (hasSocials) {
+          html += '<div class="store-card-socials">';
+          if (store.instagram) {
+            html += '<a class="store-card-social" href="' + store.instagram + '" target="_blank" rel="noopener noreferrer" aria-label="Instagram">' + ICONS.instagram + '</a>';
+          }
+          if (store.facebook) {
+            html += '<a class="store-card-social" href="' + store.facebook + '" target="_blank" rel="noopener noreferrer" aria-label="Facebook">' + ICONS.facebook + '</a>';
+          }
+          html += '</div>';
         }
-        if (store.facebook) {
-          html += '<a class="store-card-social" href="' + store.facebook + '" target="_blank" rel="noopener noreferrer" aria-label="Facebook">' + ICONS.facebook + '</a>';
+
+        if (hasDirections) {
+          var mapsUrl = 'https://maps.google.com/?q=' + encodeURIComponent(store.plusCode);
+          html += '<a class="store-card-directions" href="' + mapsUrl + '" target="_blank" rel="noopener noreferrer">' +
+            ICONS.map + 'Get Directions</a>';
         }
-        html += '</div>';
+
+        html += '</div>'; // .store-card-foot
       }
 
-      html += '</div>';
+      html += '</div>'; // .store-card-body
+
+      html += '</div>'; // .store-card
     });
 
     gridEl.innerHTML = html;

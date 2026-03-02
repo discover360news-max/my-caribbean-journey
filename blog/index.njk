@@ -19,7 +19,7 @@ permalink: /blog/
 // Word pool baked in at build time from post titles + tags.
 // Regenerates automatically on every deploy (including new posts).
 (function () {
-  if (window.innerWidth < 768) return;
+  var isMobile = window.innerWidth < 768;
 
   var raw = [
     {%- for post in posts -%}
@@ -46,10 +46,10 @@ permalink: /blog/
   if (words.length < 4) return;
 
   var hero   = document.querySelector('.blog-hero');
-  var SLOTS  = 10;   // concurrent words on screen
-  var SPEED  = [70, 130];   // ms per character
-  var HOLD   = [2500, 5000]; // ms to hold after typing finishes
-  var FADE   = 700;          // ms fade-out
+  var SLOTS  = isMobile ? 6 : 10;   // fewer concurrent words on mobile
+  var SPEED  = [70, 130];
+  var HOLD   = [2500, 5000];
+  var FADE   = 700;
 
   function rand(a, b)    { return Math.random() * (b - a) + a; }
   function randInt(a, b) { return Math.floor(rand(a, b)); }
@@ -57,10 +57,10 @@ permalink: /blog/
 
   function run(el, delay) {
     setTimeout(function () {
-      // Random position — keep away from the left 40% where text lives
-      el.style.left      = rand(42, 88) + '%';
+      // On mobile text is centred so spread words across the full width
+      el.style.left      = isMobile ? rand(5, 88) + '%' : rand(42, 88) + '%';
       el.style.top       = rand(12, 78) + '%';
-      el.style.fontSize  = rand(0.7, 1.15) + 'rem';
+      el.style.fontSize  = isMobile ? rand(0.55, 0.85) + 'rem' : rand(0.7, 1.15) + 'rem';
       el.style.transform = 'rotate(' + rand(-10, 10) + 'deg)';
       el.style.opacity   = rand(0.12, 0.22);
       el.textContent     = '';
@@ -247,32 +247,42 @@ permalink: /blog/
     if (featured) featured.classList.toggle('filter-active', !!activeValue);
   }
 
-  // Build category chips
-  if (categories.length) {
-    var catSep = document.createElement('span');
-    catSep.className = 'filter-section-label';
-    catSep.textContent = 'Category';
-    container.appendChild(catSep);
-    categories.forEach(function (cat) {
-      container.appendChild(buildChip(cat, CATEGORY_LABELS[cat] || cat, 'category'));
-    });
+  function buildGroup(labelText, chips) {
+    var group = document.createElement('div');
+    group.className = 'filter-group';
+    var lbl = document.createElement('span');
+    lbl.className = 'filter-section-label';
+    lbl.textContent = labelText;
+    group.appendChild(lbl);
+    var row = document.createElement('div');
+    row.className = 'filter-chip-row';
+    chips.forEach(function (chip) { row.appendChild(chip); });
+    group.appendChild(row);
+    return group;
   }
 
-  // Build tag chips
-  if (tags.length && categories.length) {
-    var rowBreak = document.createElement('div');
-    rowBreak.className = 'filter-row-break';
-    container.appendChild(rowBreak);
-  }
-  if (tags.length) {
-    var tagSep = document.createElement('span');
-    tagSep.className = 'filter-section-label';
-    tagSep.textContent = 'Tags';
-    container.appendChild(tagSep);
-    tags.forEach(function (tag) {
-      var label = tag.charAt(0).toUpperCase() + tag.slice(1);
-      container.appendChild(buildChip(tag, label, 'tag'));
+  // Build category group
+  if (categories.length) {
+    var catChips = categories.map(function (cat) {
+      return buildChip(cat, CATEGORY_LABELS[cat] || cat, 'category');
     });
+    container.appendChild(buildGroup('Category', catChips));
+  }
+
+  // Divider between groups
+  if (categories.length && tags.length) {
+    var divider = document.createElement('div');
+    divider.className = 'filter-divider';
+    container.appendChild(divider);
+  }
+
+  // Build tag group
+  if (tags.length) {
+    var tagChips = tags.map(function (tag) {
+      var label = tag.charAt(0).toUpperCase() + tag.slice(1);
+      return buildChip(tag, label, 'tag');
+    });
+    container.appendChild(buildGroup('Tags', tagChips));
   }
 
   filterBar.removeAttribute('hidden');

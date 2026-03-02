@@ -366,9 +366,17 @@
 
 .filter-chips {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1.25rem;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  width: 100%;
 }
 
 .filter-section-label {
@@ -377,26 +385,19 @@
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--text-muted);
-  flex-shrink: 0;
 }
 
-.filter-section-label:not(:first-child) {
-  margin-left: 0.5rem;
-  padding-left: 0.75rem;
-  border-left: 1px solid rgba(255, 255, 255, 0.15);
+.filter-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
-/* Tags label starts a new row — no left separator needed */
-.filter-row-break + .filter-section-label {
-  margin-left: 0;
-  padding-left: 0;
-  border-left: none;
-}
-
-.filter-row-break {
+.filter-divider {
   width: 100%;
-  height: 0;
-  margin-bottom: 0.5rem;
+  height: 1px;
+  background: rgba(212, 160, 48, 0.15);
 }
 
 .filter-chip {
@@ -1312,15 +1313,32 @@
 
 @media (max-width: 640px) {
   .blog-hero {
-    padding: 9rem 0 6rem;
+    padding: 8rem 0 8rem;
   }
 
-  .blog-posts {
-    padding: var(--space-lg) 0;
+  .blog-posts .container {
+    margin-top: -5rem;
   }
 
   .post-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Featured card loses the landscape ratio on mobile — square matches the rest */
+  .post-card.is-featured .post-card-image {
+    aspect-ratio: 1 / 1;
+  }
+
+  .post-card.is-featured .post-card-overlay {
+    padding: 1.25rem 1.1rem 1rem;
+  }
+
+  .post-card.is-featured .post-card-overlay .post-card-title {
+    font-size: 1.2rem;
+  }
+
+  .post-card.is-featured .post-card-body {
+    padding: 0.75rem 1.1rem;
   }
 
   .blog-post .post-header {

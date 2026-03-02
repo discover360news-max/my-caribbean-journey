@@ -211,10 +211,12 @@
     // Bottom footer (centered, text only)
     resultsFooter.classList.add('is-active');
     resultsFooter.innerHTML =
-      '<span class="guide-results-footer-count">' + countLabel + '</span>' +
-      (chips ? '<span class="guide-results-bar-sep">·</span>' + chips : '') +
-      '<span class="guide-results-bar-sep">·</span>' +
-      '<button class="guide-clear-btn-text" id="guide-clear-btn-footer" type="button">Clear filters</button>';
+      '<div class="guide-results-footer-inner">' +
+        '<span class="guide-results-footer-count">' + countLabel + '</span>' +
+        (chips ? '<span class="guide-results-bar-sep">·</span>' + chips : '') +
+        '<span class="guide-results-bar-sep">·</span>' +
+        '<button class="guide-clear-btn-text" id="guide-clear-btn-footer" type="button">Clear filters</button>' +
+      '</div>';
     document.getElementById('guide-clear-btn-footer').addEventListener('click', clearAllFilters);
   }
 
