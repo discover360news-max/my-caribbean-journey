@@ -29,9 +29,15 @@
 
   var pinSvg = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>';
 
-  function locationHtml(area) {
-    if (!area) return '';
-    var label = AREA_LABELS[area] || area;
+  function locationHtml(link) {
+    if (!link.area) return '';
+    var label = AREA_LABELS[link.area] || link.area;
+    if (link.plusCode) {
+      var mapsUrl = 'https://maps.google.com/?q=' + encodeURIComponent(link.plusCode);
+      return '<button class="guide-card-directions" type="button" data-maps-url="' + mapsUrl + '">' +
+        pinSvg + 'Get Directions' +
+      '</button>';
+    }
     return '<span class="guide-card-location">' + pinSvg + label + '</span>';
   }
 
@@ -396,44 +402,52 @@
 
       items.forEach(function (link) {
         var featuredClass = link.featured ? ' featured' : '';
-        var imageHtml = link.image
-          ? '<img src="/my-tobago-guide/' + link.image + '" class="guide-card-image" alt="' + link.title + '" loading="lazy">'
-          : '';
-        var bodyClass = link.image ? ' has-image' : '';
+
+        // "..." link — span for <a> cards (whole card is link), <a> for <div> embedPage cards
+        var moreLinkHtml = link.embedPage
+          ? '<a class="guide-card-more-link" href="' + (link.url || '#') + '" target="_blank" rel="noopener noreferrer">…</a>'
+          : '<span class="guide-card-more-link">…</span>';
+
+        var footerHtml = link.embedPage
+          ? locationHtml(link) +
+            '<div class="guide-card-actions">' +
+              '<a class="guide-card-action-link" href="' + (link.url || '#') + '" target="_blank" rel="noopener noreferrer">Visit ' + arrowSvg + '</a>' +
+              '<a class="guide-card-action-link" href="' + (link.embedPage || link.url || '#') + '" target="_blank" rel="noopener noreferrer">Stream ' + arrowSvg + '</a>' +
+            '</div>'
+          : locationHtml(link) + '<span class="guide-card-link">Visit' + arrowSvg + '</span>';
+
+        var innerHtml;
+        if (link.image) {
+          // IMAGE CARD: all content in overlay, image fills the card
+          innerHtml =
+            '<div class="guide-card-img-area">' +
+              '<img src="/my-tobago-guide/' + link.image + '" class="guide-card-image" alt="' + link.title + '" loading="lazy">' +
+              '<div class="guide-card-img-overlay">' +
+                '<h3 class="guide-card-title">' + link.title + '</h3>' +
+                '<p class="guide-card-description">' + link.description + '</p>' +
+                moreLinkHtml +
+                '<div class="guide-card-footer">' + footerHtml + '</div>' +
+              '</div>' +
+            '</div>' +
+            heartBtn(link.url) +
+            catIconBadge(cat.id);
+        } else {
+          // NO-IMAGE CARD: content in body
+          innerHtml =
+            heartBtn(link.url) +
+            catIconBadge(cat.id) +
+            '<div class="guide-card-body">' +
+              '<h3 class="guide-card-title">' + link.title + '</h3>' +
+              '<p class="guide-card-description">' + link.description + '</p>' +
+              moreLinkHtml +
+              '<div class="guide-card-footer">' + footerHtml + '</div>' +
+            '</div>';
+        }
 
         if (link.embedPage) {
-          html += '<div class="guide-card' + featuredClass + '">' +
-            imageHtml +
-            heartBtn(link.url) +
-            catIconBadge(cat.id) +
-            '<div class="guide-card-body' + bodyClass + '">' +
-              '<h3 class="guide-card-title">' + link.title + '</h3>' +
-              '<p class="guide-card-description">' + link.description + '</p>' +
-              '<button class="guide-card-more" type="button">More info</button>' +
-              '<div class="guide-card-footer">' +
-                locationHtml(link.area) +
-                '<div class="guide-card-actions">' +
-                  '<a class="guide-card-action-link" href="' + (link.url || '#') + '" target="_blank" rel="noopener noreferrer">Visit ' + arrowSvg + '</a>' +
-                  '<a class="guide-card-action-link" href="' + (link.embedPage || link.url || '#') + '" target="_blank" rel="noopener noreferrer">Stream ' + arrowSvg + '</a>' +
-                '</div>' +
-              '</div>' +
-            '</div>' +
-          '</div>';
+          html += '<div class="guide-card' + featuredClass + '">' + innerHtml + '</div>';
         } else {
-          html += '<a href="' + link.url + '" class="guide-card' + featuredClass + '" target="_blank" rel="noopener noreferrer">' +
-            imageHtml +
-            heartBtn(link.url) +
-            catIconBadge(cat.id) +
-            '<div class="guide-card-body' + bodyClass + '">' +
-              '<h3 class="guide-card-title">' + link.title + '</h3>' +
-              '<p class="guide-card-description">' + link.description + '</p>' +
-              '<button class="guide-card-more" type="button">More info</button>' +
-              '<div class="guide-card-footer">' +
-                locationHtml(link.area) +
-                '<span class="guide-card-link">Visit' + arrowSvg + '</span>' +
-              '</div>' +
-            '</div>' +
-          '</a>';
+          html += '<a href="' + link.url + '" class="guide-card' + featuredClass + '" target="_blank" rel="noopener noreferrer">' + innerHtml + '</a>';
         }
       });
 
@@ -447,24 +461,23 @@
     renderResultsBar(filtered.length);
     updateCategoryCardCounts();
 
-    // Hide "More info" buttons on descriptions that aren't actually truncated
+    // Show the "…" link only when the description is actually truncated
     grid.querySelectorAll('.guide-card-description').forEach(function (desc) {
-      var more = desc.nextElementSibling;
-      if (more && more.classList.contains('guide-card-more')) {
-        more.style.display = desc.scrollHeight <= desc.clientHeight + 2 ? 'none' : '';
+      var moreLink = desc.nextElementSibling;
+      if (moreLink && moreLink.classList.contains('guide-card-more-link')) {
+        moreLink.style.display = desc.scrollHeight <= desc.clientHeight + 2 ? 'none' : '';
       }
     });
   }
 
-  // --- "More info" expand/collapse delegation ---
+  // --- Get Directions delegation (opens Google Maps via Plus Code) ---
   grid.addEventListener('click', function (e) {
-    var btn = e.target.closest('.guide-card-more');
+    var btn = e.target.closest('.guide-card-directions');
     if (!btn) return;
     e.preventDefault();
     e.stopPropagation();
-    var desc = btn.previousElementSibling;
-    var expanded = desc.classList.toggle('is-expanded');
-    btn.textContent = expanded ? 'Less' : 'More info';
+    var url = btn.getAttribute('data-maps-url');
+    if (url) window.open(url, '_blank', 'noopener,noreferrer');
   });
 
   // --- Heart button delegation (works after every re-render) ---

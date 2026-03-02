@@ -81,6 +81,7 @@
   line-height: 1.8;
   max-width: 550px;
   margin: 0 auto;
+  text-wrap: balance;
 }
 
 /* --- Mobile Search Trigger (inside hero, hidden on desktop) --- */
@@ -584,7 +585,7 @@ body.guide-tray-closing .guide-tray-backdrop {
   position: relative;
   background: white;
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(26, 74, 46, 0.08);
+  border: 1px solid rgba(212, 160, 48, 0.12);
   transition: transform var(--transition), box-shadow var(--transition);
   display: flex;
   flex-direction: column;
@@ -594,7 +595,7 @@ body.guide-tray-closing .guide-tray-backdrop {
 
   &:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(26, 74, 46, 0.1);
+    box-shadow: 0 16px 48px rgba(26, 74, 46, 0.15);
 
     .guide-card-link {
       color: var(--gold);
@@ -608,13 +609,86 @@ body.guide-tray-closing .guide-tray-backdrop {
   }
 }
 
+/* --- Card image wrapper (overlay-capable) --- */
+.guide-card-img-area {
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  aspect-ratio: 3 / 4;
+}
+
+/* Stronger gradient — supports description text in overlay */
+.guide-card-img-area::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.0) 0%,
+    rgba(0, 0, 0, 0.05) 20%,
+    rgba(13, 31, 18, 0.45) 50%,
+    rgba(13, 31, 18, 0.9) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* All content overlaid — fills image area, pushes text to bottom */
+.guide-card-img-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.1rem 1.1rem 0.9rem;
+  z-index: 2;
+}
+
+.guide-card-img-overlay .guide-card-title {
+  color: var(--cream);
+  font-size: 1.1rem;
+  margin: 0 0 0.35rem;
+  text-wrap: balance;
+}
+
+.guide-card-img-overlay .guide-card-description {
+  color: rgba(232, 228, 220, 0.82);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  margin: 0 0 0.35rem;
+  -webkit-line-clamp: 3;
+}
+
+.guide-card-img-overlay .guide-card-footer {
+  margin-top: 0;
+  border-color: rgba(255, 255, 255, 0.15);
+  padding-top: 0.65rem;
+}
+
+.guide-card-img-overlay .guide-card-location,
+.guide-card-img-overlay .guide-card-directions {
+  color: rgba(232, 228, 220, 0.7);
+}
+
+.guide-card-img-overlay .guide-card-location svg,
+.guide-card-img-overlay .guide-card-directions svg {
+  color: rgba(232, 228, 220, 0.6);
+}
+
+.guide-card-img-overlay .guide-card-link {
+  color: rgba(232, 228, 220, 0.7);
+}
+
+.guide-card:hover .guide-card-img-overlay .guide-card-link {
+  color: var(--gold);
+}
+
 /* --- Card image banner --- */
 .guide-card-image {
   width: 100%;
-  height: 180px;
+  height: 100%;
   object-fit: cover;
   display: block;
-  flex-shrink: 0;
 }
 
 /* --- Card body (wraps text content) --- */
@@ -644,18 +718,8 @@ body.guide-tray-closing .guide-tray-backdrop {
   flex-shrink: 0;
 }
 
-/* When card has an image — badge straddles the image/body boundary */
-.guide-card:has(.guide-card-image) .guide-card-cat-icon {
-  top: calc(180px - 24px);
-}
-
-/* Extra top padding on card body to clear the overlapping badge */
-.guide-card:has(.guide-card-image) .guide-card-body {
-  padding-top: 2.25rem;
-}
-
 /* No-image cards: push content below the icon badge (top: 1.25rem + 48px height + gap) */
-.guide-card:not(:has(.guide-card-image)) .guide-card-body {
+.guide-card:not(:has(.guide-card-img-area)) .guide-card-body {
   padding-top: 5rem;
 }
 
@@ -697,7 +761,7 @@ body.guide-tray-closing .guide-tray-backdrop {
 }
 
 /* Heart sits in image corner when a photo is present */
-.guide-card:has(.guide-card-image) .guide-card-heart {
+.guide-card:has(.guide-card-img-area) .guide-card-heart {
   top: 0.75rem;
   right: 0.75rem;
 }
@@ -755,23 +819,22 @@ body.guide-tray-closing .guide-tray-backdrop {
   }
 }
 
-/* "More info" expand toggle */
-.guide-card-more {
-  display: inline-block;
-  background: none;
-  border: none;
+/* "…" link shown when description is truncated */
+.guide-card-more-link {
+  display: none; /* shown by JS when description overflows */
   font-family: var(--font-body);
   font-size: 0.8rem;
   font-weight: 600;
-  color: var(--green-mid);
+  color: var(--gold);
+  text-decoration: none;
   cursor: pointer;
+  margin-bottom: 0.5rem;
+  background: none;
+  border: none;
   padding: 0;
-  margin-bottom: 1rem;
-  text-decoration: underline;
-  text-underline-offset: 2px;
   transition: color var(--transition);
 
-  &:hover { color: var(--gold); }
+  &:hover { color: var(--gold-light); }
 }
 
 /* --- Card footer (location + visit link row) --- */
@@ -799,6 +862,36 @@ body.guide-tray-closing .guide-tray-backdrop {
 .guide-card-location svg {
   color: var(--green-mid);
   flex-shrink: 0;
+}
+
+/* Get Directions button (shown when plusCode is set on a listing) */
+.guide-card-directions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--green-mid);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: color var(--transition);
+
+  &:hover { color: var(--gold); }
+
+  svg {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    color: var(--green-mid);
+    transition: color var(--transition);
+  }
+
+  &:hover svg { color: var(--gold); }
 }
 
 .guide-card-link {

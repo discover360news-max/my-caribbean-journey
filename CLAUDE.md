@@ -164,6 +164,7 @@ Edit `/my-tobago-guide/js/guide-data.js` — add an object to the `links` array:
   image: 'images/photo.jpg',    // optional: path relative to /my-tobago-guide/
   embedPage: 'https://...',     // optional: adds Visit + Stream buttons
   live: true,                   // optional: false = hidden from directory
+  plusCode: '3HGQ+P8 Scarborough, Tobago',  // optional: Google Plus Code — enables "Get Directions" link in card footer
   tags: ['synonym', 'local term', 'vibe', 'activity type']  // optional: hidden search keywords
 }
 ```

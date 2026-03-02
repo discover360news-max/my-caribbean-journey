@@ -12,6 +12,9 @@
 //   image       (optional) Path relative to /my-tobago-guide/ e.g. 'images/this-bago-girl.jpg'
 //   embedPage   (optional) Secondary stream/embed URL (adds Visit + Stream buttons)
 //   live        (optional) false = hidden from directory
+//   plusCode    (optional) Google Plus Code for this location — enables a "Get Directions" link.
+//               Find a Plus Code at plus.codes or Google Maps (right-click a location → copy Plus Code).
+//               Example: plusCode: '3HGQ+P8 Scarborough, Tobago'
 //   tags        (optional) Array of hidden search keywords — synonyms, local terms, vibes, activity types.
 //               Use lowercase strings. These are never shown on the card.
 //               Example: tags: ['roti', 'curry', 'street food', 'cheap eats', 'vegetarian friendly']
@@ -87,6 +90,7 @@ var GUIDE_DATA = {
       url: 'https://www.facebook.com/shorethingstobago',
       category: 'food-recipes',
       area: 'speyside',
+      plusCode: '568V+67J Lambeau, Trinidad and Tobago',
       featured: false,
       tags: [
         'cafe', 'lunch', 'desserts', 'seaside', 'craft', 'shop', 'gifts', 'souvenirs',
@@ -100,6 +104,7 @@ var GUIDE_DATA = {
       url: 'https://www.facebook.com/tobagochocolatedelights/',
       category: 'food-recipes',
       area: 'scarborough',
+      plusCode: '568V+67J Lambeau, Trinidad and Tobago',
       featured: true,
       tags: [
         'chocolate', 'artisan chocolate', 'bean to bar', 'craft chocolate', 'cacao', 'cocoa',
@@ -112,12 +117,13 @@ var GUIDE_DATA = {
       description: 'Delicious homemade treats and baked goods from a local Tobagonian family. A sweet taste of home.',
       url: 'https://kerrysniceandsweettreats.com/',
       category: 'food-recipes',
-      area: 'island-wide',
+      area: 'Whim Estate',
+      plusCode: '57W3+HG5 Orange Hill, Trinidad and Tobago',
       featured: false,
       tags: [
         'baked goods', 'homemade', 'sweets', 'treats', 'cakes', 'pastries', 'desserts',
         'local', 'family business', 'sweet bread', 'black cake', 'sorrel', 'pone',
-        'kurma', 'sugar cake', 'toolum', 'local sweets', 'tobagonian'
+        'kurma', 'sugar cake', 'toolum', 'local sweets', 'tobagonian', 'whim estate', 'catering'
       ]
     },
     {
@@ -126,6 +132,7 @@ var GUIDE_DATA = {
       url: 'https://www.tripadvisor.com/Restaurant_Review-g147393-d4887660-Reviews-Rena_Chatack_Roti_Shop-Scarborough_Tobago_Trinidad_and_Tobago.html',
       category: 'food-recipes',
       area: 'scarborough',
+      plusCode: '57M5+4QQ, Scarborough, Trinidad & Tobago',
       featured: false,
       tags: [
         'roti', 'curry', 'chickpea', 'potato', 'local food', 'street food', 'affordable',
@@ -139,6 +146,7 @@ var GUIDE_DATA = {
       url: 'https://www.tripadvisor.com/Restaurant_Review-g1463485-d4052249-Reviews-Sharon_and_Phebe_s-Charlotteville_Tobago_Trinidad_and_Tobago.html',
       category: 'food-recipes',
       area: 'charlotteville',
+      plusCode: '8FC2+M56, Charlotteville, Trinidad & Tobago',
       featured: false,
       tags: [
         'restaurant', 'dining', 'local food', 'charlotteville', 'recommended', 'authentic',
@@ -156,6 +164,7 @@ var GUIDE_DATA = {
       url: 'http://www.storebay.tt/',
       category: 'beaches-nature',
       area: 'crown-point',
+      plusCode: '5546+94J Crown Point, Trinidad and Tobago',
       featured: false,
       tags: [
         'beach', 'swimming', 'sunbathing', 'clear water', 'calm sea', 'family friendly',
@@ -170,6 +179,7 @@ var GUIDE_DATA = {
       url: 'http://www.pigeonpoint.tt/',
       category: 'beaches-nature',
       area: 'crown-point',
+      plusCode: '55C6+R82 Crown Point, Trinidad and Tobago',
       featured: true,
       tags: [
         'beach', 'heritage', 'park', 'pier', 'thatched roof', 'iconic', 'photography',
@@ -183,7 +193,8 @@ var GUIDE_DATA = {
       description: 'A hidden gem tucked in the hills — hike trails, a natural spring path, waterfall, fruit trees, and stunning views. Watch hummingbirds feed up close and spot parrots in the wild. Local food on site including pelau and fish, plus homemade desserts.',
       url: 'https://www.tripadvisor.com/Attraction_Review-g147392-d12918544-Reviews-Shurland_Nature_Park-Tobago_Trinidad_and_Tobago.html',
       category: 'beaches-nature',
-      area: 'scarborough',
+      area: 'roxborough',
+      plusCode: '79PF+9FX Anse Fourmi, Trinidad and Tobago',
       featured: false,
       tags: [
         'nature', 'hiking', 'hike', 'trails', 'walking', 'scenic', 'views', 'viewpoint',
@@ -199,7 +210,8 @@ var GUIDE_DATA = {
       description: 'A local wildlife area with diverse flora and fauna.',
       url: 'https://tobagowildlife.org/',
       category: 'beaches-nature',
-      area: 'scarborough',
+      area: 'Mason Hall',
+      plusCode: '672W+P2G Mason Hall, Trinidad and Tobago',
       featured: false,
       tags: [
         'wildlife', 'birdwatching', 'birding', 'nature', 'hiking', 'outdoors',
@@ -277,6 +289,7 @@ var GUIDE_DATA = {
       url: 'https://castararetreats.com/',
       category: 'accommodation',
       area: 'castara',
+      plusCode: '78H3+6HW, Castara Retreats, North Side Road, Castara, Trinidad & Tobago',
       featured: false,
       tags: [
         'castara', 'retreat', 'eco', 'eco friendly', 'sustainable', 'nature', 'secluded',
@@ -291,6 +304,7 @@ var GUIDE_DATA = {
       url: 'https://kariwak.com/',
       category: 'accommodation',
       area: 'crown-point',
+      plusCode: '5537+66 Crown Point, Trinidad and Tobago',
       featured: false,
       tags: [
         'holistic', 'wellness', 'spa', 'yoga', 'organic', 'garden', 'restaurant',
@@ -308,6 +322,7 @@ var GUIDE_DATA = {
       url: 'https://www.facebook.com/profile.php?id=100076162752587',
       category: 'activities-tours',
       area: 'island-wide',
+      plusCode: '558G+M2W, Buccoo, Trinidad & Tobago',
       featured: true,
       tags: [
         'tours', 'car rental', 'vehicle rental', 'guided tour', 'island tour', 'transfers',
@@ -356,6 +371,7 @@ var GUIDE_DATA = {
       url: 'https://tntairports.com/anr-robinson-international-airport/',
       category: 'practical-info',
       area: 'crown-point',
+      plusCode: '5526+X24, Crown Point, Trinidad & Tobago',
       featured: false,
       tags: [
         'airport', 'flights', 'arrivals', 'departures', 'ANR', 'crown point', 'fly',
