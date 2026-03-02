@@ -76,7 +76,7 @@ var GUIDE_DATA = {
       category: 'food-recipes',
       area: 'island-wide',
       featured: true,
-      image: '../images/hero/heritage-festival.jpg', // TEMP — replace with real card photo
+      image: 'images/this-bago-girl.webp',
       tags: [
         'recipes', 'cooking', 'local food', 'tobagonian cuisine', 'food culture', 'home cooking',
         'blog', 'crab and dumpling', 'pelau', 'callaloo', 'provisions', 'creole', 'traditional',
@@ -137,6 +137,7 @@ var GUIDE_DATA = {
       area: 'scarborough',
       plusCode: '57M5+4QQ, Scarborough, Trinidad & Tobago',
       featured: false,
+      image: 'images/renas-roti-shop.webp',
       tags: [
         'roti', 'curry', 'chickpea', 'potato', 'local food', 'street food', 'affordable',
         'budget', 'cheap eats', 'trini food', 'trinidadian', 'indian', 'wrap', 'dhalpuri',
