@@ -48,11 +48,11 @@ The evidence does not settle neatly into a single narrative.
 
 ## Cultural Layering Before Contact
 
-It is important to note that the Suazoid culture did not emerge in isolation. Tobago had been inhabited for centuries before this period, including earlier Saladoid (c. 500 BCE–AD 600) and Troumassoid (c. AD 600–1200) communities whose ceramic traditions and settlement patterns shaped the island long before AD 1100. The Suazoid phase, dated roughly between AD 1100 and 1400, emerged from those earlier traditions and became a visibly enduring cultural presence in the centuries before European contact, even as other communities continued to exist on the island.
+It is important to note that the Suazoid culture did not emerge in isolation. Tobago had been inhabited for centuries before this period, including earlier Saladoid (c. 500 BCE–AD 600) and Troumassoid (c. AD 600 – 1200) communities whose ceramic traditions and settlement patterns shaped the island long before AD 1100. The Suazoid phase, dated roughly between AD 1100 and 1400, emerged from those earlier traditions and became a visibly enduring cultural presence in the centuries before European contact, even as other communities continued to exist on the island.
 
 Over time, distinctive [Suazey]( https://www.bowers.org/index.php/collections-blog/preserved-in-pottery-ceramics-of-the-taino) pottery styles transitioned into forms that would later influence [Caribbean](http://www.interpretingceramics.com/issue010/articles/05.htm) folk pottery, reflecting a movement away from ornate ceremonial display toward practical vessel forms suited to marine subsistence and inter-island exchange, long before colonial interruption.
 
-#### *But what scholars label as a “tradition” was once simply LIFE.*
+#### *But what scholars label as a “tradition” was once simply — LIFE.*
 
 It was the hands that shaped clay, the fires that hardened it, the villages that ate from it, and the communities that defended it.
 
