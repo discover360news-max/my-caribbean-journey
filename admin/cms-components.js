@@ -27,13 +27,13 @@ CMS.registerEditorComponent({
       name: 'headers',
       label: 'Column Headers',
       widget: 'string',
-      hint: 'Separate with commas — e.g.  Island, Capital, Population'
+      hint: 'Separate with pipes — e.g.  Island | Capital | Population'
     },
     {
       name: 'rows',
       label: 'Rows',
       widget: 'text',
-      hint: 'One row per line, columns separated by commas:\nTobago, Scarborough, 60,000\nTrinidad, Port of Spain, 1,300,000'
+      hint: 'One row per line, columns separated by pipes:\nTobago | Scarborough | 60,000\nTrinidad | Port of Spain | 1,300,000'
     }
   ],
 
@@ -52,7 +52,7 @@ CMS.registerEditorComponent({
       .replace(/^\| /, '').replace(/ \|$/, '')
       .split(' | ')
       .map(function (h) { return h.trim(); })
-      .join(', ');
+      .join(' | ');
 
     var dataLines = lines.slice(2);
     var rows = dataLines.map(function (line) {
@@ -60,21 +60,21 @@ CMS.registerEditorComponent({
         .replace(/^\| /, '').replace(/ \|$/, '')
         .split(' | ')
         .map(function (c) { return c.trim(); })
-        .join(', ');
+        .join(' | ');
     }).join('\n');
 
     return { caption: caption, headers: headers, rows: rows };
   },
 
   toBlock: function (data) {
-    var headers = (data.headers || 'Column 1, Column 2')
-      .split(',').map(function (h) { return h.trim(); });
+    var headers = (data.headers || 'Column 1 | Column 2')
+      .split('|').map(function (h) { return h.trim(); });
     var sep = headers.map(function () { return ' --- '; });
 
     var rows = (data.rows || '').split('\n')
       .filter(function (r) { return r.trim(); })
       .map(function (row) {
-        var cells = row.split(',').map(function (c) { return c.trim(); });
+        var cells = row.split('|').map(function (c) { return c.trim(); });
         while (cells.length < headers.length) cells.push('');
         return '| ' + cells.slice(0, headers.length).join(' | ') + ' |';
       });
@@ -89,12 +89,12 @@ CMS.registerEditorComponent({
 
   // Rendered preview shown in the CMS split-view panel
   toPreview: function (data) {
-    var headers = (data.headers || 'Column 1, Column 2')
-      .split(',').map(function (h) { return h.trim(); });
+    var headers = (data.headers || 'Column 1 | Column 2')
+      .split('|').map(function (h) { return h.trim(); });
     var rows = (data.rows || '').split('\n')
       .filter(function (r) { return r.trim(); })
       .map(function (row) {
-        return row.split(',').map(function (c) { return c.trim(); });
+        return row.split('|').map(function (c) { return c.trim(); });
       });
 
     var wrapStyle = [
