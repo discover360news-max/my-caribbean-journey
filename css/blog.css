@@ -737,6 +737,7 @@
   font-size: 1.075rem;
   line-height: 1.85;
   color: var(--text-dark);
+  text-wrap: pretty;
 }
 
 /* Opening paragraph — slightly larger */
