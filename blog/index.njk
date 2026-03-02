@@ -103,39 +103,42 @@ permalink: /blog/
   <div class="container">
 
     {% if posts.length %}
-    <div class="post-filters" id="post-filters" hidden>
-      <div class="filter-chips" id="filter-chips"></div>
-    </div>
+    <a href="#filters" class="filter-pill" id="filter-pill-link" hidden>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" x2="4" y1="21" y2="14"/><line x1="4" x2="4" y1="10" y2="3"/><line x1="12" x2="12" y1="21" y2="12"/><line x1="12" x2="12" y1="8" y2="3"/><line x1="20" x2="20" y1="21" y2="16"/><line x1="20" x2="20" y1="12" y2="3"/><line x1="1" x2="7" y1="14" y2="14"/><line x1="9" x2="15" y1="12" y2="12"/><line x1="17" x2="23" y1="16" y2="16"/></svg>
+      Filter
+    </a>
     <div class="post-grid" id="post-grid">
       {% for post in posts %}
-      <article class="post-card{% if post.data.featuredImage %} has-image{% endif %}{% if post.data.featured %} is-featured{% endif %}"
+      <article class="post-card{% if loop.first or post.data.featured %} is-featured{% endif %}"
         data-category="{{ post.data.category or '' }}"
         data-tags="{{ post.data.postTags | join(' ') if post.data.postTags else '' }}">
-        {% if post.data.featuredImage %}
-        <a href="{{ post.url }}" class="post-card-image" tabindex="-1" aria-hidden="true">
-          <img src="{{ post.data.featuredImage }}" alt="{{ post.data.title }}" loading="lazy">
-        </a>
-        {% endif %}
-        <div class="post-card-body">
-          <div class="post-card-meta">
-            {% if loop.first %}<span class="post-new-badge">New</span>{% endif %}
-            {% if post.data.category %}<span class="post-category-badge">{{ post.data.category | categoryLabel }}</span>{% endif %}
-            {% if post.data.featured %}<span class="post-featured-badge">Featured</span>{% endif %}
-          </div>
-          <time class="post-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
-          <h2 class="post-card-title">
-            <a href="{{ post.url }}">{{ post.data.title }}</a>
-          </h2>
-          {% if post.data.excerpt %}
-          <p class="post-excerpt">{{ post.data.excerpt | truncateWords(30) }}</p>
+        <a href="{{ post.url }}" class="post-card-image" aria-label="{{ post.data.title }}">
+          {% if post.data.featuredImage %}
+          <img src="{{ post.data.featuredImage }}" alt="" loading="lazy">
           {% endif %}
-          <a href="{{ post.url }}" class="post-link">
-            Read more
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
+          {% if loop.first %}<span class="post-new-badge">New</span>{% endif %}
+          <div class="post-card-overlay">
+            <h2 class="post-card-title">{{ post.data.title }}</h2>
+            {% if post.data.excerpt %}<p class="post-excerpt">{{ post.data.excerpt | truncateWords(20) }}</p>{% endif %}
+          </div>
+        </a>
+        <div class="post-card-body">
+          {% if post.data.category %}<span class="post-category-badge">{{ post.data.category | categoryLabel }}</span>{% endif %}
+          <div class="post-card-foot">
+            <time class="post-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+            <a href="{{ post.url }}" class="post-link">
+              Dive in
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
         </div>
       </article>
       {% endfor %}
+    </div>
+
+    <span id="filters" class="filter-anchor"></span>
+    <div class="post-filters" id="post-filters" hidden>
+      <div class="filter-chips" id="filter-chips"></div>
     </div>
 
     {% else %}
@@ -239,6 +242,9 @@ permalink: /blog/
       }
       card.style.display = show ? '' : 'none';
     });
+    // Collapse the featured card to regular size when a filter is active
+    var featured = document.querySelector('#post-grid .is-featured');
+    if (featured) featured.classList.toggle('filter-active', !!activeValue);
   }
 
   // Build category chips
@@ -270,6 +276,23 @@ permalink: /blog/
   }
 
   filterBar.removeAttribute('hidden');
+  var pill = document.getElementById('filter-pill-link');
+  if (pill) {
+    pill.removeAttribute('hidden');
+    pill.addEventListener('click', function () {
+      setTimeout(function () {
+        filterBar.classList.remove('is-highlighted');
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            filterBar.classList.add('is-highlighted');
+            filterBar.addEventListener('animationend', function () {
+              filterBar.classList.remove('is-highlighted');
+            }, { once: true });
+          });
+        });
+      }, 450);
+    });
+  }
 })();
 </script>
 <script>window._mcjCrumbs = [{ label: 'Home', href: '/' }, { label: 'Blog' }];</script>

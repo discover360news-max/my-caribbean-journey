@@ -70,6 +70,19 @@ module.exports = function (eleventyConfig) {
     return words.slice(0, count).join(' ') + '\u2026';
   });
 
+  // Related posts — matches by category then shared tags, excludes current post
+  eleventyConfig.addFilter("relatedPosts", function (allPosts, currentUrl, category, tags, limit) {
+    const n = limit || 4;
+    return (allPosts || []).filter(post => {
+      if (post.url === currentUrl) return false;
+      if (category && post.data.category === category) return true;
+      if (tags && tags.length && post.data.postTags && post.data.postTags.length) {
+        return tags.some(t => post.data.postTags.includes(t));
+      }
+      return false;
+    }).slice(0, n);
+  });
+
   // Render a markdown string from frontmatter (used for references field)
   eleventyConfig.addFilter("markdownify", function (content) {
     if (!content) return "";
