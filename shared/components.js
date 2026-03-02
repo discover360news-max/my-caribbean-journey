@@ -461,9 +461,6 @@ var SiteComponents = (function () {
   }
 
   function highlightEmDashes() {
-    // Skip blog post pages — prose content handles its own rhythm
-    if (document.querySelector('.prose')) return;
-
     var walker = document.createTreeWalker(
       document.body,
       NodeFilter.SHOW_TEXT,
