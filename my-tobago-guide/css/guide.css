@@ -726,8 +726,8 @@ body.guide-tray-closing .guide-tray-backdrop {
 /* --- Heart button --- */
 .guide-card-heart {
   position: absolute;
-  top: 1.75rem;
-  right: 1.75rem;
+  top: 1.25rem;
+  right: 1.25rem;
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -762,8 +762,8 @@ body.guide-tray-closing .guide-tray-backdrop {
 
 /* Heart sits in image corner when a photo is present */
 .guide-card:has(.guide-card-img-area) .guide-card-heart {
-  top: 0.75rem;
-  right: 0.75rem;
+  top: 1.25rem;
+  right: 1.25rem;
 }
 
 /* --- Favourites pill variant --- */
