@@ -859,12 +859,12 @@
 /* --- Links --- */
 
 .prose a {
-  color: var(--green-mid);
+  color: var(--gold);
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
 
-  &:hover { color: var(--green-light); }
+  &:hover { color: var(--gold-light); }
 }
 
 /* --- HR --- */
