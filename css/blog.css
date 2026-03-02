@@ -907,6 +907,7 @@
   font-size: 0.9rem;
   line-height: 1.75;
   color: var(--text-muted);
+  text-wrap: pretty;
 }
 
 .prose-references p:first-of-type::first-letter {
@@ -920,7 +921,7 @@
 
 .prose-references a {
   color: var(--gold);
-  word-break: break-all;
+  overflow-wrap: anywhere;
 }
 
 /* --- Post Footer --- */
