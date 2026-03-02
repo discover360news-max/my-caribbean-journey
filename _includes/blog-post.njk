@@ -144,6 +144,19 @@ layout: blog-base.njk
   </div>{# end .post-body #}
 
   <script>
+  // Fade in featured image and sidebar thumbnails once loaded.
+  (function () {
+    document.querySelectorAll('.post-featured-image img, .rabbit-card-thumb').forEach(function (img) {
+      if (img.complete && img.naturalWidth) {
+        img.classList.add('img-loaded');
+      } else {
+        img.addEventListener('load', function () { img.classList.add('img-loaded'); }, { once: true });
+      }
+    });
+  })();
+  </script>
+
+  <script>
   // Wrap each table in .prose with a .table-wrapper div so border-radius
   // and overflow: hidden clip the corners correctly. Also pulls any
   // preceding .table-caption paragraph into the wrapper.

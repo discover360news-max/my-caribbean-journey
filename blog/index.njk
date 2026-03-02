@@ -114,7 +114,11 @@ permalink: /blog/
         data-tags="{{ post.data.postTags | join(' ') if post.data.postTags else '' }}">
         <a href="{{ post.url }}" class="post-card-image" aria-label="{{ post.data.title }}">
           {% if post.data.featuredImage %}
+          {% if loop.first %}
+          <img src="{{ post.data.featuredImage }}" alt="" loading="eager" fetchpriority="high">
+          {% else %}
           <img src="{{ post.data.featuredImage }}" alt="" loading="lazy">
+          {% endif %}
           {% endif %}
           {% if loop.first %}<span class="post-new-badge">New</span>{% endif %}
           <div class="post-card-overlay">
@@ -149,6 +153,18 @@ permalink: /blog/
 </section>
 
 <script>
+// Fade in card images once loaded (prevents hard pop-in).
+// Also handles already-cached images that fire no load event.
+(function () {
+  document.querySelectorAll('.post-card-image img').forEach(function (img) {
+    if (img.complete && img.naturalWidth) {
+      img.classList.add('img-loaded');
+    } else {
+      img.addEventListener('load', function () { img.classList.add('img-loaded'); }, { once: true });
+    }
+  });
+})();
+
 // Retry featured images that 404 on load (CDN propagation delay on new posts).
 // Hides the broken container immediately, then re-attempts with a cache-bust
 // param every 6 seconds, up to 3 times (~18s window covers most deploys).
