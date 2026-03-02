@@ -92,6 +92,7 @@ var GUIDE_DATA = {
       area: 'speyside',
       plusCode: '568V+67J Lambeau, Trinidad and Tobago',
       featured: false,
+      image: 'images/shore-things.webp',
       tags: [
         'cafe', 'lunch', 'desserts', 'seaside', 'craft', 'shop', 'gifts', 'souvenirs',
         'art', 'dining', 'ocean view', 'atlantic', 'speyside', 'scenic', 'east tobago',
@@ -106,6 +107,7 @@ var GUIDE_DATA = {
       area: 'scarborough',
       plusCode: '568V+67J Lambeau, Trinidad and Tobago',
       featured: true,
+      image: 'images/tobago-chocolate-delights.webp',
       tags: [
         'chocolate', 'artisan chocolate', 'bean to bar', 'craft chocolate', 'cacao', 'cocoa',
         'sweets', 'gifts', 'souvenirs', 'local produce', 'shop', 'treats', 'unique',
@@ -117,9 +119,10 @@ var GUIDE_DATA = {
       description: 'Delicious homemade treats and baked goods from a local Tobagonian family. A sweet taste of home.',
       url: 'https://kerrysniceandsweettreats.com/',
       category: 'food-recipes',
-      area: 'Whim Estate',
+      area: 'whim-estate',
       plusCode: '57W3+HG5 Orange Hill, Trinidad and Tobago',
       featured: false,
+      image: 'images/kerrys-nice-and-sweet-treats.webp',
       tags: [
         'baked goods', 'homemade', 'sweets', 'treats', 'cakes', 'pastries', 'desserts',
         'local', 'family business', 'sweet bread', 'black cake', 'sorrel', 'pone',
@@ -210,7 +213,7 @@ var GUIDE_DATA = {
       description: 'A local wildlife area with diverse flora and fauna.',
       url: 'https://tobagowildlife.org/',
       category: 'beaches-nature',
-      area: 'Mason Hall',
+      area: 'mason-hall',
       plusCode: '672W+P2G Mason Hall, Trinidad and Tobago',
       featured: false,
       tags: [
