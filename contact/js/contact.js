@@ -84,7 +84,7 @@ var GAS_URL = 'https://script.google.com/macros/s/AKfycbyA1EVADWQm55lq_99BH-ZY8-
   });
 
   function showSuccess() {
-    document.getElementById('contact-form-wrap').querySelector('.contact-form').hidden = true;
+    form.style.display = 'none';
     success.hidden = false;
   }
 })();
