@@ -64,7 +64,7 @@ Excavations at Golden Grove in Tobago reveal something striking. Among the remai
 
 #### *The sea was more infrastructure than scenery.*
 
-Large dugout canoes were carved from silk cotton trees, vessels strong enough to carry people and goods between islands. These canoes facilitated trade, communication, and conflict across the Lesser Antilles.
+Large dugout canoes were carved from silk cotton trees: vessels strong enough to carry people and goods between islands. These canoes facilitated trade, communication, and conflict across the Lesser Antilles.
 
 Suazoid villages were semi-autonomous, each led by a headman known as a cayaguasu. He mediated disputes, organized communal labor, coordinated defense and warfare, and maintained ties with neighboring islands. Leadership was embedded in kinship, protection, and inter-island diplomacy. Political organization existed long before colonial governors arrived.
 
