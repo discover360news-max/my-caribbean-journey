@@ -58,6 +58,8 @@ The spiritual world of Tobago’s first peoples was populated by ancestral force
 
 <figure class="post-figure"><img src="/blog/images/zemi-600.webp" alt="Zemis"><figcaption>A depiction of a Zemi</figcaption></figure>
 
+<figure class="post-figure post-figure--float-left post-figure--ratio-1-1 post-figure--shadow"><img src="/blog/images/zemi-600.webp" alt="Zemis"><figcaption>A Depiction of a Zemi</figcaption></figure>
+
 > [Zemis](https://www.metmuseum.org/art/collection/search/313384) were not merely gods but physical manifestations of spiritual power, often carved from wood, stone, or bone. They were believed to influence weather, fertility, and the health of the community.
 
 Key elements of their belief system included:
