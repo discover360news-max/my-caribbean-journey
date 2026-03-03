@@ -3,7 +3,7 @@
    Replace GAS_URL with your deployed Web App URL
    =========================================== */
 
-var GAS_URL = 'PASTE_YOUR_GAS_URL_HERE';
+var GAS_URL = 'https://script.google.com/macros/s/AKfycbyA1EVADWQm55lq_99BH-ZY8-zJoIiXJLI8dOnWlyKUj2N6qSJjRtKxVGe8CItUyjbD/exec';
 
 (function () {
   var form    = document.getElementById('contact-form');
