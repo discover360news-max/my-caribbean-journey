@@ -1141,6 +1141,11 @@
    IMAGE + CAPTION (figure)
    ========================================== */
 
+/* flow-root contains floated images without a clearfix hack */
+.prose {
+  display: flow-root;
+}
+
 .prose .post-figure {
   margin: 2.5rem 0;
 }
@@ -1149,6 +1154,55 @@
   width: 100%;
   border-radius: 12px;
   display: block;
+}
+
+/* --- Size variants --- */
+.prose .post-figure--half {
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.prose .post-figure--float-left {
+  float: left;
+  max-width: 45%;
+  margin: 0.25rem 1.75rem 1rem 0;
+}
+
+.prose .post-figure--float-right {
+  float: right;
+  max-width: 45%;
+  margin: 0.25rem 0 1rem 1.75rem;
+}
+
+/* --- Ratio variants --- */
+.prose .post-figure--ratio-16-9 img { aspect-ratio: 16 / 9; object-fit: cover; }
+.prose .post-figure--ratio-4-3 img  { aspect-ratio: 4 / 3;  object-fit: cover; }
+.prose .post-figure--ratio-3-4 img  { aspect-ratio: 3 / 4;  object-fit: cover; }
+.prose .post-figure--ratio-1-1 img  { aspect-ratio: 1 / 1;  object-fit: cover; }
+
+/* --- Decoration variants --- */
+.prose .post-figure--border img {
+  border: 2px solid rgba(212, 160, 48, 0.45);
+}
+
+.prose .post-figure--shadow img {
+  box-shadow: 0 8px 32px rgba(13, 31, 18, 0.18);
+}
+
+/* Mobile: floats collapse to full width, half becomes 75% */
+@media (max-width: 640px) {
+  .prose .post-figure--float-left,
+  .prose .post-figure--float-right {
+    float: none;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .prose .post-figure--half {
+    max-width: 75%;
+  }
 }
 
 .prose .post-figure figcaption {

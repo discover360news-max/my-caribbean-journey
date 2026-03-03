@@ -416,10 +416,9 @@ CMS.registerEditorComponent({
 
 // -------------------------------------------------------------
 // IMAGE + CAPTION
-// Adds an "Image" toolbar button. Upload or select an image and
-// write a caption. Renders as a <figure> with <figcaption> below.
-// Use this instead of the plain markdown image syntax when you
-// need a visible caption.
+// Adds an "Image" toolbar button. Upload or select an image,
+// write a caption, choose size, display ratio, and decoration.
+// Renders as a <figure> with modifier classes for layout/style.
 // -------------------------------------------------------------
 CMS.registerEditorComponent({
   id: 'image-caption',
@@ -444,21 +443,89 @@ CMS.registerEditorComponent({
       widget: 'string',
       required: false,
       hint: 'Short caption shown below the image'
+    },
+    {
+      name: 'size',
+      label: 'Size',
+      widget: 'select',
+      default: 'full',
+      hint: 'Full spans the whole column. Float options wrap text around the image.',
+      options: [
+        { label: 'Full width',    value: 'full'        },
+        { label: 'Half width',    value: 'half'        },
+        { label: 'Float left',    value: 'float-left'  },
+        { label: 'Float right',   value: 'float-right' }
+      ]
+    },
+    {
+      name: 'ratio',
+      label: 'Display ratio',
+      widget: 'select',
+      default: 'natural',
+      hint: 'Crops the image to a fixed ratio. Natural shows the image as-is.',
+      options: [
+        { label: 'Natural (no crop)',  value: 'natural'    },
+        { label: 'Landscape — 16:9',   value: 'ratio-16-9' },
+        { label: 'Landscape — 4:3',    value: 'ratio-4-3'  },
+        { label: 'Portrait — 3:4',     value: 'ratio-3-4'  },
+        { label: 'Square — 1:1',       value: 'ratio-1-1'  }
+      ]
+    },
+    {
+      name: 'border',
+      label: 'Decorative border',
+      widget: 'boolean',
+      default: false,
+      required: false,
+      hint: 'Adds a gold border around the image'
+    },
+    {
+      name: 'shadow',
+      label: 'Drop shadow',
+      widget: 'boolean',
+      default: false,
+      required: false,
+      hint: 'Adds a subtle shadow to lift the image off the page'
     }
   ],
 
-  pattern: /^<figure class="post-figure"><img src="([^"]*)" alt="([^"]*)">(?:<figcaption>([\s\S]*?)<\/figcaption>)?<\/figure>$/,
+  pattern: /^<figure class="(post-figure[^"]*)"><img src="([^"]*)" alt="([^"]*)">(?:<figcaption>([\s\S]*?)<\/figcaption>)?<\/figure>$/,
 
   fromBlock: function (match) {
+    var classes = match[1] || 'post-figure';
+
+    var size = 'full';
+    if (classes.indexOf('float-left') !== -1)  size = 'float-left';
+    else if (classes.indexOf('float-right') !== -1) size = 'float-right';
+    else if (classes.indexOf('--half') !== -1)      size = 'half';
+
+    var ratio = 'natural';
+    if (classes.indexOf('ratio-16-9') !== -1)      ratio = 'ratio-16-9';
+    else if (classes.indexOf('ratio-4-3') !== -1)  ratio = 'ratio-4-3';
+    else if (classes.indexOf('ratio-3-4') !== -1)  ratio = 'ratio-3-4';
+    else if (classes.indexOf('ratio-1-1') !== -1)  ratio = 'ratio-1-1';
+
     return {
-      src:     match[1] || '',
-      alt:     match[2] || '',
-      caption: match[3] || ''
+      src:     match[2] || '',
+      alt:     match[3] || '',
+      caption: match[4] || '',
+      size:    size,
+      ratio:   ratio,
+      border:  classes.indexOf('--border') !== -1,
+      shadow:  classes.indexOf('--shadow') !== -1
     };
   },
 
   toBlock: function (data) {
-    var out = '<figure class="post-figure">'
+    var classes = 'post-figure';
+    if (data.size === 'half')              classes += ' post-figure--half';
+    else if (data.size === 'float-left')   classes += ' post-figure--float-left';
+    else if (data.size === 'float-right')  classes += ' post-figure--float-right';
+    if (data.ratio && data.ratio !== 'natural') classes += ' post-figure--' + data.ratio;
+    if (data.border) classes += ' post-figure--border';
+    if (data.shadow) classes += ' post-figure--shadow';
+
+    var out = '<figure class="' + classes + '">'
       + '<img src="' + (data.src || '') + '" alt="' + (data.alt || '') + '">';
     if (data.caption) out += '<figcaption>' + data.caption + '</figcaption>';
     out += '</figure>';
@@ -468,9 +535,25 @@ CMS.registerEditorComponent({
   toPreview: function (data) {
     if (!data.src) return '<p style="color:#7a7a6a;font-family:Inter,sans-serif;font-size:0.9rem;">Select an image above to see a preview.</p>';
 
-    var figStyle  = 'margin:1.5rem 0;font-family:Inter,sans-serif;';
-    var imgStyle  = 'width:100%;border-radius:12px;display:block;';
-    var capStyle  = 'font-size:0.82rem;color:#5a5a52;text-align:center;margin-top:0.65rem;font-style:italic;line-height:1.5;';
+    var size  = data.size  || 'full';
+    var ratio = data.ratio || 'natural';
+
+    var figStyle = 'margin:1.5rem 0;font-family:Inter,sans-serif;';
+    if (size === 'half')
+      figStyle = 'max-width:50%;margin:1.5rem auto;font-family:Inter,sans-serif;';
+    else if (size === 'float-left')
+      figStyle = 'float:left;max-width:45%;margin:0.25rem 1.75rem 1rem 0;font-family:Inter,sans-serif;';
+    else if (size === 'float-right')
+      figStyle = 'float:right;max-width:45%;margin:0.25rem 0 1rem 1.75rem;font-family:Inter,sans-serif;';
+
+    var ratioMap = { 'ratio-16-9': '16/9', 'ratio-4-3': '4/3', 'ratio-3-4': '3/4', 'ratio-1-1': '1/1' };
+    var imgStyle = 'width:100%;border-radius:12px;display:block;';
+    if (ratio !== 'natural')
+      imgStyle += 'aspect-ratio:' + (ratioMap[ratio] || 'auto') + ';object-fit:cover;';
+    if (data.border) imgStyle += 'border:2px solid rgba(212,160,48,0.45);box-sizing:border-box;';
+    if (data.shadow) imgStyle += 'box-shadow:0 8px 32px rgba(13,31,18,0.18);';
+
+    var capStyle = 'font-size:0.82rem;color:#5a5a52;text-align:center;margin-top:0.65rem;font-style:italic;line-height:1.5;';
 
     var html = '<figure style="' + figStyle + '">'
       + '<img src="' + data.src + '" alt="' + (data.alt || '') + '" style="' + imgStyle + '">';
