@@ -152,6 +152,7 @@ var GUIDE_DATA = {
       area: 'charlotteville',
       plusCode: '8FC2+M56, Charlotteville, Trinidad & Tobago',
       featured: false,
+      image: 'images/sharon-and-phebes.webp',
       tags: [
         'restaurant', 'dining', 'local food', 'charlotteville', 'recommended', 'authentic',
         'friendly', 'homestyle', 'north east tobago', 'lunch', 'dinner', 'creole',
