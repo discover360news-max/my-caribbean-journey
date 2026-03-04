@@ -187,15 +187,13 @@ permalink: /blog/
     img.addEventListener('error', function () {
       var el = this;
       var src = el.getAttribute('src').split('?')[0];
-      var container = el.closest('.post-card-image');
-      if (container) container.style.visibility = 'hidden';
       (function attempt() {
         if (retries >= 3) return;
         retries++;
         setTimeout(function () {
           el.src = src + '?r=' + retries;
           el.addEventListener('load', function () {
-            if (container) container.style.visibility = '';
+            el.classList.add('img-loaded');
           }, { once: true });
           el.addEventListener('error', attempt, { once: true });
         }, 6000 * retries);
