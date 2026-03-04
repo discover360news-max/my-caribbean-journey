@@ -4,7 +4,7 @@ title: "The Silk Cotton Tree: Myth, Memory, and Power in Tobago"
 date: 2026-03-04
 author: Quincy Yeates
 category: culture
-featuredImage: /blog/images/silkcottontree1772606943.webp
+featuredImage: /blog/images/silkcottontree-21772646461.webp
 excerpt: >-
   Few living things in Tobago command silence the way the Silk Cotton tree does.
 
