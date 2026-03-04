@@ -62,12 +62,14 @@ It is considered a threshold space. A boundary between worlds.
 In local belief:
 
 * Spirits reside within the hollow trunk.
-* Duppies linger among the buttress roots.
+* Duppies (spirits of the dead) linger among the buttress roots.
 * The tree forms a bridge between earth, heaven, and the underworld.
 
 There remains a strong cultural taboo against cutting or trimming a Silk Cotton tree. To disturb it is believed to invite illness, misfortune, even sudden death.
 
-#### *These beliefs are not fringe superstition.*
+In some traditions, small libations are poured at the base of the tree, often rum, as a gesture of respect to the ancestors believed to dwell there, and as a request for guidance or protection.
+
+***These beliefs are not fringe superstition.***
 
 #### They are inherited cosmologies that survived enslavement and colonial suppression.
 
@@ -77,9 +79,14 @@ No discussion of Tobago’s Silk Cotton tree can avoid the legend of Gang-Gang S
 
 During the era of enslavement, the area now known as Golden Lane, within the wider Les Coteaux district of Tobago’s interior, was a sugar plantation owned by a white planter remembered in oral tradition as Grandfather Peter, or Uncle Peter in some versions of the story. His reputation, unusually, survived with a degree of favour, suggesting that his conduct toward the enslaved may have been regarded as less brutal than many of his contemporaries.
 
-Among those enslaved on the estate were a couple named Tom and Sarah. But Sarah, the stories say, was not ordinary. She was believed to possess spiritual power. Some described her as a witch. Others as a healer or midwife. In plantation society she was an influential presence, feared and respected in equal measure.
+Among those enslaved on the estate were a couple named Tom and Sarah. But Sarah, the stories say, was not ordinary. She was believed to possess spiritual power. Some described her as a witch. Others as a healer or midwife.\
+ 
+In plantation society she was an influential presence, feared and respected in equal measure, and was believed to have carried a calling from West Africa to care for the enslaved Africans on the island.
 
-After Tom’s death, legend tells that Sarah resolved to return to Africa. She climbed the towering Silk Cotton tree on the estate, intending to launch herself back across the Atlantic. But there was a rule in African cosmology. Those who ate salt in the New World lost the power of flight. *Sarah had eaten salt*. Whether she knew she had broken that spiritual law is uncertain. What is remembered is that she leapt and fell to her death from the branches of the great tree.
+After Tom’s death, legend tells that Sarah resolved to return to Africa. 
+Another version of the story holds that it was after emancipation, when Sarah believed her work among the enslaved was complete, that she attempted to fly back to Africa.
+
+She climbed the towering Silk Cotton tree on the estate, intending to launch herself back across the Atlantic. But there was a rule in African cosmology. Those who ate salt in the New World lost the power of flight. ***Sarah had eaten salt***. Whether she knew she had broken that spiritual law is uncertain. What is remembered is that she leapt and fell to her death from the branches of the great tree.
 
 She was buried beside Tom in the plantation cemetery, a site that still exists.
 
@@ -109,7 +116,11 @@ Its fall unsettles more than the landscape.
 
 ### A Monumental Fall
 
-On 2 December 2020, after hours of heavy rainfall, the historic Silk Cotton tree in Golden Lane collapsed. Its immense trunk blocked the main road (Northside Road), temporarily cutting off access to Golden Lane and the surrounding Culloden district. But the obstruction of the roadway was only part of the impact.
+On 2 December 2020, after hours of heavy rainfall, the historic Silk Cotton tree in Golden Lane collapsed. Its immense trunk blocked the main road (Northside Road), temporarily cutting off access to Golden Lane and the surrounding Culloden district. 
+
+Some residents later recalled that groaning sounds had been heard from the great tree for nearly two weeks beforehand.
+
+***But the obstruction of the roadway was only a small part of the impact.***
 
 For many Tobagonians, the fall of what was locally known as the “**Jumbie Tree**” felt symbolic: not merely the loss of wood and root, but the physical severing of a landmark tied to Gang-Gang Sarah, to Obeah memory, and to ancestral presence.  
 
