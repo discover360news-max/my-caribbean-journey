@@ -84,7 +84,12 @@ var GAS_URL = 'https://script.google.com/macros/s/AKfycbyA1EVADWQm55lq_99BH-ZY8-
   });
 
   function showSuccess() {
-    form.style.display = 'none';
-    success.hidden = false;
+    form.style.opacity = '0';
+    setTimeout(function () {
+      form.style.display = 'none';
+      success.hidden = false;
+      void success.offsetWidth; // force reflow so transition fires
+      success.style.opacity = '1';
+    }, 250);
   }
 })();
