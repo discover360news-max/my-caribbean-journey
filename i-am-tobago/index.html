@@ -208,7 +208,10 @@
         <div class="author-text">
           <p class="section-label">The Author</p>
           <h2 class="section-title">Meet <span class="text-gold">Quincy</span></h2>
-          <p>
+
+          <div class="author-chapter"><span class="author-chapter-label">The Island</span></div>
+
+          <p class="author-drop-cap">
             I was born in Tobago when the island had just one traffic light, and even that was there
             only so children could cross safely to and from the nearby primary school. Some of my most
             vivid childhood memories are of racing down Sangsters Hill in Scarborough, dashing across
@@ -221,12 +224,16 @@
             immersed in music under the guidance of my paternal grandmother, a revered educator who
             awakened in me a deep love for language, discipline, and storytelling.
           </p>
+
+          <div class="author-chapter"><span class="author-chapter-label">The Music</span></div>
+
+          <blockquote class="author-pull-quote">Music became my first language.</blockquote>
+
           <p>
-            Music became my first language. I played organ and piano for the Scarborough and Bon Accord
-            Methodist Churches, performed steel pan at hotels across the island, and played oboe and
-            clarinet with the Tobago Youth Orchestra. As a child, I placed third on the nationally
-            televised talent competition Aunty Hazel's "12 and Under" as part of a duo with fellow
-            Tobagonian Stacy Frith.
+            I played organ and piano for the Scarborough and Bon Accord Methodist Churches, performed
+            steel pan at hotels across the island, and played oboe and clarinet with the Tobago Youth
+            Orchestra. As a child, I placed third on the nationally televised talent competition Aunty
+            Hazel's "12 and Under" as part of a duo with fellow Tobagonian Stacy Frith.
           </p>
           <p>
             I later emigrated to Tennessee to study Biology and Medicine at the University of Tennessee,
@@ -235,6 +242,9 @@
             featuring a song I wrote and recorded with pan virtuoso Andy Narell.
             <a href="https://music.youtube.com/watch?v=DcD71e7Vz3A" class="bio-listen-link" target="_blank" rel="noopener noreferrer">Listen here</a>
           </p>
+
+          <div class="author-chapter"><span class="author-chapter-label">The Work</span></div>
+
           <p>
             Along the way, I married my wife, opened a <a href="https://www.facebook.com/aimees.bohemian/" class="bio-listen-link" target="_blank" rel="noopener noreferrer">retail Bohemian store</a> with her, and became a father.
           </p>
@@ -445,6 +455,30 @@
   <div id="site-footer"></div>
 
   <script src="/shared/components.js"></script>
+  <script>
+  // Fade in + retry on error for author image and buy section bg
+  (function () {
+    function setupImg(img) {
+      if (!img) return;
+      var retries = 0;
+      function markLoaded() { img.classList.add('img-loaded'); }
+      if (img.complete && img.naturalWidth) { markLoaded(); return; }
+      img.addEventListener('load', markLoaded, { once: true });
+      img.addEventListener('error', function retry() {
+        if (retries >= 3) return;
+        retries++;
+        var src = img.getAttribute('src').split('?')[0];
+        setTimeout(function () {
+          img.src = src + '?r=' + retries;
+          img.addEventListener('load', markLoaded, { once: true });
+          img.addEventListener('error', retry, { once: true });
+        }, 6000 * retries);
+      });
+    }
+    setupImg(document.querySelector('.author-image img'));
+    setupImg(document.querySelector('.buy-bg-image'));
+  })();
+  </script>
   <script src="js/store-data.js"></script>
   <script src="js/stores.js"></script>
   <script src="js/main.js"></script>
