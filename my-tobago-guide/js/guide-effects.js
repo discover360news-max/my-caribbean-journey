@@ -1,4 +1,21 @@
 // ===========================================
+// MY TOBAGO GUIDE - Hero video fade-in
+// ===========================================
+(function () {
+  var videoBg = document.querySelector('.guide-hero-video-bg');
+  if (!videoBg) return;
+  var video = videoBg.querySelector('video');
+  if (!video) return;
+
+  function reveal() { videoBg.classList.add('video-ready'); }
+
+  // Fade in as soon as the video can play; fallback after 2.5s
+  video.addEventListener('canplay', reveal, { once: true });
+  video.addEventListener('error', reveal, { once: true });
+  setTimeout(reveal, 2500);
+})();
+
+// ===========================================
 // MY TOBAGO GUIDE - Card firefly hover effect
 // Fireflies spawn from guide cards on hover
 // and drift outward beyond the card edges.

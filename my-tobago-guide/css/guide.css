@@ -35,6 +35,12 @@
   inset: 0;
   z-index: 0;
   overflow: hidden;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.guide-hero-video-bg.video-ready {
+  opacity: 1;
 }
 
 .guide-hero-video-bg video {

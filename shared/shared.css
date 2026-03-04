@@ -3,18 +3,6 @@
    Common tokens, reset, nav, footer, buttons
    =========================================== */
 
-/* --- Page Transitions --- */
-@view-transition {
-  navigation: auto;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  ::view-transition-group(*),
-  ::view-transition-old(*),
-  ::view-transition-new(*) {
-    animation: none;
-  }
-}
 
 @layer reset, base, components;
 

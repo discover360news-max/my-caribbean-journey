@@ -588,13 +588,11 @@
   overflow: hidden;
 }
 
-.buy-bg-image {
+.buy::after {
+  content: '';
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+  background: url('../images/Tote_Bag_Mockup_2.webp') center / cover no-repeat;
   opacity: 0.12;
   pointer-events: none;
   z-index: 0;
