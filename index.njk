@@ -331,6 +331,20 @@ permalink: /
           <a href="/blog/" class="btn btn-primary">Read the Blog</a>
           <a href="{{ collections.post[0].url }}" class="btn btn-outline-dark">Latest Post</a>
         </div>
+
+        {% if collections.post and collections.post.length %}
+        <div class="blog-promo-posts">
+          {% for post in collections.post %}{% if loop.index0 < 3 %}
+          <a href="{{ post.url }}" class="blog-promo-card">
+            <div class="blog-promo-card-image">
+              {% if post.data.featuredImage %}<img src="{{ post.data.featuredImage }}" alt="" loading="lazy">{% endif %}
+            </div>
+            <p class="blog-promo-card-title">{{ post.data.title }}</p>
+          </a>
+          {% endif %}{% endfor %}
+        </div>
+        {% endif %}
+
       </div>
     </div>
   </section>
