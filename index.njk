@@ -356,6 +356,33 @@ permalink: /
   <div id="site-footer"></div>
 
   <script src="/shared/components.js"></script>
+  <script>
+  // Author image — fade in on load, retry up to 3x on error (CDN propagation)
+  (function () {
+    var img = document.querySelector('.bio-author-image img');
+    if (!img) return;
+
+    function markLoaded() { img.classList.add('img-loaded'); }
+
+    if (img.complete && img.naturalWidth) {
+      markLoaded();
+    } else {
+      img.addEventListener('load', markLoaded, { once: true });
+    }
+
+    var retries = 0;
+    img.addEventListener('error', function retry() {
+      if (retries >= 3) return;
+      retries++;
+      var src = img.getAttribute('src').split('?')[0];
+      setTimeout(function () {
+        img.src = src + '?r=' + retries;
+        img.addEventListener('load', markLoaded, { once: true });
+        img.addEventListener('error', retry, { once: true });
+      }, 6000 * retries);
+    });
+  })();
+  </script>
   <script src="js/hero-reel.js"></script>
   <script>
     // Newsletter form — replace URL with your Mailchimp form action
