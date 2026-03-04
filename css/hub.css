@@ -599,6 +599,16 @@
   margin-bottom: 1rem;
 }
 
+.about-inline-link {
+  color: var(--green-mid);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition);
+
+  &:hover { color: var(--gold); }
+}
+
 .about-cta {
   margin-top: 1.5rem;
 }
