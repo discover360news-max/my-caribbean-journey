@@ -62,7 +62,7 @@ It is considered a threshold space. A boundary between worlds.
 In local belief:
 
 * Spirits reside within the hollow trunk.
-* Duppies (spirits of the dead) linger among the buttress roots.
+* Duppies (ghosts) linger among the buttress roots.
 * The tree forms a bridge between earth, heaven, and the underworld.
 
 There remains a strong cultural taboo against cutting or trimming a Silk Cotton tree. To disturb it is believed to invite illness, misfortune, even sudden death.
