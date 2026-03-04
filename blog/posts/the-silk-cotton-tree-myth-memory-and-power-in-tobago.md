@@ -8,7 +8,7 @@ featuredImage: /blog/images/silkcottontree1772606943.webp
 excerpt: >-
   Few living things in Tobago command silence the way the Silk Cotton tree does.
 
-  Known scientifically as Ceiba pentandra, it is not merely tall. It is mythic. It is ancestral.  It is not simply ecological: it is spiritual architecture rooted in soil.   This tree is woven into Tobago’s ecology, its folklore, its resistance, and its survival of African identity. It is, in many ways, a living archive.
+  Known scientifically as Ceiba pentandra, it is not merely tall. It is mythic. It is ancestral. It is not simply ecological: it is spiritual architecture rooted in soil. This tree is woven into Tobago’s ecology, its folklore, its resistance, and its survival of African identity. It is, in many ways, a living archive.
 featured: false
 draft: false
 references: >-
@@ -69,8 +69,8 @@ There remains a strong cultural taboo against cutting or trimming a Silk Cotton 
 
 In some traditions, small libations are poured at the base of the tree, often rum, as a gesture of respect to the ancestors believed to dwell there, and as a request for guidance or protection.
 
-#### ***These beliefs are not fringe superstition.***
-
+###### ***These beliefs are not fringe superstition.***\
+\
 They are inherited cosmologies that survived enslavement and colonial suppression.
 
 ## Gang-Gang Sarah and the Silk Cotton of Golden Lane
