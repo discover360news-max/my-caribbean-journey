@@ -13,16 +13,16 @@
   Cache-Control: no-cache
 
 /images/*
-  Cache-Control: public, max-age=2592000
+  Cache-Control: public, max-age=2592000, immutable
 
 /blog/images/*
-  Cache-Control: public, max-age=2592000
+  Cache-Control: public, max-age=2592000, immutable
 
 /my-tobago-guide/images/*
-  Cache-Control: public, max-age=2592000
+  Cache-Control: public, max-age=2592000, immutable
 
 /i-am-tobago/images/*
-  Cache-Control: public, max-age=2592000
+  Cache-Control: public, max-age=2592000, immutable
 
 /my-tobago-guide/hero-bg.mp4
-  Cache-Control: public, max-age=2592000
+  Cache-Control: public, max-age=2592000, immutable
