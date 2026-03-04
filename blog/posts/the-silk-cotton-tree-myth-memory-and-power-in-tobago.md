@@ -79,7 +79,7 @@ No discussion of Tobago’s Silk Cotton tree can avoid the legend of Gang-Gang S
 
 During the era of enslavement, the area now known as Golden Lane, within the wider Les Coteaux district of Tobago’s interior, was a sugar plantation owned by a white planter remembered in oral tradition as Grandfather Peter, or Uncle Peter in some versions of the story. His reputation, unusually, survived with a degree of favour, suggesting that his conduct toward the enslaved may have been regarded as less brutal than many of his contemporaries.
 
-Among those enslaved on the estate were a couple named Tom and Sarah. But Sarah, the stories say, was not ordinary. She was believed to possess spiritual power. Some described her as a witch. Others as a healer or midwife.\
+Among those enslaved on the estate were a couple named Tom and Sarah. But Sarah, the stories say, was not ordinary. She was believed to possess spiritual power. Some described her as a witch. Others as a healer or midwife.
 
 In plantation society she was an influential presence, feared and respected in equal measure, and was believed to have carried a calling from West Africa to care for the enslaved Africans on the island.
 
