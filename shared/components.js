@@ -144,7 +144,10 @@ var SiteComponents = (function () {
             '<div class="site-footer-col site-footer-links">' + buildColHtml(col3Links) + '</div>' +
           '</div>' +
         '</div>' +
-      '</footer>'
+      '</footer>' +
+      '<div class="site-stamp-bar">' +
+        '<img src="/images/KV-11772609696.webp" alt="KV signature" class="site-stamp" loading="lazy" width="80" height="53">' +
+      '</div>'
     );
   }
 

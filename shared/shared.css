@@ -388,6 +388,21 @@ h1, h2, h3, h4, h5 { text-wrap: balance; }
   &:hover { color: var(--gold); }
 }
 
+/* --- Author Stamp Bar --- */
+.site-stamp-bar {
+  background: var(--warm-white);
+  text-align: center;
+  padding: 2rem 1rem;
+  border-top: 1px solid rgba(26, 74, 46, 0.08);
+}
+
+.site-stamp {
+  width: 72px;
+  height: auto;
+  opacity: 0.72;
+  display: inline-block;
+}
+
 /* --- Buy Me a Coffee Floating Button --- */
 .support-float {
   position: fixed;
