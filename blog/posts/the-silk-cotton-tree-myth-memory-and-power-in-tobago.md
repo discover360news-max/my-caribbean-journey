@@ -67,7 +67,7 @@ In local belief:
 
 There remains a strong cultural taboo against cutting or trimming a Silk Cotton tree. To disturb it is believed to invite illness, misfortune, even sudden death.
 
-#### *These beliefs are not fringe superstition.* 
+#### *These beliefs are not fringe superstition.*
 
 #### They are inherited cosmologies that survived enslavement and colonial suppression.
 
@@ -79,7 +79,7 @@ During the era of enslavement, the area now known as Golden Lane, within the wid
 
 Among those enslaved on the estate were a couple named Tom and Sarah. But Sarah, the stories say, was not ordinary. She was believed to possess spiritual power. Some described her as a witch. Others as a healer or midwife. In plantation society she was an influential presence, feared and respected in equal measure.
 
-After Tom’s death, legend tells that Sarah resolved to return to Africa. She climbed the towering Silk Cotton tree on the estate, intending to launch herself back across the Atlantic. But there was a rule in African cosmology. Those who ate salt in the New World lost the power of flight. Sarah had eaten salt. Whether she knew she had broken that spiritual law is uncertain. What is remembered is that she leapt and fell to her death from the branches of the great tree.
+After Tom’s death, legend tells that Sarah resolved to return to Africa. She climbed the towering Silk Cotton tree on the estate, intending to launch herself back across the Atlantic. But there was a rule in African cosmology. Those who ate salt in the New World lost the power of flight. *Sarah had eaten salt*. Whether she knew she had broken that spiritual law is uncertain. What is remembered is that she leapt and fell to her death from the branches of the great tree.
 
 She was buried beside Tom in the plantation cemetery, a site that still exists.
 
@@ -93,7 +93,7 @@ Today, neglect and encroachment threaten the burial site. Homes have been built 
 
 The tree and the cemetery together formed one of Tobago’s most powerful spiritual landscapes. 
 
-#### *They hold memory, resistance, myth, and history.* 
+#### *They hold memory, resistance, myth, and history.*
 
 #### All in the same soil.
 
@@ -125,7 +125,7 @@ In Moriah, along the main road, a towering giant often referred to as the “las
 
 In Runnemede, another ancient tree, estimated by locals to be between two and three centuries old, stands as what many now consider Tobago’s oldest remaining Silk Cotton. Along Des Vignes Road and throughout villages such as Les Coteaux, Castara, and the Main Ridge, scattered giants remain. 
 
-#### *Some carry specific legends.* 
+#### *Some carry specific legends.*
 
 #### Others carry only reverence.
 
@@ -166,7 +166,7 @@ Recognizing its significance, Ceiba pentandra is listed under the Forests Act of
 
 Yet ancient trees face pressure from development, road expansion, and urban growth. Community advocacy has often been the first line of defense.
 
-#### *The danger is not only ecological loss.* 
+#### *The danger is not only ecological loss.*
 
 #### It is the quiet erosion of cultural memory.
 
@@ -178,7 +178,7 @@ It has survived colonialism, enslavement, attempted spiritual erasure, hurricane
 
 #### *It is both biological organism and cultural monument.*
 
-#### To protect it is not simply environmental policy. 
+#### To protect it is not simply environmental policy.
 
 #### It is preservation of Tobago’s spiritual grammar.
 
