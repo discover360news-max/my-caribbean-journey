@@ -4,7 +4,7 @@ title: "The Silk Cotton Tree: Myth, Memory, and Power in Tobago"
 date: 2026-03-04
 author: Quincy Yeates
 category: culture
-featuredImage: /blog/images/silkcottontree1772606943.webp
+featuredImage: /blog/images/silkcottontree-21772646461.webp
 excerpt: >-
   Few living things in Tobago command silence the way the Silk Cotton tree does.
 
@@ -62,7 +62,7 @@ It is considered a threshold space. A boundary between worlds.
 In local belief:
 
 * Spirits reside within the hollow trunk.
-* Duppies (ghosts) linger among the buttress roots.
+* Duppies (spirits of the dead) linger among the buttress roots.
 * The tree forms a bridge between earth, heaven, and the underworld.
 
 There remains a strong cultural taboo against cutting or trimming a Silk Cotton tree. To disturb it is believed to invite illness, misfortune, even sudden death.
