@@ -146,7 +146,10 @@ var SiteComponents = (function () {
         '</div>' +
       '</footer>' +
       '<div class="site-stamp-bar">' +
-        '<img src="/images/KV-11772609696.webp" alt="KV signature" class="site-stamp" loading="lazy" width="80" height="53">' +
+        '<div class="site-stamp-container">' +
+          '<span class="site-stamp-tooltip">Psst &#8212; K.V., proud brother of the visionary bringing Tobago&#8217;s history and culture to the world.</span>' +
+          '<img src="/images/KV-11772609696.webp" alt="KV signature" class="site-stamp" loading="lazy" width="144" height="96">' +
+        '</div>' +
       '</div>'
     );
   }
@@ -556,6 +559,18 @@ var SiteComponents = (function () {
     var footerSlot = document.getElementById('site-footer');
     if (footerSlot) {
       footerSlot.innerHTML = renderFooter(config);
+
+      // Stamp tooltip — tap to reveal on touch devices
+      var stampContainer = footerSlot.querySelector('.site-stamp-container');
+      if (stampContainer) {
+        stampContainer.addEventListener('click', function (e) {
+          var isActive = stampContainer.classList.toggle('is-active');
+          if (isActive) e.stopPropagation();
+        });
+        document.addEventListener('click', function () {
+          stampContainer.classList.remove('is-active');
+        });
+      }
     }
 
     // Render charity callout
