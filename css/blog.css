@@ -694,14 +694,17 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 3rem;
-  align-items: start;
 }
 
 .post-layout.has-sidebar {
   grid-template-columns: 1fr 260px;
 }
 
-/* Sidebar */
+/* Main column: top-aligned, sidebar: stretches full row height (required for sticky) */
+.post-main {
+  align-self: start;
+}
+
 .post-sidebar-sticky {
   position: sticky;
   top: 5.5rem;
