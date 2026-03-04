@@ -385,9 +385,9 @@ permalink: /
   </script>
   <script src="js/hero-reel.js"></script>
   <script>
-    // Newsletter form — replace URL with your Mailchimp form action
+    // Newsletter form
     (function () {
-      var MAILCHIMP_URL = 'http://eepurl.com/jzTWJk';
+      var MAILCHIMP_URL = 'https://mycaribbeanjourney.us19.list-manage.com/subscribe/post?u=31fa45decc7faca8ab66ba769&id=f550f8c69b&f_id=0067c4e4f0';
       var form = document.getElementById('newsletter-form-hub');
       var success = document.getElementById('newsletter-success-hub');
       if (!form) return;
@@ -407,9 +407,23 @@ permalink: /
         var url = MAILCHIMP_URL.replace('/post?', '/post-json?') + '&' + params + '&c=' + callbackName;
 
         var script = document.createElement('script');
+
+        // Timeout fallback — never leave the button stuck
+        var timeout = setTimeout(function () {
+          if (window[callbackName]) {
+            delete window[callbackName];
+            if (script.parentNode) script.parentNode.removeChild(script);
+            btn.disabled = false;
+            btn.textContent = originalText;
+            success.textContent = 'Something went wrong. Please try again.';
+            success.removeAttribute('hidden');
+          }
+        }, 8000);
+
         window[callbackName] = function (data) {
+          clearTimeout(timeout);
           delete window[callbackName];
-          document.head.removeChild(script);
+          if (script.parentNode) script.parentNode.removeChild(script);
           if (data.result === 'success') {
             form.style.display = 'none';
             success.removeAttribute('hidden');

@@ -338,8 +338,8 @@
     });
   }
 
-  // --- Newsletter form --- replace URL with your Mailchimp form action ---
-  var MAILCHIMP_URL_BOOK = 'http://eepurl.com/jzTWJk';
+  // --- Newsletter form ---
+  var MAILCHIMP_URL_BOOK = 'https://mycaribbeanjourney.us19.list-manage.com/subscribe/post?u=31fa45decc7faca8ab66ba769&id=f550f8c69b&f_id=0067c4e4f0';
   var newsletterForm = document.getElementById('newsletter-form-book');
   var newsletterSuccess = document.getElementById('newsletter-success-book');
 
@@ -359,9 +359,23 @@
       var url = MAILCHIMP_URL_BOOK.replace('/post?', '/post-json?') + '&' + params + '&c=' + callbackName;
 
       var script = document.createElement('script');
+
+      // Timeout fallback — never leave the button stuck
+      var timeout = setTimeout(function () {
+        if (window[callbackName]) {
+          delete window[callbackName];
+          if (script.parentNode) script.parentNode.removeChild(script);
+          btn.disabled = false;
+          btn.textContent = originalText;
+          newsletterSuccess.textContent = 'Something went wrong. Please try again.';
+          newsletterSuccess.removeAttribute('hidden');
+        }
+      }, 8000);
+
       window[callbackName] = function (data) {
+        clearTimeout(timeout);
         delete window[callbackName];
-        document.head.removeChild(script);
+        if (script.parentNode) script.parentNode.removeChild(script);
         if (data.result === 'success') {
           newsletterForm.style.display = 'none';
           newsletterSuccess.removeAttribute('hidden');
