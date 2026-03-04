@@ -215,6 +215,59 @@
   margin: 0;
 }
 
+/* Footer row inside the featured card overlay — category + date + dive in on the image */
+.post-card-overlay-foot {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid rgba(232, 228, 220, 0.18);
+}
+
+.post-card-overlay-foot .post-category-badge {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: rgba(232, 228, 220, 0.72);
+  flex-shrink: 0;
+}
+
+.post-card-overlay-foot .post-date {
+  flex: 1;
+  text-align: center;
+  color: rgba(232, 228, 220, 0.6);
+  transition: color var(--transition);
+}
+
+/* "Dive in" as a <span> inside the featured overlay (parent <a> wraps the whole card) */
+.post-link.post-link--light {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(232, 228, 220, 0.65);
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: gap var(--transition), color var(--transition);
+
+  svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+}
+
+/* Card hover — date and dive in both go gold */
+.post-card-image:hover .post-card-overlay-foot .post-date,
+.post-card-image:hover .post-link--light {
+  color: var(--gold);
+}
+
+.post-card-image:hover .post-link.post-link--light {
+  gap: 0.65rem;
+}
+
 /* Below-image strip — category, then date + read more */
 .post-card-body {
   display: flex;
@@ -283,7 +336,7 @@
   .post-card-overlay { padding: 1.25rem 1.1rem 1rem; }
   .post-card-overlay .post-card-title { font-size: 1.2rem; }
   .post-card-overlay .post-excerpt { font-size: 0.8rem; -webkit-line-clamp: 2; }
-  .post-card-body { padding: 0.75rem 1.1rem; }
+  .post-card-overlay-foot { display: none; }
 }
 
 /* Featured card — latest post spans full width with a landscape ratio */
@@ -291,11 +344,11 @@
   grid-column: 1 / -1;
 
   .post-card-image {
-    aspect-ratio: 16 / 7;
+    aspect-ratio: 2 / 1;
   }
 
   .post-card-overlay {
-    padding: 1.75rem 1.75rem 1.25rem;
+    padding: 1.75rem 1.75rem 1.5rem;
   }
 
   .post-card-overlay .post-card-title {
@@ -306,10 +359,6 @@
   .post-card-overlay .post-excerpt {
     font-size: 0.88rem;
     -webkit-line-clamp: 3;
-  }
-
-  .post-card-body {
-    padding: 0.9rem 1.75rem 1rem;
   }
 }
 
@@ -1413,8 +1462,9 @@
     font-size: 1.2rem;
   }
 
-  .post-card.is-featured .post-card-body {
-    padding: 0.75rem 1.1rem;
+  /* Hide overlay foot on mobile — square card is too compact for it */
+  .post-card.is-featured .post-card-overlay-foot {
+    display: none;
   }
 
   .blog-post .post-header {

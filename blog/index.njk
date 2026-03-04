@@ -109,7 +109,8 @@ permalink: /blog/
     </a>
     <div class="post-grid" id="post-grid">
       {% for post in posts %}
-      <article class="post-card{% if loop.first or post.data.featured %} is-featured{% endif %}"
+      {% set isFeatured = loop.first or post.data.featured %}
+      <article class="post-card{% if isFeatured %} is-featured{% endif %}"
         data-category="{{ post.data.category or '' }}"
         data-tags="{{ post.data.postTags | join(' ') if post.data.postTags else '' }}">
         <a href="{{ post.url }}" class="post-card-image" aria-label="{{ post.data.title }}">
@@ -124,8 +125,19 @@ permalink: /blog/
           <div class="post-card-overlay">
             <h2 class="post-card-title">{{ post.data.title }}</h2>
             {% if post.data.excerpt %}<p class="post-excerpt">{{ post.data.excerpt | truncateWords(20) }}</p>{% endif %}
+            {% if isFeatured %}
+            <div class="post-card-overlay-foot">
+              {% if post.data.category %}<span class="post-category-badge">{{ post.data.category | categoryLabel }}</span>{% endif %}
+              <time class="post-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+              <span class="post-link post-link--light">
+                Dive in
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </span>
+            </div>
+            {% endif %}
           </div>
         </a>
+        {% if not isFeatured %}
         <div class="post-card-body">
           {% if post.data.category %}<span class="post-category-badge">{{ post.data.category | categoryLabel }}</span>{% endif %}
           <div class="post-card-foot">
@@ -136,6 +148,7 @@ permalink: /blog/
             </a>
           </div>
         </div>
+        {% endif %}
       </article>
       {% endfor %}
     </div>
