@@ -69,7 +69,7 @@ There remains a strong cultural taboo against cutting or trimming a Silk Cotton 
 
 In some traditions, small libations are poured at the base of the tree, often rum, as a gesture of respect to the ancestors believed to dwell there, and as a request for guidance or protection.
 
-***These beliefs are not fringe superstition.***
+##### ***These beliefs are not fringe superstition.***
 
 #### They are inherited cosmologies that survived enslavement and colonial suppression.
 
