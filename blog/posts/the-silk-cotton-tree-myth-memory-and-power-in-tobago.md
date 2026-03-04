@@ -69,9 +69,9 @@ There remains a strong cultural taboo against cutting or trimming a Silk Cotton 
 
 In some traditions, small libations are poured at the base of the tree, often rum, as a gesture of respect to the ancestors believed to dwell there, and as a request for guidance or protection.
 
-###### ***These beliefs are not fringe superstition.***
+#### ***These beliefs are not fringe superstition.***
 
-They are inherited cosmologies that survived enslavement and colonial suppression.
+#### They are inherited cosmologies that survived enslavement and colonial suppression.
 
 ## Gang-Gang Sarah and the Silk Cotton of Golden Lane
 
@@ -90,7 +90,7 @@ She climbed the towering Silk Cotton tree on the estate, intending to launch her
 
 She was buried beside Tom in the plantation cemetery, a site that still exists.
 
-Her grave became a place of reverence. Offerings were reportedly left there as part of Obeah practice. Near the estate stood the same Silk Cotton tree from which she was said to have fallen. For many years the imposing giant bore a rough sign that read:
+Her grave became a place of reverence. Offerings were reportedly left there as part of Obeah practice. Nearby stood the same Silk Cotton tree from which she was said to have fallen. For many years the imposing giant bore a rough sign that read:
 
 <div class="pull-quote"><p>“This silk cotton tree was considered sacred by the African slaves who believed the spirits of their ancestors lived in its branches. Obeah men from all parts of the island came here to perform black magic rituals, the most famous being Bobby Quashie of Culloden. This tree is the largest of its kind on the island and is well known for its many legends, spanning over 150 years.”</p></div>
 
@@ -126,6 +126,8 @@ For many Tobagonians, the fall of what was locally known as the “**Jumbie Tree
 
 #### *In a landscape where folklore and history intertwine, its collapse felt like a rupture.*
 
+According to some accounts, workers initially refused to cut what remained of the tree during the cleanup, wary of the spiritual repercussions that might follow.
+
 While the grave site is officially recognized and slated for restoration, preservation efforts are now focused on maintaining the cemetery and the memory of the legend rather than the original natural monument.
 
 #### *Yet the tradition did not fall with it.*
@@ -146,19 +148,19 @@ The Silk Cotton tree occupies sacred space within the Orisha faith, where it is 
 
 Spiritual Baptists also recognize its spiritual potency.
 
-Even within certain Hindu communities in Trinidad and Tobago, the tree is regarded as spiritually potent, echoing associations with deities such as Kali and Bhairava, who are linked to fierce and transformative aspects of the divine.
+Even within certain Hindu communities in Trinidad and Tobago, the tree is also regarded as spiritually potent, echoing associations with deities such as Kali and Bhairava, who are linked to fierce and transformative aspects of the divine.
 
 This convergence reveals something important: Caribbean spirituality is layered. The tree became a shared sacred site across African-derived and Indian-derived traditions.
 
 It was so central to enslaved Africans’ spiritual and communal life that British Governor Sir Thomas Picton reportedly ordered Silk Cotton trees destroyed in an effort to suppress Obeah practices and gatherings that were viewed as a threat to plantation authority.
 
-Even the colonial powers understood what the tree meant.
+#### *Even the colonial powers understood what the tree meant.*
 
 ## A Symbol of West African Continuity
 
 Tobago’s demographic history allowed much of its West African cultural identity to survive with unusual strength. Unlike Trinidad, Tobago experienced relatively limited post-emancipation cultural influx beyond British influence, and the population remained overwhelmingly Afro-West Indian for generations.
 
-In that environment, African cosmology retained structural integrity.
+#### *In that environment, African cosmology retained structural integrity.*
 
 The Silk Cotton tree became a physical anchor for that continuity.
 
