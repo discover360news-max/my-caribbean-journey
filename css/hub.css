@@ -142,97 +142,143 @@
   container-type: inline-size;
 }
 
-@container (max-width: 340px) {
-  .book-card-image { height: 180px; }
-}
 
 .book-card {
-  background: white;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  border: 1px solid rgba(26, 74, 46, 0.08);
+  border: 1px solid rgba(212, 160, 48, 0.12);
   transition: transform var(--transition), box-shadow var(--transition);
 
   &:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 48px rgba(26, 74, 46, 0.12);
+    transform: translateY(-5px);
+    box-shadow: 0 16px 48px rgba(26, 74, 46, 0.15);
+
+    .book-card-image img { transform: scale(1.04); }
+    .book-card-link { gap: 0.65rem; color: var(--gold); }
   }
 
   &.coming-soon .book-card-image {
-    background: linear-gradient(135deg, var(--gold), var(--orange));
-    position: relative;
+    background: linear-gradient(135deg, var(--green-mid) 0%, var(--green-deep) 100%);
   }
 }
 
 .book-card-image {
   position: relative;
-  height: 360px;
+  aspect-ratio: 2 / 3;
   overflow: hidden;
   background: linear-gradient(135deg, var(--green-deep), var(--green-mid));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
 
   img {
-    max-height: 100%;
-    width: auto;
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
   }
+
+  /* Dark gradient — lifts overlay text off the image */
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.04) 0%,
+      rgba(0, 0, 0, 0.1) 25%,
+      rgba(13, 31, 18, 0.72) 55%,
+      rgba(13, 31, 18, 0.96) 100%
+    );
+    pointer-events: none;
+  }
+}
+
+.book-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.25rem 1.1rem 1rem;
+  z-index: 2;
+}
+
+.book-card-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1.25;
+  margin: 0 0 0.35rem;
+  text-wrap: balance;
+}
+
+.book-card-subtitle {
+  font-size: 0.8rem;
+  color: rgba(232, 228, 220, 0.78);
+  line-height: 1.5;
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.book-card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.75rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid rgba(232, 228, 220, 0.18);
 }
 
 .book-card-badge {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  /* background: var(--gold); */
+  z-index: 3;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
   background: linear-gradient(135deg, var(--gold), var(--orange));
   color: var(--green-deep);
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 0.35rem 0.75rem;
-  border-radius: 6px;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5), 0 3px 10px rgba(0, 0, 0, 0.25);
 }
 
-.book-card-body {
-  padding: 1.75rem;
+/* Coming soon — big centred label on the green bg */
+.book-card.coming-soon .book-card-overlay {
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
 }
 
-.book-card-title {
+.book-card-coming-soon-label {
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
   font-weight: 700;
-  color: var(--green-deep);
-  margin-bottom: 0.5rem;
-}
-
-.book-card-subtitle {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  margin-bottom: 1rem;
-  line-height: 1.6;
+  font-style: italic;
+  line-height: 1.1;
+  color: var(--cream);
+  margin: 0 0 1.25rem;
+  text-wrap: balance;
 }
 
 .book-card-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
+  font-size: 0.82rem;
   font-weight: 600;
-  color: var(--green-mid);
-  transition: color var(--transition), gap var(--transition);
-
-  &:hover {
-    color: var(--gold);
-    gap: 0.75rem;
-  }
+  color: rgba(232, 228, 220, 0.85);
+  white-space: nowrap;
+  transition: gap var(--transition), color var(--transition);
 
   svg {
-    width: 18px;
-    height: 18px;
-    transition: transform var(--transition);
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
   }
 }
 
@@ -411,16 +457,6 @@
   color: var(--gold);
 }
 
-/* --- Coming Soon Card --- */
-.book-card.coming-soon .book-card-image::after {
-  content: 'Coming Soon';
-  position: absolute;
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-style: italic;
-  color: rgba(232, 228, 220, 0.3);
-}
-
 /* --- Island Sound (Video) Section --- */
 .island-sound {
   background: linear-gradient(135deg, var(--green-deep) 0%, #0a2e15 50%, var(--green-dark) 100%);
@@ -569,6 +605,100 @@
   font-size: 1.05rem;
   line-height: 1.8;
   margin-bottom: 1.25rem;
+  text-wrap: pretty;
+}
+
+/* Drop cap on opening paragraph */
+.bio-drop-cap::first-letter {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-weight: 700;
+  float: left;
+  line-height: 0.82;
+  margin: 0.1rem 0.18rem 0 0;
+  color: var(--gold);
+}
+
+/* Chapter break — gold rule with italic label */
+.bio-chapter {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2.75rem 0 1.75rem;
+
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(212, 160, 48, 0.25);
+  }
+}
+
+.bio-chapter-label {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(212, 160, 48, 0.65);
+  white-space: nowrap;
+}
+
+/* Pull quote */
+.bio-pull-quote {
+  position: relative;
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 3vw, 1.9rem);
+  font-style: italic;
+  font-weight: 700;
+  color: var(--gold);
+  text-align: center;
+  line-height: 1.35;
+  margin: 0 0 1.75rem;
+  padding: 1.5rem 2rem;
+  border-top: 1px solid rgba(212, 160, 48, 0.3);
+  border-bottom: 1px solid rgba(212, 160, 48, 0.3);
+  text-wrap: balance;
+
+  &::before {
+    content: '\201C';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10rem;
+    line-height: 1;
+    color: rgba(212, 160, 48, 0.06);
+    font-style: normal;
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
+/* Island section — 2-column with author photo */
+.bio-island-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 2.5rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.bio-author-image {
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 2px solid rgba(212, 160, 48, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
 }
 
 .bio-cta {
@@ -702,19 +832,6 @@
     gap: 1.5rem;
   }
 
-  .book-card-image {
-    height: 280px;
-    padding: 1.5rem;
-  }
-
-  .book-card-body {
-    padding: 1.25rem;
-  }
-
-  .book-card-title {
-    font-size: 1.3rem;
-  }
-
   .books .section-header {
     margin-bottom: 2rem;
   }
@@ -770,6 +887,15 @@
   .bio-content p {
     font-size: 0.95rem;
   }
+
+  .bio-island-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .bio-author-image {
+    max-width: 220px;
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 480px) {
@@ -797,23 +923,6 @@
 
   .books {
     padding: 2.5rem 0;
-  }
-
-  .book-card-image {
-    height: 240px;
-    padding: 1rem;
-  }
-
-  .book-card-body {
-    padding: 1rem;
-  }
-
-  .book-card-title {
-    font-size: 1.15rem;
-  }
-
-  .book-card-subtitle {
-    font-size: 0.85rem;
   }
 
   .books .section-header {

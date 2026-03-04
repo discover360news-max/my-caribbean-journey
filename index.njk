@@ -125,26 +125,27 @@ permalink: /
           <div class="book-card-image">
             <img src="i-am-tobago/images/book-cover.jpg" alt="I Am Tobago book cover" loading="lazy">
             <span class="book-card-badge">Available Now</span>
-          </div>
-          <div class="book-card-body">
-            <h3 class="book-card-title">I Am Tobago</h3>
-            <p class="book-card-subtitle">A journey through the culture, folklore, and enduring heritage of Tobago.</p>
-            <span class="book-card-link">
-              Explore this book
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </span>
+            <div class="book-card-overlay">
+              <h3 class="book-card-title">I Am Tobago</h3>
+              <p class="book-card-subtitle">A journey through the culture, folklore, and enduring heritage of Tobago.</p>
+              <div class="book-card-foot">
+                <span class="book-card-link">
+                  Explore this book
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </span>
+              </div>
+            </div>
           </div>
         </a>
 
         <!-- Placeholder: Future Book -->
         <div class="book-card coming-soon">
-          <div class="book-card-image"></div>
-          <div class="book-card-body">
-            <h3 class="book-card-title">Next Title</h3>
-            <p class="book-card-subtitle">Something new is on the horizon. Stay tuned for our next Caribbean story.</p>
-            <span class="book-card-link" style="color: var(--text-muted); pointer-events: none;">
-              Coming soon
-            </span>
+          <div class="book-card-image">
+            <div class="book-card-overlay">
+              <p class="book-card-coming-soon-label">Coming<br>Soon</p>
+              <h3 class="book-card-title">Next Title</h3>
+              <p class="book-card-subtitle">Something new is on the horizon. Stay tuned for our next Caribbean story.</p>
+            </div>
           </div>
         </div>
 
@@ -159,7 +160,7 @@ permalink: /
         <p class="section-label">From the Islands</p>
         <h2 class="section-title">The Sound of <span class="text-gold">Tobago</span></h2>
       </div>
-      <p class="island-sound-credit">All images are of Tobago courtesy of Robert Yeates of <a href="https://www.youtube.com/playlist?list=PLpClA29ZBtH4fRIOhK_XR-wkH0mEFFLqU" target="_blank" rel="noopener noreferrer">Equilibrium Media</a></p>
+      <p class="island-sound-credit">All landscape images are of Tobago, courtesy of Robert Yeates of <a href="https://www.youtube.com/playlist?list=PLpClA29ZBtH4fRIOhK_XR-wkH0mEFFLqU" target="_blank" rel="noopener noreferrer">Equilibrium Media</a></p>
       <div class="island-sound-embed">
         <iframe
           src="https://www.youtube.com/embed/ejbyOlyrzs8?rel=0&modestbranding=1"
@@ -211,25 +212,39 @@ permalink: /
       <div class="bio-content">
         <p class="section-label">The Author</p>
         <h2 class="section-title">Quincy</h2>
+
+        <div class="bio-chapter"><span class="bio-chapter-label">The Island</span></div>
+
+        <div class="bio-island-layout">
+          <div class="bio-author-image">
+            <img src="/i-am-tobago/images/author.jpg" alt="Quincy" loading="lazy">
+          </div>
+          <div>
+            <p class="bio-drop-cap">
+              I was born in Tobago when the island had just one traffic light, and even that was there
+              only so children could cross safely to and from the nearby primary school. Some of my most
+              vivid childhood memories are of racing down Sangsters Hill in Scarborough, dashing across
+              the main road, plunging into the sea, and eating far too many sea grapes until my stomach
+              ached, long before a deep-water harbour replaced those simple freedoms.
+            </p>
+            <p>
+              I spent part of my early years in Trinidad before returning home to Tobago at the age of
+              nine. I attended Scarborough Methodist Primary School and Bishop's High School, growing up
+              immersed in music under the guidance of my paternal grandmother, a revered educator who
+              awakened in me a deep love for language, discipline, and storytelling.
+            </p>
+          </div>
+        </div>
+
+        <div class="bio-chapter"><span class="bio-chapter-label">The Music</span></div>
+
+        <blockquote class="bio-pull-quote">Music became my first language.</blockquote>
+
         <p>
-          I was born in Tobago when the island had just one traffic light, and even that was there
-          only so children could cross safely to and from the nearby primary school. Some of my most
-          vivid childhood memories are of racing down Sangsters Hill in Scarborough, dashing across
-          the main road, plunging into the sea, and eating far too many sea grapes until my stomach
-          ached, long before a deep-water harbour replaced those simple freedoms.
-        </p>
-        <p>
-          I spent part of my early years in Trinidad before returning home to Tobago at the age of
-          nine. I attended Scarborough Methodist Primary School and Bishop's High School, growing up
-          immersed in music under the guidance of my paternal grandmother, a revered educator who
-          awakened in me a deep love for language, discipline, and storytelling.
-        </p>
-        <p>
-          Music became my first language. I played organ and piano for the Scarborough and Bon Accord
-          Methodist Churches, performed steel pan at hotels across the island, and played oboe and
-          clarinet with the Tobago Youth Orchestra. As a child, I placed third on the nationally
-          televised talent competition Aunty Hazel's "12 and Under" as part of a duo with fellow
-          Tobagonian Stacy Frith.
+          I played organ and piano for the Scarborough and Bon Accord Methodist Churches, performed
+          steel pan at hotels across the island, and played oboe and clarinet with the Tobago Youth
+          Orchestra. As a child, I placed third on the nationally televised talent competition Aunty
+          Hazel's "12 and Under" as part of a duo with fellow Tobagonian Stacy Frith.
         </p>
         <p>
           I later emigrated to Tennessee to study Biology and Medicine at the University of Tennessee,
@@ -241,6 +256,9 @@ permalink: /
           Listen on YouTube Music
           <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
+
+        <div class="bio-chapter"><span class="bio-chapter-label">The Work</span></div>
+
         <p>
           Along the way, I married my wife, opened a <a href="https://www.facebook.com/aimees.bohemian/" class="bio-inline-link" target="_blank" rel="noopener noreferrer">retail Bohemian store</a> with her, and became a father.
         </p>
