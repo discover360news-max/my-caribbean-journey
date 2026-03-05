@@ -339,7 +339,7 @@
   }
 
   // --- Newsletter form ---
-  var MAILCHIMP_URL_BOOK = 'https://mycaribbeanjourney.us19.list-manage.com/subscribe/post?u=31fa45decc7faca8ab66ba769&id=f550f8c69b&f_id=0067c4e4f0';
+  var MAILERLITE_URL = 'https://assets.mailerlite.com/jsonp/2164218/forms/181130806283994185/subscribe';
   var newsletterForm = document.getElementById('newsletter-form-book');
   var newsletterSuccess = document.getElementById('newsletter-success-book');
 
@@ -348,46 +348,37 @@
       e.preventDefault();
       var btn = newsletterForm.querySelector('button[type="submit"]');
       var originalText = btn.textContent;
-      var fname = newsletterForm.querySelector('[name="FNAME"]').value.trim();
-      var email = newsletterForm.querySelector('[name="EMAIL"]').value.trim();
+      var name = newsletterForm.querySelector('[name="fields[name]"]').value.trim();
+      var email = newsletterForm.querySelector('[name="fields[email]"]').value.trim();
 
       btn.disabled = true;
       btn.textContent = 'Subscribing…';
 
-      var callbackName = 'mc_cb_' + Date.now();
-      var params = 'FNAME=' + encodeURIComponent(fname) + '&EMAIL=' + encodeURIComponent(email);
-      var url = MAILCHIMP_URL_BOOK.replace('/post?', '/post-json?') + '&' + params + '&c=' + callbackName;
+      var data = new FormData();
+      data.append('fields[name]', name);
+      data.append('fields[email]', email);
+      data.append('ml-submit', '1');
+      data.append('anticsrf', 'true');
 
-      var script = document.createElement('script');
-
-      // Timeout fallback — never leave the button stuck
-      var timeout = setTimeout(function () {
-        if (window[callbackName]) {
-          delete window[callbackName];
-          if (script.parentNode) script.parentNode.removeChild(script);
+      fetch(MAILERLITE_URL, { method: 'POST', body: data })
+        .then(function (r) { return r.json(); })
+        .then(function (res) {
+          if (res.success) {
+            newsletterForm.style.display = 'none';
+            newsletterSuccess.removeAttribute('hidden');
+          } else {
+            btn.disabled = false;
+            btn.textContent = originalText;
+            newsletterSuccess.textContent = 'Something went wrong. Please try again.';
+            newsletterSuccess.removeAttribute('hidden');
+          }
+        })
+        .catch(function () {
           btn.disabled = false;
           btn.textContent = originalText;
           newsletterSuccess.textContent = 'Something went wrong. Please try again.';
           newsletterSuccess.removeAttribute('hidden');
-        }
-      }, 8000);
-
-      window[callbackName] = function (data) {
-        clearTimeout(timeout);
-        delete window[callbackName];
-        if (script.parentNode) script.parentNode.removeChild(script);
-        if (data.result === 'success') {
-          newsletterForm.style.display = 'none';
-          newsletterSuccess.removeAttribute('hidden');
-        } else {
-          btn.disabled = false;
-          btn.textContent = originalText;
-          var msg = (data.msg || '').replace(/<[^>]+>/g, '');
-          newsletterSuccess.textContent = msg.indexOf('already subscribed') !== -1
-            ? 'You\'re already on the list!'
-            : 'Something went wrong. Please try again.';
-          newsletterSuccess.removeAttribute('hidden');
-        }
+        });
       };
       script.src = url;
       document.head.appendChild(script);
