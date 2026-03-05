@@ -74,8 +74,9 @@ In some traditions, small libations are poured at the base of the tree, often ru
 #### They are inherited cosmologies that survived enslavement and colonial suppression.
 
 ## Gang-Gang Sarah and the Silk Cotton of Golden Lane
+*A historic photograph of the Silk Cotton tree associated with the legend of Gang-Gang Sarah can be seen [in this archival image shared by Patricia Bissessar](https://www.facebook.com/photo?fbid=9402291133117155&set=pcb.10162334898534269).*
 
-No discussion of Tobago’s Silk Cotton tree can avoid the legend of Gang-Gang Sarah.
+#### No discussion of Tobago’s Silk Cotton tree can avoid the legend of Gang-Gang Sarah. ####
 
 During the era of enslavement, the area now known as Golden Lane, within the wider Les Coteaux district of Tobago’s interior, was a sugar plantation owned by a white planter remembered in oral tradition as Grandfather Peter, or Uncle Peter in some versions of the story. His reputation, unusually, survived with a degree of favour, suggesting that his conduct toward the enslaved may have been regarded as less brutal than many of his contemporaries.
 
@@ -114,7 +115,7 @@ The story persists not because people literally expect a devil to emerge, but be
 
 Its fall unsettles more than the landscape.
 
-### A Monumental Fall
+### [A Monumental Fall](https://newsday.co.tt/2020/12/02/tobagos-ancient-silk-cotton-tree-falls/)
 
 On 2 December 2020, after hours of heavy rainfall, the historic Silk Cotton tree in Golden Lane collapsed. Its immense trunk blocked the main road (Northside Road), temporarily cutting off access to Golden Lane and the surrounding Culloden district. 
 
