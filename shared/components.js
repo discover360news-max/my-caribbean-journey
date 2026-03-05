@@ -39,6 +39,16 @@ var SiteComponents = (function () {
   };
 
   // ----------------------------------------
+  // MailerLite — update IDs here, reflects everywhere
+  // ----------------------------------------
+  var MAILERLITE = {
+    accountId:  '2164218',
+    formId:     '38056270',
+    internalId: '181130806283994185',
+    scriptSrc:  'https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b'
+  };
+
+  // ----------------------------------------
   // Charity data — update once, reflects everywhere
   // ----------------------------------------
   var CHARITY = {
@@ -449,7 +459,7 @@ var SiteComponents = (function () {
     banner.innerHTML =
       '<p class="gdpr-text">' +
         'We use local storage to remember your music preferences, and load fonts via Google Fonts. ' +
-        'Our newsletter is powered by Mailchimp. No tracking or ad cookies are used. ' +
+        'Our newsletter is powered by MailerLite. No tracking or ad cookies are used. ' +
         '<a href="/privacy-policy/">Privacy Policy</a>' +
       '</p>' +
       '<button id="mcj-gdpr-accept" class="gdpr-accept">Got it</button>';
@@ -546,6 +556,61 @@ var SiteComponents = (function () {
     );
   }
 
+  // ----------------------------------------
+  // Newsletter — MailerLite signup form
+  // Renders into #site-newsletter; config: { label, desc, buttonText, successText }
+  // ----------------------------------------
+  function renderNewsletter(config) {
+    var checkSvg = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><polyline points="20 6 9 17 4 12"/></svg>';
+    return (
+      '<p class="hero-newsletter-label">' + config.label + '</p>' +
+      '<p class="hero-newsletter-desc">' + config.desc + '</p>' +
+      '<div id="mlb2-' + MAILERLITE.formId + '" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-' + MAILERLITE.formId + '">' +
+        '<div class="row-form">' +
+          '<form class="ml-block-form hero-newsletter-form"' +
+            ' action="https://assets.mailerlite.com/jsonp/' + MAILERLITE.accountId + '/forms/' + MAILERLITE.internalId + '/subscribe"' +
+            ' data-code="" method="post" target="_blank">' +
+            '<div class="hero-newsletter-fields">' +
+              '<input type="text" name="fields[name]" placeholder="Your name" autocomplete="given-name" required>' +
+              '<input type="email" name="fields[email]" placeholder="Your email address" autocomplete="email" required>' +
+              '<button type="submit" class="btn btn-primary">' + config.buttonText + '</button>' +
+            '</div>' +
+            '<input type="hidden" name="ml-submit" value="1">' +
+            '<input type="hidden" name="anticsrf" value="true">' +
+          '</form>' +
+        '</div>' +
+        '<div class="row-success hero-newsletter-success" style="display:none;">' +
+          checkSvg +
+          '<span>' + config.successText + '</span>' +
+        '</div>' +
+      '</div>'
+    );
+  }
+
+  function initNewsletter(config) {
+    var slot = document.getElementById('site-newsletter');
+    if (!slot) return;
+
+    slot.innerHTML = renderNewsletter(config);
+
+    // Register MailerLite success callback
+    window['ml_webform_success_' + MAILERLITE.formId] = function () {
+      document.querySelectorAll('.ml-subscribe-form-' + MAILERLITE.formId + ' .row-form').forEach(function (el) { el.style.display = 'none'; });
+      document.querySelectorAll('.ml-subscribe-form-' + MAILERLITE.formId + ' .row-success').forEach(function (el) { el.style.display = 'flex'; });
+    };
+
+    // Inject MailerLite script (once per page)
+    if (!document.querySelector('script[src*="webforms.min.js"]')) {
+      var s = document.createElement('script');
+      s.src = MAILERLITE.scriptSrc;
+      s.type = 'text/javascript';
+      document.body.appendChild(s);
+    }
+
+    // View tracking
+    fetch('https://assets.mailerlite.com/jsonp/' + MAILERLITE.accountId + '/forms/' + MAILERLITE.internalId + '/takel');
+  }
+
   function init(config) {
     config = config || {};
 
@@ -571,6 +636,11 @@ var SiteComponents = (function () {
           stampContainer.classList.remove('is-active');
         });
       }
+    }
+
+    // Render newsletter form
+    if (config.newsletter) {
+      initNewsletter(config.newsletter);
     }
 
     // Render charity callout
