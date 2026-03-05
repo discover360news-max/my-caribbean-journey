@@ -135,6 +135,42 @@
   padding: var(--space-2xl) 0;
 }
 
+/* --- Guide Promo Section --- */
+.guide-promo {
+  background-image: url('../../images/tobago-guide-trail.webp');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.guide-promo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at center, rgba(13, 31, 18, 0.55) 0%, rgba(13, 31, 18, 0.88) 100%),
+    linear-gradient(180deg, rgba(10, 46, 21, 0.4) 0%, rgba(6, 20, 10, 0.6) 100%);
+  pointer-events: none;
+}
+
+.guide-promo .container {
+  position: relative;
+  z-index: 1;
+}
+
+.guide-promo .section-label {
+  color: var(--gold);
+}
+
+.guide-promo .section-title {
+  color: var(--cream);
+}
+
+.guide-promo p:not(.section-label) {
+  color: rgba(245, 240, 232, 0.8) !important;
+}
+
 /* --- Guide Promo Icon --- */
 .guide-promo-icon {
   width: 80px;
@@ -686,8 +722,10 @@
 }
 
 /* --- Book Newsletter Section --- */
+/* Sits directly after .buy — same dark zone, gold top border as the connector */
 .book-newsletter {
-  background: linear-gradient(135deg, var(--green-deep) 0%, #0a2e15 50%, var(--green-dark) 100%);
+  background: var(--green-deep);
+  border-top: 1px solid rgba(212, 160, 48, 0.25);
   padding: var(--space-xl) 0;
   text-align: center;
 }
