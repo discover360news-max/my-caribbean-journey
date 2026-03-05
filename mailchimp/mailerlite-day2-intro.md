@@ -1,6 +1,6 @@
-# Welcome Email Template — My Caribbean Journey
+# Day-2 Intro Email Template — My Caribbean Journey
 
-MailerLite welcome automation email. Upload the HTML below via **Templates → New template → Upload HTML** in MailerLite.
+MailerLite automation email — sent **2 days after signup**. Upload the HTML below via **Templates → New template → Upload HTML** in MailerLite.
 
 ---
 
@@ -8,10 +8,10 @@ MailerLite welcome automation email. Upload the HTML below via **Templates → N
 
 | Setting | Value |
 |---|---|
-| **Subject line** | Welcome to My Caribbean Journey, {$name} |
-| **Preview text** | Stories, guides & culture from the Caribbean — handpicked by Quincy. |
+| **Subject line** | Here's what to explore — enter this in MailerLite's subject field (add personalization tag for name from their UI, not in the HTML) |
+| **Preview text** | The book, the guide, the stories — a quick tour of My Caribbean Journey. |
 | **From name** | Quincy · My Caribbean Journey |
-| **Trigger** | Automations → When subscriber joins a group → Send email (immediately) |
+| **Trigger** | Automations → When subscriber joins a group → Wait 2 days → Send email |
 | **Unsubscribe link** | Already included in the footer via `{$unsubscribe}` |
 
 > **Merge tag note:** `{$name}` inserts the subscriber's name. MailerLite doesn't support inline fallbacks in HTML templates the same way Mailchimp does — if a subscriber has no name on file, it will render blank. To avoid this, make the Name field **required** on your signup form (already done on the MCJ site forms).
@@ -107,7 +107,7 @@ MailerLite welcome automation email. Upload the HTML below via **Templates → N
                     <span style="font-family:Georgia,'Playfair Display',serif;font-size:17px;font-weight:bold;color:#d4a030;letter-spacing:0.02em;">My Caribbean Journey</span>
                   </td>
                   <td align="right">
-                    <span style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#f5f0e8;letter-spacing:0.1em;text-transform:uppercase;opacity:0.6;">Welcome</span>
+                    <span style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#f5f0e8;letter-spacing:0.1em;text-transform:uppercase;opacity:0.6;">Explore</span>
                   </td>
                 </tr>
               </table>
@@ -130,12 +130,12 @@ MailerLite welcome automation email. Upload the HTML below via **Templates → N
           ============================= -->
           <tr>
             <td class="section-pad" style="background-color:#0d1f12;padding:36px 40px 40px;">
-              <p style="margin:0 0 10px;font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:600;color:#d4a030;letter-spacing:0.14em;text-transform:uppercase;">A warm welcome</p>
+              <p style="margin:0 0 10px;font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:600;color:#d4a030;letter-spacing:0.14em;text-transform:uppercase;">Start here</p>
               <h1 class="hero-headline" style="margin:0 0 20px;font-family:Georgia,'Playfair Display',serif;font-size:32px;font-weight:bold;color:#faf8f4;line-height:1.25;">
-                Hey {$name} — you made it to the right place.
+                A few things worth exploring.
               </h1>
               <p style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:15px;color:#f5f0e8;line-height:1.75;opacity:0.85;">
-                My Caribbean Journey is a living archive of island culture - stories, folklore, guides, and honest picks for anyone who loves these islands or is just beginning to discover them.
+                This space explores the history, culture, and stories of the Caribbean.
               </p>
             </td>
           </tr>
@@ -147,13 +147,10 @@ MailerLite welcome automation email. Upload the HTML below via **Templates → N
           <tr>
             <td class="section-pad" style="padding:40px 40px 36px;background-color:#faf8f4;">
               <p style="margin:0 0 18px;font-family:Arial,Helvetica,sans-serif;font-size:15px;color:#1a1a1a;line-height:1.8;">
-                Hi - I'm Quincy.
-              </p>
-              <p style="margin:0 0 18px;font-family:Arial,Helvetica,sans-serif;font-size:15px;color:#1a1a1a;line-height:1.8;">
-                I grew up surrounded by Tobago's stories - the silk-cotton trees, the goat races, the sound of tambrin drums at festival time. This project is my way of making sure those stories don't disappear, and that people like you - whether you're a visitor, an expat, or just curious - have a real, personal guide to the Caribbean.
+                Many of the stories that shape our identity live mostly in oral tradition, or in stuffy books that few people read. One of my goals here is to document, preserve, and share them — along with the history behind our cultures — in a way that is enjoyable and accessible.
               </p>
               <p style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:15px;color:#1a1a1a;line-height:1.8;">
-                Here's a quick look at what's waiting for you. ↓
+                Here's what I've built so far. Each one is a different way into the same world.
               </p>
             </td>
           </tr>
@@ -237,7 +234,7 @@ MailerLite welcome automation email. Upload the HTML below via **Templates → N
           <tr>
             <td class="footer-pad" style="background-color:#0d1f12;padding:40px;">
               <p style="margin:0 0 6px;font-family:Arial,Helvetica,sans-serif;font-size:15px;color:#f5f0e8;line-height:1.75;">
-                Reply anytime - I read every message.
+                Thank you for being part of the journey.
               </p>
               <p style="margin:0 0 32px;font-family:Georgia,'Playfair Display',serif;font-size:19px;font-style:italic;color:#d4a030;line-height:1.5;">
                 — Quincy
