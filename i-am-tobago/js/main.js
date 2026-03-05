@@ -354,33 +354,39 @@
       btn.disabled = true;
       btn.textContent = 'Subscribing…';
 
-      var data = new FormData();
-      data.append('fields[name]', name);
-      data.append('fields[email]', email);
-      data.append('ml-submit', '1');
-      data.append('anticsrf', 'true');
+      var callbackName = 'ml_cb_' + Date.now();
+      var params = 'fields[name]=' + encodeURIComponent(name)
+        + '&fields[email]=' + encodeURIComponent(email)
+        + '&ml-submit=1&anticsrf=true&callback=' + callbackName;
+      var script = document.createElement('script');
 
-      fetch(MAILERLITE_URL, { method: 'POST', body: data })
-        .then(function (r) { return r.json(); })
-        .then(function (res) {
-          if (res.success) {
-            newsletterForm.style.display = 'none';
-            newsletterSuccess.removeAttribute('hidden');
-          } else {
-            btn.disabled = false;
-            btn.textContent = originalText;
-            newsletterSuccess.textContent = 'Something went wrong. Please try again.';
-            newsletterSuccess.removeAttribute('hidden');
-          }
-        })
-        .catch(function () {
+      var timeout = setTimeout(function () {
+        if (window[callbackName]) {
+          delete window[callbackName];
+          if (script.parentNode) script.parentNode.removeChild(script);
           btn.disabled = false;
           btn.textContent = originalText;
           newsletterSuccess.textContent = 'Something went wrong. Please try again.';
           newsletterSuccess.removeAttribute('hidden');
-        });
+        }
+      }, 8000);
+
+      window[callbackName] = function (res) {
+        clearTimeout(timeout);
+        delete window[callbackName];
+        if (script.parentNode) script.parentNode.removeChild(script);
+        if (res.success) {
+          newsletterForm.style.display = 'none';
+          newsletterSuccess.removeAttribute('hidden');
+        } else {
+          btn.disabled = false;
+          btn.textContent = originalText;
+          newsletterSuccess.textContent = 'Something went wrong. Please try again.';
+          newsletterSuccess.removeAttribute('hidden');
+        }
       };
-      script.src = url;
+
+      script.src = MAILERLITE_URL + '?' + params;
       document.head.appendChild(script);
     });
   }
