@@ -338,58 +338,6 @@
     });
   }
 
-  // --- Newsletter form ---
-  var MAILERLITE_URL = 'https://assets.mailerlite.com/jsonp/2164218/forms/181130806283994185/subscribe';
-  var newsletterForm = document.getElementById('newsletter-form-book');
-  var newsletterSuccess = document.getElementById('newsletter-success-book');
-
-  if (newsletterForm) {
-    newsletterForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var btn = newsletterForm.querySelector('button[type="submit"]');
-      var originalText = btn.textContent;
-      var name = newsletterForm.querySelector('[name="fields[name]"]').value.trim();
-      var email = newsletterForm.querySelector('[name="fields[email]"]').value.trim();
-
-      btn.disabled = true;
-      btn.textContent = 'Subscribing…';
-
-      var callbackName = 'ml_cb_' + Date.now();
-      var params = 'fields[name]=' + encodeURIComponent(name)
-        + '&fields[email]=' + encodeURIComponent(email)
-        + '&ml-submit=1&anticsrf=true&callback=' + callbackName;
-      var script = document.createElement('script');
-
-      var timeout = setTimeout(function () {
-        if (window[callbackName]) {
-          delete window[callbackName];
-          if (script.parentNode) script.parentNode.removeChild(script);
-          btn.disabled = false;
-          btn.textContent = originalText;
-          newsletterSuccess.textContent = 'Something went wrong. Please try again.';
-          newsletterSuccess.removeAttribute('hidden');
-        }
-      }, 8000);
-
-      window[callbackName] = function (res) {
-        clearTimeout(timeout);
-        delete window[callbackName];
-        if (script.parentNode) script.parentNode.removeChild(script);
-        if (res.success) {
-          newsletterForm.style.display = 'none';
-          newsletterSuccess.removeAttribute('hidden');
-        } else {
-          btn.disabled = false;
-          btn.textContent = originalText;
-          newsletterSuccess.textContent = 'Something went wrong. Please try again.';
-          newsletterSuccess.removeAttribute('hidden');
-        }
-      };
-
-      script.src = MAILERLITE_URL + '?' + params;
-      document.head.appendChild(script);
-    });
-  }
 
   // --- Auto-expand stores section when navigated to ---
   function openStoresSection() {
