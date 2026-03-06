@@ -502,6 +502,10 @@
   background-clip: text;
 }
 
+.island-sound .section-header {
+  margin-bottom: 0;
+}
+
 .island-sound .section-title {
   color: var(--cream);
   margin-bottom: 0.75rem;
