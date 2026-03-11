@@ -32,13 +32,13 @@ For many people, their first encounter with a coral reef happens underwater.
 
 As a child growing up for a time in Trinidad, it seemed that almost every house I visited had the same object mounted somewhere on the wall: a delicate fan coral. Whenever I asked where it came from, the answer was almost always the same.
 
-<div class="pull-quote"><p>Tobago</p></div></p></div>
+Tobago</p></div></p></div>
 
 At the time I had no real understanding of what a reef was. I only knew that this strange, fragile-looking structure had come from somewhere beneath the sea, and that people brought it home from Tobago the way someone might bring back a shell from a beach.
 
 _It was my first introduction to coral._
 
-A few years later, back in Tobago, an aunt took me on a trip to Little Tobago. On the way there the boat stopped in the channel between the village of Speyside and Little Tobago, known as the **Kelleston Drain**. We were on a glass-bottom boat, and through the pane beneath our feet the sea opened up into an entirely different and fantastically mesmerizing world.
+A few years later, back in Tobago, an aunt took me on a trip to Little Tobago. On the way there the boat stopped in the channel between the village of Speyside and Little Tobago, known as the \*\*Kelleston Drain\*\*. We were on a glass-bottom boat, and through the pane beneath our feet the sea opened up into an entirely different and fantastically mesmerizing world.
 
 #### Below us sat an enormous brain coral.
 
@@ -109,8 +109,11 @@ Tobago's reefs are more than natural beauty.
 The island's economy relies heavily on tourism, and its natural resources are among the strongest attractions for visitors. Reefs in particular draw people to Tobago's waters.
 
 - Glass-bottom boat tours.
+
 - Snorkeling excursions.
+
 - Dive operations.
+
 - Guesthouses and restaurants.
 
 Healthy reefs support them all.
@@ -121,7 +124,7 @@ Healthy reefs support them all.
 
 Despite the challenges, there are reasons for cautious optimism.
 
-Tobago benefits from a number of groups and institutions that actively advocate for marine protection. Research organizations such as the **Institute of Marine Affairs** continue to study reef conditions, while conservation groups including **Environment Tobago, Coral Reef Research Institute** and **SpeSeas** work to raise awareness about protecting the island's marine ecosystems.
+Tobago benefits from a number of groups and institutions that actively advocate for marine protection. Research organizations such as the \*\*Institute of Marine Affairs\*\* continue to study reef conditions, while conservation groups including \*\*Environment Tobago, Coral Reef Research Institute\*\* and \*\*SpeSeas\*\* work to raise awareness about protecting the island's marine ecosystems.
 
 Younger generations may also be approaching these issues differently. With greater access to information and the reach of social media, awareness can spread quickly.
 
@@ -170,11 +173,13 @@ They are resilient ecosystems, but that resilience has limits and should never b
 They are small disciplines practiced consistently.
 
 - Choosing not to step on coral.
+
 - Managing development responsibly.
+
 - Keeping waterways clean.
 
 Protecting Tobago's reefs does not require dramatic gestures.
 
 #### It simply requires caring enough to stop ignoring the small things.
 
-<div class="callout callout-contributor-about"><p><strong>👤 About the Contributor</strong> Calvin Alexander is a Tobago native and fisheries specialist who has worked extensively with Tobago's fishing communities since beginning his career with the Department of Marine Resources and Fisheries of the Tobago House of Assembly in the late 1990s. His work has also included collaboration with marine scientists and fisheries programs, including the U.S. National Oceanic and Atmospheric Administration (NOAA) Fisheries. He currently works as a Fisheries Liaison Officer for a private marine consulting company.</p></div>
+<div class="callout callout-contributor-about"><p><strong>👤 About the Contributor</strong> Calvin Alexander is a Tobago native and fisheries specialist who has worked extensively with Tobago's fishing communities since beginning his career with the Department of Marine Resources and Fisheries of the Tobago House of Assembly in the late 1990s. His work has also included collaboration with marine scientists and fisheries programs, including the U.S. National Oceanic and Atmospheric Administration (NOAA) Fisheries. He currently works as a Fisheries Liaison Officer for a private marine consulting company.
