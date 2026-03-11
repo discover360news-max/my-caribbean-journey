@@ -54,7 +54,7 @@ Mine happened on a living room wall.
 
 As a child growing up for a time in Trinidad, it seemed that almost every house I visited had the same object mounted somewhere on the wall: a delicate fan coral. Whenever I asked where it came from, the answer was almost always the same.
 
-#### Tobago
+> Tobago
 
 At the time I had no real understanding of what a reef was. I only knew that this strange, fragile-looking structure had come from somewhere beneath the sea, and that people brought it home from Tobago the way someone might bring back a shell from a beach.
 
