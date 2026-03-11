@@ -8,9 +8,6 @@ backend:
 media_folder: "blog/images"
 public_folder: "/blog/images"
 
-# Shared field definitions (referenced below)
-# Both collections use identical fields — only the type default differs.
-
 collections:
 
   # ----------------------------------------
@@ -26,6 +23,12 @@ collections:
     slug: "{{slug}}"
     filter: {field: "type", value: "post"}
     fields:
+
+      - label: "Title"
+        name: "title"
+        widget: "string"
+
+      # ── Classification ──────────────────────
       - label: "Collection Type"
         name: "type"
         widget: "select"
@@ -35,9 +38,39 @@ collections:
           - { label: "Blog Post",    value: "post"  }
           - { label: "Island Story", value: "story" }
 
-      - label: "Title"
-        name: "title"
-        widget: "string"
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        required: false
+        options:
+          - { label: "Culture & Heritage", value: "culture" }
+          - { label: "History",            value: "history" }
+          - { label: "Travel & Expat",     value: "travel"  }
+          - { label: "Food & Traditions",  value: "food"    }
+          - { label: "Music & Arts",       value: "music"   }
+          - { label: "News & Updates",     value: "news"    }
+
+      # ── Status flags ────────────────────────
+      - label: "Save as Draft"
+        name: "draft"
+        widget: "boolean"
+        default: false
+        required: false
+        hint: "Drafts are not shown on the live site until this is turned off."
+
+      - label: "Featured Post"
+        name: "featured"
+        widget: "boolean"
+        default: false
+        required: false
+        hint: "Pin this post to the top of the blog listing."
+
+      # ── Cover & meta ────────────────────────
+      - label: "Featured Image"
+        name: "featuredImage"
+        widget: "image"
+        required: false
+        hint: "Cover image shown on the blog listing and at the top of the post."
 
       - label: "Publish Date"
         name: "date"
@@ -52,35 +85,11 @@ collections:
         default: "Quincy"
         required: false
 
-      - label: "Category"
-        name: "category"
-        widget: "select"
-        required: false
-        options:
-          - { label: "Culture & Heritage", value: "culture" }
-          - { label: "History",            value: "history" }
-          - { label: "Travel & Expat",     value: "travel"  }
-          - { label: "Food & Traditions",  value: "food"    }
-          - { label: "Music & Arts",       value: "music"   }
-          - { label: "News & Updates",     value: "news"    }
-
-      - label: "Featured Image"
-        name: "featuredImage"
-        widget: "image"
-        required: false
-        hint: "Cover image shown on the blog listing and at the top of the post."
-
+      # ── Listing metadata ─────────────────────
       - label: "Excerpt"
         name: "excerpt"
         widget: "text"
         hint: "Short summary shown on the blog listing (1–2 sentences)."
-
-      - label: "Featured Post"
-        name: "featured"
-        widget: "boolean"
-        default: false
-        required: false
-        hint: "Pin this post to the top of the blog listing."
 
       - label: "Tags"
         name: "postTags"
@@ -88,13 +97,7 @@ collections:
         required: false
         hint: "Specific keywords like 'tobago', 'history', 'folklore'. One word per tag, lowercase. Press Enter to add each one."
 
-      - label: "Save as Draft"
-        name: "draft"
-        widget: "boolean"
-        default: false
-        required: false
-        hint: "Drafts are not shown on the live site until this is turned off."
-
+      # ── Content ──────────────────────────────
       - label: "Body"
         name: "body"
         widget: "markdown"
@@ -118,6 +121,12 @@ collections:
     slug: "{{slug}}"
     filter: {field: "type", value: "story"}
     fields:
+
+      - label: "Title"
+        name: "title"
+        widget: "string"
+
+      # ── Classification ──────────────────────
       - label: "Collection Type"
         name: "type"
         widget: "select"
@@ -127,9 +136,39 @@ collections:
           - { label: "Blog Post",    value: "post"  }
           - { label: "Island Story", value: "story" }
 
-      - label: "Title"
-        name: "title"
-        widget: "string"
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        required: false
+        options:
+          - { label: "Culture & Heritage", value: "culture" }
+          - { label: "History",            value: "history" }
+          - { label: "Travel & Expat",     value: "travel"  }
+          - { label: "Food & Traditions",  value: "food"    }
+          - { label: "Music & Arts",       value: "music"   }
+          - { label: "News & Updates",     value: "news"    }
+
+      # ── Status flags ────────────────────────
+      - label: "Save as Draft"
+        name: "draft"
+        widget: "boolean"
+        default: false
+        required: false
+        hint: "Drafts are not shown on the live site until this is turned off."
+
+      - label: "Featured Story"
+        name: "featured"
+        widget: "boolean"
+        default: false
+        required: false
+        hint: "Pin this story to the top of the blog listing."
+
+      # ── Cover & meta ────────────────────────
+      - label: "Featured Image"
+        name: "featuredImage"
+        widget: "image"
+        required: false
+        hint: "Cover image shown on the blog listing and at the top of the story."
 
       - label: "Publish Date"
         name: "date"
@@ -144,35 +183,11 @@ collections:
         default: "Quincy"
         required: false
 
-      - label: "Category"
-        name: "category"
-        widget: "select"
-        required: false
-        options:
-          - { label: "Culture & Heritage", value: "culture" }
-          - { label: "History",            value: "history" }
-          - { label: "Travel & Expat",     value: "travel"  }
-          - { label: "Food & Traditions",  value: "food"    }
-          - { label: "Music & Arts",       value: "music"   }
-          - { label: "News & Updates",     value: "news"    }
-
-      - label: "Featured Image"
-        name: "featuredImage"
-        widget: "image"
-        required: false
-        hint: "Cover image shown on the blog listing and at the top of the story."
-
+      # ── Listing metadata ─────────────────────
       - label: "Excerpt"
         name: "excerpt"
         widget: "text"
         hint: "Short summary shown on the blog listing (1–2 sentences)."
-
-      - label: "Featured Story"
-        name: "featured"
-        widget: "boolean"
-        default: false
-        required: false
-        hint: "Pin this story to the top of the blog listing."
 
       - label: "Tags"
         name: "postTags"
@@ -180,13 +195,7 @@ collections:
         required: false
         hint: "Specific keywords like 'tobago', 'history', 'folklore'. One word per tag, lowercase. Press Enter to add each one."
 
-      - label: "Save as Draft"
-        name: "draft"
-        widget: "boolean"
-        default: false
-        required: false
-        hint: "Drafts are not shown on the live site until this is turned off."
-
+      # ── Content ──────────────────────────────
       - label: "Body"
         name: "body"
         widget: "markdown"
