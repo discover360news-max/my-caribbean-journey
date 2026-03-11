@@ -1304,7 +1304,8 @@
 }
 
 .prose .callout strong {
-  display: inline;
+  display: block;
+  margin-bottom: 0.4rem;
 }
 
 .prose .callout-tip {
@@ -1341,6 +1342,16 @@
 
 .prose .callout-warning strong {
   color: var(--orange);
+}
+
+/* Contributor / author bio callout — all four label variants share this style */
+.prose [class*="callout-contributor"] {
+  background: var(--cream);
+  border-color: var(--green-deep);
+}
+
+.prose [class*="callout-contributor"] strong {
+  color: var(--green-deep);
 }
 
 /* ==========================================

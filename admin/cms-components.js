@@ -155,10 +155,14 @@ CMS.registerEditorComponent({
       label: 'Type',
       widget: 'select',
       options: [
-        { label: '💡 Tip',       value: 'tip'     },
-        { label: '⭐ Fun Fact',  value: 'fact'    },
-        { label: '📌 Note',      value: 'note'    },
-        { label: '⚠️ Warning',   value: 'warning' }
+        { label: '💡 Tip',                  value: 'tip'                 },
+        { label: '⭐ Fun Fact',             value: 'fact'                },
+        { label: '📌 Note',                 value: 'note'                },
+        { label: '⚠️ Warning',              value: 'warning'             },
+        { label: '✍️ Contributor',          value: 'contributor'         },
+        { label: '👤 About the Author',     value: 'contributor-author'  },
+        { label: '🙏 With thanks to',       value: 'contributor-thanks'  },
+        { label: '👤 About the Contributor',value: 'contributor-about'   }
       ],
       default: 'tip'
     },
@@ -170,7 +174,7 @@ CMS.registerEditorComponent({
     }
   ],
 
-  pattern: /^<div class="callout callout-(tip|fact|note|warning)"><p><strong>[^<]+<\/strong> ([\s\S]*?)<\/p><\/div>$/,
+  pattern: /^<div class="callout callout-(tip|fact|note|warning|contributor|contributor-author|contributor-thanks|contributor-about)"><p><strong>[^<]+<\/strong> ([\s\S]*?)<\/p><\/div>$/,
 
   fromBlock: function (match) {
     return {
@@ -180,7 +184,11 @@ CMS.registerEditorComponent({
   },
 
   toBlock: function (data) {
-    var labels = { tip: '💡 Tip', fact: '⭐ Fun Fact', note: '📌 Note', warning: '⚠️ Warning' };
+    var labels = {
+      tip: '💡 Tip', fact: '⭐ Fun Fact', note: '📌 Note', warning: '⚠️ Warning',
+      'contributor': '✍️ Contributor', 'contributor-author': '👤 About the Author',
+      'contributor-thanks': '🙏 With thanks to', 'contributor-about': '👤 About the Contributor'
+    };
     var type    = data.type || 'tip';
     var label   = labels[type] || 'Tip';
     var content = (data.content || '').replace(/\n/g, '<br>');
@@ -188,12 +196,21 @@ CMS.registerEditorComponent({
   },
 
   toPreview: function (data) {
-    var labels = { tip: '💡 Tip', fact: '⭐ Fun Fact', note: '📌 Note', warning: '⚠️ Warning' };
+    var labels = {
+      tip: '💡 Tip', fact: '⭐ Fun Fact', note: '📌 Note', warning: '⚠️ Warning',
+      'contributor': '✍️ Contributor', 'contributor-author': '👤 About the Author',
+      'contributor-thanks': '🙏 With thanks to', 'contributor-about': '👤 About the Contributor'
+    };
+    var contribStyle = { bg: '#f5f0e8', border: '#0d1f12' };
     var colors = {
-      tip:     { bg: 'rgba(45,107,69,0.08)',    border: '#1a4a2e' },
-      fact:    { bg: 'rgba(212,160,48,0.10)',   border: '#d4a030' },
-      note:    { bg: 'rgba(212,160,48,0.05)',   border: 'rgba(212,160,48,0.5)' },
-      warning: { bg: 'rgba(232,101,42,0.08)',   border: '#e8652a' }
+      tip:                  { bg: 'rgba(45,107,69,0.08)',   border: '#1a4a2e' },
+      fact:                 { bg: 'rgba(212,160,48,0.10)',  border: '#d4a030' },
+      note:                 { bg: 'rgba(212,160,48,0.05)',  border: 'rgba(212,160,48,0.5)' },
+      warning:              { bg: 'rgba(232,101,42,0.08)',  border: '#e8652a' },
+      'contributor':        contribStyle,
+      'contributor-author': contribStyle,
+      'contributor-thanks': contribStyle,
+      'contributor-about':  contribStyle
     };
     var type   = data.type || 'tip';
     var label  = labels[type] || 'Tip';
@@ -201,7 +218,7 @@ CMS.registerEditorComponent({
     var content = (data.content || '').replace(/\n/g, '<br>');
 
     return '<div style="background:' + color.bg + ';border-left:4px solid ' + color.border + ';border-radius:12px;padding:1.1rem 1.4rem;margin:1rem 0;font-family:Inter,sans-serif;font-size:0.95rem;line-height:1.7;">'
-      + '<p style="margin:0;"><strong style="color:' + color.border + ';">' + label + '</strong> ' + content + '</p></div>';
+      + '<p style="margin:0;"><strong style="display:block;margin-bottom:0.4rem;color:' + color.border + ';">' + label + '</strong>' + content + '</p></div>';
   }
 });
 
