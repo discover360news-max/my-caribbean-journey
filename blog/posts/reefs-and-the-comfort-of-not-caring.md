@@ -186,9 +186,9 @@ They are resilient ecosystems, but that resilience has limits and should never b
 
 They are small disciplines practiced consistently.
 
-***Choosing not to step on coral.*** 
-***Managing development responsibly.*** 
-***Keeping waterways clean.***
+* ***Choosing not to step on coral.*** 
+* ***Managing development responsibly.*** 
+* ***Keeping waterways clean.***
 
 Protecting Tobago’s reefs does not require dramatic gestures. 
 
