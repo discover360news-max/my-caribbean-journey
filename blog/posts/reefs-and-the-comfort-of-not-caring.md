@@ -102,7 +102,7 @@ Indiscriminate dumping can also introduce pollutants into the environment, from 
 
 Once in the sea, the silt clouds the water and settles over coral colonies, reducing sunlight and placing additional stress on reefs already coping with warming seas.
 
-*Unlike sand on a beach we can brush from our skin, coral cannot rid itself of the sediment that settles over it.*
+***Unlike sand on a beach we can brush from our skin, coral cannot rid itself of the sediment that settles over it.***
 
 This is why development planning matters. Without measures to contain or trap sediment before it reaches watercourses, even routine construction can quietly but significantly affect reef health.
 
