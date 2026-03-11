@@ -22,6 +22,24 @@ collections:
     create: true
     slug: "{{slug}}"
     filter: {field: "type", value: "post"}
+    summary: "{{title}} · {{date}} · {{category}}"
+    sortable_fields:
+      fields:
+        - name: date
+          label: "Publish Date"
+        - name: title
+          label: "Title"
+      default:
+        field: date
+        direction: Descending
+    view_filters:
+      filters:
+        - label: "Drafts"
+          field: draft
+          pattern: true
+        - label: "Published"
+          field: draft
+          pattern: false
     fields:
 
       - label: "Title"
@@ -120,6 +138,24 @@ collections:
     create: true
     slug: "{{slug}}"
     filter: {field: "type", value: "story"}
+    summary: "{{title}} · {{date}} · {{category}}"
+    sortable_fields:
+      fields:
+        - name: date
+          label: "Publish Date"
+        - name: title
+          label: "Title"
+      default:
+        field: date
+        direction: Descending
+    view_filters:
+      filters:
+        - label: "Drafts"
+          field: draft
+          pattern: true
+        - label: "Published"
+          field: draft
+          pattern: false
     fields:
 
       - label: "Title"
