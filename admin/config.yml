@@ -23,15 +23,7 @@ collections:
     slug: "{{slug}}"
     filter: {field: "type", value: "post"}
     summary: "{{title}} · {{date}} · {{category}}"
-    sortable_fields:
-      fields:
-        - name: date
-          label: "Publish Date"
-        - name: title
-          label: "Title"
-      default:
-        field: date
-        direction: Descending
+    sortable_fields: ['date', 'title']
     view_filters:
       - label: "Drafts"
         field: draft
@@ -138,15 +130,7 @@ collections:
     slug: "{{slug}}"
     filter: {field: "type", value: "story"}
     summary: "{{title}} · {{date}} · {{category}}"
-    sortable_fields:
-      fields:
-        - name: date
-          label: "Publish Date"
-        - name: title
-          label: "Title"
-      default:
-        field: date
-        direction: Descending
+    sortable_fields: ['date', 'title']
     view_filters:
       - label: "Drafts"
         field: draft

@@ -11,7 +11,7 @@ postTags:
   - pride
   - culture
 draft: false
-references: |
+references: >-
   - Drewett, P. L. Excavations at Heywoods, Barbados, and the Economic Basis of
   the Suazoid Period in the Lesser Antilles. Proceedings of the Prehistoric
   Society. [Click
