@@ -667,88 +667,86 @@ CMS.registerPreviewStyle('https://fonts.googleapis.com/css2?family=Playfair+Disp
 CMS.registerPreviewStyle('/shared/shared.css');
 CMS.registerPreviewStyle('/css/blog.css');
 
-var PostPreview = createClass({
-  render: function () {
-    var entry         = this.props.entry;
-    var title         = entry.getIn(['data', 'title'])         || '';
-    var excerpt       = entry.getIn(['data', 'excerpt'])       || '';
-    var author        = entry.getIn(['data', 'author'])        || '';
-    var category      = entry.getIn(['data', 'category'])      || '';
-    var featuredImage = entry.getIn(['data', 'featuredImage']) || '';
-    var refs          = entry.getIn(['data', 'references']);
-    var body          = this.props.widgetFor('body');
-    var refsWidget    = this.props.widgetFor('references');
+function PostPreview(props) {
+  var entry         = props.entry;
+  var title         = entry.getIn(['data', 'title'])         || '';
+  var excerpt       = entry.getIn(['data', 'excerpt'])       || '';
+  var author        = entry.getIn(['data', 'author'])        || '';
+  var category      = entry.getIn(['data', 'category'])      || '';
+  var featuredImage = entry.getIn(['data', 'featuredImage']) || '';
+  var refs          = entry.getIn(['data', 'references']);
+  var body          = props.widgetFor('body');
+  var refsWidget    = props.widgetFor('references');
 
-    var categoryLabels = {
-      culture: 'Culture & Heritage', history: 'History',
-      travel: 'Travel & Expat',      food: 'Food & Traditions',
-      music: 'Music & Arts',         news: 'News & Updates'
-    };
-    var categoryLabel = categoryLabels[category] || '';
+  var categoryLabels = {
+    culture: 'Culture & Heritage', history: 'History',
+    travel: 'Travel & Expat',      food: 'Food & Traditions',
+    music: 'Music & Arts',         news: 'News & Updates'
+  };
+  var categoryLabel = categoryLabels[category] || '';
 
-    var headerBg = featuredImage
-      ? 'linear-gradient(to bottom, rgba(13,31,18,0.65) 0%, rgba(13,31,18,0.88) 100%), url(' + featuredImage + ') center/cover no-repeat'
-      : 'linear-gradient(135deg, #0d1f12 0%, #1a4a2e 100%)';
+  var headerBg = featuredImage
+    ? 'linear-gradient(to bottom, rgba(13,31,18,0.65) 0%, rgba(13,31,18,0.88) 100%), url(' + featuredImage + ') center/cover no-repeat'
+    : 'linear-gradient(135deg, #0d1f12 0%, #1a4a2e 100%)';
 
-    return h('div', { style: { background: '#faf8f4', fontFamily: 'Inter, sans-serif' } },
+  return h('div', { style: { background: '#faf8f4', fontFamily: 'Inter, sans-serif' } },
 
-      // ── Hero header ──────────────────────────────────────
-      h('header', { style: { background: headerBg, padding: '4rem 2.5rem 3.5rem' } },
-        h('div', { style: { maxWidth: '68ch', margin: '0 auto' } },
+    // ── Hero header ──────────────────────────────────────
+    h('header', { style: { background: headerBg, padding: '4rem 2.5rem 3.5rem' } },
+      h('div', { style: { maxWidth: '68ch', margin: '0 auto' } },
 
-          // Category + author row
-          h('div', { style: { display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem', flexWrap: 'wrap' } },
-            categoryLabel && h('span', { style: {
-              background: 'rgba(212,160,48,0.2)', color: '#d4a030',
-              fontSize: '0.72rem', fontWeight: '700', textTransform: 'uppercase',
-              letterSpacing: '0.1em', padding: '0.25rem 0.75rem',
-              borderRadius: '20px', border: '1px solid rgba(212,160,48,0.35)'
-            }}, categoryLabel),
-            author && h('span', { style: { fontSize: '0.85rem', color: 'rgba(245,240,232,0.65)' } }, 'by ' + author)
-          ),
+        // Category + author row
+        h('div', { style: { display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem', flexWrap: 'wrap' } },
+          categoryLabel && h('span', { style: {
+            background: 'rgba(212,160,48,0.2)', color: '#d4a030',
+            fontSize: '0.72rem', fontWeight: '700', textTransform: 'uppercase',
+            letterSpacing: '0.1em', padding: '0.25rem 0.75rem',
+            borderRadius: '20px', border: '1px solid rgba(212,160,48,0.35)'
+          }}, categoryLabel),
+          author && h('span', { style: { fontSize: '0.85rem', color: 'rgba(245,240,232,0.65)' } }, 'by ' + author)
+        ),
 
-          // Title
-          h('h1', { style: {
-            fontFamily: '"Playfair Display", serif',
-            fontSize: 'clamp(1.75rem, 4vw, 2.75rem)', fontWeight: '700',
-            lineHeight: '1.15', color: '#f5f0e8',
-            maxWidth: '20ch', marginBottom: excerpt ? '1.25rem' : '0'
-          }}, title),
+        // Title
+        h('h1', { style: {
+          fontFamily: '"Playfair Display", serif',
+          fontSize: 'clamp(1.75rem, 4vw, 2.75rem)', fontWeight: '700',
+          lineHeight: '1.15', color: '#f5f0e8',
+          maxWidth: '20ch', marginBottom: excerpt ? '1.25rem' : '0'
+        }}, title),
 
-          // Excerpt / standfirst
-          excerpt && h('p', { style: {
-            fontFamily: '"Playfair Display", serif', fontSize: '1.1rem',
-            fontStyle: 'italic', color: 'rgba(245,240,232,0.75)',
-            maxWidth: '56ch', lineHeight: '1.65', margin: '0'
-          }}, excerpt)
-        )
-      ),
+        // Excerpt / standfirst
+        excerpt && h('p', { style: {
+          fontFamily: '"Playfair Display", serif', fontSize: '1.1rem',
+          fontStyle: 'italic', color: 'rgba(245,240,232,0.75)',
+          maxWidth: '56ch', lineHeight: '1.65', margin: '0'
+        }}, excerpt)
+      )
+    ),
 
-      // ── Featured image card ───────────────────────────────
-      featuredImage && h('div', { style: { maxWidth: '68ch', margin: '-3rem auto 0', padding: '0 2.5rem' } },
-        h('div', { style: {
-          borderRadius: '16px', overflow: 'hidden',
-          boxShadow: '0 12px 56px rgba(0,0,0,0.4)',
-          aspectRatio: '16 / 9', background: '#0d1f12'
-        }},
-          h('img', { src: featuredImage, alt: title, style: { width: '100%', height: '100%', objectFit: 'cover', display: 'block' } })
-        )
-      ),
+    // ── Featured image card ───────────────────────────────
+    featuredImage && h('div', { style: { maxWidth: '68ch', margin: '-3rem auto 0', padding: '0 2.5rem' } },
+      h('div', { style: {
+        borderRadius: '16px', overflow: 'hidden',
+        boxShadow: '0 12px 56px rgba(0,0,0,0.4)',
+        aspectRatio: '16 / 9', background: '#0d1f12'
+      }},
+        h('img', { src: featuredImage, alt: title, style: { width: '100%', height: '100%', objectFit: 'cover', display: 'block' } })
+      )
+    ),
 
-      // ── Body + references ─────────────────────────────────
-      h('div', { style: { padding: '3rem 2.5rem 4rem' } },
-        h('div', { style: { maxWidth: '68ch', margin: '0 auto' } },
-          h('div', { className: 'prose' }, body),
-          refs && h('div', { className: 'post-references' },
-            h('h2', { className: 'references-heading' }, 'References & Further Reading'),
-            h('div', { className: 'prose prose-references' }, refsWidget)
-          )
+    // ── Body + references ─────────────────────────────────
+    h('div', { style: { padding: '3rem 2.5rem 4rem' } },
+      h('div', { style: { maxWidth: '68ch', margin: '0 auto' } },
+        h('div', { className: 'prose' }, body),
+        refs && h('div', { className: 'post-references' },
+          h('h2', { className: 'references-heading' }, 'References & Further Reading'),
+          h('div', { className: 'prose prose-references' }, refsWidget)
         )
       )
+    )
 
-    );
-  }
-});
+  );
+}
 
 CMS.registerPreviewTemplate('posts',   PostPreview);
 CMS.registerPreviewTemplate('stories', PostPreview);
