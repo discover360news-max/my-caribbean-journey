@@ -12,8 +12,7 @@ postTags:
   - coralreef
 draft: false
 references: >-
-  Caribbean Water and Wastewater Association. (2025). Developmental Study: Water
-  and Sustainability in Trinidad and Tobago.
+ [Caribbean Water and Wastewater Association. (2025). *Developmental Study: Water and Sustainability in Trinidad and Tobago.*](https://cwwa.net/wp-content/uploads/2025/02/Developmental-Study-Water-and-Sustainability-in-Trinidad-and-Tobago.pdf)
 
 
   World Resources Institute & Water and Sewerage Authority (WASA). (2015). Characterization Form for Defining the Costs and Benefits of Domestic Wastewater Management – Southwest Tobago. GEF CReW Project.
@@ -50,7 +49,7 @@ references: >-
 ---
 For many people, their first encounter with a coral reef happens underwater.
 
-Mine happened on a living room wall.
+***Mine happened on a living room wall.***
 
 As a child growing up for a time in Trinidad, it seemed that almost every house I visited had the same object mounted somewhere on the wall: a delicate fan coral. Whenever I asked where it came from, the answer was almost always the same.
 
@@ -58,9 +57,9 @@ As a child growing up for a time in Trinidad, it seemed that almost every house 
 
 At the time I had no real understanding of what a reef was. I only knew that this strange, fragile-looking structure had come from somewhere beneath the sea, and that people brought it home from Tobago the way someone might bring back a shell from a beach.
 
-***It was my first introduction to coral.***
+*It was my first introduction to coral.*
 
-A few years later, back in Tobago, an aunt took me on a trip to Little Tobago. On the way there the boat stopped in the channel between the village of Speyside and Little Tobago, known as the Kelleston Drain. We were on a glass-bottom boat, and through the pane beneath our feet the sea opened up into an entirely different and fantastically mesmerizing world.
+A few years later, back in Tobago, an aunt took me on a trip to Little Tobago. On the way there the boat stopped in the channel between the village of Speyside and Little Tobago, known as the ****Kelleston Drain****. We were on a glass-bottom boat, and through the pane beneath our feet the sea opened up into an entirely different and fantastically mesmerizing world.
 
 ***Below us sat an enormous brain coral.***
 
@@ -72,15 +71,15 @@ Someone on the boat exclaimed that it was the largest brain coral in the Western
 
 Beyond the walking trails and the heat of the afternoon sun, I remember very little about the rest of that excursion to Little Tobago. As the saying goes, youth is wasted on the young.
 
-But the image of that brain coral has stayed with me ever since.
+*But the image of that brain coral has stayed with me ever since.*
 
-Memories like that create the sense that reefs are permanent.
+****Memories like that create the sense that reefs are permanent.****
 
 Yet anyone who has spent time studying Tobago’s marine ecosystems knows that reefs are far more fragile than they appear.
 
 Over the past several decades, subtle changes have become noticeable in places like Buccoo Reef. The reef is still there. Boats still arrive. Visitors still marvel at the water. But the kaleidoscope of colours and density of life that once stunned first-time visitors before the turn of the century is not quite the same today.
 
-The change has been gradual, and such change is easy to ignore.
+***The change has been gradual, and such change is easy to ignore.***
 
 ## What the Trained Eye Notices
 
@@ -94,7 +93,7 @@ They also watch the growth of sponges and keep an eye out for early signs of ble
 
 To the casual observer, bleaching may simply look like lighter coral.
 
-*To someone trained to read a reef, it signals stress.*
+***To someone trained to read a reef, it signals stress.***
 
 In recent years, large mats of sargassum seaweed drifting westward from the tropical Atlantic into the Caribbean have created new pressures on coastal ecosystems, sometimes smothering reefs and blocking the sunlight corals depend on.
 
@@ -114,11 +113,13 @@ Indiscriminate dumping can also introduce pollutants into the environment, from 
 
 Once in the sea, the silt clouds the water and settles over coral colonies, reducing sunlight and placing additional stress on reefs already coping with warming seas.
 
-*Unlike sand on a beach, coral cannot simply brush it away*.
+*Unlike sand on a beach we can brush from our skin, coral cannot rid itself of the sediment that settles over it.*
 
 This is why development planning matters. Without measures to contain or trap sediment before it reaches watercourses, even routine construction can quietly but significantly affect reef health.
 
-Another issue that continues to surface in discussions about reef health is wastewater management. Studies going back decades have highlighted how untreated or poorly treated sewage entering coastal waters can contribute to the decline of ecosystems like the Buccoo Reef Complex. While infrastructure upgrades in south-west Tobago have improved wastewater treatment in recent years, environmental groups and researchers continue to raise concerns about capacity, development pressures, and the long-term impact of nutrient pollution on reef health.
+Another issue that continues to surface in discussions about reef health is wastewater management. Studies going back decades have highlighted how untreated or poorly treated sewage entering coastal waters can contribute to the decline of ecosystems like the Buccoo Reef Complex. While infrastructure upgrades in south-west Tobago have improved wastewater treatment in recent years, environmental groups and researchers continue to raise concerns about whether treatment capacity can keep pace with development in the region, and the long-term impact of nutrient pollution on reef health.
+
+<div class="callout callout-note"><p><strong>📌 Note</strong> Nutrient pollution occurs when excess nitrogen and phosphorus enter coastal waters, often from sewage or runoff, stimulating algae growth that can overwhelm coral reefs.
 
 ## Tourism and the Reef Economy
 
