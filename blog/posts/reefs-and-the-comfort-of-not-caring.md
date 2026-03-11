@@ -14,7 +14,7 @@ postTags:
 references: |-
   - Caribbean Water and Wastewater Association. (2025). [_Developmental Study: Water and Sustainability in Trinidad and Tobago._](https://cwwa.net/wp-content/uploads/2025/02/Developmental-Study-Water-and-Sustainability-in-Trinidad-and-Tobago.pdf)
   - World Resources Institute & Water and Sewerage Authority (WASA). (2015). [_Characterization Form for Defining the Costs and Benefits of Domestic Wastewater Management – Southwest Tobago. GEF CReW Project._](https://clmeplus.org/app/uploads/2020/04/CReW_C2_WRI_Valuing_Wastewater_Annex_3B_SW_Tobago_Characterization.pdf)
-  - Burke, L. (2016, June 8). [A History of Untreated Sewage Sours Tobago’s Waters.](https://www.wri.org/insights/history-untreated-sewage-sours-tobagos-waters) World Resources Institute.
+  - Burke, L. (2016, June 8). [A History of Untreated Sewage Sours Tobago's Waters.](https://www.wri.org/insights/history-untreated-sewage-sours-tobagos-waters) World Resources Institute.
   - Parliament of the Republic of Trinidad and Tobago. (2021). [_Joint Select Committee on Land and Physical Infrastructure Report._](https://www.ttparliament.org/wp-content/uploads/2021/11/p12-s1-J-20210629-LPI-R1.pdf)
   - Connelly, C. (2020, July 28). [\$125m wastewater facility to benefit Tobago.](https://newsday.co.tt/2020/07/28/125m-wastewater-facility-to-benefit-tobago/) _Trinidad and Tobago Newsday._
   - Wild Tobago. (2024, January 27). [_Still Crying for Buccoo Reef._](http://wildtobago.blogspot.com/2024/01/still-crying-for-buccoo-reef.html)
@@ -28,7 +28,7 @@ references: |-
 
 For many people, their first encounter with a coral reef happens underwater.
 
-**_Mine happened on a living room wall._**
+#### Mine happened on a living room wall.
 
 As a child growing up for a time in Trinidad, it seemed that almost every house I visited had the same object mounted somewhere on the wall: a delicate fan coral. Whenever I asked where it came from, the answer was almost always the same.
 
@@ -40,13 +40,13 @@ _It was my first introduction to coral._
 
 A few years later, back in Tobago, an aunt took me on a trip to Little Tobago. On the way there the boat stopped in the channel between the village of Speyside and Little Tobago, known as the **Kelleston Drain**. We were on a glass-bottom boat, and through the pane beneath our feet the sea opened up into an entirely different and fantastically mesmerizing world.
 
-### Below us sat an enormous brain coral.
+#### Below us sat an enormous brain coral.
 
 Someone on the boat exclaimed that it was the largest brain coral in the Western Hemisphere.
 
 ### That small detail immediately captured my attention and filled me with a quiet sense of pride.
 
-Seen through the glass beneath our feet, the scale of it was astonishing, especially to a child’s eyes. The coral looked ancient, like something that had been quietly growing there for centuries.
+Seen through the glass beneath our feet, the scale of it was astonishing, especially to a child's eyes. The coral looked ancient, like something that had been quietly growing there for centuries.
 
 Beyond the walking trails and the heat of the afternoon sun, I remember very little about the rest of that excursion to Little Tobago. As the saying goes, youth is wasted on the young.
 
@@ -54,11 +54,11 @@ _But the image of that brain coral has stayed with me ever since._
 
 #### Memories like that create the sense that reefs are permanent.
 
-Yet anyone who has spent time studying Tobago’s marine ecosystems knows that reefs are far more fragile than they appear.
+Yet anyone who has spent time studying Tobago's marine ecosystems knows that reefs are far more fragile than they appear.
 
 Over the past several decades, subtle changes have become noticeable in places like Buccoo Reef. The reef is still there. Boats still arrive. Visitors still marvel at the water. But the kaleidoscope of colours and density of life that once stunned first-time visitors before the turn of the century is not quite the same today.
 
-**_The change has been gradual, and such change is easy to ignore._**
+#### The change has been gradual, and such change is easy to ignore.
 
 ## What the Trained Eye Notices
 
@@ -66,13 +66,13 @@ Most people swimming over a reef see colour and fish.
 
 _Marine scientists see something different._
 
-They look for the quieter biological signals that reveal a reef’s health. They notice how corals compete for space, sometimes slowly overgrowing one another in a silent battle for territory. In some cases, even the types of coral present can reveal the reef’s condition. An overabundance of fire coral, for example, can signal a disturbed ecosystem, while lower abundance may indicate a healthier reef environment.
+They look for the quieter biological signals that reveal a reef's health. They notice how corals compete for space, sometimes slowly overgrowing one another in a silent battle for territory. In some cases, even the types of coral present can reveal the reef's condition. An overabundance of fire coral, for example, can signal a disturbed ecosystem, while lower abundance may indicate a healthier reef environment.
 
 They also watch the growth of sponges and keep an eye out for early signs of bleaching, when warming seas cause corals to expel the tiny algae that give them colour and sustain them.
 
 To the casual observer, bleaching may simply look like lighter coral.
 
-_To someone trained to read a reef, it signals stress._
+#### To someone trained to read a reef, it signals stress.
 
 In recent years, large mats of sargassum seaweed drifting westward from the tropical Atlantic into the Caribbean have created new pressures on coastal ecosystems, sometimes smothering reefs and blocking the sunlight corals depend on.
 
@@ -84,7 +84,7 @@ _It comes from ordinary behaviour._
 
 Something as simple as stepping on coral can have lasting consequences. Coral may look like rock, but it is a living organism that grows extremely slowly. One careless step can destroy years of growth.
 
-**_The most significant pressures on reefs begin far from the water._**
+#### The most significant pressures on reefs begin far from the water.
 
 Activities on land, particularly construction, road work, and land clearing, can release large amounts of silt into the landscape. During heavy rainfall, that sediment is carried into streams and eventually into coastal bays.
 
@@ -102,11 +102,11 @@ Another issue that continues to surface in discussions about reef health is wast
 
 ## Tourism and the Reef Economy
 
-Tobago’s reefs are more than natural beauty.
+Tobago's reefs are more than natural beauty.
 
-**_They are economic infrastructure._**
+#### They are economic infrastructure.
 
-The island’s economy relies heavily on tourism, and its natural resources are among the strongest attractions for visitors. Reefs in particular draw people to Tobago’s waters.
+The island's economy relies heavily on tourism, and its natural resources are among the strongest attractions for visitors. Reefs in particular draw people to Tobago's waters.
 
 - Glass-bottom boat tours.
 - Snorkeling excursions.
@@ -115,27 +115,27 @@ The island’s economy relies heavily on tourism, and its natural resources are 
 
 Healthy reefs support them all.
 
-**_Protecting reefs, therefore, is quintessentially part of tourism itself._**
+#### Protecting reefs, therefore, is quintessentially part of tourism itself.
 
 ## Reasons for Hope
 
 Despite the challenges, there are reasons for cautious optimism.
 
-Tobago benefits from a number of groups and institutions that actively advocate for marine protection. Research organizations such as the **Institute of Marine Affairs** continue to study reef conditions, while conservation groups including **Environment Tobago, Coral Reef Research Institute** and **SpeSeas** work to raise awareness about protecting the island’s marine ecosystems.
+Tobago benefits from a number of groups and institutions that actively advocate for marine protection. Research organizations such as the **Institute of Marine Affairs** continue to study reef conditions, while conservation groups including **Environment Tobago, Coral Reef Research Institute** and **SpeSeas** work to raise awareness about protecting the island's marine ecosystems.
 
 Younger generations may also be approaching these issues differently. With greater access to information and the reach of social media, awareness can spread quickly.
 
-**_Information travels faster than ever._**
+#### Information travels faster than ever.
 
 And awareness, when shared widely enough, has the potential to translate into action.
 
 ## A Shared Responsibility
 
-Since land-based activities can severely impact coral reef health, the reef is not someone else’s responsibility.
+Since land-based activities can severely impact coral reef health, the reef is not someone else's responsibility.
 
-_It is everyone’s: visitors, residents, and developers._
+_It is everyone's: visitors, residents, and developers._
 
-### We all play a role.
+#### We all play a role.
 
 Even small choices matter.
 
@@ -151,7 +151,7 @@ And for many Tobagonians, they are part of childhood memories and island identit
 
 For generations, children growing up in coastal villages learned to free dive along the reefs, sometimes with little more than homemade spear guns, catching fish and lobster in waters that felt both familiar and abundant.
 
-#### **_That connection to the sea should always matter._**
+#### That connection to the sea should always matter.
 
 ## Looking Forward
 
@@ -165,7 +165,7 @@ Storm damage.
 
 They are resilient ecosystems, but that resilience has limits and should never be taken for granted. Rising ocean temperatures, combined with local pressures, could eventually push reefs beyond what they can recover from.
 
-**_The good news is that many of the solutions are not complicated._**
+#### The good news is that many of the solutions are not complicated.
 
 They are small disciplines practiced consistently.
 
@@ -173,8 +173,8 @@ They are small disciplines practiced consistently.
 - Managing development responsibly.
 - Keeping waterways clean.
 
-Protecting Tobago’s reefs does not require dramatic gestures.
+Protecting Tobago's reefs does not require dramatic gestures.
 
-**_It simply requires caring enough to stop ignoring the small things._**
+#### It simply requires caring enough to stop ignoring the small things.
 
-<div class="callout callout-contributor-about"><p><strong>👤 About the Contributor</strong> Calvin Alexander is a Tobago native and fisheries specialist who has worked extensively with Tobago’s fishing communities since beginning his career with the Department of Marine Resources and Fisheries of the Tobago House of Assembly in the late 1990s. His work has also included collaboration with marine scientists and fisheries programs, including the U.S. National Oceanic and Atmospheric Administration (NOAA) Fisheries. He currently works as a Fisheries Liaison Officer for a private marine consulting company.</p></div>
+<div class="callout callout-contributor-about"><p><strong>👤 About the Contributor</strong> Calvin Alexander is a Tobago native and fisheries specialist who has worked extensively with Tobago's fishing communities since beginning his career with the Department of Marine Resources and Fisheries of the Tobago House of Assembly in the late 1990s. His work has also included collaboration with marine scientists and fisheries programs, including the U.S. National Oceanic and Atmospheric Administration (NOAA) Fisheries. He currently works as a Fisheries Liaison Officer for a private marine consulting company.</p></div>
