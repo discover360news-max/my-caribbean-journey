@@ -12,38 +12,29 @@ postTags:
   - coralreef
 draft: false
 references: >-
- - [Caribbean Water and Wastewater Association. (2025). *Developmental Study: Water and Sustainability in Trinidad and Tobago.*](https://cwwa.net/wp-content/uploads/2025/02/Developmental-Study-Water-and-Sustainability-in-Trinidad-and-Tobago.pdf)
+- Caribbean Water and Wastewater Association. (2025). [*Developmental Study: Water and Sustainability in Trinidad and Tobago.*](https://cwwa.net/wp-content/uploads/2025/02/Developmental-Study-Water-and-Sustainability-in-Trinidad-and-Tobago.pdf)
 
+- World Resources Institute & Water and Sewerage Authority (WASA). (2015). [*Characterization Form for Defining the Costs and Benefits of Domestic Wastewater Management – Southwest Tobago. GEF CReW Project.*](https://clmeplus.org/app/uploads/2020/04/CReW_C2_WRI_Valuing_Wastewater_Annex_3B_SW_Tobago_Characterization.pdf)
 
- - [World Resources Institute & Water and Sewerage Authority (WASA). (2015). *Characterization Form for Defining the Costs and Benefits of Domestic Wastewater Management – Southwest Tobago. GEF CReW Project.*](https://clmeplus.org/app/uploads/2020/04/CReW_C2_WRI_Valuing_Wastewater_Annex_3B_SW_Tobago_Characterization.pdf)
+- Burke, L. (2016, June 8). [A History of Untreated Sewage Sours Tobago’s Waters.](https://www.wri.org/insights/history-untreated-sewage-sours-tobagos-waters) World Resources Institute.
 
+- Parliament of the Republic of Trinidad and Tobago. (2021). [*Joint Select Committee on Land and Physical Infrastructure Report.*](https://www.ttparliament.org/wp-content/uploads/2021/11/p12-s1-J-20210629-LPI-R1.pdf)
 
- - [Burke, L. (2016, June 8). A History of Untreated Sewage Sours Tobago’s Waters. World Resources Institute.](https://www.wri.org/insights/history-untreated-sewage-sours-tobagos-waters)
+- Connelly, C. (2020, July 28). [\$125m wastewater facility to benefit Tobago.](https://newsday.co.tt/2020/07/28/125m-wastewater-facility-to-benefit-tobago/) *Trinidad and Tobago Newsday.*
 
+- Wild Tobago. (2024, January 27). [*Still Crying for Buccoo Reef.*](http://wildtobago.blogspot.com/2024/01/still-crying-for-buccoo-reef.html)
 
- - [Parliament of the Republic of Trinidad and Tobago. (2021). *Joint Select Committee on Land and Physical Infrastructure Report.*](https://www.ttparliament.org/wp-content/uploads/2021/11/p12-s1-J-20210629-LPI-R1.pdf)
+- Trinidad and Tobago Newsday. (2025, July 14). [Residents concerned about proposed hotel at Rocky Point.](https://newsday.co.tt/2025/07/14/residents-concerned-about-proposed-hotel-at-rocky-point/)
 
-  [Connelly, C. (2020, July 28). $125m wastewater facility to benefit Tobago. Trinidad and Tobago Newsday.](https://newsday.co.tt/2020/07/28/125m-wastewater-facility-to-benefit-tobago/)
+- SpeSeas. (2025, December 9). [Rocky Point at Risk: The EIA You Need to Know About.](https://speseas.org/2025/12/09/rocky-point-at-risk-the-eia-you-need-to-know-about/)
 
+- Inter-American Development Bank. (2022). [Trinidad and Tobago National Water Sector Transformation Program (TT-L1055).](https://www.iadb.org/en/project/TT-L1055)
 
- - Wild Tobago. (2024, January 27). [*Still Crying for Buccoo Reef.*](http://wildtobago.blogspot.com/2024/01/still-crying-for-buccoo-reef.html)
+- Ministry of Public Utilities. (2024). [National Water & Wastewater Sector Transformation: Achievements 2020–2024.](https://www.mpu.gov.tt/wp-content/uploads/2024/12/NWWSTP-Achievements-2020-to-2024-Booklet-web.pdf)
 
-  Trinidad and Tobago Newsday. (2025, July 14). Residents concerned about proposed hotel at Rocky Point.
+- Institute of Marine Affairs. (2010). [*Mass Coral Bleaching in 2010 in the Southern Caribbean.*](https://www.ima.gov.tt/wp-content/uploads/2018/04/Mass-Coral-Bleaching-in-2010-in-Southern-Caribbean.pdf)
 
-
-  [SpeSeas. (2025, December 9). Rocky Point at Risk: The EIA You Need to Know About.](https://speseas.org)
-
-
-  Inter-American Development Bank. (2022). Trinidad and Tobago National Water Sector Transformation Program (TT-L1055).
-
-
-  Ministry of Public Utilities. (2024). National Water & Wastewater Sector Transformation: Achievements 2020–2024.
-
-
-  [Institute of Marine Affairs. (2010). Mass Coral Bleaching in 2010 in the Southern Caribbean.](https://www.ima.gov.tt/wp-content/uploads/2018/04/Mass-Coral-Bleaching-in-2010-in-Southern-Caribbean.pdf)
-
-
-  [NOAA Ocean Service. What is Sargassum?](https://oceanservice.noaa.gov/news/sargassum/)
+- NOAA Ocean Service. (n.d.). [What is Sargassum?](https://oceanservice.noaa.gov/news/sargassum/)
 ---
 For many people, their first encounter with a coral reef happens underwater.
 
@@ -117,7 +108,7 @@ This is why development planning matters. Without measures to contain or trap se
 
 Another issue that continues to surface in discussions about reef health is wastewater management. Studies going back decades have highlighted how untreated or poorly treated sewage entering coastal waters can contribute to the decline of ecosystems like the Buccoo Reef Complex. While infrastructure upgrades in south-west Tobago have improved wastewater treatment in recent years, environmental groups and researchers continue to raise concerns about whether treatment capacity can keep pace with development in the region, and the long-term impact of nutrient pollution on reef health.
 
-<div class="callout callout-note"><p><strong>📌 Note</strong> Nutrient pollution occurs when excess nitrogen and phosphorus enter coastal waters, often from sewage or runoff, stimulating algae growth that can overwhelm coral reefs.
+<div class="callout callout-note"><p><strong>📌 Note</strong> Nutrient pollution occurs when excess nitrogen and phosphorus enter coastal waters, often from sewage or runoff, stimulating algae growth that can overwhelm coral reefs.</p></div>
 
 ## Tourism and the Reef Economy
 
