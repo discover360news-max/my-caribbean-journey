@@ -12,23 +12,21 @@ postTags:
   - coralreef
 draft: false
 references: >-
- [Caribbean Water and Wastewater Association. (2025). *Developmental Study: Water and Sustainability in Trinidad and Tobago.*](https://cwwa.net/wp-content/uploads/2025/02/Developmental-Study-Water-and-Sustainability-in-Trinidad-and-Tobago.pdf)
+ - [Caribbean Water and Wastewater Association. (2025). *Developmental Study: Water and Sustainability in Trinidad and Tobago.*](https://cwwa.net/wp-content/uploads/2025/02/Developmental-Study-Water-and-Sustainability-in-Trinidad-and-Tobago.pdf)
 
 
-  World Resources Institute & Water and Sewerage Authority (WASA). (2015). Characterization Form for Defining the Costs and Benefits of Domestic Wastewater Management – Southwest Tobago. GEF CReW Project.
+ - [World Resources Institute & Water and Sewerage Authority (WASA). (2015). *Characterization Form for Defining the Costs and Benefits of Domestic Wastewater Management – Southwest Tobago. GEF CReW Project.*](https://clmeplus.org/app/uploads/2020/04/CReW_C2_WRI_Valuing_Wastewater_Annex_3B_SW_Tobago_Characterization.pdf)
 
 
-  [Burke, L. (2016, June 8). A History of Untreated Sewage Sours Tobago’s Waters. World Resources Institute.](https://www.wri.org/insights/history-untreated-sewage-sours-tobagos-waters)
+ - [Burke, L. (2016, June 8). A History of Untreated Sewage Sours Tobago’s Waters. World Resources Institute.](https://www.wri.org/insights/history-untreated-sewage-sours-tobagos-waters)
 
 
-  Parliament of the Republic of Trinidad and Tobago. (2021). Joint Select Committee on Land and Physical Infrastructure Report.
-
+ - [Parliament of the Republic of Trinidad and Tobago. (2021). *Joint Select Committee on Land and Physical Infrastructure Report.*](https://www.ttparliament.org/wp-content/uploads/2021/11/p12-s1-J-20210629-LPI-R1.pdf)
 
   [Connelly, C. (2020, July 28). $125m wastewater facility to benefit Tobago. Trinidad and Tobago Newsday.](https://newsday.co.tt/2020/07/28/125m-wastewater-facility-to-benefit-tobago/)
 
 
-  Wild Tobago. (2024, January 27). Still Crying for Buccoo Reef.
-
+ - Wild Tobago. (2024, January 27). [*Still Crying for Buccoo Reef.*](http://wildtobago.blogspot.com/2024/01/still-crying-for-buccoo-reef.html)
 
   Trinidad and Tobago Newsday. (2025, July 14). Residents concerned about proposed hotel at Rocky Point.
 
