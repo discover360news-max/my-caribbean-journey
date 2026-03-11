@@ -657,10 +657,9 @@ CMS.registerEditorComponent({
 
 
 // -------------------------------------------------------------
-// PREVIEW STYLES + TEMPLATE
-// Injects site CSS into the CMS preview iframe and registers a
-// template that renders body + references with proper markup.
-// Both collections (posts, stories) share the same template.
+// PREVIEW STYLES
+// Injects site CSS into the CMS preview iframe.
+// Note: registerPreviewTemplate is not yet supported in Sveltia CMS.
 // -------------------------------------------------------------
 
 CMS.registerPreviewStyle('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap');
@@ -748,8 +747,9 @@ function PostPreview(props) {
   );
 }
 
-CMS.registerPreviewTemplate('posts',   PostPreview);
-CMS.registerPreviewTemplate('stories', PostPreview);
+// CMS.registerPreviewTemplate('posts',   PostPreview);
+// CMS.registerPreviewTemplate('stories', PostPreview);
+// ^ Uncomment when Sveltia CMS adds support for custom preview templates.
 
 
 // -------------------------------------------------------------

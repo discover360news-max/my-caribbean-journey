@@ -11,9 +11,8 @@ postTags:
   - tobago
   - coralreef
 draft: false
----
-references: >-
-- Caribbean Water and Wastewater Association. (2025). [*Developmental Study: Water and Sustainability in Trinidad and Tobago.*](https://cwwa.net/wp-content/uploads/2025/02/Developmental-Study-Water-and-Sustainability-in-Trinidad-and-Tobago.pdf)
+references: |
+  [Caribbean Water and Wastewater Association. (2025). *Developmental Study: Water and Sustainability in Trinidad and Tobago.*](https://cwwa.net/wp-content/uploads/2025/02/Developmental-Study-Water-and-Sustainability-in-Trinidad-and-Tobago.pdf)
 
 - World Resources Institute & Water and Sewerage Authority (WASA). (2015). [*Characterization Form for Defining the Costs and Benefits of Domestic Wastewater Management – Southwest Tobago. GEF CReW Project.*](https://clmeplus.org/app/uploads/2020/04/CReW_C2_WRI_Valuing_Wastewater_Annex_3B_SW_Tobago_Characterization.pdf)
 

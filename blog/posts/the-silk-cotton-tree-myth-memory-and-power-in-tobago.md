@@ -11,7 +11,7 @@ excerpt: >-
   Known scientifically as Ceiba pentandra, it is not merely tall: it is MYTHIC. It is ancestral. It is not simply ecological: it is spiritual architecture rooted in soil. This tree is woven into Tobago’s ecology, its folklore, its resistance, and its survival of African identity. It is, in many ways, a living archive.
 featured: false
 draft: false
-references: >-
+references: |
   [Florida Museum – Caribbean Archaeology
   Program](https://www.floridamuseum.ufl.edu/caribarch/education/ceiba/)
 

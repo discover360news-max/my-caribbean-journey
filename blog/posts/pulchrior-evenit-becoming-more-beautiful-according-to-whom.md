@@ -16,7 +16,7 @@ excerpt: >-
 
 
   Explore the shift from imposed symmetry to the true beauty of resilience, and how a phrase born of administration became a testament to survival.
-references: >-
+references: |
   ### Historical Context
 
 
