@@ -108,7 +108,7 @@ This is why development planning matters. Without measures to contain or trap se
 
 Another issue that continues to surface in discussions about reef health is wastewater management. Studies going back decades have highlighted how untreated or poorly treated sewage entering coastal waters can contribute to the decline of ecosystems like the Buccoo Reef Complex. While infrastructure upgrades in south-west Tobago have improved wastewater treatment in recent years, environmental groups and researchers continue to raise concerns about whether treatment capacity can keep pace with development in the region, and the long-term impact of nutrient pollution on reef health.
 
-<div class="callout callout-note"><p><strong>📌 Note</strong> Nutrient pollution occurs when excess nitrogen and phosphorus enter coastal waters, often from sewage or runoff, stimulating algae growth that can overwhelm coral reefs.</p></div>
+<div class="callout callout-note"><p><strong>📌 Note</strong> Nutrient pollution occurs when excess nitrogen and phosphorus enter coastal waters, often from sewage, fertilizers, or stormwater runoff, stimulating algae growth that can overwhelm coral reefs.</p></div>
 
 ## Tourism and the Reef Economy
 
