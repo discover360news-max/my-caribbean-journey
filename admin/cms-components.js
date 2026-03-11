@@ -657,6 +657,51 @@ CMS.registerEditorComponent({
 
 
 // -------------------------------------------------------------
+// PREVIEW STYLES + TEMPLATE
+// Injects site CSS into the CMS preview iframe and registers a
+// template that renders body + references with proper markup.
+// Both collections (posts, stories) share the same template.
+// -------------------------------------------------------------
+
+CMS.registerPreviewStyle('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap');
+CMS.registerPreviewStyle('/shared/shared.css');
+CMS.registerPreviewStyle('/css/blog.css');
+
+var PostPreview = createClass({
+  render: function () {
+    var entry    = this.props.entry;
+    var title    = entry.getIn(['data', 'title']) || '';
+    var refs     = entry.getIn(['data', 'references']);
+    var body     = this.props.widgetFor('body');
+    var refsWidget = this.props.widgetFor('references');
+
+    return h('div', { style: { padding: '2rem 2.5rem', background: '#faf8f4', minHeight: '100vh' } },
+      title && h('h1', {
+        style: {
+          fontFamily: '"Playfair Display", serif',
+          fontSize: '2rem',
+          fontWeight: '700',
+          color: '#0d1f12',
+          lineHeight: '1.2',
+          marginBottom: '2rem',
+          borderBottom: '1px solid rgba(0,0,0,0.08)',
+          paddingBottom: '1.5rem'
+        }
+      }, title),
+      h('div', { className: 'prose' }, body),
+      refs && h('div', { className: 'post-references' },
+        h('h2', { className: 'references-heading' }, 'References & Further Reading'),
+        h('div', { className: 'prose prose-references' }, refsWidget)
+      )
+    );
+  }
+});
+
+CMS.registerPreviewTemplate('posts',   PostPreview);
+CMS.registerPreviewTemplate('stories', PostPreview);
+
+
+// -------------------------------------------------------------
 // Add new components below this line.
 // Copy a block above as a template.
 // -------------------------------------------------------------
