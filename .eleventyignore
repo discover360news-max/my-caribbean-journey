@@ -3,6 +3,9 @@ CLAUDE.md
 DESIGN.md
 README.md
 
+# Memory system — not pages
+.memory/
+
 # Build output
 _site/
 

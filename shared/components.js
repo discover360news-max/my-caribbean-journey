@@ -611,6 +611,153 @@ var SiteComponents = (function () {
     fetch('https://assets.mailerlite.com/jsonp/' + MAILERLITE.accountId + '/forms/' + MAILERLITE.internalId + '/takel');
   }
 
+  // ----------------------------------------
+  // Reviews Carousel — data-driven, reusable across pages
+  // renderReviews(reviews, config) — builds the full section HTML
+  // initReviews(reviews, config)  — injects into #site-reviews + attaches behavior
+  //
+  // Config shape:
+  //   label    {string}  — section label above title (default: 'What Readers Are Saying')
+  //   title    {string}  — section heading (default: 'Reviews')
+  //   cta      {object}  — optional CTA below carousel
+  //     label    {string}  — small label above button
+  //     text     {string}  — button text
+  //     href     {string}  — button href (default: '#')
+  //     cssClass {string}  — button classes (default: 'btn btn-primary')
+  //     external {boolean} — adds target="_blank" rel="noopener noreferrer"
+  //
+  // Review object shape:
+  //   text       {string}  — review body (HTML-safe)
+  //   expandable {boolean} — adds data-expandable + Read more/less toggle
+  //   reviewer   {string}  — reviewer name
+  //   role       {string}  — reviewer title/location (may contain inline HTML)
+  // ----------------------------------------
+  function renderReviews(reviews, config) {
+    var cfg     = config || {};
+    var label   = cfg.label || 'What Readers Are Saying';
+    var title   = cfg.title || 'Reviews';
+    var cta     = cfg.cta   || null;
+
+    var starsHtml =
+      '<div class="review-stars">' +
+        '<span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>' +
+        '<span>&#9733;</span><span>&#9733;</span>' +
+      '</div>';
+
+    var arrowLeft =
+      '<button class="reviews-arrow reviews-arrow-left" aria-label="Scroll reviews left">' +
+        '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+          '<polyline points="15 18 9 12 15 6"></polyline>' +
+        '</svg>' +
+      '</button>';
+
+    var arrowRight =
+      '<button class="reviews-arrow reviews-arrow-right" aria-label="Scroll reviews right">' +
+        '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' +
+          '<polyline points="9 18 15 12 9 6"></polyline>' +
+        '</svg>' +
+      '</button>';
+
+    var cardsHtml = '';
+    reviews.forEach(function (r) {
+      var expandAttr  = r.expandable ? ' data-expandable' : '';
+      var readMoreBtn = r.expandable ? '<button class="review-read-more" hidden>Read more</button>' : '';
+      cardsHtml +=
+        '<div class="review-card">' +
+          starsHtml +
+          '<div class="review-quote">' +
+            '<div class="review-text"' + expandAttr + '>' +
+              '<p>' + r.text + '</p>' +
+            '</div>' +
+            readMoreBtn +
+          '</div>' +
+          '<div class="reviewer">' +
+            '<strong>' + r.reviewer + '</strong>' +
+            '<span>' + r.role + '</span>' +
+          '</div>' +
+        '</div>';
+    });
+
+    var ctaHtml = '';
+    if (cta) {
+      var btnClass  = cta.cssClass || 'btn btn-primary';
+      var btnTarget = cta.external ? ' target="_blank" rel="noopener noreferrer"' : '';
+      ctaHtml =
+        '<div class="reviews-cta">' +
+          (cta.label ? '<p class="reviews-cta-label">' + cta.label + '</p>' : '') +
+          '<a href="' + (cta.href || '#') + '" class="' + btnClass + '"' + btnTarget + '>' +
+            cta.text +
+          '</a>' +
+        '</div>';
+    }
+
+    return (
+      '<section class="section reviews" id="reviews">' +
+        '<div class="container">' +
+          '<div class="section-header">' +
+            '<p class="section-label">' + label + '</p>' +
+            '<h2 class="section-title">' + title + '</h2>' +
+          '</div>' +
+          '<div class="reviews-carousel">' +
+            arrowLeft +
+            '<div class="reviews-track">' + cardsHtml + '</div>' +
+            arrowRight +
+          '</div>' +
+          ctaHtml +
+        '</div>' +
+      '</section>'
+    );
+  }
+
+  function initReviews(reviews, config) {
+    var slot = document.getElementById('site-reviews');
+    if (!slot) return;
+
+    slot.innerHTML = renderReviews(reviews, config);
+
+    // Carousel scroll
+    var track = slot.querySelector('.reviews-track');
+    var left  = slot.querySelector('.reviews-arrow-left');
+    var right = slot.querySelector('.reviews-arrow-right');
+
+    if (track && left && right) {
+      var scrollAmount = 360;
+
+      left.addEventListener('click', function () {
+        track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      });
+
+      right.addEventListener('click', function () {
+        track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      });
+
+      function updateArrows() {
+        left.disabled  = track.scrollLeft <= 0;
+        right.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 1;
+      }
+
+      track.addEventListener('scroll', updateArrows, { passive: true });
+      updateArrows();
+    }
+
+    // Read more / truncation for long reviews
+    slot.querySelectorAll('.review-text[data-expandable]').forEach(function (el) {
+      var p   = el.querySelector('p');
+      var btn = el.parentNode.querySelector('.review-read-more');
+      if (!p || !btn || p.textContent.length <= 150) return;
+
+      el.classList.add('clamped');
+      btn.hidden = false;
+
+      btn.addEventListener('click', function () {
+        var isClamped = el.classList.contains('clamped');
+        el.classList.toggle('clamped',  !isClamped);
+        el.classList.toggle('expanded',  isClamped);
+        btn.textContent = isClamped ? 'Read less' : 'Read more';
+      });
+    });
+  }
+
   function init(config) {
     config = config || {};
 
@@ -665,5 +812,5 @@ var SiteComponents = (function () {
     initGdprBanner();
   }
 
-  return { init: init, cta: getCTA, disabledLabel: DISABLED_LABEL };
+  return { init: init, cta: getCTA, disabledLabel: DISABLED_LABEL, initReviews: initReviews };
 })();

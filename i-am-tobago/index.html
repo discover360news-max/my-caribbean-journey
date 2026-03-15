@@ -266,89 +266,8 @@
     </div>
   </section>
 
-  <!-- Reviews / Testimonials -->
-  <section class="section reviews" id="reviews">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-label">What Readers Are Saying</p>
-        <h2 class="section-title">Reviews</h2>
-      </div>
-      <div class="reviews-carousel">
-        <button class="reviews-arrow reviews-arrow-left" aria-label="Scroll reviews left">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-        </button>
-        <div class="reviews-track">
-          <div class="review-card">
-            <div class="review-stars">
-              <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
-            </div>
-            <div class="review-text" data-expandable>
-              <p>"I am Tobago" offers a vibrant immersion into a gem of an island. It is the perfect read aloud with a young child—the kind where both the adult reader and the child cozied up to listen will learn with wonder and awe. I bought it for my grandson and the way his eyes sparkled with the magic of discovery will be something I hold in my heart. The text and illustrations make I am Tobago a journey. Well done!</p>
-            </div>
-            <div class="reviewer">
-              <strong>Tia Levings</strong>
-              <span>NYT Bestselling author of <span><strong>"A Well-Trained Wife"</strong></span></span>
-            </div>
-          </div>
-          <div class="review-card">
-            <div class="review-stars">
-              <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
-            </div>
-            <div class="review-text">
-              <p>'I am Tobago' is flat out awesome. Illustrations are gorgeous!</p>
-            </div>
-            <div class="reviewer">
-              <strong>Julianne</strong>
-              <span>North Carolina, USA</span>
-            </div>
-          </div>
-          <div class="review-card">
-            <div class="review-stars">
-              <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
-            </div>
-            <div class="review-text">
-              <p>Wow! Every page is suitable for framing. Quincy, it is exquisite!!! I give it 5 stars. It is a book which makes me want to go there.</p>
-            </div>
-            <div class="reviewer">
-              <strong>Gwyn</strong>
-              <span>Michigan, USA</span>
-            </div>
-          </div>
-          <div class="review-card">
-            <div class="review-stars">
-              <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
-            </div>
-            <div class="review-text" data-expandable>
-              <p>I got my book today - well done Quincy! I wasn't sure what to expect, but, your book makes me want to go back to visit with those I met and spend much more time there exploring the natural beauty of the island, the sites and sounds, the foods, and more.</p>
-            </div>
-            <div class="reviewer">
-              <strong>Mary</strong>
-              <span>Virginia, USA</span>
-            </div>
-          </div>
-          <div class="review-card">
-            <div class="review-stars">
-              <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
-            </div>
-            <div class="review-text" data-expandable>
-              <p>Got my hands on 'I am Tobago' and it's AMAZING! Learned a lot about Trinidad and Tobago. Great work Quincy!</p>
-            </div>
-            <div class="reviewer">
-              <strong>Michelle Hood-Juilen</strong>
-              <span>Author of "In Grenada, What do you see"</span>
-            </div>
-          </div>
-        </div>
-        <button class="reviews-arrow reviews-arrow-right" aria-label="Scroll reviews right">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-        </button>
-      </div>
-      <div class="reviews-cta">
-        <p class="reviews-cta-label">Convinced? Get your copy.</p>
-        <a href="#buy" class="btn btn-primary amazon-book-link" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
-      </div>
-    </div>
-  </section>
+  <!-- Reviews / Testimonials — rendered by SiteComponents.initReviews() -->
+  <div id="site-reviews"></div>
 
   <!-- Buy CTA Section -->
   <section class="section buy" id="buy">
@@ -470,8 +389,8 @@
   })();
   </script>
   <script src="js/store-data.js"></script>
+  <script src="js/reviews-data.js"></script>
   <script src="js/stores.js"></script>
-  <script src="js/main.js"></script>
   <script>
     SiteComponents.init({
       breadcrumbs: [
@@ -505,6 +424,18 @@
         { label: 'Contact', href: '/contact/' }
       ]
     });
+    SiteComponents.initReviews(BOOK_REVIEWS, {
+      label: 'What Readers Are Saying',
+      title: 'Reviews',
+      cta: {
+        label:    'Convinced? Get your copy.',
+        text:     'Buy on Amazon',
+        href:     '#buy',
+        cssClass: 'btn btn-primary amazon-book-link',
+        external: true
+      }
+    });
   </script>
+  <script src="js/main.js"></script>
 </body>
 </html>
