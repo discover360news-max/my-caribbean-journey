@@ -5,7 +5,8 @@ date: 2026-03-01
 author: Quincy Yeates
 category: culture
 featuredImage: /blog/images/suazey.webp
-excerpt: Suazey, the Kalinago, and the Roots of Tobagonian Identity
+excerpt: >-
+  Long before any European flag was planted on Tobago's shore, the Suazey people and the Kalinago had already shaped the island's identity. A deep dive into the indigenous roots of Tobagonian culture and resistance.
 featured: false
 postTags:
   - pride

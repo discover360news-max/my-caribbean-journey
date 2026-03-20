@@ -20,6 +20,13 @@
   <meta property="og:site_name" content="My Caribbean Journey">
   <meta property="og:locale" content="en_US">
 
+  <!-- Article-specific OG (blog posts only) -->
+  <meta property="og:article:published_time" content="{{ page.date | htmlDateString }}">
+  <meta property="og:article:modified_time" content="{{ page.date | htmlDateString }}">
+  <meta property="og:article:section" content="{{ category | categoryLabel if category else 'Culture' }}">
+  {% for tag in postTags %}<meta property="og:article:tag" content="{{ tag }}">
+  {% endfor %}
+
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ title }} — My Caribbean Journey">
@@ -34,7 +41,10 @@
     "headline": {{ title | dump | safe }},
     "description": {{ (excerpt or description or "") | dump | safe }},
     "url": "https://mycaribbeanjourney.com{{ page.url }}",
+    "image": "{% if featuredImage %}https://mycaribbeanjourney.com{{ featuredImage }}{% else %}https://mycaribbeanjourney.com/images/hero/heritage-festival.jpg{% endif %}",
     "datePublished": "{{ page.date | htmlDateString }}",
+    "dateModified": "{{ page.date | htmlDateString }}",
+    "keywords": [{% for tag in postTags %}"{{ tag }}"{% if not loop.last %}, {% endif %}{% endfor %}],
     "author": {
       "@type": "Person",
       "name": "{{ author or 'Quincy' }}"
