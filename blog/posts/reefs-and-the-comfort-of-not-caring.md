@@ -144,7 +144,7 @@ Despite the challenges, there are reasons for cautious optimism.
 
 Tobago benefits from a number of groups and institutions that actively advocate for marine protection. Research organizations such as the **Institute of Marine Affairs** continue to study reef conditions, while conservation groups including **Environment Tobago, Coral Reef Research Institute** and **SpeSeas** work to raise awareness about protecting the island’s marine ecosystems.
 
-Younger generations may also be approaching these issues differently. With greater access to information and the reach of social media, awareness can spread quickly.
+Younger generations may approach these issues differently. With greater access to information and the reach of social media, awareness can spread quickly.
 
 ***Information travels faster than ever.***
 
