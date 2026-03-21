@@ -267,7 +267,6 @@ var SiteComponents = (function () {
   // Music Player — audio logic (HTML lives in renderHeader)
   // ----------------------------------------
   function initMusicPlayer() {
-    var STORAGE_KEY = 'mcj_music_session';
     var TARGET_VOL  = 0.45;
     var FADE_MS     = 3500;
 
@@ -319,6 +318,14 @@ var SiteComponents = (function () {
       if (btn) btn.setAttribute('aria-label', muted ? 'Unmute' : 'Mute');
     }
 
+    // Expose pause so other players (e.g. blog audio) can stop site music
+    window._mcjPauseSiteMusic = function () {
+      if (isPlaying) {
+        audio.pause();
+        setPlayState(false);
+      }
+    };
+
     // Wire play/pause button
     var playBtn = document.getElementById('mcj-play-btn');
     if (playBtn) {
@@ -327,11 +334,14 @@ var SiteComponents = (function () {
           audio.pause();
           setPlayState(false);
         } else {
+          // Pause any other audio playing on the page
+          document.querySelectorAll('audio').forEach(function (a) {
+            if (a !== audio) a.pause();
+          });
           audio.muted  = isMuted;
           audio.volume = isMuted ? 0 : TARGET_VOL;
           audio.play();
           setPlayState(true);
-          sessionStorage.setItem(STORAGE_KEY, 'started');
         }
       });
     }
@@ -344,27 +354,11 @@ var SiteComponents = (function () {
       });
     }
 
-    // Show sound icon on load (playing unmuted after fade)
+    // Player starts paused — plays only on user click
     setMuteState(false);
-
-    // Autoplay on first session visit; pause on subsequent pages
-    var hasStarted = sessionStorage.getItem(STORAGE_KEY);
-    if (!hasStarted) {
-      audio.play().then(function () {
-        setPlayState(true);
-        sessionStorage.setItem(STORAGE_KEY, 'started');
-        fadeIn();
-      }).catch(function () {
-        // Autoplay blocked — ready to play when user presses play
-        audio.muted  = false;
-        audio.volume = TARGET_VOL;
-        setPlayState(false);
-      });
-    } else {
-      audio.muted  = false;
-      audio.volume = TARGET_VOL;
-      setPlayState(false);
-    }
+    audio.muted  = false;
+    audio.volume = TARGET_VOL;
+    setPlayState(false);
   }
 
   // ----------------------------------------

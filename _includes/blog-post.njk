@@ -314,6 +314,13 @@ layout: blog-base.njk
         audio.play();
       });
     });
+
+    // Stop site music whenever any blog audio starts (track button or native controls)
+    widget.querySelectorAll('.media-audio-player').forEach(function (a) {
+      a.addEventListener('play', function () {
+        if (window._mcjPauseSiteMusic) window._mcjPauseSiteMusic();
+      });
+    });
   })();
   </script>
 
