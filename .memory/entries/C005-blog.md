@@ -3,7 +3,7 @@ id: C005
 type: COMPONENT
 status: ACTIVE
 created: 2026-03-11
-updated: 2026-03-11
+updated: 2026-03-21
 related: CFG01, C006, D001
 ---
 
@@ -51,7 +51,7 @@ css/
 | `draft` | boolean | Hides from live site |
 | `references` | markdown | Optional — rendered below post body via `markdownify` filter |
 | `youtubeId` | string | Optional — YouTube video ID only (not full URL). Powers Watch tab in sidebar. |
-| `audioUrl` | string | Optional — Audio file URL for Listen tab. Shows "Coming soon" when absent. |
+| `audioTracks` | list | Optional — List of R2 audio URLs. 1 item = plain player; 2+ = track selector. Shows "Coming soon" when absent. |
 
 **Eleventy filters (`.eleventy.js`):**
 | Filter | Usage | Notes |
@@ -77,8 +77,8 @@ css/
 **Blog post features:**
 - **Featured image**: overlaps hero — `padding-bottom: 10rem` on header, `margin: -7rem auto 0` on image
 - **Breadcrumb**: set via `window._mcjCrumbs` before `SiteComponents.init()` runs
-- **Sidebar**: Always renders now (was conditional on related posts). Contains:
-  1. **Listen/Watch widget** (`.post-media-widget`) — tab UI, "Coming soon" placeholders; Watch shows YouTube embed when `youtubeId` is set; Listen shows `<audio>` when `audioUrl` is set.
+- **Sidebar**: Always renders (was conditional on related posts). Contains:
+  1. **Listen/Watch widget** (`.post-media-widget`) — tabbed UI above related posts. See C009 for full details.
   2. **"Down the rabbit hole"** — related posts (conditional, only when related posts exist)
 - **Table wrapper**: inline JS in `blog-post.njk` wraps all `.prose table` in `.table-wrapper` div on load
 - **Em dash treatment**: `highlightEmDashes()` in shared JS applies gold colour to em dashes in prose
@@ -125,3 +125,4 @@ python3 -m http.server 8888
 ## Change Log
 - 2026-03-11 Created
 - 2026-03-20 Updated: excerpt ~160 char target for meta description (see S001)
+- 2026-03-21 Added Listen/Watch sidebar widget + audioTracks/youtubeId frontmatter fields (see C009)
