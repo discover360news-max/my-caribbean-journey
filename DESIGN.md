@@ -218,7 +218,7 @@ var CHARITY = { ..., live: false };
 ### Tooltip
 One site-wide label defined as `DISABLED_LABEL` in `shared/components.js`. Change it once, updates everywhere. Currently: `'Coming soon'`.
 
-CSS lives in `shared/shared.css` under `[data-tooltip]`. Tooltip appears above the element on hover/focus.
+CSS lives in `shared/shared.css` under `[data-tooltip]`. Tooltip appears above the element on hover/focus/tap. On mobile, a `touchstart` handler in `components.js` (at the bottom, outside the IIFE return) adds `.is-active` to the tapped element for 2s, then removes it. CSS has `&.is-active::after { opacity: 1 }` for this.
 
 ### `.btn-disabled` class
 Applies `opacity: 0.6` and `cursor: not-allowed`. Combined with `data-tooltip` and `href="#"` for the full disabled button treatment.
@@ -428,4 +428,20 @@ Interactive elements must have a minimum tappable area of **44×44px** (WCAG 2.5
 ---
 
 ### Font Size Floor
-Never render text below `0.75rem` (12px) for content that carries information. Decorative/label text (`0.7rem`) is acceptable only at high contrast. The footer copy exception is documented under M-2 in `AUDIT.md`.
+Never render text below `0.75rem` (12px) for content that carries information. Decorative/label text (`0.7rem`) is acceptable only at high contrast.
+
+---
+
+### Reduced Motion
+
+Always respect `prefers-reduced-motion: reduce` for canvas animations and transitions.
+
+```js
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  // skip or hide the animation entirely
+} else {
+  // run the animation
+}
+```
+
+Applied to: hero fireflies canvas in `i-am-tobago/js/main.js`. The CSS `@layer` scroll-driven animations in `shared/shared.css` already use `@media (prefers-reduced-motion: no-preference)` guards — maintain this pattern for any new CSS animations.
