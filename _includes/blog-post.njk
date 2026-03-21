@@ -58,7 +58,7 @@ layout: blog-base.njk
     </div>
     {% endif %}
     <div class="container">
-      <div class="post-layout{% if related and related.length %} has-sidebar{% endif %}">
+      <div class="post-layout has-sidebar">
         <div class="post-main">
 
           <div class="prose">
@@ -118,9 +118,50 @@ layout: blog-base.njk
 
         </div>{# end .post-main #}
 
-        {% if related and related.length %}
         <aside class="post-sidebar">
           <div class="post-sidebar-sticky">
+
+            <!-- Listen / Watch widget -->
+            <div class="post-media-widget">
+              <div class="media-tabs" role="tablist">
+                <button class="media-tab is-active" role="tab" aria-selected="true" data-media-tab="listen">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                  Listen
+                </button>
+                <button class="media-tab" role="tab" aria-selected="false" data-media-tab="watch">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  Watch
+                </button>
+              </div>
+
+              <div class="media-panel" data-media-panel="listen">
+                {% if audioUrl %}
+                <audio controls class="media-audio-player" src="{{ audioUrl }}"></audio>
+                {% else %}
+                <div class="media-coming-soon">
+                  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                  <p>Audio version</p>
+                  <span class="media-soon-badge">Coming soon</span>
+                </div>
+                {% endif %}
+              </div>
+
+              <div class="media-panel{% if youtubeId %} media-panel--video{% endif %} is-hidden" data-media-panel="watch">
+                {% if youtubeId %}
+                <div class="youtube-embed">
+                  <iframe src="https://www.youtube-nocookie.com/embed/{{ youtubeId }}" title="{{ title }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                </div>
+                {% else %}
+                <div class="media-coming-soon">
+                  <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  <p>Video version</p>
+                  <span class="media-soon-badge">Coming soon</span>
+                </div>
+                {% endif %}
+              </div>
+            </div>{# end .post-media-widget #}
+
+            {% if related and related.length %}
             <h3 class="sidebar-heading">Down the rabbit hole</h3>
             {% for post in related %}
             <a href="{{ post.url }}" class="rabbit-card">
@@ -135,9 +176,10 @@ layout: blog-base.njk
               </div>
             </a>
             {% endfor %}
+            {% endif %}
+
           </div>
         </aside>
-        {% endif %}
 
       </div>{# end .post-layout #}
     </div>{# end .container #}
@@ -228,5 +270,25 @@ layout: blog-base.njk
   </script>
 
   <script>window._mcjCrumbs = [{ label: 'Home', href: '/' }, { label: 'Essays', href: '/blog/' }, { label: {{ title | dump | safe }} }];</script>
+
+  <script>
+  // Media widget — Listen / Watch tab switching
+  (function () {
+    var widget = document.querySelector('.post-media-widget');
+    if (!widget) return;
+    widget.querySelectorAll('.media-tab').forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        var target = tab.dataset.mediaTab;
+        widget.querySelectorAll('.media-tab').forEach(function (t) {
+          t.classList.toggle('is-active', t === tab);
+          t.setAttribute('aria-selected', t === tab ? 'true' : 'false');
+        });
+        widget.querySelectorAll('.media-panel').forEach(function (panel) {
+          panel.classList.toggle('is-hidden', panel.dataset.mediaPanel !== target);
+        });
+      });
+    });
+  })();
+  </script>
 
 </article>

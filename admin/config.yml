@@ -94,6 +94,19 @@ collections:
         default: "Quincy"
         required: false
 
+      # ── Listen / Watch ────────────────────────
+      - label: "YouTube Video ID"
+        name: "youtubeId"
+        widget: "string"
+        required: false
+        hint: "Paste just the video ID from the YouTube URL — e.g. if the URL is youtube.com/watch?v=dQw4w9WgXcQ, paste dQw4w9WgXcQ. Leave blank until the video is published."
+
+      - label: "Audio URL"
+        name: "audioUrl"
+        widget: "string"
+        required: false
+        hint: "URL of the audio file for the Listen feature (TTS or podcast). Leave blank — this feature is coming soon."
+
       # ── Listing metadata ─────────────────────
       - label: "Excerpt"
         name: "excerpt"
@@ -200,6 +213,19 @@ collections:
         widget: "string"
         default: "Quincy"
         required: false
+
+      # ── Listen / Watch ────────────────────────
+      - label: "YouTube Video ID"
+        name: "youtubeId"
+        widget: "string"
+        required: false
+        hint: "Paste just the video ID from the YouTube URL — e.g. if the URL is youtube.com/watch?v=dQw4w9WgXcQ, paste dQw4w9WgXcQ. Leave blank until the video is published."
+
+      - label: "Audio URL"
+        name: "audioUrl"
+        widget: "string"
+        required: false
+        hint: "URL of the audio file for the Listen feature (TTS or podcast). Leave blank — this feature is coming soon."
 
       # ── Listing metadata ─────────────────────
       - label: "Excerpt"
