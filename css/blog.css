@@ -817,6 +817,7 @@
   border-radius: 10px;
   overflow: hidden;
   border: 1px solid rgba(212, 160, 48, 0.22);
+  scroll-margin-top: 7rem;
 }
 
 .media-tabs {
