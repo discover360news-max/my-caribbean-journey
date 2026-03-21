@@ -87,15 +87,20 @@ css/
 - Links: `var(--gold)` (not `--green-mid` — blends into body text)
 - `text-wrap: pretty`; `max-width: 68ch; font-size: 1.075rem`
 - `display: flow-root` — contains floated images without clearfix
+- **Colour hierarchy (Mar 2026):**
+  - Body text: `#6b6560` (warm mid-grey — easier to read on cream)
+  - Bold (`strong`): `#4a4540` (darker than body for hierarchy)
+  - H2: `var(--green-light)` / `#2d6b45` — ⚠️ do NOT use `--green-deep` (#0d1f12 reads as black)
+  - H3/H4: inherit dark from design tokens
 
 **CMS component styles (all in `css/blog.css`):**
 | Component | Class(es) | Visual |
 |-----------|-----------|--------|
 | Pull Quote | `.pull-quote` | Centred Playfair italic, gold borders, `"` watermark |
-| Definition | `.definition-box` | Green-mid left border, tinted bg, optional gold pill |
+| Definition | `.definition-box` | Tinted green bg, fully rounded, soft shadow — ⚠️ no left border |
 | Image+Caption | `.post-figure` + modifiers | Full-width default; size/ratio/border/shadow via modifiers |
 | Button/CTA | `.post-cta` + `.btn` | Centred, uses shared `.btn-primary`/`.btn-outline-dark` |
-| Callout | `.callout .callout-{type}` | `tip` (green), `fact` (gold), `note` (muted), `warning` (orange) |
+| Callout | `.callout .callout-{type}` | `tip` (green 0.14), `fact` (gold 0.18), `note` (gold 0.12), `warning` (orange 0.14) — fully rounded, shadow, ⚠️ no left border |
 | YouTube | `.youtube-embed` | 16:9 padding-bottom, border-radius 12px |
 | Table | `.table-wrapper` + `.prose table` | Rounded, green gradient thead, alternating rows |
 
@@ -126,3 +131,7 @@ python3 -m http.server 8888
 - 2026-03-11 Created
 - 2026-03-20 Updated: excerpt ~160 char target for meta description (see S001)
 - 2026-03-21 Added Listen/Watch sidebar widget + audioTracks/youtubeId frontmatter fields (see C009)
+- 2026-03-21 Prose colour hierarchy: body #6b6560, bold #4a4540, h2 --green-light
+- 2026-03-21 Callouts + definition-box: removed left border, added shadow, bumped bg opacity
+- 2026-03-21 References section: collapsible with fade + "Show all references" toggle
+- 2026-03-21 Mobile: share buttons icon-only in hero header; listen anchor pill below excerpt
