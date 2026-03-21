@@ -73,9 +73,15 @@ layout: blog-base.njk
           {% if references %}
           <div class="post-references">
             <h2 class="references-heading">References &amp; Further Reading</h2>
-            <div class="prose prose-references">
-              {{ references | markdownify | safe }}
+            <div class="post-references-body">
+              <div class="prose prose-references">
+                {{ references | markdownify | safe }}
+              </div>
             </div>
+            <button class="post-references-toggle" aria-expanded="false">
+              <span class="references-toggle-label">Show all references</span>
+              <svg class="references-toggle-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
           </div>
           {% endif %}
 
@@ -283,6 +289,41 @@ layout: blog-base.njk
           showFeedback();
         }
       });
+    });
+  })();
+  </script>
+
+  <script>
+  // References — expand / collapse
+  (function () {
+    var section = document.querySelector('.post-references');
+    var body    = section && section.querySelector('.post-references-body');
+    var btn     = section && section.querySelector('.post-references-toggle');
+    var label   = btn && btn.querySelector('.references-toggle-label');
+    if (!section || !body || !btn) return;
+
+    btn.addEventListener('click', function () {
+      var expanded = section.classList.contains('is-expanded');
+      if (expanded) {
+        // Collapse: pin height first, then shrink next frame
+        body.style.maxHeight = body.scrollHeight + 'px';
+        requestAnimationFrame(function () {
+          body.style.maxHeight = '10rem';
+        });
+        section.classList.remove('is-expanded');
+        btn.setAttribute('aria-expanded', 'false');
+        label.textContent = 'Show all references';
+      } else {
+        // Expand: animate to full height, then release to none so it can reflow
+        body.style.maxHeight = body.scrollHeight + 'px';
+        body.addEventListener('transitionend', function release() {
+          body.style.maxHeight = 'none';
+          body.removeEventListener('transitionend', release);
+        });
+        section.classList.add('is-expanded');
+        btn.setAttribute('aria-expanded', 'true');
+        label.textContent = 'Show fewer';
+      }
     });
   })();
   </script>
