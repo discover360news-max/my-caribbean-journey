@@ -1397,11 +1397,11 @@
    ========================================== */
 
 .prose .definition-box {
-  border-left: 3px solid var(--green-mid);
   background: rgba(45, 107, 69, 0.06);
-  border-radius: 0 10px 10px 0;
+  border-radius: 10px;
   padding: 1rem 1.25rem;
   margin: 2rem 0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
 }
 
 .prose .definition-term {
@@ -1528,9 +1528,9 @@
   border-radius: 12px;
   padding: 1.1rem 1.4rem;
   margin: 2rem 0;
-  border-left: 4px solid;
   font-size: 0.95rem;
   line-height: 1.7;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
 }
 
 .prose .callout p {
@@ -1544,7 +1544,6 @@
 
 .prose .callout-tip {
   background: rgba(45, 107, 69, 0.08);
-  border-color: var(--green-mid);
 }
 
 .prose .callout-tip strong {
@@ -1553,7 +1552,6 @@
 
 .prose .callout-fact {
   background: rgba(212, 160, 48, 0.10);
-  border-color: var(--gold);
 }
 
 .prose .callout-fact strong {
@@ -1562,7 +1560,6 @@
 
 .prose .callout-note {
   background: rgba(212, 160, 48, 0.05);
-  border-color: rgba(212, 160, 48, 0.45);
 }
 
 .prose .callout-note strong {
@@ -1571,7 +1568,6 @@
 
 .prose .callout-warning {
   background: rgba(232, 101, 42, 0.08);
-  border-color: var(--orange);
 }
 
 .prose .callout-warning strong {
@@ -1581,7 +1577,6 @@
 /* Contributor / author bio callout — all four label variants share this style */
 .prose [class*="callout-contributor"] {
   background: var(--cream);
-  border-color: var(--green-deep);
 }
 
 .prose [class*="callout-contributor"] strong {
