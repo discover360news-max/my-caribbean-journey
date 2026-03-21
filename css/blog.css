@@ -780,6 +780,36 @@
   color: var(--text-muted);
 }
 
+/* ── Listen anchor (mobile header shortcut) ───────────── */
+
+.post-listen-anchor {
+  display: none; /* hidden on desktop — widget is visible in sidebar */
+}
+
+@media (max-width: 900px) {
+  .post-listen-anchor {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 1rem;
+    padding: 0.45rem 1rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(212, 160, 48, 0.45);
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .post-listen-anchor:hover {
+    background: rgba(212, 160, 48, 0.1);
+    border-color: var(--gold);
+  }
+}
+
 /* ── Post Media Widget (Listen / Watch) ───────────────── */
 
 .post-media-widget {
