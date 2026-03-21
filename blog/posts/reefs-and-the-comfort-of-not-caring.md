@@ -7,6 +7,9 @@ category: culture
 featuredImage: /blog/images/firstencounter.webp
 excerpt: A co-write with Tobago native and fisheries specialist Calvin Alexander exploring the quiet pressures facing Tobago’s coral reefs and the small everyday choices that shape their future.
 featured: false
+audioTracks:
+  - "https://media.mycaribbeanjourney.com/Reefs%20and%20the%20Comfort%20of%20Not%20Caring/Track%201.mp3"
+  - "https://media.mycaribbeanjourney.com/Reefs%20and%20the%20Comfort%20of%20Not%20Caring/Track%202.mp3"
 postTags:
   - tobago
   - coralreef

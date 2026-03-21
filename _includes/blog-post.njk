@@ -135,8 +135,21 @@ layout: blog-base.njk
               </div>
 
               <div class="media-panel" data-media-panel="listen">
-                {% if audioUrl %}
-                <audio controls class="media-audio-player" src="{{ audioUrl }}"></audio>
+                {% if audioTracks and audioTracks.length %}
+                  {% if audioTracks.length == 1 %}
+                  <audio controls class="media-audio-player" src="{{ audioTracks[0] }}"></audio>
+                  {% else %}
+                  <div class="audio-playlist">
+                    <div class="audio-track-btns">
+                      {% for track in audioTracks %}
+                      <button class="audio-track-btn{% if loop.first %} is-active{% endif %}" data-track-src="{{ track }}">
+                        Track {{ loop.index }}
+                      </button>
+                      {% endfor %}
+                    </div>
+                    <audio controls class="media-audio-player" src="{{ audioTracks[0] }}"></audio>
+                  </div>
+                  {% endif %}
                 {% else %}
                 <div class="media-coming-soon">
                   <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
@@ -286,6 +299,19 @@ layout: blog-base.njk
         widget.querySelectorAll('.media-panel').forEach(function (panel) {
           panel.classList.toggle('is-hidden', panel.dataset.mediaPanel !== target);
         });
+      });
+    });
+
+    // Audio playlist — track selector
+    widget.querySelectorAll('.audio-track-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var playlist = btn.closest('.audio-playlist');
+        var audio = playlist.querySelector('.media-audio-player');
+        playlist.querySelectorAll('.audio-track-btn').forEach(function (b) {
+          b.classList.toggle('is-active', b === btn);
+        });
+        audio.src = btn.dataset.trackSrc;
+        audio.play();
       });
     });
   })();

@@ -867,6 +867,43 @@
   padding: 0.2rem 0.65rem;
 }
 
+.audio-playlist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.audio-track-btns {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.audio-track-btn {
+  flex: 1;
+  padding: 0.45rem 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--green-deep);
+  background: rgba(26, 74, 46, 0.08);
+  border: 1px solid rgba(26, 74, 46, 0.2);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.audio-track-btn.is-active {
+  background: var(--gold);
+  color: var(--green-deep);
+  border-color: var(--gold);
+}
+
+.audio-track-btn:hover:not(.is-active) {
+  background: rgba(26, 74, 46, 0.14);
+}
+
 .media-audio-player {
   width: 100%;
   border-radius: 6px;

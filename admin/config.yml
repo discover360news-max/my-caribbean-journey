@@ -101,11 +101,15 @@ collections:
         required: false
         hint: "Paste just the video ID from the YouTube URL — e.g. if the URL is youtube.com/watch?v=dQw4w9WgXcQ, paste dQw4w9WgXcQ. Leave blank until the video is published."
 
-      - label: "Audio URL"
-        name: "audioUrl"
-        widget: "string"
+      - label: "Audio Tracks"
+        name: "audioTracks"
+        widget: "list"
         required: false
-        hint: "URL of the audio file for the Listen feature (TTS or podcast). Leave blank — this feature is coming soon."
+        field:
+          label: "Track URL"
+          name: "track"
+          widget: "string"
+        hint: "Add one R2 audio URL per track. If the article is split into two parts, add both — Track 1 first, Track 2 second."
 
       # ── Listing metadata ─────────────────────
       - label: "Excerpt"
@@ -221,11 +225,15 @@ collections:
         required: false
         hint: "Paste just the video ID from the YouTube URL — e.g. if the URL is youtube.com/watch?v=dQw4w9WgXcQ, paste dQw4w9WgXcQ. Leave blank until the video is published."
 
-      - label: "Audio URL"
-        name: "audioUrl"
-        widget: "string"
+      - label: "Audio Tracks"
+        name: "audioTracks"
+        widget: "list"
         required: false
-        hint: "URL of the audio file for the Listen feature (TTS or podcast). Leave blank — this feature is coming soon."
+        field:
+          label: "Track URL"
+          name: "track"
+          widget: "string"
+        hint: "Add one R2 audio URL per track. If the article is split into two parts, add both — Track 1 first, Track 2 second."
 
       # ── Listing metadata ─────────────────────
       - label: "Excerpt"
