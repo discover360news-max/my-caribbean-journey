@@ -377,3 +377,55 @@ The music player hangs below the fixed header as a centred pill (`position: abso
 - Do not duplicate shared styles (tokens, buttons, nav, footer) in page CSS files
 - New pages always load `/shared/shared.css` before their own CSS
 - `--orange` is an accent only — never use it as a primary button or heading colour
+
+---
+
+## Mobile Best Practices
+
+Established patterns from the 2026-03-21 mobile audit. Apply these to all new pages and components.
+
+### iOS Safe Area (notch / Dynamic Island)
+The fixed header uses `env(safe-area-inset-top)` to push nav content below the status bar on iPhones. This is set once in `shared/shared.css` on `.site-nav` and cascades automatically to all pages.
+
+```css
+/* shared/shared.css — do not duplicate on page CSS */
+.site-nav {
+  padding: calc(var(--space-sm) + env(safe-area-inset-top)) 0 var(--space-sm);
+}
+```
+
+`env()` returns `0` on all non-iOS platforms — the rule is safe everywhere.
+
+**Rule for new pages:** No action needed. The header already handles this. If a page has its own fixed element (e.g. a sticky footer bar), add `padding-bottom: env(safe-area-inset-bottom)` to it.
+
+---
+
+### Viewport Height — `dvh` over `vh`
+`100vh` on iOS Safari includes the address bar height. When the bar hides on scroll, elements sized to `100vh` overshoot and the page jumps. Use `dvh` (dynamic viewport height) with `vh` as the fallback.
+
+```css
+/* Correct pattern for full-height sections */
+min-height: 100vh;       /* fallback for browsers without dvh support */
+min-height: 100dvh;      /* hides browser chrome, recalculates on scroll */
+```
+
+The second declaration overrides the first in supporting browsers. Unsupporting browsers silently fall back to `vh`. Apply to any `min-height: NNvh` — not just 100%.
+
+---
+
+### Touch Target Sizes
+Interactive elements must have a minimum tappable area of **44×44px** (WCAG 2.5.5 / Apple HIG).
+
+| Element | How to achieve 44px |
+|---------|---------------------|
+| Hamburger toggle | `padding: 14px 8px` (bar content ~16px + 28px padding = 44px) |
+| Icon buttons (music player, close) | `width: 32–36px; height: 32–36px` on mobile at minimum; prefer 44px |
+| Text links as buttons | `padding: 0.65rem 1rem` minimum |
+| Filter chips | `min-height: 44px` via padding |
+
+**Rule:** Any new clickable element that isn't a full-width block needs an explicit mobile touch area check before merging.
+
+---
+
+### Font Size Floor
+Never render text below `0.75rem` (12px) for content that carries information. Decorative/label text (`0.7rem`) is acceptable only at high contrast. The footer copy exception is documented under M-2 in `AUDIT.md`.

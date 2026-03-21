@@ -6,6 +6,7 @@
 .guide-hero {
   position: relative;
   min-height: 45vh;
+  min-height: 45dvh; /* dvh excludes mobile browser chrome — prevents iOS Safari jump */
   display: flex;
   align-items: center;
   justify-content: center;
