@@ -1258,6 +1258,21 @@
   opacity: 1;
 }
 
+@media (max-width: 900px) {
+  .post-share--header {
+    flex-wrap: nowrap;
+    gap: 0.4rem;
+  }
+
+  .post-share--header .share-label {
+    display: none;
+  }
+
+  .post-share--header .share-btn {
+    padding: 0.4rem 0.5rem;
+  }
+}
+
 /* Copied feedback */
 .share-copy-feedback {
   font-size: 0.78rem;
