@@ -335,7 +335,7 @@ h1, h2, h3, h4, h5 { text-wrap: balance; }
 
 .site-footer-tagline {
   font-size: 0.85rem;
-  color: rgba(232, 228, 220, 0.4);
+  color: rgba(232, 228, 220, 0.55);
   margin-top: 4px;
 }
 
@@ -347,7 +347,7 @@ h1, h2, h3, h4, h5 { text-wrap: balance; }
 
 .site-footer-copy {
   font-size: 0.8rem;
-  color: rgba(232, 228, 220, 0.3);
+  color: rgba(232, 228, 220, 0.55);
   margin-top: var(--space-sm);
 }
 
@@ -364,13 +364,13 @@ h1, h2, h3, h4, h5 { text-wrap: balance; }
   justify-content: space-between;
   align-items: center;
   font-size: 0.8rem;
-  color: rgba(232, 228, 220, 0.3);
+  color: rgba(232, 228, 220, 0.55);
 }
 
 /* --- Footer Support Link --- */
 .footer-support {
   font-size: 0.75rem;
-  color: rgba(232, 228, 220, 0.35);
+  color: rgba(232, 228, 220, 0.55);
   text-decoration: underline;
   text-decoration-style: dotted;
   text-underline-offset: 3px;
@@ -864,7 +864,7 @@ h1, h2, h3, h4, h5 { text-wrap: balance; }
 
 .music-player-title {
   font-family: var(--font-body);
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 500;
   color: rgba(232, 228, 220, 0.62);
   letter-spacing: 0.02em;
@@ -990,7 +990,7 @@ h1, h2, h3, h4, h5 { text-wrap: balance; }
 
 .music-toast-cue {
   display: block;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   color: rgba(212, 160, 48, 0.6);
   margin-top: 0.4rem;
   letter-spacing: 0.03em;

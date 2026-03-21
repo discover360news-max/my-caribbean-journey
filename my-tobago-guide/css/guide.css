@@ -1007,7 +1007,7 @@ body.guide-tray-closing .guide-tray-backdrop {
     align-items: center;
     gap: 0.55rem;
     margin-top: 2rem;
-    padding: 0.8rem 1.6rem;
+    padding: 0.95rem 1.6rem;
     background: white;
     border: none;
     border-radius: 40px;
@@ -1242,6 +1242,7 @@ body.guide-tray-closing .guide-tray-backdrop {
   /* Cards 1 & 2: keep full card styling, sized to fill 2 columns */
   .guide-cat-card {
     flex: 0 0 calc(50% - 0.625rem);
+    padding: 2rem 1.25rem;
   }
 
   /* Cards 3 & 4: pill style, hidden by default */

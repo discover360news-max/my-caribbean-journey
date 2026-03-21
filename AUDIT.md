@@ -38,14 +38,14 @@ These affect every page, every mobile visitor, every session.
 
 ## 🟡 Medium Priority — Schedule
 
-- [ ] **M-1** — Multiple UI text sizes below legible threshold: `.explore-card-badge` / `.store-card-nation-badge` at `0.6rem` (9.6px), `.music-toast-cue` / `.music-player-title` at `0.7rem` — floor at `0.75rem`
-- [ ] **M-2** — Footer bottom text contrast failing WCAG AA: `rgba(232,228,220,0.3)` on dark green ≈ 1.6:1 contrast ratio — raise to `0.55` minimum · `shared/shared.css:346,359`
-- [ ] **M-3** — Share buttons insufficient touch targets on mobile (~28px, reduces to ~25px in post header) · `css/blog.css:1259` — add `min-height: 44px` at ≤900px
-- [ ] **M-4** — Listen/Watch media tabs ~29px tall · `css/blog.css:829` `.media-tab` — increase to `padding: 0.9rem 0.5rem`
-- [ ] **M-5** — `post-meta` date + author row can overflow/run together on narrow screens (`gap: 0`) · `css/blog.css:596` — change to `gap: 0.5rem 1rem`
-- [ ] **M-6** — Guide category cards have `padding: 4rem 1.5rem` on mobile (64px internal padding at 50% card width) · `my-tobago-guide/css/guide.css:303` — reduce to `padding: 2rem 1.25rem` at ≤768px
-- [ ] **M-7** — Guide mobile search trigger pill is ~40px tall (needs 44px) · `my-tobago-guide/css/guide.css:1004` — increase to `padding: 0.95rem 1.6rem`
-- [ ] **M-8** — Blog hero floating word-cloud elements may clip at mobile widths — verify on device, hide at ≤640px if clipping visible · `css/blog.css:40`
+- [x] **M-1** — Multiple UI text sizes below legible threshold: `.explore-card-badge` / `.store-card-nation-badge` at `0.6rem` (9.6px), `.music-toast-cue` / `.music-player-title` at `0.7rem` — floor at `0.75rem` *(fixed 2026-03-21 — all raised to `0.75rem`; `.site-footer-tagline/copy/bottom/footer-support` also raised to `0.55` opacity for consistency)*
+- [x] **M-2** — Footer bottom text contrast failing WCAG AA: `rgba(232,228,220,0.3)` on dark green ≈ 1.6:1 contrast ratio — raise to `0.55` minimum · `shared/shared.css:346,359` *(fixed 2026-03-21 — all four footer text opacities raised to `0.55`: tagline, copy, bottom, footer-support)*
+- [x] **M-3** — Share buttons insufficient touch targets on mobile (~28px, reduces to ~25px in post header) · `css/blog.css:1259` — add `min-height: 44px` at ≤900px *(fixed 2026-03-21)*
+- [x] **M-4** — Listen/Watch media tabs ~29px tall · `css/blog.css:829` `.media-tab` — increase to `padding: 0.9rem 0.5rem` *(fixed 2026-03-21)*
+- [x] **M-5** — `post-meta` date + author row can overflow/run together on narrow screens (`gap: 0`) · `css/blog.css:596` — change to `gap: 0.5rem 1rem` *(fixed 2026-03-21)*
+- [x] **M-6** — Guide category cards have `padding: 4rem 1.5rem` on mobile (64px internal padding at 50% card width) · `my-tobago-guide/css/guide.css:303` — reduce to `padding: 2rem 1.25rem` at ≤768px *(fixed 2026-03-21)*
+- [x] **M-7** — Guide mobile search trigger pill is ~40px tall (needs 44px) · `my-tobago-guide/css/guide.css:1004` — increase to `padding: 0.95rem 1.6rem` *(fixed 2026-03-21)*
+- [x] **M-8** — Blog hero floating word-cloud elements may clip at mobile widths — verify on device, hide at ≤640px if clipping visible · `css/blog.css:40` *(fixed 2026-03-21 — hidden at ≤640px; purely decorative)*
 
 ---
 
@@ -77,3 +77,11 @@ These affect every page, every mobile visitor, every session.
 | H-4 | Author image switched to `aspect-ratio: 350/675` with `max-height` caps at tablet/mobile | 2026-03-21 |
 | H-5 | Drop cap reduced to `3rem` at ≤480px in hub.css and i-am-tobago/css/style.css | 2026-03-21 |
 | H-6 | Hero action buttons set to `flex-direction: column; width: 100%` at ≤480px | 2026-03-21 |
+| M-1 | All sub-threshold font sizes raised to `0.75rem` floor (badges, music title/toast) | 2026-03-21 |
+| M-2 | All four footer text opacities raised to `0.55` (tagline, copy, bottom, support) | 2026-03-21 |
+| M-3 | `.share-btn` min-height: 44px added at ≤900px | 2026-03-21 |
+| M-4 | `.media-tab` padding raised to `0.9rem 0.5rem` | 2026-03-21 |
+| M-5 | `.post-meta` gap changed from `0` to `0.5rem 1rem` | 2026-03-21 |
+| M-6 | `.guide-cat-card` padding reduced to `2rem 1.25rem` at ≤768px | 2026-03-21 |
+| M-7 | `.guide-search-mobile-trigger` padding raised to `0.95rem 1.6rem` | 2026-03-21 |
+| M-8 | `.blog-hero-word` hidden at ≤640px (decorative, clips on narrow screens) | 2026-03-21 |
