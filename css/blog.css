@@ -1045,7 +1045,7 @@
 
 .prose strong {
   font-weight: 600;
-  color: var(--text-dark);
+  color: #4a4540;
 }
 
 .prose em {
