@@ -219,6 +219,7 @@
   font-size: 0.8rem;
   color: rgba(232, 228, 220, 0.78);
   line-height: 1.5;
+  text-wrap: pretty;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
