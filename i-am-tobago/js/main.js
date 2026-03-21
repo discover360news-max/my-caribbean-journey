@@ -20,6 +20,10 @@
   });
 
   // --- Hero firefly light flares ---
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var heroFirefliesCanvas = document.getElementById('hero-fireflies');
+    if (heroFirefliesCanvas) heroFirefliesCanvas.style.display = 'none';
+  } else {
   var canvas = document.getElementById('hero-fireflies');
   var ctx = canvas.getContext('2d');
   var fireflies = [];
@@ -144,6 +148,7 @@
     if (animating) requestAnimationFrame(drawFireflies);
   }, { threshold: 0 });
   heroObserver.observe(heroEl);
+  } // end prefers-reduced-motion else
 
   // --- Navbar scroll effect (handled by shared components.js) ---
   // Legacy nav code removed — shared SiteComponents handles nav behavior

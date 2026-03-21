@@ -807,5 +807,17 @@ var SiteComponents = (function () {
     initGdprBanner();
   }
 
+  // data-tooltip touch feedback — show tooltip briefly on tap for mobile users
+  document.addEventListener('touchstart', function (e) {
+    var target = e.target.closest('[data-tooltip]');
+    document.querySelectorAll('[data-tooltip].is-active').forEach(function (el) {
+      if (el !== target) el.classList.remove('is-active');
+    });
+    if (target) {
+      target.classList.add('is-active');
+      setTimeout(function () { target.classList.remove('is-active'); }, 2000);
+    }
+  }, { passive: true });
+
   return { init: init, cta: getCTA, disabledLabel: DISABLED_LABEL, initReviews: initReviews };
 })();

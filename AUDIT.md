@@ -51,15 +51,15 @@ These affect every page, every mobile visitor, every session.
 
 ## 🟢 Minor — Backlog
 
-- [ ] **m-1** — Review "Read more" button on review cards has `padding: 0` (untappable) · `i-am-tobago/css/style.css:611` — add `padding: 0.5rem 0`
-- [ ] **m-2** — Stamp tooltip hover-only — never shows on mobile (no `touchstart` equivalent) · `shared/shared.css:448` — verify JS has touch handler in `components.js`
-- [ ] **m-3** — `[data-tooltip]` (coming soon) hover-only — disabled buttons give zero feedback on mobile · `shared/shared.css:1092` — add JS `touchstart` toggle
-- [ ] **m-4** — Verify all newsletter/search email inputs use `type="email"` for iOS email keyboard — cannot confirm from CSS alone
-- [ ] **m-5** — Guide category expand toggle looks like a note not a button on mobile — add border/pill styling · `my-tobago-guide/css/guide.css:1310` `.guide-cat-expand`
-- [ ] **m-6** — Music player pill has asymmetric vertical padding at ≤480px (`0.38rem` top, `0.55rem` bottom) — looks off-centre · `shared/shared.css:903` — equalise to `0.45rem`
-- [ ] **m-7** — I Am Tobago `about-excerpt blockquote` uses old left-border style inconsistent with all other blockquotes · `i-am-tobago/css/style.css:245`
-- [ ] **m-8** — Blog post hero `padding: 12rem 0 10rem` — the 10rem bottom padding is excessive on mobile, recommend `7rem` at ≤640px · `css/blog.css:543`
-- [ ] **m-9** — Hero fireflies canvas animation has no `prefers-reduced-motion` guard in JS — check `main.js` · `i-am-tobago/js/main.js`
+- [x] **m-1** — Review "Read more" button on review cards has `padding: 0` (untappable) · `i-am-tobago/css/style.css:611` — add `padding: 0.5rem 0` *(fixed 2026-03-21)*
+- [x] **m-2** — Stamp tooltip hover-only — never shows on mobile (no `touchstart` equivalent) · `shared/shared.css:448` — verify JS has touch handler in `components.js` *(already fixed — click handler + `is-active` CSS class toggle present in components.js:771)*
+- [x] **m-3** — `[data-tooltip]` (coming soon) hover-only — disabled buttons give zero feedback on mobile · `shared/shared.css:1092` — add JS `touchstart` toggle *(fixed 2026-03-21 — `is-active::after` CSS rule + document touchstart handler in components.js; tooltip shows 2s on tap)*
+- [x] **m-4** — Verify all newsletter/search email inputs use `type="email"` for iOS email keyboard — cannot confirm from CSS alone *(already correct — contact form + newsletter both use `type="email"`; guide keyword search correctly uses `type="text"`)*
+- [x] **m-5** — Guide category expand toggle looks like a note not a button on mobile — add border/pill styling · `my-tobago-guide/css/guide.css:1310` `.guide-cat-expand` *(fixed 2026-03-21 — added `border: 1px solid rgba(212,160,48,0.4); border-radius: 20px; padding: 0.5rem 1.25rem; width: auto; margin: 0 auto`)*
+- [x] **m-6** — Music player pill has asymmetric vertical padding at ≤480px (`0.38rem` top, `0.55rem` bottom) — looks off-centre · `shared/shared.css:903` — equalise to `0.45rem` *(fixed 2026-03-21 — `padding: 0.45rem 0.7rem`)*
+- [x] **m-7** — I Am Tobago `about-excerpt blockquote` uses old left-border style inconsistent with all other blockquotes · `i-am-tobago/css/style.css:245` *(fixed 2026-03-21 — border-left removed; border-top/bottom pattern + text-align: center to match site standard)*
+- [x] **m-8** — Blog post hero `padding: 12rem 0 10rem` — the 10rem bottom padding is excessive on mobile, recommend `7rem` at ≤640px · `css/blog.css:543` *(fixed 2026-03-21 — `padding-bottom: 7rem` at ≤640px)*
+- [x] **m-9** — Hero fireflies canvas animation has no `prefers-reduced-motion` guard in JS — check `main.js` · `i-am-tobago/js/main.js` *(fixed 2026-03-21 — canvas hidden and animation skipped entirely when `prefers-reduced-motion: reduce` is set)*
 
 ---
 
@@ -85,3 +85,12 @@ These affect every page, every mobile visitor, every session.
 | M-6 | `.guide-cat-card` padding reduced to `2rem 1.25rem` at ≤768px | 2026-03-21 |
 | M-7 | `.guide-search-mobile-trigger` padding raised to `0.95rem 1.6rem` | 2026-03-21 |
 | M-8 | `.blog-hero-word` hidden at ≤640px (decorative, clips on narrow screens) | 2026-03-21 |
+| m-1 | `.review-read-more` padding raised to `0.5rem 0` for tappable touch target | 2026-03-21 |
+| m-2 | Already fixed — stamp tooltip `is-active` click handler present in components.js | 2026-03-21 |
+| m-3 | `[data-tooltip]` touch feedback: `is-active::after` CSS + document touchstart handler (2s auto-dismiss) | 2026-03-21 |
+| m-4 | Already correct — all email inputs use `type="email"` | 2026-03-21 |
+| m-5 | `.guide-cat-expand` restyled as centered pill with gold border | 2026-03-21 |
+| m-6 | Music player padding equalised to `0.45rem 0.7rem` at ≤480px | 2026-03-21 |
+| m-7 | `.about-excerpt blockquote` border-left replaced with border-top/bottom; text-align: center | 2026-03-21 |
+| m-8 | Blog post hero `padding-bottom: 7rem` at ≤640px (was 10rem) | 2026-03-21 |
+| m-9 | Fireflies canvas skipped entirely when `prefers-reduced-motion: reduce` is set | 2026-03-21 |

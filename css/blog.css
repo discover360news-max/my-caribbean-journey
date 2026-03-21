@@ -1702,6 +1702,10 @@
     padding: calc(8rem + env(safe-area-inset-top)) 0 8rem;
   }
 
+  .blog-post .post-header {
+    padding-bottom: 7rem;
+  }
+
   .blog-posts .container {
     margin-top: -5rem;
   }

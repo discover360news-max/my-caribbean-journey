@@ -37,7 +37,7 @@ Never render informational text below `0.75rem` (12px). Decorative labels at `0.
 | 🔴 Critical | 4 | 4 | 0 |
 | 🟠 High | 6 | 6 | 0 |
 | 🟡 Medium | 8 | 8 | 0 |
-| 🟢 Minor | 9 | 0 | 9 |
+| 🟢 Minor | 9 | 9 | 0 |
 
 ## M-tier fix notes (2026-03-21)
 - **M-1** — Font floor raised to `0.75rem` across `.explore-card-badge` (hub.css), `.store-card-nation-badge` (i-am-tobago/css/style.css), `.music-player-title` and `.music-toast-cue` (shared/shared.css). Note: `.music-player-title` is already `display:none` at ≤480px.

@@ -1308,20 +1308,22 @@ body.guide-tray-closing .guide-tray-backdrop {
     display: inline-flex;
   }
 
-  /* Expand / collapse toggle — centered */
+  /* Expand / collapse toggle — centered pill */
   .guide-cat-expand {
     display: block;
-    width: 100%;
+    width: auto;
+    margin: 0 auto;
     text-align: center;
-    padding: 0.3rem 0.5rem;
-    border: none;
+    padding: 0.5rem 1.25rem;
+    border: 1px solid rgba(212, 160, 48, 0.4);
+    border-radius: 20px;
     background: none;
     font-family: var(--font-body);
     font-size: 0.875rem;
     font-weight: 500;
     color: var(--gold);
     cursor: pointer;
-    transition: color var(--transition);
+    transition: color var(--transition), border-color var(--transition);
     margin-bottom: 0.25rem;
 
     &:hover { color: var(--gold-light); }

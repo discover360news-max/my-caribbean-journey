@@ -249,11 +249,13 @@
   font-style: italic;
   color: var(--green-deep);
   line-height: 1.8;
-  padding: var(--space-lg);
-  border-left: 3px solid var(--gold);
-  background: rgba(212, 160, 48, 0.05);
-  border-radius: 0 var(--radius) var(--radius) 0;
-  text-align: left;
+  padding: var(--space-lg) var(--space-md);
+  border-top: 2px solid var(--gold);
+  border-bottom: 1px solid rgba(212, 160, 48, 0.25);
+  border-left: none;
+  background: none;
+  border-radius: 0;
+  text-align: center;
 }
 
 .excerpt-note {
@@ -617,7 +619,7 @@
   cursor: pointer;
   border: none;
   background: none;
-  padding: 0;
+  padding: 0.5rem 0;
   margin-top: var(--space-sm);
   transition: color var(--transition);
 
