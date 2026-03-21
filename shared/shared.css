@@ -272,7 +272,7 @@ h1, h2, h3, h4, h5 { text-wrap: balance; }
 .site-mobile-menu {
   display: none;
   position: fixed;
-  top: 82px;
+  top: 82px; /* fallback — overridden dynamically in components.js */
   left: 0;
   right: 0;
   background: rgba(13, 31, 18, 0.98);

@@ -27,12 +27,12 @@ These affect every page, every mobile visitor, every session.
 
 ## 🟠 High Priority — Fix Soon
 
-- [ ] **H-1** — Mobile menu `top: 82px` hardcoded — breaks if nav height changes · `shared/shared.css:270` `.site-mobile-menu`
-- [ ] **H-2** — GDPR banner and support float button overlap on first visit (float hidden behind banner) · `shared/shared.css` — fix: suppress float until GDPR dismissed (JS localStorage check)
-- [ ] **H-3** — Hero `padding-top` values don't account for `env(safe-area-inset-top)` (partially mitigated by C-2 fix but large headers still need review) · `hub.css`, `i-am-tobago/css/style.css`, `guide.css`, `blog.css`, `contact.css`
-- [ ] **H-4** — Author image uses hardcoded `height: 675px/300px/250px` instead of `aspect-ratio` — distortion risk at all breakpoints · `i-am-tobago/css/style.css:363` `.author-image img`
-- [ ] **H-5** — Drop cap `font-size: 4rem` on bio + author sections has no mobile reduction (blog section already fixed at 3.5rem) · `hub.css:656`, `i-am-tobago/css/style.css:396` — add ≤480px rule reducing to ~3rem
-- [ ] **H-6** — Hero action buttons not full-width on mobile — narrow side-by-side layout at 320px · `hub.css:116`, `i-am-tobago/css/style.css:97` — add `flex-direction: column; width: 100%` at ≤480px
+- [x] **H-1** — Mobile menu `top: 82px` hardcoded — breaks if nav height changes · `shared/shared.css:270` `.site-mobile-menu` *(fixed 2026-03-21 — top set dynamically via `header.getBoundingClientRect().bottom` on each open)*
+- [x] **H-2** — GDPR banner and support float button overlap on first visit (float hidden behind banner) · `shared/support.js` *(fixed 2026-03-21 — float now waits for `mcj:gdpr-accepted` event on first visit)*
+- [x] **H-3** — Hero `padding-top` values don't account for `env(safe-area-inset-top)` (partially mitigated by C-2 fix but large headers still need review) · `hub.css`, `i-am-tobago/css/style.css`, `guide.css`, `blog.css`, `contact.css` *(fixed 2026-03-21 — guide.css sufficient, all others use `calc(Xrem + env(safe-area-inset-top))`)*
+- [x] **H-4** — Author image uses hardcoded `height: 675px/300px/250px` instead of `aspect-ratio` — distortion risk at all breakpoints · `i-am-tobago/css/style.css:363` `.author-image img` *(fixed 2026-03-21 — `aspect-ratio: 350/675` at base; `max-height` caps at tablet/mobile)*
+- [x] **H-5** — Drop cap `font-size: 4rem` on bio + author sections has no mobile reduction (blog section already fixed at 3.5rem) · `hub.css:656`, `i-am-tobago/css/style.css:396` — add ≤480px rule reducing to ~3rem *(fixed 2026-03-21 — reduced to `3rem` at ≤480px in both files)*
+- [x] **H-6** — Hero action buttons not full-width on mobile — narrow side-by-side layout at 320px · `hub.css:116`, `i-am-tobago/css/style.css:97` — add `flex-direction: column; width: 100%` at ≤480px *(fixed 2026-03-21 — `flex-direction: column; align-items: stretch; width: 100%` on buttons at ≤480px)*
 
 ---
 
@@ -71,3 +71,9 @@ These affect every page, every mobile visitor, every session.
 | C-2 | `env(safe-area-inset-top)` added to `.site-nav` padding | 2026-03-21 |
 | C-3 | `min-height: 100dvh` added after `100vh` on all hero sections | 2026-03-21 |
 | C-4 | `.music-player-btn` raised to `32×32px` on mobile ≤480px | 2026-03-21 |
+| H-1 | Mobile menu top set dynamically via `header.getBoundingClientRect().bottom` in `components.js` | 2026-03-21 |
+| H-2 | Support float gated on `mcj:gdpr-accepted` event in `support.js` on first visit | 2026-03-21 |
+| H-3 | Hero padding-top uses `calc(Xrem + env(safe-area-inset-top))` in hub.css, i-am-tobago, blog.css, contact.css | 2026-03-21 |
+| H-4 | Author image switched to `aspect-ratio: 350/675` with `max-height` caps at tablet/mobile | 2026-03-21 |
+| H-5 | Drop cap reduced to `3rem` at ≤480px in hub.css and i-am-tobago/css/style.css | 2026-03-21 |
+| H-6 | Hero action buttons set to `flex-direction: column; width: 100%` at ≤480px | 2026-03-21 |

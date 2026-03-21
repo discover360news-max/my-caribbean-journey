@@ -189,6 +189,7 @@ var SiteComponents = (function () {
       toggle.addEventListener('click', function () {
         menuOpen = !menuOpen;
         if (menuOpen) {
+          mobileMenu.style.top = header.getBoundingClientRect().bottom + 'px';
           mobileMenu.classList.add('open');
           toggle.setAttribute('aria-expanded', 'true');
         } else {

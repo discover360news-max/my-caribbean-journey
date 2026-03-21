@@ -42,9 +42,19 @@
 
     document.body.appendChild(btn);
 
-    setTimeout(function () {
-      btn.classList.add('support-float--visible');
-    }, 4000);
+    function showAfterDelay() {
+      setTimeout(function () {
+        btn.classList.add('support-float--visible');
+      }, 4000);
+    }
+
+    // On first visit the GDPR banner is active — wait for acceptance before
+    // showing the float so the two don't compete for the same corner.
+    if (localStorage.getItem('mcj_gdpr_accepted')) {
+      showAfterDelay();
+    } else {
+      document.addEventListener('mcj:gdpr-accepted', showAfterDelay, { once: true });
+    }
   }
 
   if (document.readyState === 'loading') {

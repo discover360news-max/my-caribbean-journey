@@ -1691,7 +1691,7 @@
 
 @media (max-width: 640px) {
   .blog-hero {
-    padding: 8rem 0 8rem;
+    padding: calc(8rem + env(safe-area-inset-top)) 0 8rem;
   }
 
   .blog-posts .container {

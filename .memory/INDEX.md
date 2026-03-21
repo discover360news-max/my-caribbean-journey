@@ -1,5 +1,5 @@
 # My Caribbean Journey — Project Memory Index
-Last updated: 2026-03-11 (memory system initialised)
+Last updated: 2026-03-21
 Project: Caribbean culture hub — books, island guides, curated resources | Stack: Eleventy 2.0 + plain HTML/CSS/JS | Deploy: Cloudflare Pages
 
 ## How to use this index
@@ -26,3 +26,4 @@ B001  | BUG       | DEPRECATED  | Buy section bg: decorative <img> → CSS ::aft
 C008  | COMPONENT | ACTIVE      | Reviews carousel: SiteComponents.initReviews(), data in reviews-data.js, .review-quote card structure → .memory/entries/C008-reviews-component.md
 S001  | STANDARD  | ACTIVE      | SEO metadata: target intents, title/desc conventions, BlogPosting schema, OG article tags, sitemap lastmod, GSC setup → .memory/entries/S001-seo-metadata.md
 C009  | COMPONENT | ACTIVE      | Listen/Watch sidebar widget: audioTracks (R2), youtubeId, playlist UI, ElevenLabs workflow → .memory/entries/C009-listen-watch-widget.md
+L003  | LEARNING  | ACTIVE      | Mobile UX standards: safe-area, dvh, touch targets, font floor — audit tracker at /AUDIT.md → .memory/entries/L003-mobile-ux-standards.md
