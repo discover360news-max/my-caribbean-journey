@@ -3,7 +3,7 @@ id: C001
 type: COMPONENT
 status: ACTIVE
 created: 2026-03-11
-updated: 2026-03-11
+updated: 2026-03-21
 related: D002, D001
 ---
 
@@ -54,6 +54,23 @@ per-page via `SiteComponents.init(config)`.
 - Tooltip on hover + tap: "Psst — K.V., proud brother of the visionary bringing Tobago's history and culture to the world."
 - Image: `/images/KV-11772609696.webp` (144px wide)
 
+## Site Music Player
+
+**Function:** `initMusicPlayer()` in `/shared/components.js`
+**Audio file:** `/shared/audio/jamboule.mp3` — loops at `volume: 0.45`
+**HTML elements (rendered in nav):** `#mcj-play-btn`, `#mcj-mute-btn`, `#mcj-icon-play`, `#mcj-icon-pause`, `#mcj-icon-muted`, `#mcj-icon-sound`, `#mcj-music-note`
+
+**Behaviour:**
+- ⚠️ Does NOT autoplay — player starts paused, plays only on explicit user click (autoplay removed Mar 2026)
+- Play button toggles play/pause; mute button toggles mute
+- `fadeIn()` ramps volume from 0 → 0.45 over 3.5s when user first presses play
+- Before playing, pauses all other `<audio>` elements on the page
+
+**Global coordination bridge:**
+- Exposes `window._mcjPauseSiteMusic()` — any page can call this to pause site music and sync the play/pause UI
+- Used by the blog Listen/Watch widget (C009) — blog audio `play` event calls `_mcjPauseSiteMusic` automatically
+- ⚠️ `_mcjPauseSiteMusic` is only defined after `initMusicPlayer()` runs (i.e. after `SiteComponents.init()`). Safe to call conditionally: `if (window._mcjPauseSiteMusic) window._mcjPauseSiteMusic()`
+
 ## Decisions Made
 - **JS template literals** — avoids a framework while sharing nav/footer across pages. Update
   `components.js` once and all pages reflect the change instantly.
@@ -67,3 +84,4 @@ per-page via `SiteComponents.init(config)`.
 
 ## Change Log
 - 2026-03-11 Created
+- 2026-03-21 Documented music player; removed autoplay; added window._mcjPauseSiteMusic bridge (see C009)

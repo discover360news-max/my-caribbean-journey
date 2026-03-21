@@ -4,7 +4,7 @@ type: COMPONENT
 status: ACTIVE
 created: 2026-03-21
 updated: 2026-03-21
-related: C005, CFG01
+related: C005, C001, CFG01
 ---
 
 # Listen / Watch Sidebar Widget
@@ -56,6 +56,15 @@ admin/config.yml          ← audioTracks (list) + youtubeId (string) fields in 
 1. Publish the video on YouTube
 2. Copy just the video ID from the URL (the part after `?v=`)
 3. In Evently: open the post → **YouTube Video ID** field → paste ID → save
+
+## Audio Coordination — One Player at a Time
+
+Blog audio and the site-wide music player are in separate JS scopes. Coordination is via a global bridge:
+
+- `window._mcjPauseSiteMusic()` — defined in `initMusicPlayer()` (`shared/components.js`). Pauses site music and syncs the play/pause UI.
+- Every `.media-audio-player` element listens to the native `play` event and calls `_mcjPauseSiteMusic` if defined. This fires whether the user clicks the track button **or** the native browser audio controls.
+- The site play button does the reverse: pauses all `<audio>` elements on the page (except itself) before playing.
+- ⚠️ Always call conditionally: `if (window._mcjPauseSiteMusic) window._mcjPauseSiteMusic()` — only exists on pages that loaded `components.js` with `initMusicPlayer()`.
 
 ## Future: Listen with TTS
 - When ElevenLabs audio is ready for a post, `audioTracks` activates the player automatically
