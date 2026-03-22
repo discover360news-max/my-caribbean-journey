@@ -27,3 +27,4 @@ C008  | COMPONENT | ACTIVE      | Reviews carousel: SiteComponents.initReviews()
 S001  | STANDARD  | ACTIVE      | SEO metadata: target intents, title/desc conventions, BlogPosting schema, OG article tags, sitemap lastmod, GSC setup → .memory/entries/S001-seo-metadata.md
 C009  | COMPONENT | ACTIVE      | Listen/Watch sidebar widget: audioTracks (R2), youtubeId, playlist UI, ElevenLabs workflow → .memory/entries/C009-listen-watch-widget.md
 L003  | LEARNING  | ACTIVE      | Mobile UX standards: safe-area, dvh, touch targets, font floor — audit tracker at /AUDIT.md → .memory/entries/L003-mobile-ux-standards.md
+C010  | COMPONENT | ACTIVE      | I Am Tobago historical map: SVG OSM coastline, 27 locations, pan/zoom, filter chips, popup → .memory/entries/C010-historical-map.md

@@ -136,17 +136,20 @@
     popup.querySelector('.map-popup-title').textContent = loc.name;
     popup.querySelector('.map-popup-desc').textContent = loc.description;
 
-    /* Force reflow before adding .active so the browser knows the popup's
-       real height with content. Without this, on first click height=0 so
-       translateY(100%) equals 0px — the popup snaps in from the top
-       rather than sliding up from the bottom. */
-    popup.classList.remove('active');
-    void popup.offsetHeight;
-
-    popup.classList.add('active');
-    popup.setAttribute('aria-hidden', 'false');
     activePin = loc.id;
-    popupClose.focus();
+
+    /* Double rAF: ensures the browser actually paints one frame with the
+       element in its reset (translateY 100%) state before the transition
+       fires. void offsetHeight forces a reflow but not a paint, so the
+       first-click flip can still occur. Two animation frames guarantees it. */
+    popup.classList.remove('active');
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        popup.classList.add('active');
+        popup.setAttribute('aria-hidden', 'false');
+        popupClose.focus({ preventScroll: true });
+      });
+    });
   }
 
   function hidePopup() {
