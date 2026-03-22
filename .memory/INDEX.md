@@ -1,5 +1,5 @@
 # My Caribbean Journey — Project Memory Index
-Last updated: 2026-03-21
+Last updated: 2026-03-22
 Project: Caribbean culture hub — books, island guides, curated resources | Stack: Eleventy 2.0 + plain HTML/CSS/JS | Deploy: Cloudflare Pages
 
 ## How to use this index
@@ -27,4 +27,4 @@ C008  | COMPONENT | ACTIVE      | Reviews carousel: SiteComponents.initReviews()
 S001  | STANDARD  | ACTIVE      | SEO metadata: target intents, title/desc conventions, BlogPosting schema, OG article tags, sitemap lastmod, GSC setup → .memory/entries/S001-seo-metadata.md
 C009  | COMPONENT | ACTIVE      | Listen/Watch sidebar widget: audioTracks (R2), youtubeId, playlist UI, ElevenLabs workflow → .memory/entries/C009-listen-watch-widget.md
 L003  | LEARNING  | ACTIVE      | Mobile UX standards: safe-area, dvh, touch targets, font floor — audit tracker at /AUDIT.md → .memory/entries/L003-mobile-ux-standards.md
-C010  | COMPONENT | ACTIVE      | I Am Tobago historical map: SVG OSM coastline, 27 locations, pan/zoom, filter chips, popup → .memory/entries/C010-historical-map.md
+C010  | COMPONENT | ACTIVE      | I Am Tobago historical map: 27 georeferenced pins, affine transform formula, Photon API geocoding, pan/zoom, filter, popup → .memory/entries/C010-historical-map.md
