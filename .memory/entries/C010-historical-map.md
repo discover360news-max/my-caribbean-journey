@@ -3,7 +3,7 @@ id: C010
 type: COMPONENT
 status: ACTIVE
 created: 2026-03-22
-updated: 2026-03-22
+updated: 2026-03-22 (island path upgraded)
 related: C003, D001, D003
 ---
 
@@ -29,12 +29,21 @@ i-am-tobago/index.html       ← Map section + script tags
 ```
 
 ## Island SVG
-- **Real 108-point OSM-derived coastline** (Douglas-Peucker simplified from OpenStreetMap relation 555717)
+- **High-detail traced silhouette** from Quincy's Photoshop illustration (potrace, ~12,000-point path)
+- Source: `/Users/kavellforde/Documents/Quincy/Designs/Tobago Outline PNG.svg` (Inkscape wrapper around a 3600×2700 RGBA PNG)
+- Trace process: extract alpha channel with Pillow → threshold at 128 → PBM → potrace → extract path 4 (main island)
 - **ViewBox:** `0 0 900 520`
-- **Transformation:** `x = (60.90 - lon) / 0.43 * 900`, `y = (11.37 - lat) / 0.29 * 520`
+- Island wrapped in nested `<g>` transforms:
+  ```html
+  <g transform="scale(0.25, 0.19259)">
+    <g transform="translate(0,2700) scale(0.1,-0.1)">
+      <path class="island-body" vector-effect="non-scaling-stroke" d="..."/>
+  ```
+  The outer scale maps 3600×2700 → 900×520; the inner is potrace's Y-flip. `vector-effect="non-scaling-stroke"` keeps the gold border 1.5px visual regardless of transforms.
+- **Geographic → SVG coordinate formula (for pins):** `x% = (60.90 - lon) / 0.43 * 100`, `y% = (11.37 - lat) / 0.29 * 100`
 - Island fill: `--green-mid` with gold `drop-shadow` glow (`island-body` class)
 - Small offshore islets rendered as separate `<circle>` / `<ellipse>` elements (`island-islet` class)
-- ⚠️ Do NOT re-add the old fake `<polygon>` — the real `<path>` is in place
+- ⚠️ Do NOT replace the traced `<path>` with the old 108-point OSM polygon — the detailed trace is final
 
 ## Pin coordinates
 `x` and `y` in `map-data.js` are **percentages of the viewBox** (0–100).
@@ -56,7 +65,7 @@ Pin positions have been manually verified to sit on land (not in the sea).
 - **Zoom method:** SVG `viewBox` attribute manipulation (no CSS transform, no library)
 - **Filter chips:** category filter above map, hides/shows pins, closes popup
 - **Popup:** `position: absolute; bottom: 0` slide-up panel within `.map-wrapper`
-- **Popup fix:** `void popup.offsetHeight` reflow trick before adding `.active` — prevents first-click snap-in-from-top glitch caused by height=0 on first render
+- **Popup fix:** double `requestAnimationFrame` before adding `.active` — guarantees one full paint before transition fires, preventing first-click snap-in-from-top (height=0 on first render). `void offsetHeight` is NOT sufficient — use the double rAF pattern.
 
 ## Section background
 Dark section (`--green-deep`) with radial gradient overlays — same pattern as hero/features.
@@ -83,3 +92,4 @@ No CMS integration — data is static from the book and is not expected to chang
 
 ## Change Log
 - 2026-03-22 Created. 27 locations, all categories, pan/zoom, filter, popup.
+- 2026-03-22 Island path upgraded: replaced 108-point OSM polygon with ~12,000-point potrace silhouette from Quincy's illustration. Nested transform + `vector-effect="non-scaling-stroke"` approach.
