@@ -82,7 +82,10 @@
       html += '<div class="store-card">';
 
       // --- Image / gradient area ---
-      html += '<div class="store-card-image">';
+      var imgStyle = store.image
+        ? ' style="background-image:url(\'' + store.image + '\');background-size:cover;background-position:center;"'
+        : '';
+      html += '<div class="store-card-image"' + imgStyle + '>';
 
       // Nation badge — top right
       if (nation) {

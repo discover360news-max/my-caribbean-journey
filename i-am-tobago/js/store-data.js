@@ -24,7 +24,8 @@ var STORE_DATA = {
       instagram: null,
       facebook: 'https://www.facebook.com/aimees.bohemian',
       hours: 'Mon-Sat - 11am - 6pm',
-      plusCode: 'X23R+M7 Knoxville, Tennessee, USA'   // e.g. 'VJ29+M5 Knoxville, Tennessee'
+      plusCode: 'X23R+M7 Knoxville, Tennessee, USA',   // e.g. 'VJ29+M5 Knoxville, Tennessee'
+      image: '/i-am-tobago/images/stores/aimees-bohemian-jewelry-and-imports.webp'
     },
     {
       name: "Nelson's Bookstore",
@@ -34,9 +35,10 @@ var STORE_DATA = {
       phone: "1 (868) 660 7506",
       website: null,
       instagram: null,
-      facebook: null,
+      facebook: 'https://www.facebook.com/Nelsonsbookstore',
       hours: 'Mon-Fri 9am - 5pm <br> Sat - 9am - 2pm',
-      plusCode: '57J4+6WC Scarborough, Trinidad and Tobago'   // e.g. '7P29+QF Scarborough, Tobago'
+      plusCode: '57J4+6WC Scarborough, Trinidad and Tobago',   // e.g. '7P29+QF Scarborough, Tobago'
+      image: '/i-am-tobago/images/stores/nelsons-bookstore.webp'
     },
     {
       name: "Heritage Haven: Books and Things",
@@ -48,7 +50,8 @@ var STORE_DATA = {
       instagram: null,
       facebook: "https://www.facebook.com/p/Heritage-Haven-Books-and-Things-61566368980246/",
       hours: '9am - 5pm',
-      plusCode: '57J5+JH Scarborough, Trinidad and Tobago'   // e.g. '7P29+QF Scarborough, Tobago'
+      plusCode: '57J5+JH Scarborough, Trinidad and Tobago',   // e.g. '7P29+QF Scarborough, Tobago'
+      image: '/i-am-tobago/images/stores/heritage-haven-books-and-things.webp'
     },
     {
       name: "Gumbs Bookstore",
@@ -58,12 +61,13 @@ var STORE_DATA = {
       phone: "1 (868) 639 4608",
       website: null,
       instagram: null,
-      facebook: null,
+      facebook: 'https://www.facebook.com/p/Gumbs-Bookstore-61576700355429/',
       hours: null,
-      plusCode: '57M6+84H Scarborough, Trinidad and Tobago'   // e.g. '7P29+QF Scarborough, Tobago'
+      plusCode: '57M6+84H Scarborough, Trinidad and Tobago',   // e.g. '7P29+QF Scarborough, Tobago'
+      image: '/i-am-tobago/images/stores/gumbs-bookstore.webp'
     },
     {
-      name: "Shore Things Café & Craft",
+      name: "Shore Things Cafe & Craft",
       nation: 'tobago',
       address: "25 Old Milford Rd",
       city: 'Lambeau, Tobago',
@@ -72,7 +76,8 @@ var STORE_DATA = {
       instagram: null,
       facebook: "https://www.facebook.com/shorethingstobago",
       hours: 'Tue-Fri - 11am - 6pm <br> Sat - 8am - 3pm',
-      plusCode: '568V+67J Lambeau, Trinidad and Tobago'   // e.g. 'XXXX+XX Lambeau, Tobago'
+      plusCode: '568V+67J Lambeau, Trinidad and Tobago',   // e.g. 'XXXX+XX Lambeau, Tobago'
+      image: '/i-am-tobago/images/stores/shore-things-cafe-and-craft.webp'
     },
 
     //Trinidad Locations - add more details when possible
@@ -86,7 +91,8 @@ var STORE_DATA = {
       instagram: null,
       facebook: "https://www.facebook.com/metropolitanbookstt",
       hours: 'Mon-Fri - 8am - 4:30pm <br> Sat - 9am - 2:30pm',
-      plusCode: 'MF5J+CF Port of Spain, Trinidad and Tobago'   // e.g. 'XXXX+XX Port of Spain, Trinidad'
+      plusCode: 'MF5J+CF Port of Spain, Trinidad and Tobago',   // e.g. 'XXXX+XX Port of Spain, Trinidad'
+      image: '/i-am-tobago/images/stores/metropolitan-book-suppliers.webp'
     }
   ]
 };
