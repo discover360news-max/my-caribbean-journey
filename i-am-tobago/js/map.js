@@ -136,6 +136,13 @@
     popup.querySelector('.map-popup-title').textContent = loc.name;
     popup.querySelector('.map-popup-desc').textContent = loc.description;
 
+    const imgEl = popup.querySelector('.map-popup-image');
+    if (loc.image) {
+      imgEl.style.background = `url('${loc.image}') center/cover no-repeat`;
+    } else {
+      imgEl.style.background = `linear-gradient(145deg, #0d1f12 0%, ${cat.colour}55 100%)`;
+    }
+
     activePin = loc.id;
 
     /* Double rAF: ensures the browser actually paints one frame with the

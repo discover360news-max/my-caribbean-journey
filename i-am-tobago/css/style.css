@@ -1593,6 +1593,26 @@ a.store-card-detail:hover {
   color: var(--cream);
 }
 
+.map-popup-body {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.map-popup-image {
+  width: 225px;
+  flex-shrink: 0;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.map-popup-text {
+  flex: 1;
+  min-width: 0;
+}
+
 .map-popup-title {
   font-family: var(--font-display);
   font-size: clamp(1.2rem, 3vw, 1.6rem);
@@ -1645,6 +1665,7 @@ a.store-card-detail:hover {
 
   .map-popup-title { font-size: 1.15rem; }
   .map-popup-desc  { font-size: 0.9rem; }
+  .map-popup-image { width: 160px; }
 
   .map-hint { display: none; }
 
