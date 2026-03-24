@@ -1,21 +1,24 @@
 ---
-type: story
 title: Reefs and the Comfort of Not Caring
+type: story
+category: culture
+draft: false
+featured: false
+featuredImage: /blog/images/firstencounter.webp
 date: 2026-03-11
 author: Quincy Yeates
-category: culture
-featuredImage: /blog/images/firstencounter.webp
-excerpt: A co-write with Tobago native and fisheries specialist Calvin Alexander exploring the quiet pressures facing Tobago’s coral reefs and the small everyday choices that shape their future.
-featured: false
 audioTracks:
-  - "https://media.mycaribbeanjourney.com/Reefs%20and%20the%20Comfort%20of%20Not%20Caring/Track%201.mp3"
-  - "https://media.mycaribbeanjourney.com/Reefs%20and%20the%20Comfort%20of%20Not%20Caring/Track%202.mp3"
+  - https://media.mycaribbeanjourney.com/Reefs%20and%20the%20Comfort%20of%20Not%20Caring/reefFinal.mp3
+excerpt: A co-write with Tobago native and fisheries specialist Calvin Alexander
+  exploring the quiet pressures facing Tobago’s coral reefs and the small
+  everyday choices that shape their future.
 postTags:
   - tobago
   - coralreef
-draft: false
 references: >-
-  - Caribbean Water and Wastewater Association. (2025). [*Developmental Study: Water and Sustainability in Trinidad and Tobago.*](https://cwwa.net/wp-content/uploads/2025/02/Developmental-Study-Water-and-Sustainability-in-Trinidad-and-Tobago.pdf)
+  - Caribbean Water and Wastewater Association. (2025). [*Developmental Study:
+  Water and Sustainability in Trinidad and
+  Tobago.*](https://cwwa.net/wp-content/uploads/2025/02/Developmental-Study-Water-and-Sustainability-in-Trinidad-and-Tobago.pdf)
 
 
   - World Resources Institute & Water and Sewerage Authority (WASA). (2015). [*Characterization Form for Defining the Costs and Benefits of Domestic Wastewater Management – Southwest Tobago. GEF CReW Project.*](https://clmeplus.org/app/uploads/2020/04/CReW_C2_WRI_Valuing_Wastewater_Annex_3B_SW_Tobago_Characterization.pdf)
