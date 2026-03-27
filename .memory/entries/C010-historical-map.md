@@ -3,7 +3,7 @@ id: C010
 type: COMPONENT
 status: ACTIVE
 created: 2026-03-22
-updated: 2026-03-22 (full georeferencing + 27-pin calibration)
+updated: 2026-03-23
 related: C003, D001, D003
 ---
 
@@ -119,7 +119,11 @@ the SW coast — correct. These are genuinely offshore features.
 - **Zoom method:** SVG `viewBox` attribute manipulation (no CSS transform, no library)
 - **Filter chips:** category filter above map, hides/shows pins, closes popup
 - **Popup:** `position: absolute; bottom: 0` slide-up panel within `.map-wrapper`
+- **Popup layout:** flex row — 16:9 image block (225px, `--radius-lg`) left + text (title + desc) right
+- **Popup image fallback:** gradient from `#0d1f12` → `cat.colour + '55'` (category-tinted) when no `image` field set
+- **Popup image field:** optional `image` on each `map-data.js` entry — gradient shows until real photos added
 - **Popup fix:** double `requestAnimationFrame` before adding `.active` — guarantees one full paint before transition fires, preventing first-click snap-in-from-top (height=0 on first render). `void offsetHeight` is NOT sufficient — use the double rAF pattern.
+- **Token note:** only `--radius` (12px) and `--radius-lg` (20px) exist — `--radius-md` is not defined
 
 ## Section background
 Dark section (`--green-deep`) with radial gradient overlays — same pattern as hero/features.
@@ -168,3 +172,4 @@ When manually placing GCPs, JS was injected via Playwright `browser_evaluate`:
 - 2026-03-22 Created. 27 locations, all categories, pan/zoom, filter, popup.
 - 2026-03-22 Island path upgraded: replaced 108-point OSM polygon with ~12,000-point potrace silhouette from Quincy's illustration. Nested transform + `vector-effect="non-scaling-stroke"` approach.
 - 2026-03-22 All 27 pin coordinates georeferenced: 9 manual GCPs + affine transform regression + Photon API geocoding for remaining pins. Max residual 1.3% x, 1.0% y. Committed and deployed.
+- 2026-03-23 Popup: added 16:9 image block with category-colour gradient fallback. Optional `image` field in map-data.js entries.

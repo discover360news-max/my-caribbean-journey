@@ -3,7 +3,7 @@ id: C003
 type: COMPONENT
 status: ACTIVE
 created: 2026-03-11
-updated: 2026-03-11
+updated: 2026-03-23
 related: D001, D002, B001
 ---
 
@@ -26,6 +26,7 @@ i-am-tobago/
   js/store-data.js      ← Physical store locations data (edit to add/update stores)
   js/stores.js          ← Store section rendering + toggle logic
   images/               ← Book cover, author photo, tote bag mockup
+  images/stores/        ← One webp per store (named to match store slug)
 ```
 
 **Section order:** Hero → About the Book → What's Inside → Author → Reviews → Buy CTA → Newsletter → Find In Store
@@ -64,6 +65,10 @@ i-am-tobago/
 - Data in `js/store-data.js` — stores by nation
 - Rendered by `js/stores.js`
 - Toggle between nations; all optional fields (phone, address, etc.) — unused fields don't render
+- Each store card has a `.store-card-image` area that shows a real photo when `image` is set
+- `image` field = absolute path e.g. `/i-am-tobago/images/stores/nelsons-bookstore.webp`
+- `stores.js` injects `background-image` inline; green gradient is the fallback for stores without a photo
+- Nation badge uses dark translucent bg (`rgba(0,0,0,0.45)`) for readability over photos
 
 **Inline links (dark sections):**
 - `.bio-listen-link` — gold, underlined (author section links)
@@ -88,3 +93,4 @@ i-am-tobago/
 
 ## Change Log
 - 2026-03-11 Created
+- 2026-03-23 Added store photos + Facebook links for Nelson's and Gumbs; nation badge darkened
