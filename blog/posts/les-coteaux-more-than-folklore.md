@@ -67,7 +67,7 @@ In standard French, it is pronounced "Lay Koh-TOH"
 
 Among residents, the pronunciation often shifts between **"Les Koh-TOH"** and **"Leh Koh-TOH"**. In stronger dialect, it can take on even more distinct forms, sometimes heard as **"Lek ka-TOE"** or even **"Leckitoe"**. Some note that speakers from the more urbanized southwest of the island, often referred to as "low side" or "town side" depending on perspective, are more likely to say **"Leh Koh-TOH"**.
 
-These variations often come from how people grew up hearing the name, rather than something they phonetically choose on purpose.\
+These variations often come from how people grew up hearing the name, rather than something they phonetically choose on purpose.
 
 *In some cases, the way it is said also carries a quiet social awareness, with speakers adjusting depending on who they are in the presence of.*
 
@@ -166,6 +166,8 @@ While not unique to Les Coteaux, the existence and contributions of such individ
 ## Village Icons
 
 From this environment emerged one of the most distinctive and original voices in the history of Caribbean music.
+
+<figure class="post-figure post-figure--shadow"><img src="/blog/images/shadow.webp" alt=""></figure>
 
 **Winston McGarland Bailey** (4 October 1941 to 23 October 2018), known to the world as:
 
