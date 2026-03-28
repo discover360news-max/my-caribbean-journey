@@ -2,7 +2,7 @@
 title: "Les Coteaux: More Than Folklore"
 type: story
 category: culture
-draft: true
+draft: false
 featured: false
 featuredImage: /blog/images/beyondfolklore.webp
 date: 2026-03-28
@@ -19,6 +19,37 @@ excerpt: >-
   A place where history does not feel distant, but present.
 
   Long before it became known for folklore, Les Coteaux was shaped by something far heavier.
+references: >-
+  * Caribbean Atlas. Tobago: [In and Out of Colonial
+  Empires](http://www.caribbean-atlas.com/en/themes/waves-of-colonization-and-control-in-the-caribbean/waves-of-colonization/tobago-in-and-out-of-colonial-empires.html).
+
+  *  Caribbean Beat. [Tobago’s Hidden History](https://www.caribbean-beat.com/issue-113/tobagos-hidden-history). 
+
+  * Charan, R. (2015). [Tales of Les Coteaux. Trinidad Express](https://trinidadexpress.com/news/local/tales-of-les-coteaux/article_e0c73d7c-c183-5529-8fc6-b8e6af64d001.html). 
+
+  * Hackett, Z. A. (2020). [District Highlight: The Historical Ruins of Les Coteaux. Facebook](https://www.facebook.com/ZorishaAmenaHackett/posts/135761168297061/). 
+
+  * Newsday (2019). [Les Coteaux — the Folklore Capital](https://newsday.co.tt/2019/07/30/les-coteaux-the-folklore-capital/). 
+
+  * Newsday (2023). [Carion Baird-Job: The Cultural Queen of Leckitoe](https://newsday.co.tt/2023/06/25/carion-baird-job-the-cultural-queen-of-leckitoe/). 
+
+  * National Archives of Trinidad and Tobago (2015). [The Tobago Heritage Festival: Preserving Folk Traditions.](https://nationalarchivestt.wordpress.com/2015/08/02/the-tobago-heritage-festival-preserving-folk-traditions/) 
+
+  * History of Tobago’s Heritage Festival — [Les Coteaux](https://thehistoryoftobagosheritagefestival.wordpress.com/les-coteaux/). 
+
+  * NALIS. [Tobago Heritage Festival](https://www.nalis.gov.tt/resources/tt-content-guide/tobago-heritage-festival/). 
+
+  * Tour Tobago Travel. [St. Thomas Anglican Church](https://www.tourtobagotravel.com/home/post/1386/st-thomas-anglican-church). 
+
+  * Jacob, D. (1995). Shadow: [The Uncrowned King. Caribbean Beat, Issue 16](https://www.caribbean-beat.com/issue-16/shadow-uncrowned-king). 
+
+  * Healy, D. (2018). [The Man Behind the Shadow. Trinidad and Tobago Newsday](https://newsday.co.tt/2018/10/27/the-man-behind-the-shadow/). 
+
+  * Wired868 (2018). Casting the Longest Shadow: [How the Bassman from Les Coteaux Shook Up Calypso](http://wired868.com/2018/10/23/casting-the-longest-shadow-how-the-bassman-from-les-couteaux-shook-up-calypso/). 
+
+  * Tobago Festivals. Keeper of Tradition, Builder of Legacy: [Heart of Les Coteaux at the Heritage Calypso. Facebook](https://www.facebook.com/tobagofestivals/posts/-keeper-of-tradition-builder-of-legacy-heart-of-les-coteaux-at-the-heritage-caly/1153254780171826/). 
+
+  * Meyer, J. Caribbean Folklore and Belief Systems. [(PDF)](https://www.llti.lt/failai/05%20MEYERIO.pdf)
 ---
 ## A Name Shaped by History
 
