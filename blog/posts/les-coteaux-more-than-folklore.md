@@ -53,27 +53,22 @@ references: >-
 ---
 ## A Name Shaped by History
 
-
 ***The name Les Coteaux is more than descriptive. 
 It is a reminder of Tobago’s layered colonial past.***
-
 
 Translated from French, Les Coteaux means **the hillsides,** a fitting description of a village shaped by steep terrain and rolling slopes overlooking the Courland River valley.
 The name dates back to the late eighteenth century, a period when Tobago changed hands among several European powers, including the French, who left a lasting mark on the island’s landscape and place names. Even after British control was firmly established after the Napoleonic Wars in 1814, many of these names remained, preserved as part of the island’s historical memory.
 
-
 *Over time, however, the name has taken on a life of its own.*
-
 
 In standard French, it is pronounced “Lay Koh-TOH”
 
-
 ***In Tobago, the name has been reshaped over time.***
-
 
 Among residents, the pronunciation often shifts between **“Les Koh-TOH”** and **“Leh Koh-TOH”**. In stronger dialect, it can take on even more distinct forms, sometimes heard as **“Lek ka-TOE”** or even **“Leckitoe”**. Some note that speakers from the more urbanized southwest of the island, often referred to as “low side” or “town side” depending on perspective, are more likely to say **“Leh Koh-TOH”**.
 
-These variations often come from how people grew up hearing the name, rather than something they phonetically choose on purpose.
+These variations often come from how people grew up hearing the name, rather than something they phonetically choose on purpose.\
+
 *In some cases, the way it is said also carries a quiet social awareness, with speakers adjusting depending on who they are in the presence of.*
 
 While the formal French version still exists, the name has taken on a distinctly local life.
@@ -82,7 +77,6 @@ While the formal French version still exists, the name has taken on a distinctly
 
 ## A Village in the Hills
 
-### 
 The first impression of Les Coteaux is the land itself.
 
 The terrain is steep and rolling, sometimes described as mountainous in Tobago terms. Homes are built along the hillsides or nestled into the gullies or valleys below, and the roads wind with the land rather than cutting through it.
@@ -104,7 +98,6 @@ Stories passed down through generations speak of **massa days**, a term used to 
 There was a [copper, or cupper](https://www.facebook.com/photo/?fbid=1190612736539766) in almost every yard: large metal pots once used in sugar processing on the estates, a reminder of the village’s plantation past.  
 
 <div class="callout callout-note"><p><strong>📌 Note</strong> These pots were often made of or lined with copper, allowing for even heat distribution during the boiling of cane juice.</p></div>
-
 
 Today, however, that past has largely receded from daily conversation. As generations pass, the distance between lived memory and inherited history continues to grow.
 
@@ -132,7 +125,7 @@ Accounts of unexplained marks, such as red bruises believed to be caused by a so
 
 Among the most well-known stories is that of Gang Gang Sarah.
 
-The story tells of an African woman said to have used her ability to fly across the ocean to reach Tobago in search of her family, who had been taken into slavery. She remained in the village for many years, living as a healer and midwife. When she later attempted to return to Africa, she found she could no longer fly, having lost her power after consuming salt. She fell from a [silk cotton tree ](https://mycaribbeanjourney.com/blog/the-silk-cotton-tree-myth-memory-and-power-in-tobago/), a moment that has come to symbolize the rupture between Africa and the Caribbean.
+The story tells of an African woman said to have used her ability to fly across the ocean to reach Tobago in search of her family, who had been taken into slavery. She remained in the village for many years, living as a healer and midwife. When she later attempted to return to Africa, she found she could no longer fly, having lost her power after consuming salt. She fell from a [silk cotton tree](https://mycaribbeanjourney.com/blog/the-silk-cotton-tree-myth-memory-and-power-in-tobago/), a moment that has come to symbolize the rupture between Africa and the Caribbean.
 
 Often introduced to children at an early age, the story has long been part of the cultural fabric of the village. Today, it is widely understood as ***folklore***, *a body of stories and beliefs passed down through generations that once helped explain and guide everyday life*, yet it still lingers in the hearts and beliefs of many.
 
@@ -166,7 +159,7 @@ The Anglican church also held an important place in village life. Established in
 
 There was this sense of a small, close-knit community, with a distinctly country feel. A few parlors provided basic goods, and the rhythms of daily life were shaped by both proximity and distance, with Scarborough about twenty minutes away and Plymouth closer still.
 
-There were also familiar figures who served the needs of the entire community. Among them were characters with intriguing and mysterious names, like Shadow, the lone tailor known to everyone, whose shop along the main road served the village. 
+There were also familiar figures who served the needs of the entire community. Among them were characters with intriguing and mysterious names, like *Shadow*, the lone tailor known to everyone, whose shop along the main road served the village. 
 
 While not unique to Les Coteaux, the existence and contributions of such individuals reflected a broader village structure, where essential roles, whether tailor, butcher, shopkeeper, or tradesman, were woven into everyday life.
 
@@ -180,14 +173,13 @@ From this environment emerged one of the most distinctive and original voices in
 
 Les Coteaux profoundly shaped his music, embedding African folklore, percussion, and spiritual themes that would come to define his unique calypso style.
 
-Some of his most celebrated works, such as *Bassman* (a figure rising from Hell), **Pay the Devil, La Diablesse** (a devil woman exposing her cowfoot), and *Abyssinia* (the terrifying Blue Devil masquerader), are drawn directly from the folkloric world of Les Coteaux.
+Some of his most celebrated works, such as **Bassman** (a figure rising from Hell), **Pay the Devil, La Diablesse** (a devil woman exposing her cowfoot), and **Abyssinia** (the terrifying Blue Devil masquerader), are drawn directly from the folkloric world of Les Coteaux.
 
 Although born in Belmont, a suburb of Port of Spain, Trinidad, he was raised in Les Coteaux by his grandparents, Evlan and Elly Bailey, until he was approximately 15 or so years of age.
 
 This formative period in the village shaped virtually every dimension of his artistic character.
 
 In his own words, he described his childhood in the village with a deep, almost reverent attachment to the natural world:
-
 
 <div class="pull-quote"><p>All I know is I always liked the bush, the trees and breeze. I liked listening to the birds. I always looked at the sunset.</p><cite>The mighty Shadow</cite></div>
 
@@ -196,7 +188,6 @@ He spent his days looking after cattle, sheep, and donkeys, bathing in the river
 Accounts suggest that the first music *The Mighty Shadow* ever heard was the sound of wooden drums covered with goatskin, heated over a coconut branch fire and accompanied by a fiddler at weddings and celebrations, a direct echo of the African percussion traditions preserved in Les Coteaux.
 
 Recalling the first time he heard calypso at the age of eight, he said: 
-
 
 <div class="pull-quote"><p>I was so carried away. I knew from that moment what I wanted to do with my life.</p></div>
 
@@ -224,12 +215,12 @@ Now passed, his presence is still deeply felt in the village.
 
 <div class="callout callout-note"><p><strong>📌 Note</strong> Concote is a traditional Tobago dish made from ground provisions slowly cooked into a thick, hearty mixture, often with coconut milk and seasoned meats or fish. Coo-coo, also a traditional dish, is made from cornmeal and ochro, cooked into a smooth, firm consistency and typically served with fish.</p></div>
 
-
 Born on October 31st, 1941, Grant served the community not only through formal roles, including his work with the Les Coteaux Village Council and the Les Coteaux Close Connection Heritage Group, but through the everyday work of keeping tradition alive.
 
 Whether through performance, food, or craft, Ulric Grant embodied something deeper: a living connection to the village’s past, and a steady hand ensuring that it would not be forgotten.
 
-That same responsibility of carrying culture forward can be seen in the work of **Carion Baird-Job**.
+That same responsibility of carrying culture forward can be seen in the work of \
+**Carion Baird-Job**.
 
 Deeply rooted in the cultural life of Les Coteaux, her work has centered on the organization, preservation, and promotion of Tobago’s heritage. Through her involvement in festivals and cultural initiatives, particularly those connected to the Tobago Heritage Festival, she has helped bring the traditions of the village into wider national focus.
 
@@ -251,7 +242,7 @@ Some villagers found employment in the hotel and hospitality industry, working i
 
 Today, many continue to join the diaspora, going on to study, work, and contribute to communities beyond Tobago. From education and public service to business and the creative industries, the influence of Les Coteaux can be seen far beyond the village itself. While many remain rooted at home, others carry its values, experiences, and cultural identity with them, shaping the wider world in ways both visible and quietly enduring.
 
-*Despite this, misconceptions remain.*
+***Despite this, misconceptions remain.***
 
 Because of its association with folklore, Les Coteaux is sometimes viewed as being rooted in the past. In reality, it is a modern community with ambition, with access to the same services and opportunities as other parts of Tobago.
 
