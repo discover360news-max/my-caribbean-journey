@@ -23,7 +23,7 @@ references: >-
   * Caribbean Atlas. Tobago: [In and Out of Colonial
   Empires](http://www.caribbean-atlas.com/en/themes/waves-of-colonization-and-control-in-the-caribbean/waves-of-colonization/tobago-in-and-out-of-colonial-empires.html).
 
-  *  Caribbean Beat. [Tobago’s Hidden History](https://www.caribbean-beat.com/issue-113/tobagos-hidden-history). 
+  *  Caribbean Beat. [Tobago's Hidden History](https://www.caribbean-beat.com/issue-113/tobagos-hidden-history). 
 
   * Charan, R. (2015). [Tales of Les Coteaux. Trinidad Express](https://trinidadexpress.com/news/local/tales-of-les-coteaux/article_e0c73d7c-c183-5529-8fc6-b8e6af64d001.html). 
 
@@ -35,7 +35,7 @@ references: >-
 
   * National Archives of Trinidad and Tobago (2015). [The Tobago Heritage Festival: Preserving Folk Traditions.](https://nationalarchivestt.wordpress.com/2015/08/02/the-tobago-heritage-festival-preserving-folk-traditions/) 
 
-  * History of Tobago’s Heritage Festival — [Les Coteaux](https://thehistoryoftobagosheritagefestival.wordpress.com/les-coteaux/). 
+  * History of Tobago's Heritage Festival — [Les Coteaux](https://thehistoryoftobagosheritagefestival.wordpress.com/les-coteaux/). 
 
   * NALIS. [Tobago Heritage Festival](https://www.nalis.gov.tt/resources/tt-content-guide/tobago-heritage-festival/). 
 
@@ -54,18 +54,18 @@ references: >-
 ## A Name Shaped by History
 
 ***The name Les Coteaux is more than descriptive. 
-It is a reminder of Tobago’s layered colonial past.***
+It is a reminder of Tobago's layered colonial past.***
 
 Translated from French, Les Coteaux means **the hillsides,** a fitting description of a village shaped by steep terrain and rolling slopes overlooking the Courland River valley.
-The name dates back to the late eighteenth century, a period when Tobago changed hands among several European powers, including the French, who left a lasting mark on the island’s landscape and place names. Even after British control was firmly established after the Napoleonic Wars in 1814, many of these names remained, preserved as part of the island’s historical memory.
+The name dates back to the late eighteenth century, a period when Tobago changed hands among several European powers, including the French, who left a lasting mark on the island's landscape and place names. Even after British control was firmly established after the Napoleonic Wars in 1814, many of these names remained, preserved as part of the island's historical memory.
 
 *Over time, however, the name has taken on a life of its own.*
 
-In standard French, it is pronounced “Lay Koh-TOH”
+In standard French, it is pronounced "Lay Koh-TOH"
 
 ***In Tobago, the name has been reshaped over time.***
 
-Among residents, the pronunciation often shifts between **“Les Koh-TOH”** and **“Leh Koh-TOH”**. In stronger dialect, it can take on even more distinct forms, sometimes heard as **“Lek ka-TOE”** or even **“Leckitoe”**. Some note that speakers from the more urbanized southwest of the island, often referred to as “low side” or “town side” depending on perspective, are more likely to say **“Leh Koh-TOH”**.
+Among residents, the pronunciation often shifts between **"Les Koh-TOH"** and **"Leh Koh-TOH"**. In stronger dialect, it can take on even more distinct forms, sometimes heard as **"Lek ka-TOE"** or even **"Leckitoe"**. Some note that speakers from the more urbanized southwest of the island, often referred to as "low side" or "town side" depending on perspective, are more likely to say **"Leh Koh-TOH"**.
 
 These variations often come from how people grew up hearing the name, rather than something they phonetically choose on purpose.\
 
@@ -95,7 +95,7 @@ Like much of Tobago, Les Coteaux was once the site of large and productive sugar
 Remnants of that past remain in places like Arnos Vale, where an old water wheel and estate ruins can still be seen. Other sites, such as the [Franklyn estate](https://www.facebook.com/groups/191766699268/posts/10160856232269269/) remain in varying states of preservation, though they are less well known and less frequently visited. But the deeper traces of that plantation history are not always visible.
 
 Stories passed down through generations speak of **massa days**, a term used to describe the time of plantation slavery and the harsh realities that came with it.
-There was a [copper, or cupper](https://www.facebook.com/photo/?fbid=1190612736539766) in almost every yard: large metal pots once used in sugar processing on the estates, a reminder of the village’s plantation past.  
+There was a [copper, or cupper](https://www.facebook.com/photo/?fbid=1190612736539766) in almost every yard: large metal pots once used in sugar processing on the estates, a reminder of the village's plantation past.  
 
 <div class="callout callout-note"><p><strong>📌 Note</strong> These pots were often made of or lined with copper, allowing for even heat distribution during the boiling of cane juice.</p></div>
 
@@ -135,7 +135,7 @@ Elements of the landscape, particularly silk cotton trees, still carry a sense o
 
 This connection between story and place is most visible during the **Tobago Heritage Festival**.
 
-Les Coteaux’s presentation, a staged performance that brings the village’s folklore to life, is considered one of the highlights of the festival, drawing large crowds and showcasing its deep cultural roots. Through drama, music, and storytelling, traditions once passed down quietly within families are brought to a wider audience.
+Les Coteaux's presentation, a staged performance that brings the village's folklore to life, is considered one of the highlights of the festival, drawing large crowds and showcasing its deep cultural roots. Through drama, music, and storytelling, traditions once passed down quietly within families are brought to a wider audience.
 
 ***There is also a growing awareness that preserving these traditions requires continued effort, with a need to keep presentations fresh and engaging as audiences change over time.***
 
@@ -153,7 +153,7 @@ Agriculture played a central role, with families producing ground provisions and
 
 Community life was reinforced through gatherings such as weddings, funerals, and especially wakes. These events brought people together through shared food, music, and collective participation, strengthening the social fabric of the village.
 
-The Anglican church also held an important place in village life. Established in the nineteenth century, it served not only as a place of worship, but as a central space for gathering, marking key moments such as baptisms and other rites of passage. For some, it offered a sense of refuge, a space for those who chose not to engage with the village’s folklore traditions, while still remaining part of the wider community. 
+The Anglican church also held an important place in village life. Established in the nineteenth century, it served not only as a place of worship, but as a central space for gathering, marking key moments such as baptisms and other rites of passage. For some, it offered a sense of refuge, a space for those who chose not to engage with the village's folklore traditions, while still remaining part of the wider community. 
 
 *It remains an active presence today.*
 
@@ -195,7 +195,7 @@ His onstage persona, the long cape, wide-brimmed hat, and oratorical style, can 
 
 One fiddler he would have been mesmerized by was village native, and member of his extended Bailey family, **Vandyke Bailey**. 
 
-*As one of the last of a generation of Tobago’s traditional Tambrin fiddlers, Bailey carried a role that was both rare and essential.* 
+*As one of the last of a generation of Tobago's traditional Tambrin fiddlers, Bailey carried a role that was both rare and essential.* 
 
 In Tambrin music, the violin, often referred to as a fiddle, does more than provide melody; it helps establish the tempo, weaving through the drums in a way that anchors the entire ensemble.
 
@@ -205,9 +205,9 @@ Bailey belonged to a generation of musicians whose style carried the imprint of 
 
 Today, that sound is increasingly rare, and his contribution remains something remembered and quietly missed.
 
-But the village’s traditions were not carried through music alone.
+But the village's traditions were not carried through music alone.
 
-One of the quiet pillars of Les Coteaux, a man whose life was dedicated to preserving and living Tobago’s cultural heritage, was **Ulric Grant**.
+One of the quiet pillars of Les Coteaux, a man whose life was dedicated to preserving and living Tobago's cultural heritage, was **Ulric Grant**.
 
 He became widely known for his unforgettable portrayal of the Obeah Man at the Les Coteaux Heritage Festival, bringing to life the same spiritual and folkloric world that has long defined the village. But he was also a master chef, known for preparing traditional dishes such as concote and coo-coo, and a skilled craftsman who built traditional dirt ovens, preserving practices that are as much history as they are culture.
 
@@ -217,12 +217,12 @@ Now passed, his presence is still deeply felt in the village.
 
 Born on October 31st, 1941, Grant served the community not only through formal roles, including his work with the Les Coteaux Village Council and the Les Coteaux Close Connection Heritage Group, but through the everyday work of keeping tradition alive.
 
-Whether through performance, food, or craft, Ulric Grant embodied something deeper: a living connection to the village’s past, and a steady hand ensuring that it would not be forgotten.
+Whether through performance, food, or craft, Ulric Grant embodied something deeper: a living connection to the village's past, and a steady hand ensuring that it would not be forgotten.
 
 That same responsibility of carrying culture forward can be seen in the work of \
 **Carion Baird-Job**.
 
-Deeply rooted in the cultural life of Les Coteaux, her work has centered on the organization, preservation, and promotion of Tobago’s heritage. Through her involvement in festivals and cultural initiatives, particularly those connected to the Tobago Heritage Festival, she has helped bring the traditions of the village into wider national focus.
+Deeply rooted in the cultural life of Les Coteaux, her work has centered on the organization, preservation, and promotion of Tobago's heritage. Through her involvement in festivals and cultural initiatives, particularly those connected to the Tobago Heritage Festival, she has helped bring the traditions of the village into wider national focus.
 
 Her role reflects a different kind of stewardship. Not only keeping tradition alive within the community, but helping to shape how it is presented, understood, and sustained in a modern context.
 
@@ -236,9 +236,9 @@ Over time, Les Coteaux has evolved, much like other villages across Tobago.
 
 The arrival of modern conveniences such as cable television, internet access, improved public transportation, and increased vehicle ownership has opened the village more fully to the rest of the island. Movement of people, resources, ideas, and skills is now clearly visible in everyday life.
 
-In earlier years, families were largely sustained by agriculture. The village produced hardworking families who cultivated ground provisions, pumpkins, and other crops that were taken to market in Scarborough. While that foundation remains part of the village’s identity, many have since moved beyond agriculture, taking on roles that contribute to the wider development of Tobago.
+In earlier years, families were largely sustained by agriculture. The village produced hardworking families who cultivated ground provisions, pumpkins, and other crops that were taken to market in Scarborough. While that foundation remains part of the village's identity, many have since moved beyond agriculture, taking on roles that contribute to the wider development of Tobago.
 
-Some villagers found employment in the hotel and hospitality industry, working in areas such as Arnos Vale, Plymouth, and Black Rock. Others became schoolteachers, teaching in the village’s primary school or in surrounding communities. Many were also employed in various capacities in what were commonly referred to as government jobs both within the village and in Scarborough.
+Some villagers found employment in the hotel and hospitality industry, working in areas such as Arnos Vale, Plymouth, and Black Rock. Others became schoolteachers, teaching in the village's primary school or in surrounding communities. Many were also employed in various capacities in what were commonly referred to as government jobs both within the village and in Scarborough.
 
 Today, many continue to join the diaspora, going on to study, work, and contribute to communities beyond Tobago. From education and public service to business and the creative industries, the influence of Les Coteaux can be seen far beyond the village itself. While many remain rooted at home, others carry its values, experiences, and cultural identity with them, shaping the wider world in ways both visible and quietly enduring.
 
@@ -248,7 +248,7 @@ Because of its association with folklore, Les Coteaux is sometimes viewed as bei
 
 *The folklore that defines its reputation does not define its daily life or its reality.*
 
-### What remains constant, however, is Les Coteaux’s place within the identity of Tobago.
+### What remains constant, however, is Les Coteaux's place within the identity of Tobago.
 
 For many, the mention of Les Coteaux immediately brings folklore to mind. The village and its stories are closely intertwined.
 
