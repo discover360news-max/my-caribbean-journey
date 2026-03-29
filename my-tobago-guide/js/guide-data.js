@@ -171,6 +171,7 @@ var GUIDE_DATA = {
       area: 'crown-point',
       plusCode: '5546+94J Crown Point, Trinidad and Tobago',
       featured: false,
+      image: 'images/store-bay-beach.webp',
       tags: [
         'beach', 'swimming', 'sunbathing', 'clear water', 'calm sea', 'family friendly',
         'accessible', 'crown point', 'food stalls', 'local food', 'crab and dumpling',
@@ -186,6 +187,7 @@ var GUIDE_DATA = {
       area: 'crown-point',
       plusCode: '55C6+R82 Crown Point, Trinidad and Tobago',
       featured: true,
+      image: 'images/pigeon-point-heritage-park.webp',
       tags: [
         'beach', 'heritage', 'park', 'pier', 'thatched roof', 'iconic', 'photography',
         'swimming', 'snorkeling', 'calm water', 'entry fee', 'scenic', 'crown point',
@@ -201,6 +203,7 @@ var GUIDE_DATA = {
       area: 'roxborough',
       plusCode: '79PF+9FX Anse Fourmi, Trinidad and Tobago',
       featured: false,
+      image: 'images/shurland-nature-park.webp',
       tags: [
         'nature', 'hiking', 'hike', 'trails', 'walking', 'scenic', 'views', 'viewpoint',
         'park', 'outdoors', 'birdwatching', 'birding', 'hummingbird', 'hummingbird feeding',
@@ -218,6 +221,7 @@ var GUIDE_DATA = {
       area: 'mason-hall',
       plusCode: '672W+P2G Mason Hall, Trinidad and Tobago',
       featured: false,
+      image: 'images/corbin-local-wildlife.webp',
       tags: [
         'wildlife', 'birdwatching', 'birding', 'nature', 'hiking', 'outdoors',
         'conservation', 'rainforest', 'trails', 'flora', 'fauna', 'animals',
