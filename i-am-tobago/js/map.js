@@ -14,20 +14,28 @@
 
   /* Category display config */
   const CATEGORIES = {
-    history:   { label: 'History',   colour: '#d4a030' },
-    folklore:  { label: 'Folklore',  colour: '#e8652a' },
-    nature:    { label: 'Nature',    colour: '#2d6b45' },
-    village:   { label: 'Village',   colour: '#f5f0e8' },
-    religious: { label: 'Religious', colour: '#9a8a7a' }
+    history:     { label: 'History',     colour: '#d4a030' },
+    folklore:    { label: 'Folklore',    colour: '#e8652a' },
+    nature:      { label: 'Nature',      colour: '#2d6b45' },
+    village:     { label: 'Village',     colour: '#f5f0e8' },
+    religious:   { label: 'Religious',   colour: '#9a8a7a' },
+    forts:       { label: 'Forts',       colour: '#b5451b' },
+    waterfalls:  { label: 'Waterfalls',  colour: '#4a9fc4' },
+    waterwheels: { label: 'Waterwheels', colour: '#7a5c38' },
+    islands:     { label: 'Islands',     colour: '#1a8a8a' }
   };
 
-  /* Category SVG icons (inline, 16×16 viewBox for pin use) */
+  /* Category SVG icons (inline, 24×24 viewBox) */
   const CAT_ICONS = {
-    history: `<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-width="1.5"/>`,
-    folklore: `<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke-width="1.5"/>`,
-    nature: `<path d="M17 8C8 10 5.9 16.17 3.82 19.34A2 2 0 1 0 7 21C12 14 18 15 21 9" stroke-width="1.5"/><path d="M10.34 13.94c.21.28.42.56.62.84" stroke-width="1.5"/>`,
-    village: `<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-width="1.5"/><polyline points="9 22 9 12 15 12 15 22" stroke-width="1.5"/>`,
-    religious: `<line x1="12" y1="2" x2="12" y2="22" stroke-width="1.5"/><line x1="2" y1="12" x2="22" y2="12" stroke-width="1.5"/>`
+    history:     `<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-width="1.5"/>`,
+    folklore:    `<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke-width="1.5"/><circle cx="12" cy="12" r="3" stroke-width="1.5"/>`,
+    nature:      `<path d="M17 8C8 10 5.9 16.17 3.82 19.34A2 2 0 1 0 7 21C12 14 18 15 21 9" stroke-width="1.5"/><path d="M10.34 13.94c.21.28.42.56.62.84" stroke-width="1.5"/>`,
+    village:     `<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-width="1.5"/><polyline points="9 22 9 12 15 12 15 22" stroke-width="1.5"/>`,
+    religious:   `<line x1="12" y1="2" x2="12" y2="22" stroke-width="1.5"/><line x1="2" y1="12" x2="22" y2="12" stroke-width="1.5"/>`,
+    forts:       `<path d="M4 22V10l8-8 8 8v12" stroke-width="1.5"/><rect x="9" y="14" width="6" height="8" stroke-width="1.5"/>`,
+    waterfalls:  `<path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" stroke-width="1.5"/>`,
+    waterwheels: `<circle cx="12" cy="12" r="3" stroke-width="1.5"/><circle cx="12" cy="12" r="9" stroke-width="1.5"/><line x1="12" y1="3" x2="12" y2="9" stroke-width="1.5"/><line x1="12" y1="15" x2="12" y2="21" stroke-width="1.5"/><line x1="3" y1="12" x2="9" y2="12" stroke-width="1.5"/><line x1="15" y1="12" x2="21" y2="12" stroke-width="1.5"/>`,
+    islands:     `<ellipse cx="12" cy="17" rx="9" ry="4" stroke-width="1.5"/><path d="M8 17c0-6 4-11 4-11s4 5 4 11" stroke-width="1.5"/>`
   };
 
   /* ── State ───────────────────────────────────────────────── */
