@@ -121,12 +121,13 @@ collections:
         name: "postTags"
         widget: "list"
         required: false
-        hint: "Specific keywords like 'tobago', 'history', 'folklore'. One word per tag, lowercase. Press Enter to add each one. Currently in use: colonialism, coralreef, culture, history, pride, tobago."
+        hint: "Lowercase, press Enter to add each one. Use hyphens for multi-word tags (e.g. coral-reef, les-coteaux). Currently in use: colonialism, coralreef, culture, history, pride, tobago."
 
       # ── Content ──────────────────────────────
       - label: "Body"
         name: "body"
         widget: "markdown"
+        editor_components: ['code-block']
 
       - label: "References & Further Reading"
         name: "references"
@@ -245,12 +246,13 @@ collections:
         name: "postTags"
         widget: "list"
         required: false
-        hint: "Specific keywords like 'tobago', 'history', 'folklore'. One word per tag, lowercase. Press Enter to add each one. Currently in use: colonialism, coralreef, culture, history, pride, tobago."
+        hint: "Lowercase, press Enter to add each one. Use hyphens for multi-word tags (e.g. coral-reef, les-coteaux). Currently in use: colonialism, coralreef, culture, history, pride, tobago."
 
       # ── Content ──────────────────────────────
       - label: "Body"
         name: "body"
         widget: "markdown"
+        editor_components: ['code-block']
 
       - label: "References & Further Reading"
         name: "references"
