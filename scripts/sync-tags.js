@@ -35,7 +35,7 @@ const tags = [...tagSet].sort();
 
 let config = fs.readFileSync(CONFIG_PATH, 'utf8');
 
-const BASE_HINT = "Specific keywords like 'tobago', 'history', 'folklore'. One word per tag, lowercase. Press Enter to add each one.";
+const BASE_HINT = "Lowercase, press Enter to add each one. Use hyphens for multi-word tags (e.g. coral-reef, les-coteaux).";
 const newHint = tags.length > 0
   ? `${BASE_HINT} Currently in use: ${tags.join(', ')}.`
   : BASE_HINT;
