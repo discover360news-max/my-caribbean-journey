@@ -121,7 +121,7 @@ collections:
         name: "postTags"
         widget: "list"
         required: false
-        hint: "Specific keywords like 'tobago', 'history', 'folklore'. One word per tag, lowercase. Press Enter to add each one."
+        hint: "Specific keywords like 'tobago', 'history', 'folklore'. One word per tag, lowercase. Press Enter to add each one. Currently in use: colonialism, coralreef, culture, history, pride, tobago."
 
       # ── Content ──────────────────────────────
       - label: "Body"
@@ -245,7 +245,7 @@ collections:
         name: "postTags"
         widget: "list"
         required: false
-        hint: "Specific keywords like 'tobago', 'history', 'folklore'. One word per tag, lowercase. Press Enter to add each one."
+        hint: "Specific keywords like 'tobago', 'history', 'folklore'. One word per tag, lowercase. Press Enter to add each one. Currently in use: colonialism, coralreef, culture, history, pride, tobago."
 
       # ── Content ──────────────────────────────
       - label: "Body"

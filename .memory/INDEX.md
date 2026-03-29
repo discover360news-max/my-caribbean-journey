@@ -28,3 +28,4 @@ S001  | STANDARD  | ACTIVE      | SEO metadata: target intents, title/desc conve
 C009  | COMPONENT | ACTIVE      | Listen/Watch sidebar widget: audioTracks (R2), youtubeId, playlist UI, ElevenLabs workflow → .memory/entries/C009-listen-watch-widget.md
 L003  | LEARNING  | ACTIVE      | Mobile UX standards: safe-area, dvh, touch targets, font floor — audit tracker at /AUDIT.md → .memory/entries/L003-mobile-ux-standards.md
 C010  | COMPONENT | ACTIVE      | I Am Tobago historical map: 27 georeferenced pins, affine transform formula, Photon API geocoding, pan/zoom, filter, popup → .memory/entries/C010-historical-map.md
+L004  | LEARNING  | ACTIVE      | Curly quotes in blog frontmatter break Decap CMS js-yaml — pre-commit hook added, fix command documented → .memory/entries/L004-curly-quotes-cms-yaml-error.md
