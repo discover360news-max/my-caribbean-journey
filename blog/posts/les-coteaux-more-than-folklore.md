@@ -22,7 +22,7 @@ excerpt: >-
 postTags:
   - tobago
   - history
-  - lescoteau
+  - les-coteau
 references: >-
   * Caribbean Atlas. Tobago: [In and Out of Colonial
   Empires](http://www.caribbean-atlas.com/en/themes/waves-of-colonization-and-control-in-the-caribbean/waves-of-colonization/tobago-in-and-out-of-colonial-empires.html).
