@@ -112,6 +112,10 @@ the SW coast — correct. These are genuinely offshore features.
 | `nature` | Nature | `#2d6b45` (green) |
 | `village` | Village | `#f5f0e8` (cream) |
 | `religious` | Religious | `#9a8a7a` (muted) |
+| `forts` | Forts | `#b5451b` (dark red) |
+| `waterfalls` | Waterfalls | `#4a9fc4` (blue) |
+| `waterwheels` | Waterwheels | `#7a5c38` (brown) |
+| `islands` | Islands | `#1a8a8a` (teal) |
 
 ## Features
 - **Pan:** mouse drag + one-finger touch drag
@@ -135,17 +139,27 @@ Edit `map-data.js` only. Each entry:
 {
   id: 'unique-id',
   name: 'Display Name',
-  category: 'history',   // one of the 5 category keys above
+  category: 'history',   // one of the 9 category keys above
   x: 37.4,              // % of viewBox width  (use formula above, then verify visually)
   y: 64.5,              // % of viewBox height
+  image: '/blog/images/example.webp',  // optional — gradient fallback if omitted
   description: 'Full paragraph shown in popup.'
 }
 ```
+Mark confirmed GPS entries with an inline comment: `/* REAL — lat°N, lon°W */`
+
 To place a new pin: apply the georeferencing formula with confirmed GPS, then visually
 verify in browser. The formula has ~1% precision — close enough to land on the correct
 area, but slight manual nudging may be needed for peninsula edges.
 
 No CMS integration — data is static from the book.
+
+## Confirmed GPS coordinates (as of 2026-03-29)
+| Pin | GPS |
+|---|---|
+| Les Coteaux | 11.227740°N, 60.741831°W |
+| London Bridge | 11.354981°N, 60.533172°W |
+| No Man's Land | 11.168646°N, 60.824912°W |
 
 ## Known issues / gotchas
 - NE peninsula (Speyside/Charlotteville area) is very thin in SVG space — pins there need y% ≈ 20–30 to sit on land
@@ -173,3 +187,4 @@ When manually placing GCPs, JS was injected via Playwright `browser_evaluate`:
 - 2026-03-22 Island path upgraded: replaced 108-point OSM polygon with ~12,000-point potrace silhouette from Quincy's illustration. Nested transform + `vector-effect="non-scaling-stroke"` approach.
 - 2026-03-22 All 27 pin coordinates georeferenced: 9 manual GCPs + affine transform regression + Photon API geocoding for remaining pins. Max residual 1.3% x, 1.0% y. Committed and deployed.
 - 2026-03-23 Popup: added 16:9 image block with category-colour gradient fallback. Optional `image` field in map-data.js entries.
+- 2026-03-29 Expanded to 9 categories (added forts, waterfalls, waterwheels, islands). Forts moved out of history. 34 total pins. New entries: Pigeon Peak, Turtle Beach, No Man's Land, Arnos Vale Waterwheel, The Sisters, London Bridge. Argyle moved to waterfalls, Little Tobago moved to islands. Les Coteaux, London Bridge, No Man's Land have confirmed real GPS. Map data reset from placeholder → real coordinates workflow begins.
