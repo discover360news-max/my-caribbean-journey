@@ -19,6 +19,10 @@ excerpt: >-
   A place where history does not feel distant, but present.
 
   Long before it became known for folklore, Les Coteaux was shaped by something far heavier.
+postTags:
+  - tobago
+  - history
+  - lescoteau
 references: >-
   * Caribbean Atlas. Tobago: [In and Out of Colonial
   Empires](http://www.caribbean-atlas.com/en/themes/waves-of-colonization-and-control-in-the-caribbean/waves-of-colonization/tobago-in-and-out-of-colonial-empires.html).
