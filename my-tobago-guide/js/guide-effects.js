@@ -1,4 +1,55 @@
 // ===========================================
+// MY TOBAGO GUIDE - Love Tobago scroll modal
+// Shows once per session when user scrolls 50%
+// ===========================================
+(function () {
+  'use strict';
+
+  var SESSION_KEY = 'guide_modal_shown';
+  if (sessionStorage.getItem(SESSION_KEY)) return;
+
+  var overlay = document.getElementById('guide-modal');
+  var closeBtn = document.getElementById('guide-modal-close');
+  if (!overlay) return;
+
+  function openModal() {
+    overlay.removeAttribute('hidden');
+    closeBtn && closeBtn.focus();
+    sessionStorage.setItem(SESSION_KEY, '1');
+    document.addEventListener('keydown', onKeyDown);
+  }
+
+  function closeModal() {
+    overlay.setAttribute('hidden', '');
+    document.removeEventListener('keydown', onKeyDown);
+  }
+
+  function onKeyDown(e) {
+    if (e.key === 'Escape') closeModal();
+  }
+
+  closeBtn && closeBtn.addEventListener('click', closeModal);
+
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) closeModal();
+  });
+
+  var triggered = false;
+  function onScroll() {
+    if (triggered) return;
+    var scrolled = window.scrollY + window.innerHeight;
+    var total = document.documentElement.scrollHeight;
+    if (scrolled / total >= 0.5) {
+      triggered = true;
+      window.removeEventListener('scroll', onScroll);
+      openModal();
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+})();
+
+// ===========================================
 // MY TOBAGO GUIDE - Hero video fade-in
 // ===========================================
 (function () {
