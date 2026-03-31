@@ -373,6 +373,7 @@ var GUIDE_DATA = {
       category: 'radio',
       area: 'island-wide',
       featured: false,
+      image: 'images/radio-tambrin.webp',
       tags: [
         'radio', 'music', 'news', 'soca', 'calypso', 'local', 'community', 'live stream',
         'online radio', 'entertainment', 'listen', 'steel pan', 'chutney', 'parang',
@@ -390,6 +391,7 @@ var GUIDE_DATA = {
       area: 'crown-point',
       plusCode: '5526+X24, Crown Point, Trinidad & Tobago',
       featured: false,
+      image: 'images/anr-robinson-international-airport.webp',
       tags: [
         'airport', 'flights', 'arrivals', 'departures', 'ANR', 'crown point', 'fly',
         'caribbean airlines', 'transport', 'getting here', 'travel', 'trinidad',
@@ -403,6 +405,7 @@ var GUIDE_DATA = {
       category: 'practical-info',
       area: 'scarborough',
       featured: true,
+      image: 'images/inter-island-ferry.webp',
       tags: [
         'ferry', 'boat', 'trinidad', 'port of spain', 'transport', 'sea bridge',
         'schedule', 'tickets', 'inter-island', 'getting here', 'scarborough port',
@@ -417,6 +420,7 @@ var GUIDE_DATA = {
       category: 'practical-info',
       area: 'island-wide',
       featured: false,
+      image: 'images/public-transportation-schedule.webp',
       tags: [
         'bus', 'taxi', 'maxi taxi', 'ptsc', 'transport', 'getting around', 'schedule',
         'routes', 'public transit', 'cheap', 'budget', 'local transport', 'timetable',
@@ -430,6 +434,7 @@ var GUIDE_DATA = {
       category: 'practical-info',
       area: 'island-wide',
       featured: false,
+      image: 'images/currency-exchange-rate-usd-ttd.webp',
       tags: [
         'currency', 'exchange rate', 'money', 'TTD', 'USD', 'dollars', 'TT dollars',
         'banking', 'conversion', 'finance', 'budget', 'travel money', 'cash',
