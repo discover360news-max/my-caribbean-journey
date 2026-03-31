@@ -238,6 +238,7 @@ var GUIDE_DATA = {
       category: 'culture-history',
       area: 'island-wide',
       featured: false,
+      image: 'images/tobago-events-and-festivals.webp',
       tags: [
         'events', 'festivals', 'heritage festival', 'goat race', 'carnival', 'culture',
         'music', 'community', 'calendar', 'what\'s on', 'things to do', 'entertainment',
@@ -252,6 +253,7 @@ var GUIDE_DATA = {
       category: 'culture-history',
       area: 'island-wide',
       featured: false,
+      image: 'images/tobago-heritage-conservation-society.webp',
       tags: [
         'heritage', 'conservation', 'culture', 'history', 'preservation', 'community',
         'folklore', 'traditions', 'ole time', 'old time', 'ancestors', 'legacy',
@@ -269,6 +271,7 @@ var GUIDE_DATA = {
       category: 'accommodation',
       area: 'island-wide',
       featured: false,
+      image: 'images/luxstay-tobago.webp',
       tags: [
         'luxury', 'villa', 'large villa', 'upscale', 'high end', 'premium', 'stylish', 'modern',
         'holiday rental', 'vacation rental', 'self catering', 'amenities', 'pool',
@@ -285,6 +288,7 @@ var GUIDE_DATA = {
       category: 'accommodation',
       area: 'island-wide',
       featured: false,
+      image: 'images/pint-size-paradise.webp',
       tags: [
         'airbnb', 'airbnb style', 'holiday rental', 'vacation rental', 'self catering',
         'multiple properties', 'island wide', 'large group', 'family', 'sleeps 5', 'bedrooms',
@@ -300,6 +304,7 @@ var GUIDE_DATA = {
       area: 'castara',
       plusCode: '78H3+6HW, Castara Retreats, North Side Road, Castara, Trinidad & Tobago',
       featured: false,
+      image: 'images/castara-retreats.webp',
       tags: [
         'castara', 'retreat', 'eco', 'eco friendly', 'sustainable', 'nature', 'secluded',
         'peaceful', 'romantic', 'boutique', 'beachfront', 'cottage', 'rainforest',
@@ -315,6 +320,7 @@ var GUIDE_DATA = {
       area: 'crown-point',
       plusCode: '5537+66 Crown Point, Trinidad and Tobago',
       featured: false,
+      image: 'images/kariwak-village-holistic-haven.webp',
       tags: [
         'holistic', 'wellness', 'spa', 'yoga', 'organic', 'garden', 'restaurant',
         'peaceful', 'crown point', 'near beach', 'boutique hotel', 'pool', 'romantic',
@@ -333,6 +339,7 @@ var GUIDE_DATA = {
       area: 'island-wide',
       plusCode: '558G+M2W, Buccoo, Trinidad & Tobago',
       featured: true,
+      image: 'images/frankie-tours-and-rentals.webp',
       tags: [
         'tours', 'car rental', 'vehicle rental', 'guided tour', 'island tour', 'transfers',
         'taxi', 'sightseeing', 'local guide', 'private tour', 'jeep', 'rental',
@@ -346,6 +353,7 @@ var GUIDE_DATA = {
       category: 'activities-tours',
       area: 'island-wide',
       featured: false,
+      image: 'images/island-girl-tours.webp',
       tags: [
         'tours', 'guided tour', 'beaches', 'waterfalls', 'hiking', 'hike', 'birdwatching',
         'birding', 'diving', 'scuba', 'snorkeling', 'water sports', 'kayaking', 'fishing',
