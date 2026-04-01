@@ -719,13 +719,13 @@
       if (mapEl && typeof L !== 'undefined') {
         _leafletMap = L.map(mapEl, {
           center: link.coords,
-          zoom: 15,
-          zoomControl: false,
+          zoom: 14,
+          zoomControl: true,
           attributionControl: false,
           dragging: false,
           scrollWheelZoom: false,
           touchZoom: false,
-          doubleClickZoom: false,
+          doubleClickZoom: true,
           boxZoom: false,
           keyboard: false
         });

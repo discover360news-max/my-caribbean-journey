@@ -162,7 +162,7 @@ var GUIDE_DATA = {
       category: 'food-recipes',
       area: 'charlotteville',
       plusCode: '8FC2+M56, Charlotteville, Trinidad & Tobago',
-      coords: [11.3119, -60.5513],
+      coords: [11.321594, -60.549662],
       quincyNote: 'Charlotteville is all the way on the northeast tip — the kind of place that makes you feel like you\'ve stepped outside of time. Sharon\'s is where you eat when you get there. Good food, warm welcome, and a view that makes you slow down.',
       featured: false,
       image: 'images/sharon-and-phebes.webp',
