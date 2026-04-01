@@ -486,9 +486,9 @@
         }
 
         if (link.embedPage) {
-          html += '<div class="guide-card' + featuredClass + '">' + innerHtml + '</div>';
+          html += '<div class="guide-card' + featuredClass + '" data-url="' + link.url + '">' + innerHtml + '</div>';
         } else {
-          html += '<a href="' + link.url + '" class="guide-card' + featuredClass + '" target="_blank" rel="noopener noreferrer">' + innerHtml + '</a>';
+          html += '<a href="' + link.url + '" class="guide-card' + featuredClass + '" data-url="' + link.url + '" target="_blank" rel="noopener noreferrer">' + innerHtml + '</a>';
         }
       });
 
@@ -650,6 +650,90 @@
       catExpandBtn.textContent = expanded ? 'Show less' : 'See all';
     });
   }
+
+  // --- Listing detail tray ---
+  var listingTray     = document.getElementById('guide-listing-tray');
+  var listingBody     = document.getElementById('guide-listing-body');
+  var listingClose    = document.getElementById('guide-listing-close');
+  var listingBackdrop = document.getElementById('guide-listing-backdrop');
+
+  function openListingTray(link) {
+    var cat       = getCategoryById(link.category);
+    var areaLabel = AREA_LABELS[link.area] || link.area || '';
+    var html      = '';
+
+    if (link.image) {
+      html += '<img src="/my-tobago-guide/' + link.image + '" class="guide-listing-image" alt="' + link.title + '" loading="lazy">';
+    }
+
+    html += '<div class="guide-listing-content">';
+
+    if (cat) html += '<span class="guide-listing-cat">' + cat.label + '</span>';
+    html += '<h2 class="guide-listing-title">' + link.title + '</h2>';
+
+    if (link.plusCode) {
+      var mapsUrl = 'https://maps.google.com/?q=' + encodeURIComponent(link.plusCode);
+      html += '<a class="guide-listing-location" href="' + mapsUrl + '" target="_blank" rel="noopener noreferrer">' +
+        pinSvg + ' ' + areaLabel + ' &middot; Get Directions</a>';
+    } else if (areaLabel) {
+      html += '<span class="guide-listing-location">' + pinSvg + ' ' + areaLabel + '</span>';
+    }
+
+    html += '<p class="guide-listing-desc">' + link.description + '</p>';
+
+    if (link.tags && link.tags.length) {
+      var showTags = link.tags.slice(0, 10);
+      html += '<div class="guide-listing-tags">';
+      for (var t = 0; t < showTags.length; t++) {
+        html += '<span class="guide-listing-tag">' + showTags[t] + '</span>';
+      }
+      html += '</div>';
+    }
+
+    html += '<div class="guide-listing-ctas">';
+    if (link.embedPage) {
+      html += '<a href="' + link.url + '" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Visit Website</a>';
+      html += '<a href="' + link.embedPage + '" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Stream</a>';
+    } else {
+      html += '<a href="' + link.url + '" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Visit</a>';
+    }
+    html += '</div>';
+
+    html += '</div>';
+
+    listingBody.innerHTML = html;
+    listingTray.removeAttribute('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeListingTray() {
+    listingTray.setAttribute('hidden', '');
+    document.body.style.overflow = '';
+  }
+
+  if (listingClose)    listingClose.addEventListener('click', closeListingTray);
+  if (listingBackdrop) listingBackdrop.addEventListener('click', closeListingTray);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && listingTray && !listingTray.hasAttribute('hidden')) closeListingTray();
+  });
+
+  // Card click → open tray; hearts, directions, and action links pass through untouched
+  grid.addEventListener('click', function (e) {
+    if (e.target.closest('.guide-card-heart, .guide-card-directions, .guide-card-action-link, a.guide-card-more-link')) return;
+
+    var card = e.target.closest('.guide-card[data-url]');
+    if (!card) return;
+
+    var url  = card.getAttribute('data-url');
+    var link = null;
+    for (var i = 0; i < GUIDE_DATA.links.length; i++) {
+      if (GUIDE_DATA.links[i].url === url) { link = GUIDE_DATA.links[i]; break; }
+    }
+    if (!link) return;
+
+    if (card.tagName === 'A') e.preventDefault();
+    openListingTray(link);
+  });
 
   // --- Initial render ---
   populateCategorySelect();

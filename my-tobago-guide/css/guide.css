@@ -643,6 +643,7 @@ body.guide-tray-closing .guide-tray-backdrop {
   text-decoration: none;
   color: inherit;
   overflow: hidden;
+  cursor: pointer;
 
   &:hover {
     transform: translateY(-4px);
@@ -1533,6 +1534,190 @@ body.guide-tray-closing .guide-tray-backdrop {
 
   .guide-modal-ctas .btn {
     width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+/* --- Listing detail tray --- */
+.guide-listing-tray {
+  position: fixed;
+  inset: 0;
+  z-index: 700;
+}
+
+.guide-listing-tray[hidden] { display: none; }
+
+.guide-listing-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 15, 8, 0.52);
+  animation: guide-modal-fade-in 0.25s ease both;
+}
+
+.guide-listing-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(440px, 92vw);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: -8px 0 50px rgba(0, 0, 0, 0.18);
+  animation: guide-listing-panel-in 0.32s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes guide-listing-panel-in {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+
+@keyframes guide-listing-panel-up {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+
+.guide-listing-panel-head {
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0.65rem 0.7rem 0;
+  min-height: 3rem;
+}
+
+.guide-listing-pill { display: none; }
+
+.guide-listing-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  background: rgba(0, 0, 0, 0.06);
+  border: none;
+  border-radius: 50%;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: background var(--transition);
+  flex-shrink: 0;
+}
+
+.guide-listing-close:hover { background: rgba(0, 0, 0, 0.12); }
+
+.guide-listing-body {
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.guide-listing-image {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
+}
+
+.guide-listing-content {
+  padding: 1.25rem 1.5rem 2.5rem;
+}
+
+.guide-listing-cat {
+  display: inline-block;
+  font-size: 0.73rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.guide-listing-title {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.25;
+  margin: 0 0 0.6rem;
+}
+
+.guide-listing-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  text-decoration: none;
+}
+
+a.guide-listing-location:hover {
+  color: var(--green-dark);
+  text-decoration: underline;
+}
+
+.guide-listing-desc {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--text-dark);
+  margin: 0 0 1.25rem;
+}
+
+.guide-listing-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 1.75rem;
+}
+
+.guide-listing-tag {
+  font-size: 0.73rem;
+  padding: 0.25rem 0.65rem;
+  background: rgba(26, 74, 46, 0.07);
+  color: var(--green-dark);
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.guide-listing-ctas {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .guide-listing-panel {
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    max-height: 85dvh;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.2);
+    animation: guide-listing-panel-up 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .guide-listing-pill {
+    display: block;
+    position: absolute;
+    top: 0.55rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 4px;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 2px;
+    pointer-events: none;
+  }
+
+  .guide-listing-image { height: 170px; }
+
+  .guide-listing-ctas .btn {
+    flex: 1;
     text-align: center;
     justify-content: center;
   }
