@@ -570,8 +570,39 @@
     applySearch();
   });
 
-  // --- Wire up search button + Enter ---
-  searchBtn.addEventListener('click', applySearch);
+  // --- Search hint (shown when button is clicked with no filters active) ---
+  var _hintEl = null;
+  var _hintTimer = null;
+
+  function showSearchHint() {
+    if (!_hintEl) {
+      _hintEl = document.createElement('span');
+      _hintEl.className = 'guide-search-hint';
+      _hintEl.setAttribute('aria-live', 'polite');
+      _hintEl.textContent = 'Enter a keyword or pick a filter first.';
+      document.getElementById('guide-search-form').appendChild(_hintEl);
+    }
+    clearTimeout(_hintTimer);
+    _hintEl.classList.add('is-visible');
+    keywordInput.focus();
+    _hintTimer = setTimeout(function () { _hintEl.classList.remove('is-visible'); }, 3500);
+  }
+
+  // --- Search button: scroll to results (if active) or prompt the user ---
+  searchBtn.addEventListener('click', function () {
+    if (isAnyFilterActive()) {
+      var resultsEl = document.querySelector('.guide-results');
+      if (resultsEl) {
+        // Small delay lets the mobile tray close animation finish first
+        setTimeout(function () {
+          resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 320);
+      }
+    } else {
+      showSearchHint();
+    }
+  });
+
   keywordInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') applySearch(); });
 
   // --- Mobile search tray ---
