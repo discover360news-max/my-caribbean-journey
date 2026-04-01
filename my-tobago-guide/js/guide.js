@@ -704,7 +704,7 @@
     html += '<div class="guide-listing-ctas">';
     if (link.embedPage) {
       html += '<a href="' + link.url + '" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Visit Website</a>';
-      html += '<a href="' + link.embedPage + '" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Stream</a>';
+      html += '<a href="' + link.embedPage + '" class="btn btn-outline-dark" target="_blank" rel="noopener noreferrer">Stream</a>';
     } else {
       html += '<a href="' + link.url + '" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Visit</a>';
     }

@@ -727,11 +727,13 @@ body.guide-tray-closing .guide-tray-backdrop {
   color: rgba(232, 228, 220, 0.6);
 }
 
-.guide-card-img-overlay .guide-card-link {
+.guide-card-img-overlay .guide-card-link,
+.guide-card-img-overlay .guide-card-action-link {
   color: rgba(232, 228, 220, 0.7);
 }
 
-.guide-card:hover .guide-card-img-overlay .guide-card-link {
+.guide-card:hover .guide-card-img-overlay .guide-card-link,
+.guide-card:hover .guide-card-img-overlay .guide-card-action-link {
   color: var(--gold);
 }
 
