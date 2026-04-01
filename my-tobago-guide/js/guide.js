@@ -709,7 +709,7 @@
       html += '<a href="' + link.url + '" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Visit</a>';
     }
     if (directionsUrl) {
-      html += '<a href="' + directionsUrl + '" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get Directions</a>';
+      html += '<a href="' + directionsUrl + '" class="btn btn-outline-dark" target="_blank" rel="noopener noreferrer">Get Directions</a>';
     }
     html += '</div>';
 
