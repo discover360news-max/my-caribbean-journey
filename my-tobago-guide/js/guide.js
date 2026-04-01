@@ -113,21 +113,54 @@
     }).length;
   }
 
-  // --- Build a single searchable string for a link (title + description + tags) ---
-  function searchableText(link) {
-    return [
-      link.title,
-      link.description,
-      (link.tags || []).join(' ')
-    ].join(' ').toLowerCase();
+  // --- Pre-index: build searchable strings once at load time ---
+  GUIDE_DATA.links.forEach(function (link) {
+    link._titleLc    = (link.title || '').toLowerCase();
+    link._tagsLc     = (link.tags || []).join(' ').toLowerCase();
+    link._descLc     = (link.description || '').toLowerCase();
+    link._searchText = link._titleLc + ' ' + link._descLc + ' ' + link._tagsLc;
+  });
+
+  // --- Spelling variants + conceptual synonyms ---
+  var SYNONYMS = {
+    'snorkelling': 'snorkeling', 'travelling': 'traveling',
+    'colour': 'color',           'colours': 'colors',
+    'favourite': 'favorite',     'favourites': 'favorites',
+    'centre': 'center',          'harbour': 'harbor',
+    'neighbourhood': 'neighborhood', 'programme': 'program',
+    'eat': 'food',   'eating': 'food',
+    'dine': 'restaurant', 'dining': 'restaurant',
+    'hike': 'hiking', 'hikes': 'hiking',
+    'trek': 'trekking',
+    'dive': 'diving', 'dives': 'diving',
+    'swim': 'swimming', 'swims': 'swimming',
+    'hotel': 'accommodation', 'hotels': 'accommodation',
+    'stay': 'accommodation',  'stays': 'accommodation',
+    'tour': 'tours', 'excursion': 'tours', 'excursions': 'tours'
+  };
+
+  function normalizeWords(keyword) {
+    return keyword.split(/\s+/).filter(Boolean).map(function (w) {
+      return SYNONYMS[w] || w;
+    });
   }
 
-  // --- Test a link against the active keyword (multi-word AND logic) ---
+  // --- Score a link against search words (higher = more relevant) ---
+  function scoreLink(link, words) {
+    var score = 0;
+    words.forEach(function (word) {
+      if (link._titleLc.indexOf(word) !== -1)     score += 30;
+      else if (link._tagsLc.indexOf(word) !== -1) score += 10;
+      else if (link._descLc.indexOf(word) !== -1) score += 3;
+    });
+    return score;
+  }
+
+  // --- Test a link against the active keyword (multi-word AND logic, normalized) ---
   function matchesKeyword(link, keyword) {
     if (!keyword) return true;
-    var text = searchableText(link);
-    var words = keyword.split(/\s+/).filter(Boolean);
-    return words.every(function (word) { return text.indexOf(word) !== -1; });
+    var words = normalizeWords(keyword);
+    return words.every(function (word) { return link._searchText.indexOf(word) !== -1; });
   }
 
   // --- Count live links for a category respecting active keyword + area filters ---
@@ -378,6 +411,8 @@
 
     if (activeKeyword) {
       filtered = filtered.filter(function (link) { return matchesKeyword(link, activeKeyword); });
+      var _words = normalizeWords(activeKeyword);
+      filtered.sort(function (a, b) { return scoreLink(b, _words) - scoreLink(a, _words); });
     }
 
     // Group by category for display
@@ -509,19 +544,33 @@
     if (activeFavouritesOnly) renderCards();
   });
 
-  // --- Floating label: has-value state (visual feedback only, not search) ---
-  keywordInput.addEventListener('input', function () {
+  // --- Debounce utility ---
+  function debounce(fn, ms) {
+    var t;
+    return function () { var ctx = this, a = arguments; clearTimeout(t); t = setTimeout(function () { fn.apply(ctx, a); }, ms); };
+  }
+
+  // --- Floating label + live keyword search (debounced) ---
+  keywordInput.addEventListener('input', debounce(function () {
     this.closest('.guide-search-field').classList.toggle('has-value', this.value.trim() !== '');
-  });
+    activeKeyword        = (this.value || '').toLowerCase().trim();
+    activeFavouritesOnly = false;
+    updateCardActiveStates();
+    updatePillActiveStates();
+    renderCards();
+  }, 300));
+
+  // --- Dropdowns apply immediately on change ---
   categorySelect.addEventListener('change', function () {
     this.closest('.guide-search-field').classList.toggle('has-value', this.value !== '');
+    applySearch();
   });
   areaSelect.addEventListener('change', function () {
     this.closest('.guide-search-field').classList.toggle('has-value', this.value !== '');
+    applySearch();
   });
 
-  // --- Wire up search events ---
-  // Dropdowns do NOT auto-fire — user must press Search or Enter to apply
+  // --- Wire up search button + Enter ---
   searchBtn.addEventListener('click', applySearch);
   keywordInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') applySearch(); });
 
