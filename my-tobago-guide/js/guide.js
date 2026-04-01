@@ -657,9 +657,17 @@
   var listingClose    = document.getElementById('guide-listing-close');
   var listingBackdrop = document.getElementById('guide-listing-backdrop');
 
-  var _leafletMap = null;
+  var _leafletMap    = null;
+  var _closingTimer  = null;
 
   function openListingTray(link) {
+    // Cancel any in-progress close animation
+    if (_closingTimer) {
+      clearTimeout(_closingTimer);
+      _closingTimer = null;
+      document.querySelector('.guide-listing-panel').classList.remove('is-closing');
+      listingBackdrop.classList.remove('is-closing');
+    }
     var cat       = getCategoryById(link.category);
     var areaLabel = AREA_LABELS[link.area] || link.area || '';
     var html      = '';
@@ -720,8 +728,11 @@
     // Destroy any previous map before showing the tray
     if (_leafletMap) { _leafletMap.remove(); _leafletMap = null; }
 
-    listingTray.removeAttribute('hidden');
+    // Compensate for scrollbar disappearing to prevent page shift
+    var scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
     document.body.style.overflow = 'hidden';
+    document.body.style.paddingRight = scrollbarWidth > 0 ? scrollbarWidth + 'px' : '';
+    listingTray.removeAttribute('hidden');
 
     // Init map after tray is visible (Leaflet needs a rendered container)
     if (link.coords) {
@@ -755,8 +766,18 @@
   }
 
   function closeListingTray() {
-    listingTray.setAttribute('hidden', '');
-    document.body.style.overflow = '';
+    if (_closingTimer) return;
+    var panel = document.querySelector('.guide-listing-panel');
+    panel.classList.add('is-closing');
+    listingBackdrop.classList.add('is-closing');
+    _closingTimer = setTimeout(function () {
+      listingTray.setAttribute('hidden', '');
+      panel.classList.remove('is-closing');
+      listingBackdrop.classList.remove('is-closing');
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
+      _closingTimer = null;
+    }, 280);
   }
 
   if (listingClose)    listingClose.addEventListener('click', closeListingTray);

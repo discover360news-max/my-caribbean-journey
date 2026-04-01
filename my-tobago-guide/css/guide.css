@@ -1581,6 +1581,35 @@ body.guide-tray-closing .guide-tray-backdrop {
   to   { transform: translateY(0); }
 }
 
+@keyframes guide-listing-panel-out {
+  from { transform: translateX(0); }
+  to   { transform: translateX(100%); }
+}
+
+@keyframes guide-listing-panel-out-up {
+  from { transform: translateY(0); }
+  to   { transform: translateY(100%); }
+}
+
+@keyframes guide-listing-backdrop-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+.guide-listing-panel.is-closing {
+  animation: guide-listing-panel-out 0.28s ease-in both;
+}
+
+.guide-listing-backdrop.is-closing {
+  animation: guide-listing-backdrop-out 0.28s ease both;
+}
+
+@media (max-width: 768px) {
+  .guide-listing-panel.is-closing {
+    animation: guide-listing-panel-out-up 0.28s ease-in both;
+  }
+}
+
 .guide-listing-panel-head {
   flex-shrink: 0;
   position: relative;
