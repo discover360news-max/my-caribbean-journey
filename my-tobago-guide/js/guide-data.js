@@ -200,7 +200,7 @@ var GUIDE_DATA = {
       url: 'http://www.pigeonpoint.tt/',
       category: 'beaches-nature',
       area: 'crown-point',
-      plusCode: '55C6+R82 Crown Point, Trinidad and Tobago',
+      plusCode: '55F6+2F7 Crown Point, Trinidad and Tobago',
       coords: [11.1547, -60.8463],
       quincyNote: 'This is the postcard — the thatched pier, turquoise water, white sand. The image people carry when they think Tobago. There\'s an entry fee, but go early in the morning and you\'ll have most of it to yourself.',
       featured: true,
