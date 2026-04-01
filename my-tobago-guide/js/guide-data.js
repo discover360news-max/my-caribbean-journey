@@ -183,7 +183,7 @@ var GUIDE_DATA = {
       category: 'beaches-nature',
       area: 'crown-point',
       plusCode: '5546+94J Crown Point, Trinidad and Tobago',
-      coords: [11.1477, -60.8409],
+      coords: [11.155813, -60.839871],
       quincyNote: 'This is where most people land in Tobago, and it\'s a perfect introduction. Calm water, food stalls right on the beach, and you can get crab and dumpling five minutes after your swim. It gets busy but for good reason.',
       featured: false,
       image: 'images/store-bay-beach.webp',

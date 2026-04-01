@@ -694,12 +694,22 @@
       html += '<div class="guide-listing-map" id="guide-listing-map"></div>';
     }
 
+    var directionsUrl = null;
+    if (link.plusCode) {
+      directionsUrl = 'https://maps.google.com/?q=' + encodeURIComponent(link.plusCode);
+    } else if (link.coords) {
+      directionsUrl = 'https://maps.google.com/?q=' + link.coords[0] + ',' + link.coords[1];
+    }
+
     html += '<div class="guide-listing-ctas">';
     if (link.embedPage) {
       html += '<a href="' + link.url + '" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Visit Website</a>';
       html += '<a href="' + link.embedPage + '" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Stream</a>';
     } else {
       html += '<a href="' + link.url + '" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Visit</a>';
+    }
+    if (directionsUrl) {
+      html += '<a href="' + directionsUrl + '" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get Directions</a>';
     }
     html += '</div>';
 
