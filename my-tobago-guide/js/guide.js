@@ -657,6 +657,8 @@
   var listingClose    = document.getElementById('guide-listing-close');
   var listingBackdrop = document.getElementById('guide-listing-backdrop');
 
+  var _leafletMap = null;
+
   function openListingTray(link) {
     var cat       = getCategoryById(link.category);
     var areaLabel = AREA_LABELS[link.area] || link.area || '';
@@ -681,13 +683,15 @@
 
     html += '<p class="guide-listing-desc">' + link.description + '</p>';
 
-    if (link.tags && link.tags.length) {
-      var showTags = link.tags.slice(0, 10);
-      html += '<div class="guide-listing-tags">';
-      for (var t = 0; t < showTags.length; t++) {
-        html += '<span class="guide-listing-tag">' + showTags[t] + '</span>';
-      }
-      html += '</div>';
+    if (link.quincyNote) {
+      html += '<div class="guide-listing-note">' +
+        '<span class="guide-listing-note-label">Quincy\'s take</span>' +
+        '<p>' + link.quincyNote + '</p>' +
+      '</div>';
+    }
+
+    if (link.coords) {
+      html += '<div class="guide-listing-map" id="guide-listing-map"></div>';
     }
 
     html += '<div class="guide-listing-ctas">';
@@ -702,8 +706,42 @@
     html += '</div>';
 
     listingBody.innerHTML = html;
+
+    // Destroy any previous map before showing the tray
+    if (_leafletMap) { _leafletMap.remove(); _leafletMap = null; }
+
     listingTray.removeAttribute('hidden');
     document.body.style.overflow = 'hidden';
+
+    // Init map after tray is visible (Leaflet needs a rendered container)
+    if (link.coords) {
+      var mapEl = document.getElementById('guide-listing-map');
+      if (mapEl && typeof L !== 'undefined') {
+        _leafletMap = L.map(mapEl, {
+          center: link.coords,
+          zoom: 15,
+          zoomControl: false,
+          attributionControl: false,
+          dragging: false,
+          scrollWheelZoom: false,
+          touchZoom: false,
+          doubleClickZoom: false,
+          boxZoom: false,
+          keyboard: false
+        });
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 18
+        }).addTo(_leafletMap);
+        L.marker(link.coords, {
+          icon: L.divIcon({
+            html: '<span class="guide-map-pin"></span>',
+            className: '',
+            iconSize: [14, 14],
+            iconAnchor: [7, 7]
+          })
+        }).addTo(_leafletMap);
+      }
+    }
   }
 
   function closeListingTray() {

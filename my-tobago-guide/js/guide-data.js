@@ -8,12 +8,14 @@
 //   url         (required) External link
 //   category    (required) Must match a category id
 //   area        (required) e.g. 'island-wide', 'scarborough', 'crown-point'
+//   quincyNote  (optional) Quincy's personal take — shown in the listing tray
+//   coords      (optional) [lat, lng] — powers the mini map in the listing tray
 //   featured    (optional) true = gold border highlight
 //   image       (optional) Path relative to /my-tobago-guide/ e.g. 'images/this-bago-girl.jpg'
 //   embedPage   (optional) Secondary stream/embed URL (adds Visit + Stream buttons)
 //   live        (optional) false = hidden from directory
 //   plusCode    (optional) Google Plus Code for this location — enables a "Get Directions" link.
-//               Find a Plus Code at plus.codes or Google Maps (right-click a location → copy Plus Code).
+//               Find a Plus Code at plus.codes or Google Maps (right-click a location -> copy Plus Code).
 //               Example: plusCode: '3HGQ+P8 Scarborough, Tobago'
 //   tags        (optional) Array of hidden search keywords — synonyms, local terms, vibes, activity types.
 //               Use lowercase strings. These are never shown on the card.
@@ -67,7 +69,7 @@ var GUIDE_DATA = {
   ],
   links: [
 
-    // ─── Food & Recipes ───────────────────────────────────────────────
+    // --- Food & Recipes ---
 
     {
       title: 'This Bago Girl',
@@ -75,6 +77,7 @@ var GUIDE_DATA = {
       url: 'https://thisbagogirl.com',
       category: 'food-recipes',
       area: 'island-wide',
+      quincyNote: 'The recipe site I point people to when they want real Tobago cooking. Every dish is the genuine thing — crab and dumpling, callaloo, oil down, cook up. If this is your first time with Tobagonian food, start here.',
       featured: true,
       image: 'images/this-bago-girl.webp',
       tags: [
@@ -91,6 +94,8 @@ var GUIDE_DATA = {
       category: 'food-recipes',
       area: 'speyside',
       plusCode: '568V+67J Lambeau, Trinidad and Tobago',
+      coords: [11.2978, -60.5491],
+      quincyNote: 'Way out east in Speyside, overlooking the Atlantic — one of the most beautiful views you\'ll eat in front of on this island. Good lunch, good desserts, and the craft shop carries pieces you won\'t find anywhere else on the island.',
       featured: false,
       image: 'images/shore-things.webp',
       tags: [
@@ -106,6 +111,8 @@ var GUIDE_DATA = {
       category: 'food-recipes',
       area: 'scarborough',
       plusCode: '568V+67J Lambeau, Trinidad and Tobago',
+      coords: [11.1852, -60.7401],
+      quincyNote: 'One bean-to-bar chocolate shop on the whole island — this is it. They grow the cacao, make the bars, and the flavour is nothing like anything you\'ll find on a shelf. Take some home. It\'s the kind of gift people actually remember.',
       featured: true,
       image: 'images/tobago-chocolate-delights.webp',
       tags: [
@@ -121,6 +128,8 @@ var GUIDE_DATA = {
       category: 'food-recipes',
       area: 'whim-estate',
       plusCode: '57W3+HG5 Orange Hill, Trinidad and Tobago',
+      coords: [11.2082, -60.7099],
+      quincyNote: 'This is a family business and you can taste it. The black cake, the pone, the sweet bread — made the way they\'re supposed to be. If you want the real Tobago sweet side, Kerry\'s is it.',
       featured: false,
       image: 'images/kerrys-nice-and-sweet-treats.webp',
       tags: [
@@ -136,6 +145,8 @@ var GUIDE_DATA = {
       category: 'food-recipes',
       area: 'scarborough',
       plusCode: '57M5+4QQ, Scarborough, Trinidad & Tobago',
+      coords: [11.1836, -60.7393],
+      quincyNote: 'Best roti on the island. I\'m not just saying that — I\'ve tried them all. Get the potato and chickpea curry. Go early, go hungry.',
       featured: false,
       image: 'images/renas-roti-shop.webp',
       tags: [
@@ -151,6 +162,8 @@ var GUIDE_DATA = {
       category: 'food-recipes',
       area: 'charlotteville',
       plusCode: '8FC2+M56, Charlotteville, Trinidad & Tobago',
+      coords: [11.3119, -60.5513],
+      quincyNote: 'Charlotteville is all the way on the northeast tip — the kind of place that makes you feel like you\'ve stepped outside of time. Sharon\'s is where you eat when you get there. Good food, warm welcome, and a view that makes you slow down.',
       featured: false,
       image: 'images/sharon-and-phebes.webp',
       tags: [
@@ -161,7 +174,7 @@ var GUIDE_DATA = {
       ]
     },
 
-    // ─── Beaches & Nature ─────────────────────────────────────────────
+    // --- Beaches & Nature ---
 
     {
       title: 'Store Bay Beach',
@@ -170,6 +183,8 @@ var GUIDE_DATA = {
       category: 'beaches-nature',
       area: 'crown-point',
       plusCode: '5546+94J Crown Point, Trinidad and Tobago',
+      coords: [11.1477, -60.8409],
+      quincyNote: 'This is where most people land in Tobago, and it\'s a perfect introduction. Calm water, food stalls right on the beach, and you can get crab and dumpling five minutes after your swim. It gets busy but for good reason.',
       featured: false,
       image: 'images/store-bay-beach.webp',
       tags: [
@@ -186,6 +201,8 @@ var GUIDE_DATA = {
       category: 'beaches-nature',
       area: 'crown-point',
       plusCode: '55C6+R82 Crown Point, Trinidad and Tobago',
+      coords: [11.1547, -60.8463],
+      quincyNote: 'This is the postcard — the thatched pier, turquoise water, white sand. The image people carry when they think Tobago. There\'s an entry fee, but go early in the morning and you\'ll have most of it to yourself.',
       featured: true,
       image: 'images/pigeon-point-heritage-park.webp',
       tags: [
@@ -202,6 +219,8 @@ var GUIDE_DATA = {
       category: 'beaches-nature',
       area: 'roxborough',
       plusCode: '79PF+9FX Anse Fourmi, Trinidad and Tobago',
+      coords: [11.2802, -60.5832],
+      quincyNote: 'This one is special to me. You hike through fruit trees, past a natural spring, and end up at a waterfall with hummingbirds feeding right beside you. They serve real food on site too. It\'s the kind of place that reminds you why Tobago is different.',
       featured: false,
       image: 'images/shurland-nature-park.webp',
       tags: [
@@ -220,6 +239,8 @@ var GUIDE_DATA = {
       category: 'beaches-nature',
       area: 'mason-hall',
       plusCode: '672W+P2G Mason Hall, Trinidad and Tobago',
+      coords: [11.2271, -60.6712],
+      quincyNote: 'The Main Ridge is one of the oldest protected rainforests in the western hemisphere. Corbin is your way in. If you\'re a birder or just someone who needs to be in the forest for a while, make the trip.',
       featured: false,
       image: 'images/corbin-local-wildlife.webp',
       tags: [
@@ -229,7 +250,7 @@ var GUIDE_DATA = {
       ]
     },
 
-    // ─── Culture & History ────────────────────────────────────────────
+    // --- Culture & History ---
 
     {
       title: 'Tobago Events and Festivals',
@@ -237,6 +258,7 @@ var GUIDE_DATA = {
       url: 'https://tobagofestivalscommission.com/',
       category: 'culture-history',
       area: 'island-wide',
+      quincyNote: 'This is the official calendar for what\'s on across the island. If you can be here for the Heritage Festival in July, do it — two weeks of living history. The goat race at Buccoo is something else entirely.',
       featured: false,
       image: 'images/tobago-events-and-festivals.webp',
       tags: [
@@ -252,6 +274,7 @@ var GUIDE_DATA = {
       url: 'https://www.facebook.com/THCStobago',
       category: 'culture-history',
       area: 'island-wide',
+      quincyNote: 'They\'re doing the quiet, important work of keeping Tobago\'s history alive — the folklore, the traditions, the stories that don\'t get written down easily. If you want to understand where this island comes from, this is a good place to start.',
       featured: false,
       image: 'images/tobago-heritage-conservation-society.webp',
       tags: [
@@ -262,7 +285,7 @@ var GUIDE_DATA = {
       ]
     },
 
-    // ─── Accommodation ────────────────────────────────────────────────
+    // --- Accommodation ---
 
     {
       title: 'LuxStay Tobago',
@@ -270,6 +293,7 @@ var GUIDE_DATA = {
       url: 'https://luxstaytobago.com/',
       category: 'accommodation',
       area: 'island-wide',
+      quincyNote: 'Good option if you\'re coming with a large group or want your own space to spread out. Multiple properties across the island, proper amenities, and they know Tobago well enough to point you in the right direction.',
       featured: false,
       image: 'images/luxstay-tobago.webp',
       tags: [
@@ -287,6 +311,7 @@ var GUIDE_DATA = {
       url: 'https://pintsizeparadise.com/',
       category: 'accommodation',
       area: 'island-wide',
+      quincyNote: 'Charming properties scattered around the island — more personality than a standard hotel stay. Good for those who want to feel settled in a spot rather than just passing through.',
       featured: false,
       image: 'images/pint-size-paradise.webp',
       tags: [
@@ -303,6 +328,8 @@ var GUIDE_DATA = {
       category: 'accommodation',
       area: 'castara',
       plusCode: '78H3+6HW, Castara Retreats, North Side Road, Castara, Trinidad & Tobago',
+      coords: [11.2682, -60.7104],
+      quincyNote: 'Castara is one of my favourite parts of this island. The village still feels like itself, the beach is right there, and it\'s quiet in a way that actually gets into you. Castara Retreats fits that energy perfectly. Bring someone you love.',
       featured: false,
       image: 'images/castara-retreats.webp',
       tags: [
@@ -319,6 +346,8 @@ var GUIDE_DATA = {
       category: 'accommodation',
       area: 'crown-point',
       plusCode: '5537+66 Crown Point, Trinidad and Tobago',
+      coords: [11.1493, -60.8360],
+      quincyNote: 'Kariwak has been part of Crown Point for decades and still does things right — the gardens, the pool, the feeling of the place. One of the best meals you can have in Tobago is right here. Worth visiting for dinner even if you\'re staying somewhere else.',
       featured: false,
       image: 'images/kariwak-village-holistic-haven.webp',
       tags: [
@@ -329,7 +358,7 @@ var GUIDE_DATA = {
       ]
     },
 
-    // ─── Activities & Tours ───────────────────────────────────────────
+    // --- Activities & Tours ---
 
     {
       title: 'Frankie Tours and Rentals',
@@ -338,6 +367,8 @@ var GUIDE_DATA = {
       category: 'activities-tours',
       area: 'island-wide',
       plusCode: '558G+M2W, Buccoo, Trinidad & Tobago',
+      coords: [11.1704, -60.8229],
+      quincyNote: 'This is who I trust. Frankie knows this island properly, keeps things fair, and genuinely wants to show you the good parts. Whether it\'s a rental car or a guided tour, he\'s who I\'d call first.',
       featured: true,
       image: 'images/frankie-tours-and-rentals.webp',
       tags: [
@@ -352,6 +383,7 @@ var GUIDE_DATA = {
       url: 'https://islandgirltours.com/',
       category: 'activities-tours',
       area: 'island-wide',
+      quincyNote: 'If you want someone else to handle the planning — beaches, the Main Ridge, Argyle Waterfall, nightlife — Island Girl puts together a real itinerary. Good for first-timers who want to see the whole island without having to figure it all out themselves.',
       featured: false,
       image: 'images/island-girl-tours.webp',
       tags: [
@@ -363,7 +395,7 @@ var GUIDE_DATA = {
       ]
     },
 
-    // ─── Radio ────────────────────────────────────────────────────────
+    // --- Radio ---
 
     {
       title: 'Radio Tambrin',
@@ -372,6 +404,7 @@ var GUIDE_DATA = {
       embedPage: 'https://streema.com/radios/Radio_Tambrin',
       category: 'radio',
       area: 'island-wide',
+      quincyNote: 'Tambrin is the sound of Tobago. Local news, soca, parang, calypso — put it on in the background and the island comes to you. Great way to get into the rhythm before you arrive, or stay connected after you leave.',
       featured: false,
       image: 'images/radio-tambrin.webp',
       tags: [
@@ -381,7 +414,7 @@ var GUIDE_DATA = {
       ]
     },
 
-    // ─── Practical Info ───────────────────────────────────────────────
+    // --- Practical Info ---
 
     {
       title: 'ANR Robinson International Airport',
@@ -390,6 +423,8 @@ var GUIDE_DATA = {
       category: 'practical-info',
       area: 'crown-point',
       plusCode: '5526+X24, Crown Point, Trinidad & Tobago',
+      coords: [11.1500, -60.8367],
+      quincyNote: 'Small airport, moves fast. Caribbean Airlines runs the Trinidad-Tobago route — a short hop. All regional connections go through here. Check for schedules and what to expect on arrival and departure.',
       featured: false,
       image: 'images/anr-robinson-international-airport.webp',
       tags: [
@@ -404,6 +439,8 @@ var GUIDE_DATA = {
       url: 'https://www.ttitferry.com/',
       category: 'practical-info',
       area: 'scarborough',
+      coords: [11.1840, -60.7351],
+      quincyNote: 'The sea bridge. Overnight from Port of Spain to Scarborough — I\'ve done it more times than I can count. You can bring your car, it\'s much cheaper than flying, and there\'s something about arriving by sea. Book ahead, especially around holidays.',
       featured: true,
       image: 'images/inter-island-ferry.webp',
       tags: [
@@ -419,6 +456,7 @@ var GUIDE_DATA = {
       url: 'https://ptsc.co.tt/routes-and-schedules/',
       category: 'practical-info',
       area: 'island-wide',
+      quincyNote: 'This is how local people move around — maxi taxis and PTSC buses on the main routes. Cheap and covers more than you\'d think. Good for budget travellers or anyone who wants to travel the real way.',
       featured: false,
       image: 'images/public-transportation-schedule.webp',
       tags: [
@@ -433,6 +471,7 @@ var GUIDE_DATA = {
       url: 'https://www.google.com/search?q=USD+to+TTD',
       category: 'practical-info',
       area: 'island-wide',
+      quincyNote: 'TT dollars are what you spend here. USD is widely accepted at most places, but having local cash for markets, roadside stalls and smaller spots always helps. The rate sits around 6.7 TTD to the dollar — this link gives you the live figure.',
       featured: false,
       image: 'images/currency-exchange-rate-usd-ttd.webp',
       tags: [

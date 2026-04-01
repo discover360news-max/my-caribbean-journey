@@ -1666,20 +1666,50 @@ a.guide-listing-location:hover {
   margin: 0 0 1.25rem;
 }
 
-.guide-listing-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-  margin-bottom: 1.75rem;
+/* Quincy's personal note */
+.guide-listing-note {
+  background: rgba(26, 74, 46, 0.05);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 8px 8px 0;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
 }
 
-.guide-listing-tag {
-  font-size: 0.73rem;
-  padding: 0.25rem 0.65rem;
-  background: rgba(26, 74, 46, 0.07);
-  color: var(--green-dark);
-  border-radius: 20px;
-  font-weight: 500;
+.guide-listing-note-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  margin-bottom: 0.35rem;
+}
+
+.guide-listing-note p {
+  font-size: 0.9rem;
+  line-height: 1.72;
+  color: var(--text-dark);
+  font-style: italic;
+  margin: 0;
+}
+
+/* Leaflet mini map */
+.guide-listing-map {
+  height: 175px;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  border: 1px solid rgba(26, 74, 46, 0.12);
+}
+
+.guide-map-pin {
+  display: block;
+  width: 14px;
+  height: 14px;
+  background: var(--green-deep);
+  border: 2.5px solid var(--gold);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 
 .guide-listing-ctas {
