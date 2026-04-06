@@ -7,11 +7,9 @@ featured: false
 featuredImage: /blog/images/saltwings.webp
 date: 2026-04-06
 author: Quincy Yeates
-excerpt: >-
-  What Caribbean folklore reveals about salt, survival, and the long shadow of
-  slavery on health.
-
-  A co-write with Dr. Ashleigh Yeates, Jamaican anesthesiologist and critical care specialist.
+excerpt: A co-write with Dr. Ashleigh Yeates, Jamaican anesthesiologist and
+  critical care specialist exploring what Caribbean folklore reveals about salt,
+  survival, and the long shadow of slavery on health.
 references: >-
   * Pan American Health Organization (PAHO). Salt Reduction in the Americas:
   [Policy Briefs and Regional
