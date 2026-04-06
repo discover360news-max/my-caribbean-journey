@@ -95,6 +95,8 @@ As a child, I remember buying salt prunes during primary school recess from a ve
 
 By secondary school, the ritual had deepened. I would rush home, take a piece of foil, pour out salt, crush bird peppers into it, and climb into the governor plum tree in our yard. There, it became a quiet ceremony of dip and eat.
 
+\*\*insert boy in tree picture here\*\*
+
 Fruit chow, fresh fruit seasoned with salt, hot pepper, and herbs, was a constant, whether it was plum, pommecythere, mango, or whatever was in season. 
 
 Souse, a tangy pickled dish often made with pig feet or other such cuts once considered less desirable, was another favourite.
