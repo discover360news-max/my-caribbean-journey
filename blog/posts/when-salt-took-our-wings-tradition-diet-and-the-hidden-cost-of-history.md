@@ -79,7 +79,7 @@ Not long after, it was said that another woman in the village had died suddenly.
 
 I was told that the crapaud had not been just an animal, but something sent with intention, and that whatever had been meant for my grandmother had been turned back.
 
-I was six or seven at the time, too young to make sense of it fully. Whether what I was told was true is difficult to say. 
+*I was six or seven at the time, too young to make sense of it fully. Whether what I was told was true is difficult to say.* 
 
 But I saw enough in those moments, and in other things I could not easily explain when I was around her, to understand that in the world I was growing up in, salt was never just salt.
 
@@ -91,7 +91,7 @@ The symbolism becomes more striking when placed beside the historical record.
 
 *During slavery, salt was not optional:* **it was essential**.
 
-Plantation rations commonly included salted fish and salted meat, cheap, durable foods that could survive long sea voyages and tropical storage. 
+Plantation rations commonly included salted fish and salted meat: cheap, durable foods that could survive long sea voyages and tropical storage. 
 
 These foods were often lower-value cuts or preserved imports, while higher-value cuts were reserved by plantation owners and traders for sale or their own consumption, leaving what was inexpensive and durable to be distributed in bulk to enslaved populations. 
 
@@ -199,9 +199,9 @@ In others, a single parent carries the full weight of time, income, and care, le
 
 At the same time, the social structures that once supported food preparation have changed. Extended family networks, shared cooking, and the kind of “village” support that once distributed the work of daily life are less consistent than they once were.
 
-In that context, processed and ready-made foods are not simply a preference. 
+In that context, processed and ready-made foods are not simply a preference... 
 
-*They are often the most practical response to modern life.*
+*...they are often the most practical response to modern life.*
 
 ## The Question of Inheritance
 
