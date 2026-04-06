@@ -235,7 +235,7 @@ It lives in thyme and scallion, in pimento and garlic, in ginger, Scotch bonnet,
 
 The path forward is not abandonment, but adjustment.
 
-It can mean desalting saltfish more thoroughly, using salted meats more as flavoring than as the center of a dish, and shifting seasoning away from salt-heavy blends toward herbs, spices, and fresh ingredients. 
+It can mean desalting saltfish more thoroughly, using salted meats more as flavouring than as the center of a dish, and shifting seasoning away from salt-heavy blends toward herbs, spices, and fresh ingredients. 
 
 It can mean reducing reliance on bouillon cubes, bottled sauces, and processed foods, while rebuilding meals around ground provisions, legumes, vegetables, and fruit.
 
