@@ -37,19 +37,21 @@ references: >-
 
 Across the Caribbean, hypertension, diabetes, heart disease, and kidney failure have become so common that many families almost expect them as part of aging. Yet long before anyone understood sodium levels or blood pressure, Caribbean folklore was already telling stories about salt.
 
-Stories That Remember
+## Stories That Remember
 
 In the Tobagonian legend of Gang-Gang Sarah, an African woman brought to the island possessed the power to fly. But after eating salt on the plantation, she and others like her lost that ability forever.
 
-Versions of this idea appear across the African diaspora. In Jamaican oral traditions, salt is not just seasoning but something spiritually potent, capable of grounding, protecting, or driving away spirits, or duppies.
+*Versions of this idea appear across the African diaspora.* 
 
- In the “Flying Africans” stories of the Gullah Geechee communities of the American Southeast, enslaved Africans were also said to have lost the ability to fly home after eating salt in the New World.
+In Jamaican oral traditions, salt is not just seasoning but something spiritually potent, capable of grounding, protecting, or driving away spirits, or duppies.
+
+ In the “**Flying Africans**” stories of the Gullah Geechee communities of the American Southeast, enslaved Africans were also said to have lost the ability to fly home after eating salt in the New World.
 
 Scholars tracing the “Flying Africans” motif suggest that the warning against eating salt reflects a deeper Central and West-Central African spiritual inheritance, one that was carried across the Atlantic and reshaped under slavery.
 
 *Across oceans and islands shaped by the same system of slavery, the symbolism repeats.* 
 
-### *Salt marks the moment when spiritual freedom gives way to the physical reality of plantation life*. 
+### *Salt marks the moment when spiritual freedom gives way to the physical reality of plantation life*.
 
 It sits at the meeting point of the material and symbolic.
 
@@ -85,7 +87,7 @@ Moments like that blur the line between story and lived experience.
 
 The symbolism becomes more striking when placed beside the historical record.
 
-*During slavery, salt was not optional:* it was essential.
+*During slavery, salt was not optional:* **it was essential**.
 
 Plantation rations commonly included salted fish and salted meat, cheap, durable foods that could survive long sea voyages and tropical storage. 
 
@@ -97,7 +99,7 @@ Methods like salting, drying, smoking, and brining were more than culinary prefe
 
 *…they were essential to preserving fish and meat in a world without refrigeration.*
 
-When Survival Became Tradition
+## When Survival Became Tradition
 
 Over time, those survival foods became tradition.
 
@@ -137,7 +139,7 @@ Looking back, it is striking how natural it all felt. Salt was not something add
 
 These foods speak to resilience and ingenuity under brutal conditions. But they also carry the imprint of the conditions that created them.
 
-*Honour the history, but do not romanticize the harm.*
+***Honour the history, but do not romanticize the harm.***
 
 ## The Body Remembers
 
@@ -151,7 +153,7 @@ Global guidelines recommend less than 5 grams of salt per day, yet agencies such
 
 Studies in Jamaica reflect this clearly, with most adults consuming high levels of sodium alongside low levels of potassium, a combination known to raise blood pressure at the population level. 
 
-*Sodium is not the only cause of hypertension, but reducing it remains one of the clearest and most effective interventions available.*
+***Sodium is not the only cause of hypertension, but reducing it remains one of the clearest and most effective interventions available.***
 
 At the same time, the region faces a heavy burden of overlapping non-communicable diseases: hypertension, stroke, heart disease, chronic kidney disease, obesity, and type 2 diabetes.
 
@@ -187,7 +189,7 @@ The sodium burden in the Caribbean no longer comes only from saltfish or preserv
 
 *What was once a survival diet has been reshaped by globalization into something far more constant and far more difficult to regulate.*
 
-Convenience has become a central part of that shift. 
+***Convenience has become a central part of that shift.*** 
 
 In many households, both parents now work, leaving less time for the sourcing and preparation of foods that depend on access to fresh ingredients and the time to prepare meals from scratch. 
 
@@ -237,7 +239,7 @@ It can mean reducing reliance on bouillon cubes, bottled sauces, and processed f
 
 *In many ways, this shift echoes older ideas already present in the region.* 
 
-In Rastafarian tradition, the concept of Ital emphasizes food that is natural, minimally processed, and balanced, prepared in a way that nourishes both the body and the spirit. It often limits or avoids salt, processed ingredients, and artificial additives, favoring fresh, natural foods prepared in ways that respect their natural qualities and reflect an awareness of their effect on the body.
+In Rastafarian tradition, the concept of **Ital** emphasizes food that is natural, minimally processed, and balanced, prepared in a way that nourishes both the body and the spirit. It often limits or avoids salt, processed ingredients, and artificial additives, favouring fresh, natural foods prepared in ways that respect their inherent qualities and reflect an awareness of their effect on the body.
 
 ### *These are not departures from tradition, but choices about which traditions we choose to carry forward*.
 
