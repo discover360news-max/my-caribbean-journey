@@ -45,7 +45,7 @@ In the Tobagonian legend of Gang-Gang Sarah, an African woman brought to the isl
 
 In Jamaican oral traditions, salt is not just seasoning but something spiritually potent, capable of grounding, protecting, or driving away spirits, or duppies.
 
- In the “**Flying Africans**” stories of the Gullah Geechee communities of the American Southeast, enslaved Africans were also said to have lost the ability to fly home after eating salt in the New World.
+In the “**Flying Africans**” stories of the Gullah Geechee communities of the American Southeast, enslaved Africans were also said to have lost the ability to fly home after eating salt in the New World.
 
 Scholars tracing the “Flying Africans” motif suggest that the warning against eating salt reflects a deeper Central and West-Central African spiritual inheritance, one that was carried across the Atlantic and reshaped under slavery.
 
@@ -227,7 +227,7 @@ It lives in thyme and scallion, in pimento and garlic, in ginger, Scotch bonnet,
 
 *Cultural identity should not be defined by sodium concentration…*
 
-*…* *though it is often treated as if it is.*
+*…though it is often treated as if it is.*
 
 ## Holding On, Letting Go
 
