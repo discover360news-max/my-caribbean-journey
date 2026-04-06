@@ -35,7 +35,9 @@ references: >-
 ---
 ## The Weight of a Quiet Crisis
 
-Across the Caribbean, hypertension, diabetes, heart disease, and kidney failure have become so common that many families almost expect them as part of aging. Yet long before anyone understood sodium levels or blood pressure, Caribbean folklore was already telling stories about salt.
+Across the Caribbean, hypertension, diabetes, heart disease, and kidney failure have become so common that many families almost expect them as part of aging. 
+
+Yet long before anyone understood sodium levels or blood pressure, Caribbean folklore was already telling stories about salt.
 
 ## Stories That Remember
 
