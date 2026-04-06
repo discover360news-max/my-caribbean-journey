@@ -127,7 +127,7 @@ collections:
       - label: "Body"
         name: "body"
         widget: "markdown"
-        editor_components: ['code-block']
+        editor_components: ['code-block', 'data-table', 'callout', 'youtube', 'pull-quote', 'definition', 'image-caption', 'cta-button']
 
       - label: "References & Further Reading"
         name: "references"
@@ -252,7 +252,7 @@ collections:
       - label: "Body"
         name: "body"
         widget: "markdown"
-        editor_components: ['code-block']
+        editor_components: ['code-block', 'data-table', 'callout', 'youtube', 'pull-quote', 'definition', 'image-caption', 'cta-button']
 
       - label: "References & Further Reading"
         name: "references"
