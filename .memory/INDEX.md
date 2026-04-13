@@ -16,7 +16,7 @@ D003  | DECISION  | ACTIVE      | No-framework rule: plain HTML/CSS/JS; Eleventy
 C001  | COMPONENT | ACTIVE      | Shared nav + footer: components.js, SiteComponents.init() per page → .memory/entries/C001-shared-nav-footer.md
 C002  | COMPONENT | ACTIVE      | Hub homepage: index.njk + hero reel + Eleventy, books/bio/explore sections → .memory/entries/C002-hub-homepage.md
 C003  | COMPONENT | ACTIVE      | I Am Tobago book landing: hero, carousel, reviews, buy CTA, store locator → .memory/entries/C003-book-landing.md
-C004  | COMPONENT | ACTIVE      | My Tobago Guide: data-driven directory, search, filter, favourites, mobile tray → .memory/entries/C004-island-guide.md
+C004  | COMPONENT | ACTIVE      | My Tobago Guide: directory, live search + scoring + synonyms, listing tray (Quincy notes, Leaflet map, directions), scroll modal → .memory/entries/C004-island-guide.md
 C005  | COMPONENT | ACTIVE      | Blog system: Eleventy collections, listing + post templates, image overlay cards → .memory/entries/C005-blog.md
 C006  | COMPONENT | ACTIVE      | Evently (Decap CMS): /admin/, config.yml, custom toolbar components → .memory/entries/C006-evently-cms.md
 C007  | COMPONENT | ACTIVE      | Contact page: /contact/, GAS-powered form, all contact links updated → .memory/entries/C007-contact.md
@@ -29,3 +29,4 @@ C009  | COMPONENT | ACTIVE      | Listen/Watch sidebar widget: audioTracks (R2),
 L003  | LEARNING  | ACTIVE      | Mobile UX standards: safe-area, dvh, touch targets, font floor — audit tracker at /AUDIT.md → .memory/entries/L003-mobile-ux-standards.md
 C010  | COMPONENT | ACTIVE      | I Am Tobago historical map: 27 georeferenced pins, affine transform formula, Photon API geocoding, pan/zoom, filter, popup → .memory/entries/C010-historical-map.md
 L004  | LEARNING  | ACTIVE      | Curly quotes in blog frontmatter break Decap CMS js-yaml — pre-commit hook added, fix command documented → .memory/entries/L004-curly-quotes-cms-yaml-error.md
+FB001 | FEEDBACK  | ACTIVE      | btn-outline (cream text) is for dark backgrounds; use btn-outline-dark on white/light backgrounds → .memory/entries/feedback-btn-outline-variants.md
