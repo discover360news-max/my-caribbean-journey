@@ -755,6 +755,181 @@ CMS.registerPreviewTemplate('stories', PostPreview);
 
 
 // -------------------------------------------------------------
+// SPOTIFY EMBED
+// Paste any Spotify URL (track, album, playlist, episode).
+// Choose compact (152px) for a single track, or expanded
+// (352px) for an album or playlist. Renders as a styled iframe.
+// -------------------------------------------------------------
+CMS.registerEditorComponent({
+  id: 'spotify',
+  label: 'Spotify',
+
+  fields: [
+    {
+      name: 'url',
+      label: 'Spotify URL',
+      widget: 'string',
+      hint: 'Paste the full Spotify link — track, album, playlist, or episode URL'
+    },
+    {
+      name: 'size',
+      label: 'Size',
+      widget: 'select',
+      default: 'compact',
+      options: [
+        { label: 'Compact — single track (152px)',     value: 'compact'  },
+        { label: 'Expanded — album or playlist (352px)', value: 'expanded' }
+      ]
+    }
+  ],
+
+  pattern: /^<div class="spotify-embed"><iframe src="https:\/\/open\.spotify\.com\/embed\/([^/]+)\/([^"]+)" height="(\d+)" allowtransparency="true" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"><\/iframe><\/div>$/,
+
+  fromBlock: function (match) {
+    var height = match[3];
+    return {
+      url:  'https://open.spotify.com/' + match[1] + '/' + match[2],
+      size: height === '152' ? 'compact' : 'expanded'
+    };
+  },
+
+  toBlock: function (data) {
+    var url    = data.url || '';
+    var height = data.size === 'expanded' ? '352' : '152';
+
+    // Convert any Spotify URL to an embed URL
+    var m = url.match(/spotify\.com\/(track|album|playlist|episode|show)\/([a-zA-Z0-9]+)/);
+    if (!m) return '<!-- Invalid Spotify URL -->';
+
+    var embedSrc = 'https://open.spotify.com/embed/' + m[1] + '/' + m[2];
+    return '<div class="spotify-embed"><iframe src="' + embedSrc + '" height="' + height + '" allowtransparency="true" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>';
+  },
+
+  toPreview: function (data) {
+    var url    = data.url || '';
+    var height = data.size === 'expanded' ? '352' : '152';
+
+    var m = url.match(/spotify\.com\/(track|album|playlist|episode|show)\/([a-zA-Z0-9]+)/);
+    if (!m) return '<p style="color:#e8652a;font-family:Inter,sans-serif;font-size:0.9rem;">⚠️ Paste a valid Spotify URL above to see a preview.</p>';
+
+    var embedSrc = 'https://open.spotify.com/embed/' + m[1] + '/' + m[2];
+    return '<div style="margin:1.75rem 0;border-radius:12px;overflow:hidden;">'
+      + '<iframe src="' + embedSrc + '" height="' + height + '" width="100%" allowtransparency="true" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" style="display:block;border:0;border-radius:12px;"></iframe></div>';
+  }
+});
+
+
+// -------------------------------------------------------------
+// IMAGE GALLERY
+// Adds a "Gallery" toolbar button. Place 2 or 3 images side by
+// side in a CSS grid. Each image gets its own alt text and an
+// optional individual caption. Optional shared caption below.
+// On mobile the grid collapses to a single column automatically.
+// -------------------------------------------------------------
+CMS.registerEditorComponent({
+  id: 'gallery',
+  label: 'Gallery',
+
+  fields: [
+    {
+      name: 'columns',
+      label: 'Layout',
+      widget: 'select',
+      default: '2',
+      options: [
+        { label: '2 images side by side', value: '2' },
+        { label: '3 images side by side', value: '3' }
+      ]
+    },
+    { name: 'src1',     label: 'Image 1',                   widget: 'image'  },
+    { name: 'alt1',     label: 'Image 1 — alt text',        widget: 'string' },
+    { name: 'cap1',     label: 'Image 1 — caption (optional)', widget: 'string', required: false },
+    { name: 'src2',     label: 'Image 2',                   widget: 'image'  },
+    { name: 'alt2',     label: 'Image 2 — alt text',        widget: 'string' },
+    { name: 'cap2',     label: 'Image 2 — caption (optional)', widget: 'string', required: false },
+    { name: 'src3',     label: 'Image 3 (optional)',         widget: 'image',  required: false },
+    { name: 'alt3',     label: 'Image 3 — alt text',        widget: 'string', required: false },
+    { name: 'cap3',     label: 'Image 3 — caption (optional)', widget: 'string', required: false },
+    { name: 'caption',  label: 'Shared caption (optional)', widget: 'string', required: false,
+      hint: 'Appears below the whole gallery row' }
+  ],
+
+  pattern: /^<div class="post-gallery post-gallery--(\d)col">([\s\S]*?)<\/div>$/,
+
+  fromBlock: function (match) {
+    var cols = match[1] || '2';
+    var inner = match[2] || '';
+
+    var figures = [];
+    var figRe = /<figure class="post-gallery-item"><img src="([^"]*)" alt="([^"]*)">(?:<figcaption>([^<]*)<\/figcaption>)?<\/figure>/g;
+    var fm;
+    while ((fm = figRe.exec(inner)) !== null) figures.push(fm);
+
+    var capMatch = inner.match(/<p class="post-gallery-caption">([^<]*)<\/p>/);
+
+    return {
+      columns: cols,
+      src1: figures[0] ? figures[0][1] : '',
+      alt1: figures[0] ? figures[0][2] : '',
+      cap1: figures[0] ? figures[0][3] || '' : '',
+      src2: figures[1] ? figures[1][1] : '',
+      alt2: figures[1] ? figures[1][2] : '',
+      cap2: figures[1] ? figures[1][3] || '' : '',
+      src3: figures[2] ? figures[2][1] : '',
+      alt3: figures[2] ? figures[2][2] : '',
+      cap3: figures[2] ? figures[2][3] || '' : '',
+      caption: capMatch ? capMatch[1] : ''
+    };
+  },
+
+  toBlock: function (data) {
+    var cols = data.columns || '2';
+
+    function fig(src, alt, cap) {
+      if (!src) return '';
+      var out = '<figure class="post-gallery-item"><img src="' + src + '" alt="' + (alt || '') + '">';
+      if (cap) out += '<figcaption>' + cap + '</figcaption>';
+      out += '</figure>';
+      return out;
+    }
+
+    var inner = fig(data.src1, data.alt1, data.cap1)
+      + fig(data.src2, data.alt2, data.cap2)
+      + (cols === '3' ? fig(data.src3, data.alt3, data.cap3) : '');
+    if (data.caption) inner += '<p class="post-gallery-caption">' + data.caption + '</p>';
+
+    return '<div class="post-gallery post-gallery--' + cols + 'col">' + inner + '</div>';
+  },
+
+  toPreview: function (data) {
+    var cols     = data.columns || '2';
+    var gridCols = cols === '3' ? '1fr 1fr 1fr' : '1fr 1fr';
+
+    var wrapStyle = 'display:grid;grid-template-columns:' + gridCols + ';gap:0.75rem;margin:1.75rem 0;';
+    var figStyle  = 'margin:0;';
+    var imgStyle  = 'width:100%;height:200px;object-fit:cover;border-radius:10px;display:block;';
+    var capStyle  = 'font-size:0.78rem;color:#7a7a6a;text-align:center;margin-top:0.4rem;font-style:italic;';
+    var sharedCap = 'font-size:0.82rem;color:#7a7a6a;text-align:center;margin-top:0.5rem;font-style:italic;grid-column:1 / -1;';
+
+    function figHtml(src, alt, cap) {
+      if (!src) return '';
+      var h = '<figure style="' + figStyle + '"><img src="' + src + '" alt="' + (alt || '') + '" style="' + imgStyle + '">';
+      if (cap) h += '<figcaption style="' + capStyle + '">' + cap + '</figcaption>';
+      h += '</figure>';
+      return h;
+    }
+
+    var inner = figHtml(data.src1, data.alt1, data.cap1)
+      + figHtml(data.src2, data.alt2, data.cap2)
+      + (cols === '3' ? figHtml(data.src3, data.alt3, data.cap3) : '');
+    if (data.caption) inner += '<p style="' + sharedCap + '">' + data.caption + '</p>';
+
+    return '<div style="' + wrapStyle + '">' + inner + '</div>';
+  }
+});
+
+
+// -------------------------------------------------------------
 // Add new components below this line.
 // Copy a block above as a template.
 // -------------------------------------------------------------

@@ -1,3 +1,10 @@
+# ============================================================
+# ⚠️  DUPLICATION WARNING
+# Blog Posts and Island Stories share identical fields.
+# If you add, rename, or remove a field, update it in BOTH
+# the "posts" collection AND the "stories" collection below.
+# ============================================================
+
 backend:
   name: github
   repo: discover360news-max/my-caribbean-journey
@@ -94,6 +101,19 @@ collections:
         default: "Quincy"
         required: false
 
+      # ── SEO overrides ─────────────────────────
+      - label: "SEO Title"
+        name: "seoTitle"
+        widget: "string"
+        required: false
+        hint: "Custom title for search engines and browser tabs. Defaults to the post title if blank. Aim for under 60 characters."
+
+      - label: "SEO Description"
+        name: "seoDescription"
+        widget: "text"
+        required: false
+        hint: "Custom meta description shown in search results. Defaults to the excerpt if blank. Aim for 120–155 characters."
+
       # ── Listen / Watch ────────────────────────
       - label: "YouTube Video ID"
         name: "youtubeId"
@@ -105,11 +125,17 @@ collections:
         name: "audioTracks"
         widget: "list"
         required: false
-        field:
-          label: "Track URL"
-          name: "track"
-          widget: "string"
-        hint: "Add one R2 audio URL per track. If the article is split into two parts, add both — Track 1 first, Track 2 second."
+        hint: "Add one entry per audio part. Label is optional — shown on the playlist button if there are multiple tracks."
+        fields:
+          - label: "Label (optional)"
+            name: "title"
+            widget: "string"
+            required: false
+            hint: "e.g. Part 1, or leave blank"
+          - label: "Audio URL"
+            name: "url"
+            widget: "string"
+            hint: "Full R2 URL — e.g. https://media.mycaribbeanjourney.com/..."
 
       # ── Listing metadata ─────────────────────
       - label: "Excerpt"
@@ -121,19 +147,19 @@ collections:
         name: "postTags"
         widget: "list"
         required: false
-        hint: "Lowercase, press Enter to add each one. Use hyphens for multi-word tags (e.g. coral-reef, les-coteaux). Currently in use: colonialism, coralreef, culture, history, pride, tobago."
+        hint: "Lowercase, press Enter to add each one. Use hyphens for multi-word tags. Currently in use: colonialism, coralreef, culture, history, les-coteau, pride, tobago."
 
       # ── Content ──────────────────────────────
       - label: "Body"
         name: "body"
         widget: "markdown"
-        editor_components: ['code-block', 'data-table', 'callout', 'youtube', 'pull-quote', 'definition', 'image-caption', 'cta-button']
+        editor_components: ['code-block', 'data-table', 'callout', 'youtube', 'spotify', 'pull-quote', 'definition', 'image-caption', 'gallery', 'cta-button']
 
       - label: "References & Further Reading"
         name: "references"
         widget: "markdown"
         required: false
-        hint: "Sources, citations, or further reading. Use a numbered list — e.g. '1. [Title](url)'. Renders automatically on the live post."
+        hint: "Sources and further reading. ⚠️ Always use bullet points — start each reference with '- ' on its own line. Example: '- Smith, J. [Article title](https://url.com)'. Do NOT use numbered lists or plain paragraphs — bullet format is required or the editor will crash."
 
   # ----------------------------------------
   # Island Stories — longer narrative writing
@@ -219,6 +245,19 @@ collections:
         default: "Quincy"
         required: false
 
+      # ── SEO overrides ─────────────────────────
+      - label: "SEO Title"
+        name: "seoTitle"
+        widget: "string"
+        required: false
+        hint: "Custom title for search engines and browser tabs. Defaults to the post title if blank. Aim for under 60 characters."
+
+      - label: "SEO Description"
+        name: "seoDescription"
+        widget: "text"
+        required: false
+        hint: "Custom meta description shown in search results. Defaults to the excerpt if blank. Aim for 120–155 characters."
+
       # ── Listen / Watch ────────────────────────
       - label: "YouTube Video ID"
         name: "youtubeId"
@@ -230,11 +269,17 @@ collections:
         name: "audioTracks"
         widget: "list"
         required: false
-        field:
-          label: "Track URL"
-          name: "track"
-          widget: "string"
-        hint: "Add one R2 audio URL per track. If the article is split into two parts, add both — Track 1 first, Track 2 second."
+        hint: "Add one entry per audio part. Label is optional — shown on the playlist button if there are multiple tracks."
+        fields:
+          - label: "Label (optional)"
+            name: "title"
+            widget: "string"
+            required: false
+            hint: "e.g. Part 1, or leave blank"
+          - label: "Audio URL"
+            name: "url"
+            widget: "string"
+            hint: "Full R2 URL — e.g. https://media.mycaribbeanjourney.com/..."
 
       # ── Listing metadata ─────────────────────
       - label: "Excerpt"
@@ -246,16 +291,16 @@ collections:
         name: "postTags"
         widget: "list"
         required: false
-        hint: "Lowercase, press Enter to add each one. Use hyphens for multi-word tags (e.g. coral-reef, les-coteaux). Currently in use: colonialism, coralreef, culture, history, pride, tobago."
+        hint: "Lowercase, press Enter to add each one. Use hyphens for multi-word tags. Currently in use: colonialism, coralreef, culture, history, les-coteau, pride, tobago."
 
       # ── Content ──────────────────────────────
       - label: "Body"
         name: "body"
         widget: "markdown"
-        editor_components: ['code-block', 'data-table', 'callout', 'youtube', 'pull-quote', 'definition', 'image-caption', 'cta-button']
+        editor_components: ['code-block', 'data-table', 'callout', 'youtube', 'spotify', 'pull-quote', 'definition', 'image-caption', 'gallery', 'cta-button']
 
       - label: "References & Further Reading"
         name: "references"
         widget: "markdown"
         required: false
-        hint: "Sources, citations, or further reading. Use a numbered list — e.g. '1. [Title](url)'. Renders automatically on the live post."
+        hint: "Sources and further reading. ⚠️ Always use bullet points — start each reference with '- ' on its own line. Example: '- Smith, J. [Article title](https://url.com)'. Do NOT use numbered lists or plain paragraphs — bullet format is required or the editor will crash."

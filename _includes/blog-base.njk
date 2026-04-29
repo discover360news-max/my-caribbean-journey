@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }} — My Caribbean Journey</title>
+  <title>{{ seoTitle or title }} — My Caribbean Journey</title>
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/images/my-caribbean-journey-tpbg-sm.png">
   <link rel="apple-touch-icon" href="/images/my-caribbean-journey-tpbg-sm.png">
-  <meta name="description" content="{{ excerpt or description or 'Stories, culture, and history from the Caribbean islands.' }}">
+  <meta name="description" content="{{ seoDescription or excerpt or description or 'Stories, culture, and history from the Caribbean islands.' }}">
   <link rel="canonical" href="https://mycaribbeanjourney.com{{ page.url }}">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="{{ title }} — My Caribbean Journey">
-  <meta property="og:description" content="{{ excerpt or description or 'Stories, culture, and history from the Caribbean islands.' }}">
+  <meta property="og:title" content="{{ seoTitle or title }} — My Caribbean Journey">
+  <meta property="og:description" content="{{ seoDescription or excerpt or description or 'Stories, culture, and history from the Caribbean islands.' }}">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://mycaribbeanjourney.com{{ page.url }}">
   <meta property="og:image" content="{% if featuredImage %}https://mycaribbeanjourney.com{{ featuredImage }}{% else %}https://mycaribbeanjourney.com/images/hero/heritage-festival.jpg{% endif %}">
@@ -29,8 +29,8 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{{ title }} — My Caribbean Journey">
-  <meta name="twitter:description" content="{{ excerpt or description or 'Stories, culture, and history from the Caribbean islands.' }}">
+  <meta name="twitter:title" content="{{ seoTitle or title }} — My Caribbean Journey">
+  <meta name="twitter:description" content="{{ seoDescription or excerpt or description or 'Stories, culture, and history from the Caribbean islands.' }}">
   <meta name="twitter:image" content="{% if featuredImage %}https://mycaribbeanjourney.com{{ featuredImage }}{% else %}https://mycaribbeanjourney.com/images/hero/heritage-festival.jpg{% endif %}">
 
   <!-- Structured Data -->
@@ -38,8 +38,8 @@
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": {{ title | dump | safe }},
-    "description": {{ (excerpt or description or "") | dump | safe }},
+    "headline": {{ (seoTitle or title) | dump | safe }},
+    "description": {{ (seoDescription or excerpt or description or "") | dump | safe }},
     "url": "https://mycaribbeanjourney.com{{ page.url }}",
     "image": "{% if featuredImage %}https://mycaribbeanjourney.com{{ featuredImage }}{% else %}https://mycaribbeanjourney.com/images/hero/heritage-festival.jpg{% endif %}",
     "datePublished": "{{ page.date | htmlDateString }}",

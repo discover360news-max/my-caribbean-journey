@@ -8,7 +8,8 @@ featuredImage: /blog/images/firstencounter.webp
 date: 2026-03-11
 author: Quincy Yeates
 audioTracks:
-  - https://media.mycaribbeanjourney.com/Reefs%20and%20the%20Comfort%20of%20Not%20Caring/reefFinal.mp3
+  - title: ""
+    url: https://media.mycaribbeanjourney.com/Reefs%20and%20the%20Comfort%20of%20Not%20Caring/reefFinal.mp3
 excerpt: A co-write with Tobago native and fisheries specialist Calvin Alexander
   exploring the quiet pressures facing Tobago's coral reefs and the small
   everyday choices that shape their future.

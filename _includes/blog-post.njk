@@ -148,17 +148,17 @@ layout: blog-base.njk
               <div class="media-panel" data-media-panel="listen">
                 {% if audioTracks and audioTracks.length %}
                   {% if audioTracks.length == 1 %}
-                  <audio controls class="media-audio-player" src="{{ audioTracks[0] }}"></audio>
+                  <audio controls class="media-audio-player" src="{{ audioTracks[0].url }}"></audio>
                   {% else %}
                   <div class="audio-playlist">
                     <div class="audio-track-btns">
                       {% for track in audioTracks %}
-                      <button class="audio-track-btn{% if loop.first %} is-active{% endif %}" data-track-src="{{ track }}">
-                        Track {{ loop.index }}
+                      <button class="audio-track-btn{% if loop.first %} is-active{% endif %}" data-track-src="{{ track.url }}">
+                        {{ track.title or ('Track ' + loop.index) }}
                       </button>
                       {% endfor %}
                     </div>
-                    <audio controls class="media-audio-player" src="{{ audioTracks[0] }}"></audio>
+                    <audio controls class="media-audio-player" src="{{ audioTracks[0].url }}"></audio>
                   </div>
                   {% endif %}
                 {% else %}
