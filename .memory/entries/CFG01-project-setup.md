@@ -3,16 +3,16 @@ id: CFG01
 type: CONFIG
 status: ACTIVE
 created: 2026-03-11
-updated: 2026-03-11
+updated: 2026-04-13
 related: D001, D002, D003
 ---
 
-# Project Setup — Eleventy 2.0 + Plain HTML/CSS/JS + Cloudflare Pages
+# Project Setup — Eleventy 3.x + Plain HTML/CSS/JS + Cloudflare Pages
 
 ## Summary
 My Caribbean Journey is a Caribbean culture hub featuring books, island guides, and curated
 resources. The site is a hybrid: most pages are plain static HTML/CSS/JS, while the blog and
-hub use Eleventy 2.0 for templating. Deployed to Cloudflare Pages from the `main` branch.
+hub use Eleventy 3.x for templating. Deployed to Cloudflare Pages from the `main` branch.
 
 ## Implementation Details
 
@@ -23,12 +23,18 @@ hub use Eleventy 2.0 for templating. Deployed to Cloudflare Pages from the `main
 
 **Stack:**
 - Static HTML/CSS/JS — book pages, guide pages, contact page
-- Eleventy 2.0 — hub homepage (`index.njk`), blog (`blog/`), sitemap
+- Eleventy 3.x — hub homepage (`index.njk`), blog (`blog/`), sitemap
 - No bundler, no framework, no build step for static pages
 
 **Key package versions:**
-- `@11ty/eleventy`: 2.0.x
+- `@11ty/eleventy`: 3.1.5 (upgraded from 2.0.1 on 2026-04-13)
 - `alpinejs`: not used (plain JS only)
+
+**Eleventy 3 migration notes (2026-04-13):**
+- Single-line `package.json` change — no other files needed updating
+- Config stays CJS (`module.exports`); Eleventy 3 auto-detects via missing `"type":"module"`
+- All filters, collections, passthrough copies, Nunjucks templates: fully compatible as-is
+- `markdown-it` bumped 13 → 14 internally (same API, same options used)
 
 **Eleventy config (`.eleventy.js`):**
 - Passthrough copies: `shared/`, `images/`, `i-am-tobago/`, `my-tobago-guide/`, `contact/`, `admin/`, `blog/images/`, `gas/`, `privacy-policy/`, `css/`, `js/`, `robots.txt`, `_headers`, `sitemap.njk`
@@ -91,3 +97,4 @@ python3 -m http.server 8888
 
 ## Change Log
 - 2026-03-11 Created
+- 2026-04-13 Upgraded Eleventy 2.0.1 → 3.1.5; pinned Decap CMS CDN to 3.11.0

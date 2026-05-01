@@ -11,7 +11,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(135deg, var(--green-deep) 0%, #0a2e15 40%, #132e1a 70%, #1a3520 100%);
+  background: var(--gradient-hero);
   padding: 9rem var(--space-md) 4rem;
   overflow: hidden;
 }
@@ -1002,7 +1002,7 @@ body.guide-tray-closing .guide-tray-backdrop {
 
 /* --- Book Cross-sell --- */
 .guide-book-promo {
-  background: linear-gradient(135deg, var(--green-deep) 0%, #0a2e15 50%, var(--green-dark) 100%);
+  background: var(--gradient-section);
   padding: 4rem 0;
 }
 

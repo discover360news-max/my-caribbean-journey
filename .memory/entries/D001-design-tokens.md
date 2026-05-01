@@ -3,7 +3,7 @@ id: D001
 type: DECISION
 status: ACTIVE
 created: 2026-03-11
-updated: 2026-03-11
+updated: 2026-05-01
 related: C001, CFG01
 ---
 
@@ -49,9 +49,26 @@ Both loaded from Google Fonts via `<link>` in each page's `<head>` — not centr
 - `.btn-large` — size modifier
 - `.btn-firefly` — adds firefly particle hover effect (requires page JS)
 
+### Gradient tokens (added 2026-05-01)
+Replaces all hardcoded hex gradient stops across hub.css, blog.css, style.css, guide.css:
+- `--gradient-hero` — 4-stop 135deg, full-screen heroes
+- `--gradient-card-bg` — 3-stop 145deg, card image fallback panels
+- `--gradient-section` — 3-stop 135deg, interior dark sections
+
+### Prose tokens (added 2026-05-01)
+For `.prose` context in blog posts only:
+- `--prose-body: #6b6560` — main paragraph text
+- `--prose-lead: #2a2a22` — opening paragraph
+- `--prose-strong: #4a4540` — bold text
+- `--prose-gold-dark: #9a7020` — definition badge, callout-fact strong
+
+### Keyboard focus (added 2026-05-01)
+Global `:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px }` in `@layer base`. Form inputs exempted (use border-color instead). No per-element setup needed.
+
 ### Section background rules
 - **Dark sections** (hero, features, buy, bio, book-newsletter, guide-book-promo):
-  green gradient bg → use `--gold` labels, `.btn-outline`
+  `var(--gradient-section)` bg → use `--gold` labels, `.btn-outline`
+- **Hero sections**: `var(--gradient-hero)` (4-stop, darker and richer)
 - **Light sections** (about, author, explore, reviews, stores):
   warm-white/cream bg → use `--green-mid` labels, `.btn-outline-dark`
 
@@ -89,3 +106,4 @@ Four progressive-enhancement features — full docs in `DESIGN.md § Modern CSS`
 
 ## Change Log
 - 2026-03-11 Created
+- 2026-05-01 Added gradient tokens (hero/card-bg/section), prose tokens (body/lead/strong/gold-dark), global :focus-visible rule; replaced all hardcoded gradient hex stops across 4 CSS files

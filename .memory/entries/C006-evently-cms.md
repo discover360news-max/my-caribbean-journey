@@ -3,7 +3,7 @@ id: C006
 type: COMPONENT
 status: ACTIVE
 created: 2026-03-11
-updated: 2026-03-11
+updated: 2026-04-30
 related: C005, L001
 ---
 
@@ -24,6 +24,10 @@ admin/
   cms-components.js   ← All CMS.registerEditorComponent() toolbar button definitions
 ```
 
+**Decap CMS version (pinned):**
+- Loaded via unpkg CDN: `decap-cms@3.12.2` (pinned as of 2026-04-30)
+- To upgrade: test the new version locally first, then update the version in `admin/index.html`
+
 **Access:**
 - URL: `mycaribbeanjourney.com/admin/`
 - Quincy authenticates via GitHub OAuth — must have Write access to the repo
@@ -38,47 +42,56 @@ admin/
 1. **Blog Posts** — `type: post` (set in `posts/posts.11tydata.js`)
 2. **Island Stories** — `type: story` (set in `posts/stories.11tydata.js`)
 
+⚠️ Both collections have 100% identical fields. Any field added/changed must be done in BOTH.
+A warning comment is at the top of config.yml as a reminder.
+
+**Fields per collection (as of 2026-04-30):**
+- Title, Collection Type, Category, Draft, Featured
+- Featured Image, Publish Date, Author
+- **SEO Title** (optional — overrides title in <title>, OG, Twitter, ld+json)
+- **SEO Description** (optional — overrides excerpt in all meta description slots)
+- YouTube Video ID
+- **Audio Tracks** (list of `{title (optional), url}` objects — NOT flat strings)
+- Excerpt, Tags (postTags), Body (markdown), References
+
 **Custom toolbar components (registered in `cms-components.js`):**
 | ID | Label | What it inserts |
 |----|-------|----------------|
 | `data-table` | Table | GFM pipe-table with optional caption |
-| `callout` | Callout | Tip / Fun Fact / Note / Warning box |
+| `callout` | Callout | Tip / Fun Fact / Note / Warning / Contributor boxes |
 | `youtube` | YouTube | Responsive 16:9 iframe from any YouTube URL |
+| `spotify` | Spotify | Compact (152px) or expanded (352px) Spotify embed — handles track/album/playlist/episode |
 | `pull-quote` | Pull Quote | Large italic standout line with optional attribution |
 | `definition` | Definition | Term + language label + explanation (ideal for patois/folklore) |
 | `image-caption` | Image | `<figure>` with `<figcaption>` + size/ratio/border/shadow options |
+| `gallery` | Gallery | 2-col or 3-col image grid, per-image alt+caption, optional shared caption |
 | `cta-button` | Button | Centred gold or bordered link button |
 
-**To add a new toolbar component:**
-Copy the template block at the bottom of `cms-components.js` and fill in:
-`id`, `label`, `fields`, `pattern`, `fromBlock`, `toBlock`, `toPreview`
-
-**Image component fields (Mar 2026 addition):**
-- Size: full / half / float-left / float-right
-- Ratio: natural / 16:9 / 4:3 / 3:4 / 1:1
-- Border: yes/no; Shadow: yes/no
+**audioTracks format — ⚠️ object format, not plain strings:**
+```yaml
+audioTracks:
+  - title: "Part 1"   # optional — falls back to "Track N" if blank
+    url: https://media.mycaribbeanjourney.com/...
+```
+The template (`blog-post.njk`) uses `track.url` and `track.title`. Plain string format will break.
 
 **`references` field — ⚠️ critical format (see L001):**
-Must use `>-` YAML block scalar with `- ` bullet prefix per item:
-```yaml
-references: >-
-  - First reference text here
+Must use bullet points (`- ` prefix per item). Plain paragraphs or numbered lists crash Slate.js.
 
-  - Second reference text here
-```
-Plain paragraph format or YAML list format (`- "item"`) breaks the Slate.js markdown widget
-toggle AND causes a Slate.js crash (`e.value.split is not a function`).
+**postTags currently in use:** colonialism, coralreef, culture, history, les-coteau, pride, tobago
 
 ## Decisions Made
-- **GitHub OAuth backend** — no separate CMS backend to maintain. Quincy authenticates with
-  his existing GitHub account. Posts are stored as Markdown in the repo.
-- **Custom components in `cms-components.js`** — extends the CMS toolbar without modifying
-  Decap CMS internals. Easy to add new components by following the existing pattern.
+- **GitHub OAuth backend** — no separate CMS backend to maintain
+- **Custom components in `cms-components.js`** — extends toolbar without modifying Decap internals
+- **SEO fields are optional overrides** — fallback chain: seoTitle → title, seoDescription → excerpt
 
 ## Known Issues / Gotchas
 - CMS pushes to `main` → always pull before pushing local commits
-- The `references` YAML format is non-obvious — see L001 for the full story
-- Slate.js markdown widget crashes if `references` content is not in the `- ` bullet format
+- The `references` YAML format is non-obvious — see L001
+- audioTracks must be object format `{title, url}` — flat strings will break the audio player
+- Both collections are duplicated in config.yml — update fields in both or they'll diverge
 
 ## Change Log
 - 2026-03-11 Created
+- 2026-04-13 Pinned Decap CMS CDN from @^3.0.0 to @3.11.0
+- 2026-04-30 Bumped to 3.12.2; added SEO Title/Description fields; restructured audioTracks to {title,url} objects; added Spotify and Gallery toolbar components; fixed references and postTags hints

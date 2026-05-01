@@ -1,6 +1,6 @@
 # My Caribbean Journey — Project Memory Index
-Last updated: 2026-03-22
-Project: Caribbean culture hub — books, island guides, curated resources | Stack: Eleventy 2.0 + plain HTML/CSS/JS | Deploy: Cloudflare Pages
+Last updated: 2026-04-13
+Project: Caribbean culture hub — books, island guides, curated resources | Stack: Eleventy 3.x + plain HTML/CSS/JS | Deploy: Cloudflare Pages
 
 ## How to use this index
 - Read this file at the start of every session
@@ -9,7 +9,7 @@ Project: Caribbean culture hub — books, island guides, curated resources | Sta
 - Update STATUS inline when things change (ACTIVE → DEPRECATED etc.)
 
 ## Entries
-CFG01 | CONFIG    | ACTIVE      | Eleventy 2.0 + plain HTML/CSS/JS + Cloudflare Pages setup → .memory/entries/CFG01-project-setup.md
+CFG01 | CONFIG    | ACTIVE      | Eleventy 3.x + plain HTML/CSS/JS + Cloudflare Pages setup → .memory/entries/CFG01-project-setup.md
 D001  | DECISION  | ACTIVE      | Design tokens: green/gold palette, Playfair+Inter, shared.css tokens → .memory/entries/D001-design-tokens.md
 D002  | DECISION  | ACTIVE      | Shared component system: SiteComponents.init() JS template literal pattern → .memory/entries/D002-shared-component-system.md
 D003  | DECISION  | ACTIVE      | No-framework rule: plain HTML/CSS/JS; Eleventy only for blog + hub → .memory/entries/D003-no-framework-rule.md

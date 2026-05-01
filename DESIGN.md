@@ -23,6 +23,25 @@ All tokens live in `/shared/shared.css` under `:root`. Never hardcode hex values
 | `--text-muted` | `#5a5a52` | Descriptive / secondary text |
 | `--text-light` | `#e8e4dc` | Nav links, footer text on dark |
 
+### Gradient tokens
+Pre-built gradients used across all dark sections and card image fallbacks. Use these — never write the hex stops inline.
+
+| Token | Usage |
+|-------|-------|
+| `--gradient-hero` | Full-screen hero sections (blog, guide, book) |
+| `--gradient-card-bg` | Image panel fallback on cards (square/portrait aspect ratio) |
+| `--gradient-section` | Interior dark sections (bio, buy, promo, island-sound) |
+
+### Prose tokens
+For body text within `.prose` on blog posts. Do not use these outside the prose context.
+
+| Token | Value | Usage |
+|-------|-------|-------|
+| `--prose-body` | `#6b6560` | Main prose paragraph text |
+| `--prose-lead` | `#2a2a22` | Opening / lead paragraph (slightly darker) |
+| `--prose-strong` | `#4a4540` | Bold text within prose |
+| `--prose-gold-dark` | `#9a7020` | Definition language badge, callout-fact strong |
+
 ---
 
 ## Typography
@@ -84,10 +103,10 @@ Base class is always `.btn`. Combine with a variant. Defined in `/shared/shared.
 ### Dark section
 Used for: hero, features, buy CTA, bio, book newsletter, guide book promo, footer.
 ```css
-background: linear-gradient(135deg, var(--green-deep) 0%, #0a2e15 50%, var(--green-dark) 100%);
+background: var(--gradient-section);
 color: var(--cream);
 ```
-Use `.btn-outline` here. Section label colour: `--gold`.
+Use `.btn-outline` here. Section label colour: `--gold`. For full-screen hero sections use `var(--gradient-hero)` instead.
 
 ### Light section
 Used for: about, author, reviews, stores, guide results.
@@ -368,6 +387,25 @@ The music player hangs below the fixed header as a centred pill (`position: abso
   border-color: rgba(212, 160, 48, 0.22);
 }
 ```
+
+---
+
+## Keyboard Focus Styles
+
+A global `:focus-visible` rule in `shared/shared.css` provides a gold ring for keyboard navigation on all interactive elements. No per-element setup needed.
+
+```css
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+```
+
+`:focus-visible` fires on keyboard focus only — mouse clicks do not trigger it. This means the ring appears for keyboard users but not when clicking with a mouse/touch.
+
+**Form inputs** (`input`, `textarea`, `select`) are exempted from the gold outline because they use `border-color: var(--gold)` as their focus indicator instead. This is set per-input in each page's CSS.
+
+**Rule for new interactive elements:** No action needed — the global rule covers buttons, links, and anything focusable. If a custom element needs a different indicator (e.g. a card with its own focus treatment), add a `:focus-visible` override specifically for that component.
 
 ---
 

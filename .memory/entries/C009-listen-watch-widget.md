@@ -25,14 +25,14 @@ admin/config.yml          ← audioTracks (list) + youtubeId (string) fields in 
 | Field | Type | CMS Widget | Notes |
 |-------|------|------------|-------|
 | `youtubeId` | string | string | YouTube video ID only — e.g. `dQw4w9WgXcQ` (not the full URL) |
-| `audioTracks` | list of strings | list → string | One R2 URL per track. Order = playback order. |
+| `audioTracks` | list of `{title, url}` objects | list → object | `title` is optional (falls back to "Track N"); `url` is the R2 URL. |
 
 ## Behaviour
 - **Watch tab**: If `youtubeId` set → `youtube-nocookie.com` iframe embed. Else → "Coming soon".
 - **Listen tab**:
   - No `audioTracks` → "Coming soon"
-  - 1 track → plain `<audio controls>`
-  - 2+ tracks → `.audio-track-btn` selector above the player; clicking a button swaps `audio.src` and calls `audio.play()`
+  - 1 track → plain `<audio controls>` with `src="{{ audioTracks[0].url }}"`
+  - 2+ tracks → `.audio-track-btn` selector above the player showing `track.title` (or "Track N" fallback); clicking swaps `audio.src` and calls `audio.play()`
 - Sidebar always renders (previously conditional on related posts)
 - On mobile (≤900px) sidebar drops below content — widget appears below article
 
@@ -48,8 +48,8 @@ admin/config.yml          ← audioTracks (list) + youtubeId (string) fields in 
 1. Generate audio in ElevenLabs — split into parts if needed
 2. In Cloudflare R2 → bucket → create folder named after the post
 3. Upload MP3(s) into that folder
-4. In Evently: open the post → **Audio Tracks** field → **Add** → paste the full R2 URL
-5. Add a second item for Track 2 if split
+4. In Evently: open the post → **Audio Tracks** field → **Add** → fill `title` (optional, e.g. "Part 1") and `url` (full R2 URL)
+5. Add a second item for Track 2 if split — give it a `title` like "Part 2"
 6. Save/publish — player appears live immediately after deploy
 
 ## Adding a YouTube Video
@@ -83,3 +83,7 @@ Blog audio and the site-wide music player are in separate JS scopes. Coordinatio
 | `.audio-playlist` | Wraps track buttons + audio element |
 | `.audio-track-btn` | Per-track selector; `.is-active` → solid gold bg |
 | `.media-audio-player` | Native `<audio>` element, full width |
+
+## Change Log
+- 2026-03-21 Created
+- 2026-04-30 audioTracks restructured from flat URL strings to `{title, url}` objects; template uses `track.url` and `track.title`
