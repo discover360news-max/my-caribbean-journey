@@ -92,10 +92,10 @@ var GUIDE_DATA = {
       description: 'Stunning Seaside Cafe & Craft Shop overlooking the Atlantic. Desserts \u2022 Lunch \u2022 Culture \u2022 Craft.',
       url: 'https://www.facebook.com/shorethingstobago',
       category: 'food-recipes',
-      area: 'speyside',
+      area: 'scarborough',
       plusCode: '568V+67J Lambeau, Trinidad and Tobago',
-      coords: [11.2978, -60.5491],
-      quincyNote: 'Way out east in Speyside, overlooking the Atlantic — one of the most beautiful views you\'ll eat in front of on this island. Good lunch, good desserts, and the craft shop carries pieces you won\'t find anywhere else on the island.',
+      coords: [11.1719, -60.7255],
+      quincyNote: 'In Lambeau on Tobago\'s southwest coast, overlooking the Atlantic — one of the most beautiful views you\'ll eat in front of on this island. Good lunch, good desserts, and the craft shop carries pieces you won\'t find anywhere else on the island.',
       featured: false,
       image: 'images/shore-things.webp',
       tags: [
