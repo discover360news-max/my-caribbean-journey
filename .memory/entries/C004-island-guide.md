@@ -34,7 +34,7 @@ leaflet.js → components.js → support.js → guide-data.js → guide.js → g
 **Leaflet 1.9.4** loaded from CDN (unpkg) for the listing tray mini map.
 
 ## Section Order
-Hero → Search bar (desktop) / Search pill (mobile) → Browse (categories) → Results grid → Book cross-sell → Blog invite → Footer
+Hero → Search bar (desktop) / Search pill (mobile) → **Virtual Tour pill** → Browse (categories) → Results grid → **Virtual Tour banner** → Book cross-sell → Blog invite → Footer
 
 ## Adding a New Listing (edit `guide-data.js`)
 ```js
@@ -107,7 +107,8 @@ Clicking any card (except heart/directions/action links) opens a detail tray ins
 
 ## Love Tobago Scroll Modal (guide-effects.js)
 - Fires once per session (sessionStorage key `guide_modal_shown`) at 50% page scroll
-- Shows book cross-sell CTA + secondary Essays CTA
+- Shows book cross-sell CTA + secondary Essays CTA + **Virtual Tour button** (`guide-vtour-modal-btn`)
+- Virtual Tour button closes the modal then opens the tour tray
 - Closes on X, backdrop, or Escape
 
 ## Favourites
@@ -136,3 +137,4 @@ Clicking any card (except heart/directions/action links) opens a detail tray ins
 ## Change Log
 - 2026-03-11 Created
 - 2026-04-01 Major update: live search, relevance scoring, synonym map, Search button repurpose, listing detail tray with Quincy notes + Leaflet map, Love Tobago scroll modal, coords field, quincyNote field
+- 2026-05-16 Added virtual tour tray: pill trigger under search, banner section, scroll modal button → see [[C011-virtual-tour-tray]]

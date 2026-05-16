@@ -3,7 +3,7 @@ id: C001
 type: COMPONENT
 status: ACTIVE
 created: 2026-03-11
-updated: 2026-03-21
+updated: 2026-05-16 (mobile menu UX pass)
 related: D002, D001
 ---
 
@@ -29,18 +29,38 @@ per-page via `SiteComponents.init(config)`.
 
 **Nav behaviour (automatic, no config needed):**
 - Fixed to top of viewport, `z-index` above page content
-- Transparent at rest → dark bg + backdrop-blur on scroll (threshold ~60px)
-- Mobile hamburger below 768px — full-screen overlay with all nav links
+- Transparent at rest → dark bg + backdrop-blur on scroll (threshold 50px)
+- Hamburger below **1024px** (covers all tablets + small laptops) — full-screen overlay with all nav links
+- Hamburger spans animate to an X via `[aria-expanded="true"]` CSS — no JS needed
 - Smooth scroll to anchor links
-- Active link highlighting (scrollspy via IntersectionObserver where sections exist)
+
+**Mobile menu behaviour:**
+- `openMenu()` / `closeMenu()` helpers in `attachNavBehavior()` — single source of truth for all close paths
+- Escape key closes menu (`keydown` on document, guarded by `menuOpen` flag)
+- Scroll lock: `document.body.style.overflow = 'hidden'` on open, reset to `''` on close
+- Resize guard: `window resize` listener calls `closeMenu()` if viewport grows above 1024px while open — prevents state drift on rotation/resize
+- `aria-controls="site-mobile-menu"` + `aria-expanded` on toggle button; `role="navigation"` + `aria-label="Mobile navigation"` + `aria-hidden` on menu div (toggled on open/close)
+- Active link: `aria-current="page"` added at render time via `window.location.pathname` comparison — skips anchor links (`#`) and CTA links. Styled in CSS as gold color + 3px gold left border
+- Links: hover background pill (`rgba(255,255,255,0.06)` + `border-radius: 6px`) replaces border-bottom separators
+- `@media (prefers-reduced-motion: reduce)` disables the slide/fade transition on `.site-mobile-menu`
 
 **Nav CSS key classes:**
 - `.site-nav` — fixed shell
-- `.site-nav-inner` — inner container, max-width constrained
-- `.site-nav-link` — desktop link; `.site-nav-link.is-cta` — gold button style
+- `.site-nav-inner` — inner container, max-width 1200px
+- `.site-nav-links a:not(.site-nav-cta)` — desktop link styles (use `:not` to avoid cascade fights with CTA)
+- `.site-nav-cta` — gold gradient CTA pill; **no `!important`** — specificity handled by the `:not` above
 - `.site-nav-crumb-bar` — breadcrumb row, below nav links, `0.67rem`
-- `.nav-crumb` — individual breadcrumb item
-- Mobile overlay: full-screen, covers viewport
+- Mobile overlay: full-screen, `z-index: 99`, top set dynamically by JS to `header.getBoundingClientRect().bottom`
+
+**Breakpoints:**
+- `≤1024px` — hamburger; hides `.site-nav-links`, shows `.site-nav-toggle` and `.site-mobile-menu`
+- `1025–1280px` — compact desktop: link gap `1rem`, font-size `0.85rem` (handles pages with many links)
+- `≤768px` — footer/layout breakpoint (stacks footer columns); container padding tightens
+- `≤480px` — logo `38px` / `1.1rem`; music player title hidden; player buttons expand to 32px touch target
+
+**Logo sizing:**
+- Desktop: `44px` image height, `1.3rem` wordmark — has `white-space: nowrap; flex-shrink: 0` to prevent wrapping
+- 480px: `38px` / `1.1rem`
 
 **Footer layout:**
 - `display: grid; grid-template-columns: 1.5fr 1fr 1fr`
@@ -82,6 +102,13 @@ per-page via `SiteComponents.init(config)`.
 - Blog pages: set `window._mcjCrumbs` BEFORE loading `components.js` or before calling `SiteComponents.init()`
 - The stamp bar tooltip requires JS interaction — it won't render without JS
 
+## Site Music Player — notch behaviour
+- At rest: transparent background, hairline gold border `rgba(212,160,48,0.12)` — visible on any page bg
+- On scroll: dark glass pill — `rgba(13,31,18,0.6)`, `backdrop-filter: blur(12px)`, gold border brightens
+- Pill positioned `bottom: -22px` on `.site-header` (hangs below nav row)
+
 ## Change Log
 - 2026-03-11 Created
 - 2026-03-21 Documented music player; removed autoplay; added window._mcjPauseSiteMusic bridge (see C009)
+- 2026-05-16 Header audit: breakpoint 768→1024px, hamburger X animation, logo 54→44px/1.5→1.3rem, music player border always-visible, !important removed from CTA, compact-gap rule at 1025–1280px
+- 2026-05-16 Mobile menu UX pass: Escape key, scroll lock, resize guard, ARIA wiring, active link highlight, hover pill style, prefers-reduced-motion guard

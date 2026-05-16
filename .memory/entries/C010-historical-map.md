@@ -143,6 +143,7 @@ Edit `map-data.js` only. Each entry:
   x: 37.4,              // % of viewBox width  (use formula above, then verify visually)
   y: 64.5,              // % of viewBox height
   image: '/blog/images/example.webp',  // optional — gradient fallback if omitted
+  essayUrl: '/blog/slug-here/',        // optional — shows "Read the essay →" overlay on image when set; leave '' until essay exists
   description: 'Full paragraph shown in popup.'
 }
 ```
@@ -160,6 +161,7 @@ No CMS integration — data is static from the book.
 | Les Coteaux | 11.227740°N, 60.741831°W |
 | London Bridge | 11.354981°N, 60.533172°W |
 | No Man's Land | 11.168646°N, 60.824912°W |
+| The Sisters | 11.332842°N, 60.644274°W |
 
 ## Known issues / gotchas
 - NE peninsula (Speyside/Charlotteville area) is very thin in SVG space — pins there need y% ≈ 20–30 to sit on land
@@ -188,3 +190,4 @@ When manually placing GCPs, JS was injected via Playwright `browser_evaluate`:
 - 2026-03-22 All 27 pin coordinates georeferenced: 9 manual GCPs + affine transform regression + Photon API geocoding for remaining pins. Max residual 1.3% x, 1.0% y. Committed and deployed.
 - 2026-03-23 Popup: added 16:9 image block with category-colour gradient fallback. Optional `image` field in map-data.js entries.
 - 2026-03-29 Expanded to 9 categories (added forts, waterfalls, waterwheels, islands). Forts moved out of history. 34 total pins. New entries: Pigeon Peak, Turtle Beach, No Man's Land, Arnos Vale Waterwheel, The Sisters, London Bridge. Argyle moved to waterfalls, Little Tobago moved to islands. Les Coteaux, London Bridge, No Man's Land have confirmed real GPS. Map data reset from placeholder → real coordinates workflow begins.
+- 2026-05-16 Added `essayUrl` field to village pins. Les Coteaux wired to `/blog/les-coteaux-more-than-folklore/`. Other 5 villages (Charlotteville, Castara, Parlatuvier, Speyside, Plymouth) have `essayUrl: ''` as placeholder — no UI shown until filled. Essay link renders as "Read the essay →" gradient overlay on the popup image (`map-popup-essay-link`). The Sisters pin corrected from estimated (91, 9) to GPS-verified (58.7, 19.8).

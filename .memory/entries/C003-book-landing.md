@@ -29,7 +29,7 @@ i-am-tobago/
   images/stores/        ← One webp per store (named to match store slug)
 ```
 
-**Section order:** Hero → About the Book → What's Inside → Author → Reviews → Buy CTA → Newsletter → Find In Store
+**Section order:** Hero → About the Book → What's Inside → Author → Reviews → Buy CTA → Newsletter → Charity → Guide Cross-sell (**+ Virtual Tour button**) → Find In Store
 
 **Amazon link — centralised:**
 - All buy buttons use class `.amazon-book-link`
@@ -94,3 +94,4 @@ i-am-tobago/
 ## Change Log
 - 2026-03-11 Created
 - 2026-03-23 Added store photos + Facebook links for Nelson's and Gumbs; nation badge darkened
+- 2026-05-16 Added virtual tour tray (inline styles + JS) + "Virtual Tour" button in guide-promo section → see [[C011-virtual-tour-tray]]

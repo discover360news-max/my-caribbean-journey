@@ -1,5 +1,5 @@
 # My Caribbean Journey — Project Memory Index
-Last updated: 2026-04-13
+Last updated: 2026-05-16 (C010 updated — essayUrl pattern, The Sisters GPS fix)
 Project: Caribbean culture hub — books, island guides, curated resources | Stack: Eleventy 3.x + plain HTML/CSS/JS | Deploy: Cloudflare Pages
 
 ## How to use this index
@@ -30,3 +30,5 @@ L003  | LEARNING  | ACTIVE      | Mobile UX standards: safe-area, dvh, touch tar
 C010  | COMPONENT | ACTIVE      | I Am Tobago historical map: 27 georeferenced pins, affine transform formula, Photon API geocoding, pan/zoom, filter, popup → .memory/entries/C010-historical-map.md
 L004  | LEARNING  | ACTIVE      | Curly quotes in blog frontmatter break Decap CMS js-yaml — pre-commit hook added, fix command documented → .memory/entries/L004-curly-quotes-cms-yaml-error.md
 FB001 | FEEDBACK  | ACTIVE      | btn-outline (cream text) is for dark backgrounds; use btn-outline-dark on white/light backgrounds → .memory/entries/feedback-btn-outline-variants.md
+L005  | LEARNING  | ACTIVE      | Leaflet 2.0 has breaking API changes — stay on 1.9.x, do not upgrade without a dedicated migration → .memory/entries/L005-leaflet-version-warning.md
+C011  | COMPONENT | ACTIVE      | Tobago Global Virtual Tour tray: TourMkr iframe, 3 triggers on guide page, 1 on i-am-tobago, lazy-load/unload → .memory/entries/C011-virtual-tour-tray.md
