@@ -218,6 +218,7 @@ const MAP_LOCATIONS = [
     name: 'Charlotteville',
     category: 'village',
     x: 79.3, y: 22.0,
+    essayUrl: '',
     description: 'First settled by the Dutch in 1633 and named after an early settler woman called Charlotte, Charlotteville sits in a steep-sided bay at Tobago\'s northeastern tip. Archaeological surveys have identified 93 sites of First Peoples habitation in the area — evidence of a human presence stretching back millennia before any European arrived. Accessible only by a winding mountain road, the village remains one of the island\'s most remote, its fishing culture and folk traditions alive in ways that the rest of Tobago has mostly moved past.'
   },
   {
@@ -225,6 +226,7 @@ const MAP_LOCATIONS = [
     name: 'Castara Bay',
     category: 'village',
     x: 47.8, y: 35.5,
+    essayUrl: '',
     description: 'A small bay on Tobago\'s northern coast, Castara remains one of the least commercialised fishing villages on the island. Colourful pirogues are drawn up on the sand each morning, and the catch is sold fresh on the beach. The surrounding forest meets the sea in a wall of green, and the village\'s pace of life reflects an older, quieter Tobago that the rest of the island has mostly moved past.'
   },
   {
@@ -232,6 +234,7 @@ const MAP_LOCATIONS = [
     name: 'Parlatuvier',
     category: 'village',
     x: 57.1, y: 30.1,
+    essayUrl: '',
     description: 'Parlatuvier sits at the end of a long, sheltered bay hemmed in by forest. One of the north coast\'s most traditional communities, it is known for its fishing culture and its proximity to Bloody Bay. The village\'s older residents carry oral histories of the island that stretch back generations, including stories of plantation life, rebellion, and the spirits that walk the roads after dark.'
   },
   {
@@ -239,6 +242,7 @@ const MAP_LOCATIONS = [
     name: 'Speyside',
     category: 'village',
     x: 82.8, y: 30.4,
+    essayUrl: '',
     description: 'Speyside looks out across the waters toward Little Tobago from the Atlantic-facing coast. The remnants of a lucrative 19th-century sugar estate still stand here — including a historic waterwheel, silent now but once driven by the river that flows down from the Main Ridge. Today the village is the departure point for glass-bottom boat tours and birdwatching trips to Bird of Paradise Island, and one of the best places in the Caribbean to dive alongside giant manta rays.'
   },
   {
@@ -246,6 +250,7 @@ const MAP_LOCATIONS = [
     name: 'Plymouth',
     category: 'village',
     x: 30.1, y: 54.1,
+    essayUrl: '',
     description: 'One of Tobago\'s oldest towns, Plymouth was the site of the Courland settlement in the 1630s and later a British administrative centre. Today it is a quiet coastal community that belies its turbulent past. Beyond the Mystery Tombstone in its churchyard, Plymouth holds the ruins of Fort James, an early Dutch fortification overlooking Great Courland Bay — one of the most historically layered squares of land on the island.'
   },
   {
