@@ -168,6 +168,24 @@
     </div>
   </section>
 
+  <!-- Virtual Tour Banner -->
+  <section class="guide-vtour-banner">
+    <div class="container">
+      <div class="guide-vtour-banner-inner">
+        <div class="guide-vtour-badge" aria-hidden="true">360°</div>
+        <div class="guide-vtour-banner-text">
+          <p class="section-label">Tobago Global Virtual Tour</p>
+          <h2 class="guide-vtour-banner-title">Walk Tobago Before You Arrive</h2>
+          <p class="guide-vtour-banner-desc">Explore beaches, forts, and landmarks in immersive 360° — without leaving this page.</p>
+        </div>
+        <button class="btn btn-primary guide-vtour-open-btn" id="guide-vtour-open-btn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          Launch Virtual Tour
+        </button>
+      </div>
+    </div>
+  </section>
+
   <!-- Book Cross-sell -->
   <section class="guide-book-promo">
     <div class="container">
@@ -227,12 +245,64 @@
     </div>
   </div>
 
+  <!-- Virtual Tour Tray -->
+  <div class="guide-vtour-tray" id="guide-vtour-tray" hidden role="dialog" aria-modal="true" aria-label="Tobago Global Virtual Tour">
+    <div class="guide-vtour-backdrop" id="guide-vtour-backdrop"></div>
+    <div class="guide-vtour-panel" id="guide-vtour-panel">
+      <div class="guide-vtour-head">
+        <div class="guide-vtour-pill" aria-hidden="true"></div>
+        <span class="guide-vtour-label">Tobago Global Virtual Tour</span>
+        <button class="guide-vtour-close" id="guide-vtour-close" aria-label="Close virtual tour">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+      <div class="guide-vtour-iframe-wrap">
+        <iframe id="guide-vtour-iframe" src="" allowfullscreen title="Tobago Global Virtual Tour"></iframe>
+      </div>
+    </div>
+  </div>
+
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin></script>
   <script src="/shared/components.js"></script>
   <script src="/shared/support.js"></script>
   <script src="js/guide-data.js"></script>
   <script src="js/guide.js"></script>
   <script src="js/guide-effects.js"></script>
+  <script>
+    (function () {
+      var TOUR_URL = 'https://tourmkr.com/F1h6s2HYN5/';
+      var tray     = document.getElementById('guide-vtour-tray');
+      var panel    = document.getElementById('guide-vtour-panel');
+      var iframe   = document.getElementById('guide-vtour-iframe');
+      var openBtn  = document.getElementById('guide-vtour-open-btn');
+      var closeBtn = document.getElementById('guide-vtour-close');
+      var backdrop = document.getElementById('guide-vtour-backdrop');
+
+      function openTour() {
+        iframe.src = TOUR_URL;
+        tray.hidden = false;
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeTour() {
+        panel.classList.add('is-closing');
+        panel.addEventListener('animationend', function () {
+          tray.hidden = true;
+          panel.classList.remove('is-closing');
+          iframe.src = '';
+          document.body.style.overflow = '';
+        }, { once: true });
+      }
+
+      openBtn.addEventListener('click', openTour);
+      closeBtn.addEventListener('click', closeTour);
+      backdrop.addEventListener('click', closeTour);
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !tray.hidden) closeTour();
+      });
+    }());
+  </script>
+
   <script>
     SiteComponents.init({
       breadcrumbs: [

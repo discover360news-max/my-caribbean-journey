@@ -1784,6 +1784,192 @@ a.guide-listing-location:hover {
   }
 }
 
+/* --- Virtual Tour Banner --- */
+.guide-vtour-banner {
+  background: var(--warm-white);
+  padding: 4rem 0;
+  border-top: 1px solid rgba(212, 160, 48, 0.1);
+}
+
+.guide-vtour-banner-inner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.guide-vtour-badge {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--green-deep), var(--green-mid));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  box-shadow: 0 8px 24px rgba(26, 74, 46, 0.25);
+}
+
+.guide-vtour-banner-text {
+  flex: 1;
+  min-width: 200px;
+}
+
+.guide-vtour-banner-text .section-label {
+  text-align: left;
+}
+
+.guide-vtour-banner-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  font-weight: 700;
+  color: var(--green-deep);
+  margin: 0.4rem 0 0.5rem;
+  line-height: 1.2;
+}
+
+.guide-vtour-banner-desc {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.65;
+  margin: 0;
+  max-width: 440px;
+}
+
+.guide-vtour-open-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* --- Virtual Tour Tray --- */
+.guide-vtour-tray {
+  position: fixed;
+  inset: 0;
+  z-index: 800;
+}
+
+.guide-vtour-tray[hidden] { display: none; }
+
+.guide-vtour-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 15, 8, 0.65);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  animation: guide-modal-fade-in 0.25s ease both;
+}
+
+.guide-vtour-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 92dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--green-deep);
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -12px 60px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  animation: guide-tray-slide-up 0.38s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.guide-vtour-panel.is-closing {
+  animation: guide-tray-slide-down 0.3s cubic-bezier(0.32, 0, 0.67, 0) both;
+}
+
+.guide-vtour-head {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.25rem;
+  background: var(--green-deep);
+  border-bottom: 1px solid rgba(212, 160, 48, 0.15);
+  position: relative;
+}
+
+.guide-vtour-pill {
+  position: absolute;
+  top: 0.45rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+}
+
+.guide-vtour-label {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--cream);
+  letter-spacing: 0.01em;
+  padding-top: 0.5rem;
+}
+
+.guide-vtour-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  color: var(--cream);
+  cursor: pointer;
+  transition: background var(--transition);
+  flex-shrink: 0;
+  margin-top: 0.4rem;
+
+  &:hover { background: rgba(255, 255, 255, 0.2); }
+}
+
+.guide-vtour-iframe-wrap {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.guide-vtour-iframe-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .guide-vtour-banner-inner {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .guide-vtour-banner-text .section-label {
+    text-align: center;
+  }
+
+  .guide-vtour-banner-desc {
+    max-width: 100%;
+  }
+
+  .guide-vtour-open-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 @media (max-width: 480px) {
   .guide-hero {
     padding: 8.5rem var(--space-sm) 3.5rem;
