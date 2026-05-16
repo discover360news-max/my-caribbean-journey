@@ -201,7 +201,7 @@ const MAP_LOCATIONS = [
     id: 'the-sisters',
     name: 'The Sisters',
     category: 'islands',
-    x: 91.0, y: 9.0,
+    x: 58.7, y: 19.8,  /* REAL — 11.332842°N, 60.644274°W */
     description: 'The Sisters — also known as the St. Giles Islands — are a cluster of dramatic rocky outcrops rising from the sea at Tobago\'s northeastern tip. Uninhabited and exposed to the full force of the Atlantic, they are among the most important seabird nesting sites in the southern Caribbean. Magnificent Frigatebirds, Red-footed Boobies, and Laughing Gulls crowd the cliffs each season. The rocks are visible from Charlotteville on a clear day, standing like sentinels at the edge of the island.'
   },
   {
@@ -254,6 +254,7 @@ const MAP_LOCATIONS = [
     category: 'village',
     x: 37.1, y: 51.5,  /* REAL — 11.227740°N, 60.741831°W */
     image: '/blog/images/beyondfolklore.webp',
+    essayUrl: '/blog/les-coteaux-more-than-folklore/',
     description: 'For many in Tobago, the name Les Coteaux carries a feeling before it carries a meaning. Long before it became known for folklore — for Gang Gang Sarah who first landed here, for La Diablesse who walks its roads — Les Coteaux was shaped by the weight of plantation history and the quiet, enduring survival of its people.'
   },
 

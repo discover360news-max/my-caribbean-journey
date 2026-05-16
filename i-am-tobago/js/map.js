@@ -151,6 +151,18 @@
       imgEl.style.background = `linear-gradient(145deg, #0d1f12 0%, ${cat.colour}55 100%)`;
     }
 
+    /* Essay link — rebuild each time so it reflects the current location */
+    const existing = imgEl.querySelector('.map-popup-essay-link');
+    if (existing) existing.remove();
+    if (loc.essayUrl) {
+      const link = document.createElement('a');
+      link.className = 'map-popup-essay-link';
+      link.href = loc.essayUrl;
+      link.textContent = 'Read the essay';
+      link.setAttribute('aria-label', `Read the essay about ${loc.name}`);
+      imgEl.appendChild(link);
+    }
+
     activePin = loc.id;
 
     /* Double rAF: ensures the browser actually paints one frame with the

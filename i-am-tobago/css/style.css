@@ -1606,6 +1606,41 @@ a.store-card-detail:hover {
   border-radius: var(--radius-lg);
   border: 1px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
+  position: relative;
+}
+
+.map-popup-essay-link {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.45rem 0.75rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.78) 0%, transparent 100%);
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  text-align: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0.3em;
+  padding-top: 1.5rem;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+
+.map-popup-essay-link::after {
+  content: '\2192';
+  font-size: 0.9em;
+}
+
+.map-popup-essay-link:hover,
+.map-popup-essay-link:focus-visible {
+  background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, transparent 100%);
+  color: var(--gold);
+  outline: none;
 }
 
 .map-popup-text {
