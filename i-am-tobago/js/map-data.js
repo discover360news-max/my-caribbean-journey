@@ -182,11 +182,12 @@ const MAP_LOCATIONS = [
 
   /* ── Waterwheels ─────────────────────────────────────────── */
   {
-    id: 'arnos-vale-waterwheel',
-    name: 'Arnos Vale Waterwheel',
+    id: 'speyside-waterwheel',
+    name: 'Speyside Waterwheel',
     category: 'waterwheels',
     x: 77.0, y: 38.8,
-    description: 'The great iron waterwheel at Arnos Vale is one of the most evocative relics of Tobago\'s plantation era. Built in the 19th century to process sugar cane on the Arnos Vale estate, it was powered by the river flowing down from the Main Ridge. The estate is long gone, but the wheel still stands on the Atlantic coast near Speyside — silent now, surrounded by forest, a monument to the labour that built the Caribbean\'s colonial economy.'
+    image: '/i-am-tobago/images/speyside-waterwheel.jpg',
+    description: 'The Speyside Waterwheel stands as one of the most recognizable reminders of Tobago\'s plantation era. Located near the ruins of the old Speyside Estate along Tobago\'s windward coast, the massive iron wheel once powered the crushing of sugar cane during the island\'s colonial sugar economy. Though its exact origins remain debated, many accounts suggest the present wheel was imported from Scotland in 1834.'
   },
 
   /* ── Islands ─────────────────────────────────────────────── */
@@ -202,7 +203,14 @@ const MAP_LOCATIONS = [
     name: 'The Sisters',
     category: 'islands',
     x: 58.7, y: 19.8,  /* REAL — 11.332842°N, 60.644274°W */
-    description: 'The Sisters — also known as the St. Giles Islands — are a cluster of dramatic rocky outcrops rising from the sea at Tobago\'s northeastern tip. Uninhabited and exposed to the full force of the Atlantic, they are among the most important seabird nesting sites in the southern Caribbean. Magnificent Frigatebirds, Red-footed Boobies, and Laughing Gulls crowd the cliffs each season. The rocks are visible from Charlotteville on a clear day, standing like sentinels at the edge of the island.'
+    description: 'The Sisters are a striking group of five rocky sea stacks rising from the Atlantic off Tobago\'s northeastern coast near Speyside and Charlotteville. Shaped by centuries of wind and waves, the dramatic formations are among the most recognizable natural landmarks along Tobago\'s windward shoreline. Their rugged silhouette has long formed part of the maritime identity of the northeast, visible to fishermen, boaters, and travelers moving along the coast.'
+  },
+  {
+    id: 'st-giles-island',
+    name: 'St. Giles Island',
+    category: 'islands',
+    x: 87.7, y: 8.3,
+    description: 'St. Giles Island is a small offshore island near Charlotteville at the extreme northeastern tip of Tobago. The island is believed to have been named after Saint Giles, a widely venerated Christian hermit and patron saint associated with wilderness, solitude, and protection. Uninhabited and exposed to the Atlantic, St. Giles serves as an important seabird nesting site and protected wildlife sanctuary. Magnificent Frigatebirds, Red-footed Boobies, and other seabirds gather there seasonally, making it one of Tobago\'s most ecologically significant offshore habitats.'
   },
   {
     id: 'london-bridge',
