@@ -65,12 +65,15 @@ var SiteComponents = (function () {
     var links = config.navLinks || [];
     var linksHtml = '';
     var mobileLinksHtml = '';
+    var currentPath = window.location.pathname;
 
     links.forEach(function (link) {
       var cssClass = link.cta ? ' class="site-nav-cta"' : '';
       var target = link.external ? ' target="_blank" rel="noopener noreferrer"' : '';
       linksHtml += '<a href="' + link.href + '"' + cssClass + target + '>' + link.label + '</a>';
-      mobileLinksHtml += '<a href="' + link.href + '"' + cssClass + target + '>' + link.label + '</a>';
+      var isActive = !link.cta && link.href && link.href.charAt(0) !== '#' && currentPath === link.href;
+      var current = isActive ? ' aria-current="page"' : '';
+      mobileLinksHtml += '<a href="' + link.href + '"' + cssClass + current + target + '>' + link.label + '</a>';
     });
 
     var playIcon  = '<svg id="mcj-icon-play" width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>';
@@ -89,7 +92,7 @@ var SiteComponents = (function () {
           '<div class="site-nav-inner">' +
             '<a href="/" class="site-nav-logo"><img src="/images/my-caribbean-journey-tpbg-sm.png" alt="" class="site-nav-logo-img" aria-hidden="true">My Caribbean Journey</a>' +
             '<div class="site-nav-links">' + linksHtml + '</div>' +
-            '<button class="site-nav-toggle" id="site-nav-toggle" aria-label="Toggle menu">' +
+            '<button class="site-nav-toggle" id="site-nav-toggle" aria-label="Toggle menu" aria-controls="site-mobile-menu" aria-expanded="false">' +
               '<span></span><span></span><span></span>' +
             '</button>' +
           '</div>' +
@@ -108,7 +111,7 @@ var SiteComponents = (function () {
           '</div>' +
         '</div>' +
       '</header>' +
-      '<div class="site-mobile-menu" id="site-mobile-menu">' +
+      '<div class="site-mobile-menu" id="site-mobile-menu" role="navigation" aria-label="Mobile navigation" aria-hidden="true">' +
         mobileLinksHtml +
       '</div>'
     );
@@ -186,26 +189,41 @@ var SiteComponents = (function () {
     if (toggle && mobileMenu) {
       var menuOpen = false;
 
+      function openMenu() {
+        menuOpen = true;
+        mobileMenu.style.top = header.getBoundingClientRect().bottom + 'px';
+        mobileMenu.classList.add('open');
+        mobileMenu.setAttribute('aria-hidden', 'false');
+        toggle.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMenu() {
+        menuOpen = false;
+        mobileMenu.classList.remove('open');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+
       toggle.addEventListener('click', function () {
-        menuOpen = !menuOpen;
-        if (menuOpen) {
-          mobileMenu.style.top = header.getBoundingClientRect().bottom + 'px';
-          mobileMenu.classList.add('open');
-          toggle.setAttribute('aria-expanded', 'true');
-        } else {
-          mobileMenu.classList.remove('open');
-          toggle.setAttribute('aria-expanded', 'false');
-        }
+        menuOpen ? closeMenu() : openMenu();
       });
 
       // Close on link click
       mobileMenu.querySelectorAll('a').forEach(function (link) {
-        link.addEventListener('click', function () {
-          menuOpen = false;
-          mobileMenu.classList.remove('open');
-          toggle.setAttribute('aria-expanded', 'false');
-        });
+        link.addEventListener('click', closeMenu);
       });
+
+      // Close on Escape key
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && menuOpen) closeMenu();
+      });
+
+      // Close and reset if viewport grows past the hamburger breakpoint
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 1024 && menuOpen) closeMenu();
+      }, { passive: true });
     }
 
     // Smooth scroll for anchor links in nav

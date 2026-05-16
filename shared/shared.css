@@ -300,12 +300,18 @@ select:focus-visible {
   backdrop-filter: blur(10px);
   padding: var(--space-md);
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: 0.25rem;
   z-index: 99;
   transform: translateY(-10px);
   opacity: 0;
   pointer-events: none;
   transition: transform var(--transition), opacity var(--transition);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-mobile-menu {
+    transition: none;
+  }
 }
 
 .site-mobile-menu {
@@ -318,14 +324,21 @@ select:focus-visible {
   a {
     color: var(--text-light);
     font-size: 1.1rem;
-    padding: 0.75rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.9rem 0.75rem;
+    border-radius: 6px;
+    transition: background var(--transition), color var(--transition);
+
+    &:hover { background: rgba(255, 255, 255, 0.06); }
+    &[aria-current="page"] {
+      color: var(--gold);
+      border-left: 3px solid var(--gold);
+      padding-left: 0.625rem;
+    }
   }
 
   .site-nav-cta {
     text-align: center;
     margin-top: var(--space-xs);
-    border-bottom: none;
   }
 }
 
