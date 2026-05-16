@@ -182,12 +182,11 @@ const MAP_LOCATIONS = [
 
   /* ── Waterwheels ─────────────────────────────────────────── */
   {
-    id: 'speyside-waterwheel',
-    name: 'Speyside Waterwheel',
+    id: 'arnos-vale-waterwheel',
+    name: 'Arnos Vale Waterwheel',
     category: 'waterwheels',
     x: 77.0, y: 38.8,
-    image: '/i-am-tobago/images/speyside-waterwheel.jpg',
-    description: 'The Speyside Waterwheel stands as one of the most recognizable reminders of Tobago\'s plantation era. Located near the ruins of the old Speyside Estate along Tobago\'s windward coast, the massive iron wheel once powered the crushing of sugar cane during the island\'s colonial sugar economy. Though its exact origins remain debated, many accounts suggest the present wheel was imported from Scotland in 1834.'
+    description: 'The great iron waterwheel at Arnos Vale is one of the most evocative relics of Tobago\'s plantation era. Built in the 19th century to process sugar cane on the Arnos Vale estate, it was powered by the river flowing down from the Main Ridge. The estate is long gone, but the wheel still stands on the Atlantic coast near Speyside — silent now, surrounded by forest, a monument to the labour that built the Caribbean\'s colonial economy.'
   },
 
   /* ── Islands ─────────────────────────────────────────────── */
@@ -250,8 +249,9 @@ const MAP_LOCATIONS = [
     name: 'Speyside',
     category: 'village',
     x: 82.8, y: 30.4,
+    image: '/i-am-tobago/images/speyside-waterwheel.jpg',
     essayUrl: '',
-    description: 'Speyside looks out across the waters toward Little Tobago from the Atlantic-facing coast. The remnants of a lucrative 19th-century sugar estate still stand here — including a historic waterwheel, silent now but once driven by the river that flows down from the Main Ridge. Today the village is the departure point for glass-bottom boat tours and birdwatching trips to Bird of Paradise Island, and one of the best places in the Caribbean to dive alongside giant manta rays.'
+    description: 'The Speyside Waterwheel stands as one of the most recognizable reminders of Tobago\'s plantation era. Located near the ruins of the old Speyside Estate along Tobago\'s windward coast, the massive iron wheel once powered the crushing of sugar cane during the island\'s colonial sugar economy. Though its exact origins remain debated, many accounts suggest the present wheel was imported from Scotland in 1834. Today the village is the departure point for glass-bottom boat tours and birdwatching trips to Bird of Paradise Island, and one of the best places in the Caribbean to dive alongside giant manta rays.'
   },
   {
     id: 'plymouth',
