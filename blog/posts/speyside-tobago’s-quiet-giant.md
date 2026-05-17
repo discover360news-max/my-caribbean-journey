@@ -53,11 +53,10 @@ Some say the area was once known as **Pay Site**, a place associated with the di
 
 ##### *While this version is not supported by documented historical records, it continues to circulate within the community, reflecting how memory and meaning can shape a place just as much as written history.*
 
-<div class="callout callout-note"><p><strong>📌 Note</strong> A government-established housing development during the latter part of the twentieth century created a new settlement within the village officially referred to as a Housing Scheme, but generally known by residents simply as Scheme or, in local parlance, Skeam.</p></div>
+<div class="callout callout-note"><p><strong>📌 Note</strong> A government-established housing development during the latter part of the twentieth century created a new settlement within the village officially referred to as a Housing Scheme, but generally known by residents simply as Scheme or, in local parlance, Skeam.</p></div></p></div>
 
 ## A Tale of Two Sisters
 
-### 
 Not all the stories that shape Speyside are found in records. \
 Some live in memory, passed down and retold over generations.
 
@@ -80,3 +79,117 @@ Other retellings suggest the veils were connected to a prolonged period of mourn
 Over time, these stories became woven into the history and folklore of the area, contributing to the naming of Lucy Vale as a place associated with quiet beauty, isolation, and lingering mystery.
 
 Their presence, whether rooted in history or shaped through memory, is remembered as having left an indelible imprint on the identities of both villages.
+
+## Fortune and Panchoo
+
+While some of Speyside’s stories have faded into obscurity, others are carried in the lives of people who once moved through the village, leaving behind impressions that still shape its memory today. 
+
+Among those remembered are Fortune and Panchoo, two figures whose names continue to surface in conversations about the village, not as part of formal history, but as part of its lived experience.
+
+Fortune was a runaway slave who lived for years in a cave overlooking Lucy Vale Bay, surviving on his own while avoiding capture. He would emerge only when necessary in search of food and water, aware that he was being tracked by slave masters.
+
+When slavery was finally abolished in 1838, word eventually reached the village, and people went to the cave to tell Fortune that he was free. 
+
+He did not believe them, thinking it was a trick, and remained where he was, unwilling to trust the news. 
+
+*Supposedly, it was only after a beautiful woman was sent to persuade him that he finally emerged from hiding.*
+
+Realizing that freedom had truly come, he is said to have begun singing: 
+
+<div class="pull-quote"><p>Freedom come oh, freedom come, thank you for freedom, freedom come!</div>
+
+Oral tradition suggests that the cave where he lived was known to villagers as Fortune Cave, though whether it was a true cave or merely a sheltered hollow within the hillside remains open to interpretation. 
+
+Panchoo’s story, sometimes rendered in oral accounts as Pancho or Panzoo, reaches further back into a history shaped by displacement and survival, and rooted in African heritage.
+
+He was also known as William Campbell, a Liberated African who came to reside in Speyside until his death in 1938. He is said to have come from the Moko people, also known as the Ibibio, from the region of Calabar near the Niger Delta.
+
+<figure class="post-figure post-figure--shadow"><img src="/blog/images/moko.webp" alt=""></figure>
+
+As the story is told, he had been captured by Portuguese slavers at the age of twenty-six and branded on the chest with the number “5”, a mark he carried for the rest of his life.
+
+After the vessel transporting him was intercepted, he was freed and eventually brought to Tobago. He later adopted the name Campbell, said to have adopted it from a man with whom he had lived and who had shown him kindness. 
+
+Over time, he became an independent farmer, owning land, cultivating cocoa and coconuts, and establishing a life for himself in the village.
+
+He is said to have lived well past a hundred years, with some accounts placing his age at around one hundred and seven. 
+
+He is remembered as one of the last surviving Liberated Africans in the area, his presence serving as tangible evidence of the journey endured by enslaved Africans from West Africa to the Caribbean, and from bondage to independence. 
+
+ Panchoo’s descendants are still known within the village today, with families such as the Campbells and Grays identifying him as a common ancestor through oral and family history passed down across generations. 
+
+<div class="callout callout-note"><p><strong>📌 Note</strong> The term “Liberated African” refers to individuals freed from slave ships after interception, often by British patrols following the abolition of the slave trade in 1807. This was separate from the abolition of slavery itself, which was legally enacted in 1834. However, formerly enslaved people were still required to work for their former enslavers under a compulsory “Apprenticeship” system until full emancipation was finally granted in 1838. Many Liberated Africans were not returned to their homelands, instead establishing new lives in places such as Tobago. </p></div>
+
+## A Village Remembered
+
+Speyside is not only shaped by its past, but by the memories of those who grew up within it. 
+
+*For some, it is more than a place. 
+It is home in the fullest sense of the word.*
+
+Childhood in the village was marked by a kind of freedom that feels distant today, a time when July and August holidays brought long days that stretched from morning chores to evenings reluctantly surrendered to the glow of street lights, the final signal that another day of adventure had come to an end, and that anyone still outside risked returning home to the full wrath of worried parents.
+
+<figure class="post-figure post-figure--shadow"><img src="/blog/images/summertime.webp" alt=""></figure>
+
+Days were spent fishing from the rocks with handmade rods crafted from bamboo, nylon, and cheap hooks, with catches roasted on the beach or taken home to be cooked. Sometimes breadfruit was taken along and roasted by the shore, paired with butter quietly taken from the kitchen. Beneath the surface of the sea, homemade spear guns were used during free dives, and on land, traps and snares were set for doves, manicou, and other wild game. Crab traps made from bamboo were used for catching crabs not only for household culinary enjoyment but also for sale, including to members of the public and Blue Waters Inn.
+
+*Play was just as much a part of that rhythm.* 
+
+Games such as small goal football and windball cricket sharpened skill and competitiveness, particularly in cricket, where a format known as “Out-ah-man” meant each person was responsible for their own wicket unless aligned with a sibling. 
+
+*Rivalries with neighbouring villages, especially Charlotteville, were fierce and became a major source of pride and competition.*  
+
+##### *Even daily chores carried their own lessons.*
+
+<figure class="post-figure post-figure--float-left post-figure--shadow"><img src="/blog/images/fex.webp" alt=""></figure>
+
+
+Making a fex or cocoyea broom meant gathering branches from coconut and guava trees that once stood where the Speyside High School now sits, with guavas in season often turned into jam.
+
+*The rhythms of the village were closely tied to the sea.* 
+
+Fishing was not just an occupation, but a way of life, visible in everything from net mending to boat building, and even in the sound of conch shells blown to signal the return of fishermen with their catch.
+
+## Country Bookie
+
+### *At the same time, Speyside carried an identity that was not always understood by outsiders.* 
+
+The term “country bookie” was often used by residents from the more urbanized parts of Tobago to describe people from villages such as Speyside, Charlotteville, and L’Anse Fourmi. 
+
+Though frequently intended as mockery, with undertones that rural villagers were unsophisticated or “from the bush”, the label reflected deeper social and cultural divisions within the island.
+
+*What was often being judged was not simply where people came from, but how they spoke.* 
+
+The dialect of Tobago’s northeast carries its own cadence, rhythm, and delivery, sometimes described as “broad” or “heavy”, preserving older linguistic patterns and expressions that differ from speech in more urbanized communities.
+
+Such judgments reflected a wilful misunderstanding of the richness and variation within the language itself, as well as an apparent preference for what was considered the “Queen’s English”.
+
+While there were many similarities with speech elsewhere in Tobago, the patterns of expression in the countryside differed enough to reinforce the perception that difference implied deficiency.
+
+*Even within Speyside itself, subtle distinctions existed between different parts of the village.*
+
+Residents of Lucy Vale, separated geographically from the rest of the community, were sometimes viewed as having “ah way about themselves”, a reflection of how closely identity, personality, and place could become intertwined within small village life. 
+
+*Though often shared jokingly, such perceptions formed part of the quiet social fabric of the community.*
+
+Over time, however, the meaning of “country bookie” began to shift. 
+
+For many, the phrase became less an insult and more a marker of identity, associated with being grounded, possessing “land sense”, and speaking in a way that reflected continuity with older village traditions and ancestral forms of expression.
+
+Though tourism has brought new opportunities, from employment in hospitality to tour guiding and small business ventures, the village has largely maintained its own sense of identity. 
+
+*Its language, rhythms, traditions, and even its small internal distinctions continue to shape daily life in ways outsiders may never fully understand.*
+
+## Two Names, One Bay
+
+The coastline along Speyside, Tobago, is associated with several closely connected bays, including Tyrrel’s Bay/Speyside Bay, Batteaux Bay, Indian Bay, and smaller inlets such as Lover’s Bay. 
+
+*Collectively, they form part of the sheltered northeastern coastline that helped shape the village’s maritime and tourism identity over generations.*
+
+Among these names, however, Tyrrel’s Bay (sometimes spelled Tyrrell’s Bay) and Speyside Bay have carried particular historical and cultural significance, reflecting different layers of Tobago’s colonial, military, and social history.
+
+The original and historically official name is Tyrrel’s Bay, named in the mid-18th century after Richard Tyrrell (1716–1766), a prominent Irish officer in the British Royal Navy. 
+
+
+
+<figure class="post-figure post-figure--half post-figure--shadow"><img src="/blog/images/rear_admiral_richard_tyrrell.webp" alt=""></figure>
