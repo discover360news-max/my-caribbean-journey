@@ -41,16 +41,42 @@ Remnants of that era still stand, including the massive iron waterwheel at Speys
 
 Some accounts suggest that an earlier estate wheel associated with a John Piggot existed in the late eighteenth century, while others maintain that the present iron wheel was imported from Scotland in 1834 to power the crushing of sugar cane. 
 
-Regardless of its exact origins, the structure remains a lasting symbol of Tobago’s sugar plantation economy and colonial past.
+#### Regardless of its exact origins, the structure remains a lasting symbol of Tobago’s sugar plantation economy and colonial past.
 
 Over time, those estates gave way to a village made up of five distinct settlements: Lambeau Hill, Canal Head, Top Hill, Crappo, and Lucy Vale, each shaped by former estate boundaries and the surrounding topography, and each with its own story to tell. 
 
-Crappo, for example, is named as such because of the presence of a surprisingly high population of large frogs locally referred to as crapaud (French for toad).
+Crappo, for example, is named as such because of the presence of a surprisingly high population of large frogs locally referred to as **crapaud** (French for toad).
 
 A competing narrative, preserved through oral tradition, offers a different origin.
 
-Some say the area was once known as Pay Site, a place associated with the distribution of wages or payments during the estate era. Over time, the story suggests, the name evolved into Speyside. 
+Some say the area was once known as **Pay Site**, a place associated with the distribution of wages or payments during the estate era. Over time, the story suggests, the name evolved into **Speyside**. 
 
-While this version is not supported by documented historical records, it continues to circulate within the community, reflecting how memory and meaning can shape a place just as much as written history.
+##### *While this version is not supported by documented historical records, it continues to circulate within the community, reflecting how memory and meaning can shape a place just as much as written history.*
 
 <div class="callout callout-note"><p><strong>📌 Note</strong> A government-established housing development during the latter part of the twentieth century created a new settlement within the village officially referred to as a Housing Scheme, but generally known by residents simply as Scheme or, in local parlance, Skeam.</p></div>
+
+## A Tale of Two Sisters
+
+### 
+Not all the stories that shape Speyside are found in records. \
+Some live in memory, passed down and retold over generations.
+
+<figure class="post-figure post-figure--float-right post-figure--ratio-16-9 post-figure--shadow"><img src="/blog/images/twosisters.webp" alt=""></figure>
+
+One such story speaks of two sisters, Lucy and Charlotte, of Kurgan (modern Russia/Ukraine) ancestry, remembered as figures of influence in the area.
+
+Lucy, said to be quite adept at numbers and bookkeeping, lived in what was then called **Pay Side**, a name understood as a variation of **Pay Site**, shaped by differences in pronunciation and accent. Her sister Charlotte, it is claimed, lived further north along the coast, “just over the hill”.
+
+They were the wives of estate owners and figures of authority within the plantation system. In the telling, they wore veils that covered their faces, and were mocked by those around them, including slaves, with those coverings becoming central to how they were remembered.
+
+**“Lucy’s veil”** became Lucy Vale, the name of a small community within Speyside once associated with the production of copra (dried coconut meat used to make coconut oil) and cocoa. There is also Lucy Vale Bay along the same stretch of coast.\
+
+**“Charlotte’s veil”** became Charlotteville, the area to the north where Charlotte is said to have resided.
+
+Local lore suggests that the veils were worn as a mark of extreme modesty and social seclusion. In some versions of the story, the women were deliberately kept “veiled” from the wider public, reinforcing an air of Victorian-era mystery, refinement, and class separation.
+
+Other retellings suggest the veils were connected to a prolonged period of mourning that gradually became part of their public identity. 
+
+Over time, these stories became woven into the history and folklore of the area, contributing to the naming of Lucy Vale as a place associated with quiet beauty, isolation, and lingering mystery.
+
+Their presence, whether rooted in history or shaped through memory, is remembered as having left an indelible imprint on the identities of both villages.
