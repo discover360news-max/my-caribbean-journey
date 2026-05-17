@@ -193,3 +193,58 @@ The original and historically official name is Tyrrel’s Bay, named in the mid-
 
 
 <figure class="post-figure post-figure--half post-figure--shadow"><img src="/blog/images/rear_admiral_richard_tyrrell.webp" alt=""></figure>
+
+Tyrrell is remembered in Tobagonian history for his role in 1748, when he helped thwart a French attempt to seize Tobago. Commanding a British frigate, he used both naval skill and forceful presence to defend British interests around the island during a period of intense rivalry between European powers in the Caribbean.
+
+Tyrrell’s career continued to rise after his actions in Tobago. He later became Commander-in-Chief of the British fleet in the Leeward Islands and was honoured with a large monument in Westminster Abbey commemorating his naval achievements in the Caribbean.
+
+After the Treaty of Paris in 1763, when Tobago was formally ceded to Great Britain, British authorities began a systematic survey and division of the island into parishes and estates.
+
+ During this period, British cartographers and naval surveyors officially recorded the name “Tyrrel’s Bay” on maritime charts and land surveys, helping establish it as the formal geographical name of the area.
+
+*The naming of the bay served as a lasting tribute to Tyrrell’s defence of Tobago during this volatile colonial era.*
+
+The alternative name, Speyside Bay, emerged much later. 
+
+Its use became increasingly common in the early 20th century as the district transitioned from a plantation economy to a tourism-based one. 
+
+As the village of Speyside grew in prominence and became more recognizable to visitors, the bay gradually began taking on the name of the community along its shores.
+
+*Today, both names continue to be used interchangeably.* 
+
+**Tyrrel’s Bay** is more commonly associated with historical, geographical, and nautical references, while **Speyside Bay** is often used in tourism and local community descriptions.
+
+<div class="callout callout-note"><p><strong>📌 Note</strong> Interestingly, Admiral Tyrrell was not only a naval officer but also a prominent Caribbean landowner. He owned an estate in Antigua which he renamed “Tyrrell’s”, further cementing his name within the official nomenclature of the British West Indies.</p></div>
+
+## The Birth of Tobago’s Tourism
+
+### *Photogenically tucked between Speyside Bay and the Main Ridge Forest along Tobago’s windward coast, Speyside emerged as the earliest center of tourism development in Tobago.*
+
+*Long before the island became internationally known for boat-based scuba diving and eco-tourism, visitors were already being drawn to the district’s reefs, forests, birdlife, and dramatic coastline.*
+
+ 
+
+The story began on the old Speyside Estate, lands associated with English-born naturalist William Sanger Tucker during the nineteenth century. 
+
+Originally part of Tobago’s plantation landscape, the estate reflected the agricultural economy that once shaped much of the island. Remnants of that earlier era, including the historic Speyside waterwheel and the stone ruins of the old boiling house where sugar was once processed, still survive as reminders of the estate’s colonial past.
+
+ *As plantation agriculture declined during the nineteenth and early twentieth centuries, particularly following a devastating hurricane in 1847, the estate gradually evolved into something very different.* 
+
+An Englishman identified as Mr. Guinness later acquired the property and converted the old plantation Great House above the waterwheel into what became known as the [Bird of Paradise Inn](https://www.facebook.com/groups/191766699268/posts/10162788350994269/), widely regarded as Tobago’s first hotel. 
+
+Its proximity to Little Tobago, famous for its birdlife and the introduced Birds of Paradise, made the hotel especially popular among birdwatchers, naturalists, and adventurous travelers seeking the island’s remote beauty. 
+
+The hotel became known for its panoramic dining views overlooking Batteaux Bay and Little Tobago. Vintage postcards from the early-to-mid twentieth century also referred to the property as the **Speyside on the Sea Hotel**, suggesting that the estate and its tourism facilities operated under multiple names during different periods of ownership and development.
+
+<figure class="post-figure post-figure--shadow"><img src="/blog/images/speysideontheseahotel.webp" alt=""><figcaption>Colourized version of a postcard from the collection of Scott Henderson via MyTobago (https://www.mytobago.info/history.php)</figcaption></figure>
+
+### *The tourism history of Batteaux Bay, however, is not remembered through a single clear narrative.* 
+
+
+*Surviving records and village recollections instead reveal a layered history of overlapping properties, changing ownerships, evolving hotel names, and tourism ventures that became intertwined over several decades.*
+
+ Some residents distinguished between the Bird of Paradise Inn associated with the Lau estate and the neighbouring Tucker family property that later evolved into what is today known as Blue Waters Inn. According to these accounts, the larger Lau estate stood uphill above the historic waterwheel and was separated from the Tucker property by the road leading toward Belmont.
+
+ Villagers also recalled a small beachfront facility near a secluded cove cheekily referred to as Lover’s Bay, located a stone’s throw away from the hilltop inn, where guests reportedly stored equipment and prepared for boat excursions and seaside activities.
+
+<figure class="post-figure post-figure--half post-figure--shadow"><img src="/blog/images/speyside-estate.webp" alt=""></figure>
