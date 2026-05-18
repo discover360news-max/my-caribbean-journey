@@ -143,7 +143,6 @@ Games such as small goal football and windball cricket sharpened skill and compe
 
 <figure class="post-figure post-figure--float-left post-figure--shadow"><img src="/blog/images/fex.webp" alt=""></figure>
 
-
 Making a fex or cocoyea broom meant gathering branches from coconut and guava trees that once stood where the Speyside High School now sits, with guavas in season often turned into jam.
 
 *The rhythms of the village were closely tied to the sea.* 
@@ -190,8 +189,6 @@ Among these names, however, Tyrrel’s Bay (sometimes spelled Tyrrell’s Bay) a
 
 The original and historically official name is Tyrrel’s Bay, named in the mid-18th century after Richard Tyrrell (1716–1766), a prominent Irish officer in the British Royal Navy. 
 
-
-
 <figure class="post-figure post-figure--half post-figure--shadow"><img src="/blog/images/rear_admiral_richard_tyrrell.webp" alt=""></figure>
 
 Tyrrell is remembered in Tobagonian history for his role in 1748, when he helped thwart a French attempt to seize Tobago. Commanding a British frigate, he used both naval skill and forceful presence to defend British interests around the island during a period of intense rivalry between European powers in the Caribbean.
@@ -222,8 +219,6 @@ As the village of Speyside grew in prominence and became more recognizable to vi
 
 *Long before the island became internationally known for boat-based scuba diving and eco-tourism, visitors were already being drawn to the district’s reefs, forests, birdlife, and dramatic coastline.*
 
- 
-
 The story began on the old Speyside Estate, lands associated with English-born naturalist William Sanger Tucker during the nineteenth century. 
 
 Originally part of Tobago’s plantation landscape, the estate reflected the agricultural economy that once shaped much of the island. Remnants of that earlier era, including the historic Speyside waterwheel and the stone ruins of the old boiling house where sugar was once processed, still survive as reminders of the estate’s colonial past.
@@ -240,7 +235,6 @@ The hotel became known for its panoramic dining views overlooking Batteaux Bay a
 
 ### *The tourism history of Batteaux Bay, however, is not remembered through a single clear narrative.* 
 
-
 *Surviving records and village recollections instead reveal a layered history of overlapping properties, changing ownerships, evolving hotel names, and tourism ventures that became intertwined over several decades.*
 
  Some residents distinguished between the Bird of Paradise Inn associated with the Lau estate and the neighbouring Tucker family property that later evolved into what is today known as Blue Waters Inn. According to these accounts, the larger Lau estate stood uphill above the historic waterwheel and was separated from the Tucker property by the road leading toward Belmont.
@@ -248,3 +242,136 @@ The hotel became known for its panoramic dining views overlooking Batteaux Bay a
  Villagers also recalled a small beachfront facility near a secluded cove cheekily referred to as Lover’s Bay, located a stone’s throw away from the hilltop inn, where guests reportedly stored equipment and prepared for boat excursions and seaside activities.
 
 <figure class="post-figure post-figure--half post-figure--shadow"><img src="/blog/images/speyside-estate.webp" alt=""></figure>
+
+Village accounts recall that the Tucker family operated a modest guest house at Batteaux Bay which gradually expanded alongside Tobago’s growing tourism industry and eventually evolved into what is today known as Blue Waters Inn. 
+
+The property became deeply woven into village life through employment, community activities, and even sponsorship of local football teams. 
+
+*Though closely associated with Speyside, members of the Tucker family were long believed by villagers to have resided primarily in Trinidad while maintaining connections to the estate.*
+
+ At a later stage, Trinidadian businessman Egbert Lau acquired portions of the broader estate and continued tourism operations linked to the Bird of Paradise Inn tradition, eventually renaming the hilltop property Blue Waters Inn.
+
+ ***That old hilltop hotel, originally the plantation Great House which evolved into the Bird of Paradise Inn before later being renamed Blue Waters Inn, was eventually destroyed by fire following the death of Egbert Lau.*** 
+
+While the ruins of the waterwheel and sugar works remain visible today, only fragments of the old hilltop inn foundation survive hidden among the overgrown hillside vegetation. 
+
+*The modern Blue Waters Inn was later developed closer to the beachfront below by the Kenny family.* 
+
+ During the 1950s and 1960s, that same lower beachfront section of the estate became associated with Camp Crusoe, operated by Bill and Ann Petry of Atlanta, Georgia, who reportedly held a 99-year lease on portions of the property from the Tucker family. 
+
+Separate from the old hilltop Bird of Paradise Inn, Camp Crusoe functioned as a more rugged youth camp and marine recreation base focused on spearfishing, snorkelling, scuba diving, and deep-sea exploration. 
+
+Permanent double cabanas were constructed along the beachfront at Batteaux Bay to house campers, counsellors, and visiting Boy Scout groups, with the camp’s coastal location providing direct access to the sea and dive boats. 
+
+*Together, these ventures helped establish Speyside as one of the Caribbean’s earliest centers for boat-based scuba diving and marine exploration, laying part of the foundation for the village’s later identity as a world-renowned diving destination.* 
+
+ The legacy of these early tourism ventures can still be felt throughout Speyside today. 
+
+From longstanding establishments such as Blue Waters Inn and Manta Lodge to newer hotels, retreats, smaller guesthouses, dive lodges, restaurants, tour operators, and local shops, tourism remains deeply intertwined with the identity and economy of the village. 
+
+***What began as a remote plantation estate gradually evolved into one of Tobago’s most distinctive tourism communities, shaped by generations of residents, entrepreneurs, fishermen, divers, and visitors drawn to the natural beauty and abundant biodiversity of Tobago’s northeastern coast.*** 
+
+## Lau’s Legacy
+
+Lau is remembered by some residents as an ambitious and forward-thinking figure within Tobago’s early tourism industry. 
+
+Before glass-bottom boats became commonplace, he reportedly commissioned a villager, Mr. Taylor, father of John Taylor, to construct a cedar-framed viewing box fitted with glass at the bottom. Lowered over the side of a vessel, the handmade device allowed visitors to observe coral reefs and marine life beneath the water, offering tourists an early glimpse into Speyside’s underwater world decades before such excursions became commercially widespread.
+
+Despite the role the Lau estate played in Speyside’s early tourism development, oral accounts from residents suggest that relations between Egbert Lau and sections of the community became increasingly strained during the social and political upheavals of the late 1960s and early 1970s.
+
+The period coincided with the rise of the Black Power Movement in Trinidad and Tobago, part of a broader global movement that encouraged many people across the Caribbean to speak more openly about inequality, economic hardship, representation, and community rights. 
+
+Influenced by activists such as the Moheni brothers, Tuku Moheni and Embau Moheni, as well as organizations like the National Joint Action Committee, public marches and gatherings, including demonstrations in Charlotteville, helped energize many villagers across northeast Tobago and contributed to a growing sense of political consciousness within the region. 
+
+***Residents recalled frustrations over inequality and exclusion.*** 
+
+Employment opportunities in banks and other institutions were often perceived as favouring white and lighter-skinned individuals, while many darker-skinned Tobagonians felt marginalised. 
+
+The growing Black Power Movement challenged many of these social structures and encouraged people to speak out against discrimination and economic injustice.
+
+***Within Speyside itself, disputes reportedly emerged over land use and access to parts of the estate traditionally used by villagers.*** 
+
+Residents complained that livestock belonging to Lau damaged crops planted by tenants and that access to sections of the beach and river became increasingly restricted. 
+
+***One particularly controversial issue involved the construction of a pig pen near a river used by villagers for washing.*** 
+
+Lau also reportedly opposed government efforts to establish a self-help housing project in the area, despite compensation discussions taking place.
+
+While Egbert Lau was alive, many residents viewed him as a powerful and intimidating figure who exercised strict control over the estate. 
+
+His prominence as a businessman and his perceived connections to influential figures in Trinidad contributed to a sense among villagers that he wielded considerable power and influence beyond Speyside itself. 
+
+***According to oral accounts, tensions that had simmered within the community for years intensified during this period of social change and political awakening.***
+
+Over time, resentment among some villagers reportedly boiled over. 
+
+**Following the death of Egbert Lau, residents tore down sections of estate fencing and set the old hilltop hotel ablaze.**
+
+In village memory, the destruction of the hotel came to symbolize more than the loss of a historic building. 
+
+For some residents, it represented a dramatic and emotional response to years of perceived injustice, exclusion, and conflict surrounding the estate. 
+
+The fire also marked the end of an era in Speyside’s tourism history, closing the chapter on the old hilltop hotel that had once overlooked the waterwheel and Batteaux Bay below.
+
+***Yet the Lau legacy extended far beyond the boundaries of Speyside Estate itself.***
+
+One of Egbert Lau’s sons, Conrad Albert “Connie” Lau, would eventually carry the family name into the world of aviation and aerospace engineering. 
+
+Born in Port of Spain in 1921 and educated at Queen’s Royal College before later attending the Massachusetts Institute of Technology (MIT), he became an aeronautical engineer during one of the most transformative periods in modern aviation history.
+
+During his career at Chance Vought Aircraft in the United States, Conrad Lau contributed to the development of several important military aircraft, including the Corsair series and the F8U Crusader. 
+
+His work later extended into early lunar mission planning studies, including Project MALLAR (Manned Lunar Landing and Return), an influential Lunar Orbit Rendezvous concept that helped shape ideas later adopted within NASA’s Apollo program. 
+
+Though much of Connie’s life unfolded abroad, his story reflected the far-reaching paths taken by some Trinidadian families during the twentieth century, particularly within Chinese Trinidadian communities that placed strong emphasis on education, mobility, and professional advancement. 
+
+He died of cancer in 1964 at just forty-three years old, but his achievements remain one of the most remarkable branches of the broader Lau family story.
+
+## The 1979 Oil Tanker Collision
+
+The sea surrounding Speyside has not only shaped the village through fishing and tourism, but has also placed it close to moments of international significance. 
+
+One of the most dramatic occurred on July 19, 1979, when two massive oil tankers, the **SS Atlantic Empress** and the Aegean Captain, collided during a severe tropical rain squall roughly eighteen miles off Tobago’s northeastern coast.
+
+***The collision resulted in one of the largest maritime disasters in history.*** 
+
+The Atlantic Empress would eventually become the largest ship to sink at that time, while the disaster caused what was then the largest ship-sourced oil spill ever recorded, releasing an estimated 287,000 metric tons of oil into the sea. 
+
+*Residents of Speyside vividly recalled the aftermath.* 
+
+Thick smoke drifted across the village and, carried by the northeast trade winds, spread across much of Tobago. 
+
+Some remembered clothing left hanging on outdoor lines becoming blackened by soot, while others recalled the overwhelming smell of smoke lingering in the air for days.
+
+One villager, travelling to Barbados on a 4-hour flight during the period, later recalled flying over the site and seeing enormous plumes of fire and smoke rising from the ocean below, an image that remained etched in memory for decades.
+
+*Despite the scale of the disaster, Speyside was largely spared the kind of environmental devastation many feared.* 
+
+After burning for weeks, the tanker was eventually towed far out to sea before sinking northeast of Tobago.  
+
+Much of the high-grade crude oil burned off in the inferno or evaporated before reaching shore, helping to protect the reefs and marine life that would later become central to the village’s tourism identity. 
+
+*Tragically, twenty-six crew members lost their lives in the disaster.*
+
+## The Quiet Giant
+
+Speyside is a village shaped by layers of history that still linger across its landscape. 
+
+Plantation ruins, old estate roads, village nicknames, fishing traditions, folklore, and memories passed from one generation to the next all remain woven into daily life.
+
+Its story is not carried only in official records, but also in the voices of elders, the rhythms of village speech, the names attached to bays and communities, and the recollections of those who grew up along its coastline. 
+
+*In Speyside, history is not distant. 
+It is lived, remembered, debated, and retold.*
+
+Today, Speyside is also home to one of its own serving as leader of the Tobago House of Assembly, Farley Augustine, who first emerged through community activism and grassroots political engagement. 
+
+In some ways, his rise echoes earlier periods of political awakening in Tobago, when figures such as the Moheni brothers encouraged Tobagonians to become more active in demanding representation, fairness, and greater control over their own affairs. 
+
+*It also reflects a deeper tradition within the village itself: one shaped by strong personalities, independent thinking, and a willingness to challenge existing structures.*
+
+Though often described through its natural beauty, reefs, bird sanctuaries, and sweeping coastal views, the character of Speyside ultimately rests in its people: resilient, resourceful, independent, and deeply connected to both land and sea.
+
+*In many ways, Speyside remains true to the spirit suggested by its title: a quiet giant.* 
+
+Never loud in its presence, but impossible to overlook.
