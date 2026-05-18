@@ -77,8 +77,8 @@ Some say the area was once known as **Pay Site**, a place associated with the di
 
 ## A Tale of Two Sisters
 
-Not all the stories that shape Speyside are found in records. \
-Some live in memory, passed down and retold over generations.
+*Not all the stories that shape Speyside are found in records.* \
+*Some live in memory, passed down and retold over generations.*
 
 <figure class="post-figure post-figure--float-right post-figure--ratio-16-9 post-figure--shadow"><img src="/blog/images/twosisters.webp" alt=""></figure>
 
@@ -98,7 +98,7 @@ Other retellings suggest the veils were connected to a prolonged period of mourn
 
 Over time, these stories became woven into the history and folklore of the area, contributing to the naming of Lucy Vale as a place associated with quiet beauty, isolation, and lingering mystery.
 
-Their presence, whether rooted in history or shaped through memory, is remembered as having left an indelible imprint on the identities of both villages.
+*Their presence, whether rooted in history or shaped through memory, is remembered as having left an indelible imprint on the identities of both villages.*
 
 ## Fortune and Panchoo
 
@@ -118,7 +118,7 @@ Realizing that freedom had truly come, he is said to have begun singing:
 
 <div class="pull-quote"><p>Freedom come oh, freedom come, thank you for freedom, freedom come!</p></div>
 
-Oral tradition suggests that the cave where he lived was known to villagers as Fortune Cave, though whether it was a true cave or merely a sheltered hollow within the hillside remains open to interpretation. 
+*Oral tradition suggests that the cave where he lived was known to villagers as Fortune Cave, though whether it was a true cave or merely a sheltered hollow within the hillside remains open to interpretation.* 
 
 Panchoo’s story, sometimes rendered in oral accounts as Pancho or Panzoo, reaches further back into a history shaped by displacement and survival, and rooted in African heritage.
 
@@ -136,7 +136,7 @@ He is said to have lived well past a hundred years, with some accounts placing h
 
 He is remembered as one of the last surviving Liberated Africans in the area, his presence serving as tangible evidence of the journey endured by enslaved Africans from West Africa to the Caribbean, and from bondage to independence. 
 
- Panchoo’s descendants are still known within the village today, with families such as the Campbells and Grays identifying him as a common ancestor through oral and family history passed down across generations. 
+*Panchoo’s descendants are still known within the village today, with families such as the Campbells and Grays identifying him as a common ancestor through oral and family history passed down across generations.* 
 
 <div class="callout callout-note"><p><strong>📌 Note</strong> The term “Liberated African” refers to individuals freed from slave ships after interception, often by British patrols following the abolition of the slave trade in 1807. This was separate from the abolition of slavery itself, which was legally enacted in 1834. However, formerly enslaved people were still required to work for their former enslavers under a compulsory “Apprenticeship” system until full emancipation was finally granted in 1838. Many Liberated Africans were not returned to their homelands, instead establishing new lives in places such as Tobago. </p></div>
 
@@ -221,7 +221,7 @@ After the Treaty of Paris in 1763, when Tobago was formally ceded to Great Brita
 
 *The naming of the bay served as a lasting tribute to Tyrrell’s defence of Tobago during this volatile colonial era.*
 
-The alternative name, Speyside Bay, emerged much later. 
+**The alternative name, Speyside Bay, emerged much later.** 
 
 Its use became increasingly common in the early 20th century as the district transitioned from a plantation economy to a tourism-based one. 
 
@@ -243,7 +243,7 @@ The story began on the old Speyside Estate, lands associated with English-born n
 
 Originally part of Tobago’s plantation landscape, the estate reflected the agricultural economy that once shaped much of the island. Remnants of that earlier era, including the historic Speyside waterwheel and the stone ruins of the old boiling house where sugar was once processed, still survive as reminders of the estate’s colonial past.
 
- *As plantation agriculture declined during the nineteenth and early twentieth centuries, particularly following a devastating hurricane in 1847, the estate gradually evolved into something very different.* 
+*As plantation agriculture declined during the nineteenth and early twentieth centuries, particularly following a devastating hurricane in 1847, the estate gradually evolved into something very different.* 
 
 An Englishman identified as Mr. Guinness later acquired the property and converted the old plantation Great House above the waterwheel into what became known as the [Bird of Paradise Inn](https://www.facebook.com/groups/191766699268/posts/10162788350994269/), widely regarded as Tobago’s first hotel. 
 
@@ -257,9 +257,9 @@ The hotel became known for its panoramic dining views overlooking Batteaux Bay a
 
 *Surviving records and village recollections instead reveal a layered history of overlapping properties, changing ownerships, evolving hotel names, and tourism ventures that became intertwined over several decades.*
 
- Some residents distinguished between the Bird of Paradise Inn associated with the Lau estate and the neighbouring Tucker family property that later evolved into what is today known as Blue Waters Inn. According to these accounts, the larger Lau estate stood uphill above the historic waterwheel and was separated from the Tucker property by the road leading toward Belmont.
+Some residents distinguished between the Bird of Paradise Inn associated with the Lau estate and the neighbouring Tucker family property that later evolved into what is today known as Blue Waters Inn. According to these accounts, the larger Lau estate stood uphill above the historic waterwheel and was separated from the Tucker property by the road leading toward Belmont.
 
- Villagers also recalled a small beachfront facility near a secluded cove cheekily referred to as Lover’s Bay, located a stone’s throw away from the hilltop inn, where guests reportedly stored equipment and prepared for boat excursions and seaside activities.
+Villagers also recalled a small beachfront facility near a secluded cove cheekily referred to as Lover’s Bay, located a stone’s throw away from the hilltop inn, where guests reportedly stored equipment and prepared for boat excursions and seaside activities.
 
 <figure class="post-figure post-figure--half post-figure--shadow"><img src="/blog/images/speyside-estate.webp" alt=""></figure>
 
@@ -277,7 +277,7 @@ While the ruins of the waterwheel and sugar works remain visible today, only fra
 
 *The modern Blue Waters Inn was later developed closer to the beachfront below by the Kenny family.* 
 
- During the 1950s and 1960s, that same lower beachfront section of the estate became associated with Camp Crusoe, operated by Bill and Ann Petry of Atlanta, Georgia, who reportedly held a 99-year lease on portions of the property from the Tucker family. 
+During the 1950s and 1960s, that same lower beachfront section of the estate became associated with Camp Crusoe, operated by Bill and Ann Petry of Atlanta, Georgia, who reportedly held a 99-year lease on portions of the property from the Tucker family. 
 
 Separate from the old hilltop Bird of Paradise Inn, Camp Crusoe functioned as a more rugged youth camp and marine recreation base focused on spearfishing, snorkelling, scuba diving, and deep-sea exploration. 
 
@@ -285,7 +285,7 @@ Permanent double cabanas were constructed along the beachfront at Batteaux Bay t
 
 *Together, these ventures helped establish Speyside as one of the Caribbean’s earliest centers for boat-based scuba diving and marine exploration, laying part of the foundation for the village’s later identity as a world-renowned diving destination.* 
 
- The legacy of these early tourism ventures can still be felt throughout Speyside today. 
+The legacy of these early tourism ventures can still be felt throughout Speyside today. 
 
 From longstanding establishments such as Blue Waters Inn and Manta Lodge to newer hotels, retreats, smaller guesthouses, dive lodges, restaurants, tour operators, and local shops, tourism remains deeply intertwined with the identity and economy of the village. 
 
@@ -345,7 +345,7 @@ His work later extended into early lunar mission planning studies, including Pro
 
 Though much of Connie’s life unfolded abroad, his story reflected the far-reaching paths taken by some Trinidadian families during the twentieth century, particularly within Chinese Trinidadian communities that placed strong emphasis on education, mobility, and professional advancement. 
 
-He died of cancer in 1964 at just forty-three years old, but his achievements remain one of the most remarkable branches of the broader Lau family story.
+*He died of cancer in 1964 at just forty-three years old, but his achievements remain one of the most remarkable branches of the broader Lau family story.*
 
 ## The 1979 Oil Tanker Collision
 
@@ -394,7 +394,7 @@ Though often described through its natural beauty, reefs, bird sanctuaries, and 
 
 *In many ways, Speyside remains true to the spirit suggested by its title: a quiet giant.* 
 
-Never loud in its presence, but impossible to overlook.
+**Never loud in its presence, but impossible to overlook.**
 
 <div class="callout callout-contributor-author"><p><strong>👤 About the Author</strong> Mr. Aldrick Alexander is the father of this essay’s co-author, Calvin. He has lived his entire life in Speyside, witnessing the community’s transition from a plantation-based economy to one increasingly shaped by tourism. He worked with the Water and Sewage Authority and is a skilled plumber, fisherman, and gardener. He also made it a tradition to take his family on annual “boat rides” to Little Tobago, where they explored the island’s many trails and enjoyed its natural beauty. 
 <br>Mr. Gilbert O’Connor is a cultural icon known for his passion for music and community. He once served as the Asset Based Community Development Coordinator for the THA, where he led an initiative aimed at documenting the history and notable figures of Tobago’s villages. Although the project showed great promise, the initiative was unfortunately short-lived.
