@@ -2,7 +2,7 @@
 title: "Speyside: Tobago’s Quiet Giant"
 type: story
 category: history
-draft: true
+draft: false
 featured: false
 featuredImage: /blog/images/quietgiant.webp
 date: 2026-05-17
@@ -13,6 +13,26 @@ excerpt: >
   Speyside moves to a rhythm distinctly its own.
 
   This essay features the contributions and insights of village elder Mr. Aldrick Alexander, cultural icon Mr. Gilbert O’Connor, and Tobago tour guide Mr. Wayne Gray.
+references: >-
+  * "Speyside – Tobago’s First Tourist Centre" – [Dr. Rita Pemberton, Trinidad
+  and Tobago
+  Newsday](https://newsday.co.tt/2022/12/29/speyside-tobagos-first-tourist-centre/)
+
+  * Trinidad and Tobago Black Power Revolution 1970” – [Tribune Magazine](https://tribunemag.co.uk/2023/02/trinidad-and-tobago-black-power-revolution-1970)
+
+  * [BlackPast.org](https://www.blackpast.org/)
+
+  * [Discover Blue Waters](https://www.discoverbluewaters.com/) – Penny Strawson
+
+  * Blue Waters Inn [Official Website](https://bluewatersinn.com/)
+
+  * “Conrad Lau” – [NIHERST Icons of Trinidad and Tobago](https://niherst.gov.tt/icons/icon/conrad-lau-ch/)
+
+  * “The Forgotten Plans to Reach the Moon Before Apollo” – [Smithsonian Air & Space Magazine](https://www.smithsonianmag.com/air-space-magazine/forgotten-plans-reach-moon-apollo-180972695/)
+
+  * “The Atlantic Empress Spill” – [International Tanker Owners Pollution Federation (ITOPF)](https://www.itopf.org/in-action/case-studies/atlantic-empress-west-indies-1979/)
+
+  * Stony Brook University Africana Studies - [Black Power Revolution in Tobago (1970)](https://www.facebook.com/sbuafricana/videos/black-power-revolution-in-tobago-1970in-1970-tobago-and-trinidad-were-swept-into/1439299001207040/)
 ---
 ## The name Speyside is not unique to Tobago.
 
