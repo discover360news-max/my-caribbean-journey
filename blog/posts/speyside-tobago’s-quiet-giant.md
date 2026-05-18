@@ -73,7 +73,7 @@ Some say the area was once known as **Pay Site**, a place associated with the di
 
 ##### *While this version is not supported by documented historical records, it continues to circulate within the community, reflecting how memory and meaning can shape a place just as much as written history.*
 
-<div class="callout callout-note"><p><strong>📌 Note</strong> A government-established housing development during the latter part of the twentieth century created a new settlement within the village officially referred to as a Housing Scheme, but generally known by residents simply as Scheme or, in local parlance, Skeam.</p></div></p></div></p></div>
+<div class="callout callout-note"><p><strong>📌 Note</strong> A government-established housing development during the latter part of the twentieth century created a new settlement within the village officially referred to as a Housing Scheme, but generally known by residents simply as Scheme or, in local parlance, Skeam.</p></div>
 
 ## A Tale of Two Sisters
 
@@ -116,7 +116,7 @@ He did not believe them, thinking it was a trick, and remained where he was, unw
 
 Realizing that freedom had truly come, he is said to have begun singing: 
 
-<div class="pull-quote"><p>Freedom come oh, freedom come, thank you for freedom, freedom come!</div>
+<div class="pull-quote"><p>Freedom come oh, freedom come, thank you for freedom, freedom come!</p></div>
 
 Oral tradition suggests that the cave where he lived was known to villagers as Fortune Cave, though whether it was a true cave or merely a sheltered hollow within the hillside remains open to interpretation. 
 
