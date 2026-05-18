@@ -53,7 +53,7 @@ Some say the area was once known as **Pay Site**, a place associated with the di
 
 ##### *While this version is not supported by documented historical records, it continues to circulate within the community, reflecting how memory and meaning can shape a place just as much as written history.*
 
-<div class="callout callout-note"><p><strong>📌 Note</strong> A government-established housing development during the latter part of the twentieth century created a new settlement within the village officially referred to as a Housing Scheme, but generally known by residents simply as Scheme or, in local parlance, Skeam.</p></div></p></div>
+<div class="callout callout-note"><p><strong>📌 Note</strong> A government-established housing development during the latter part of the twentieth century created a new settlement within the village officially referred to as a Housing Scheme, but generally known by residents simply as Scheme or, in local parlance, Skeam.</p></div></p></div></p></div>
 
 ## A Tale of Two Sisters
 
@@ -68,7 +68,7 @@ Lucy, said to be quite adept at numbers and bookkeeping, lived in what was then 
 
 They were the wives of estate owners and figures of authority within the plantation system. In the telling, they wore veils that covered their faces, and were mocked by those around them, including slaves, with those coverings becoming central to how they were remembered.
 
-**“Lucy’s veil”** became Lucy Vale, the name of a small community within Speyside once associated with the production of copra (dried coconut meat used to make coconut oil) and cocoa. There is also Lucy Vale Bay along the same stretch of coast.\
+**“Lucy’s veil”** became Lucy Vale, the name of a small community within Speyside once associated with the production of copra (dried coconut meat used to make coconut oil) and cocoa. There is also Lucy Vale Bay along the same stretch of coast.
 
 **“Charlotte’s veil”** became Charlotteville, the area to the north where Charlotte is said to have resided.
 
@@ -375,3 +375,7 @@ Though often described through its natural beauty, reefs, bird sanctuaries, and 
 *In many ways, Speyside remains true to the spirit suggested by its title: a quiet giant.* 
 
 Never loud in its presence, but impossible to overlook.
+
+<div class="callout callout-contributor-author"><p><strong>👤 About the Author</strong> Mr. Aldrick Alexander is the father of this essay’s co-author, Calvin. He has lived his entire life in Speyside, witnessing the community’s transition from a plantation-based economy to one increasingly shaped by tourism. He worked with the Water and Sewage Authority and is a skilled plumber, fisherman, and gardener. He also made it a tradition to take his family on annual “boat rides” to Little Tobago, where they explored the island’s many trails and enjoyed its natural beauty. 
+Mr. Gilbert O’Connor is a cultural icon known for his passion for music and community. He once served as the Asset Based Community Development Coordinator for the THA, where he led an initiative aimed at documenting the history and notable figures of Tobago’s villages. Although the project showed great promise, the initiative was unfortunately short-lived.
+Mr. Wayne Gray of Wayne’s World Tours is a Speyside native and experienced Tobago tour guide who specializes in educational, nature, and cultural tours across the island. His father once worked for Egbert Lau and was able to share valuable firsthand insights into the history and operations of the Lau Estate.
