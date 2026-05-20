@@ -39,7 +39,7 @@ references: >-
 <figure class="post-figure post-figure--float-left"><img src="/blog/images/riverspey.webp" alt=""></figure>
 
 \
-In Scotland, it refers to a region shaped by the River Spey, known for its whisky, its landscape, and its reputation. It is often called the heart of Scotch whisky production, home to more than fifty distilleries, including well-known names such as Glenfiddich, Macallan, and Glenlivet.
+In Scotland, it refers to a region shaped by the River Spey, known for its whisky, its landscape, and its reputation. It is often called the heart of Scotch whiskey production, home to more than fifty distilleries, including well-known names such as Glenfiddich, Macallan, and Glenlivet.
 
 *That name, like many others across Tobago, carries a broader history.*
 
@@ -67,7 +67,7 @@ Over time, those estates gave way to a village made up of five distinct settleme
 
 Crappo, for example, is named as such because of the presence of a surprisingly high population of large frogs locally referred to as **crapaud** (French for toad).
 
-A competing narrative, preserved through oral tradition, offers a different origin.
+*A competing narrative, preserved through oral tradition, offers a different origin.*
 
 Some say the area was once known as **Pay Site**, a place associated with the distribution of wages or payments during the estate era. Over time, the story suggests, the name evolved into **Speyside**. 
 
@@ -128,7 +128,7 @@ He was also known as William Campbell, a Liberated African who came to reside in
 
 As the story is told, he had been captured by Portuguese slavers at the age of twenty-six and branded on the chest with the number “5”, a mark he carried for the rest of his life.
 
-After the vessel transporting him was intercepted, he was freed and eventually brought to Tobago. He later adopted the name Campbell, said to have adopted it from a man with whom he had lived and who had shown him kindness. 
+After the vessel transporting him was intercepted, he was freed and eventually brought to Tobago. He later adopted the name Campbell from a man who had given him shelter and shown him kindness. 
 
 Over time, he became an independent farmer, owning land, cultivating cocoa and coconuts, and establishing a life for himself in the village.
 
@@ -136,7 +136,7 @@ He is said to have lived well past a hundred years, with some accounts placing h
 
 He is remembered as one of the last surviving Liberated Africans in the area, his presence serving as tangible evidence of the journey endured by enslaved Africans from West Africa to the Caribbean, and from bondage to independence. 
 
-*Panchoo’s descendants are still known within the village today, with families such as the Campbells and Grays identifying him as a common ancestor through oral and family history passed down across generations.* 
+***Panchoo’s descendants are still known within the village today, with families such as the Campbells and Grays identifying him as a common ancestor through oral and family history passed down across generations.*** 
 
 <div class="callout callout-note"><p><strong>📌 Note</strong> The term “Liberated African” refers to individuals freed from slave ships after interception, often by British patrols following the abolition of the slave trade in 1807. This was separate from the abolition of slavery itself, which was legally enacted in 1834. However, formerly enslaved people were still required to work for their former enslavers under a compulsory “Apprenticeship” system until full emancipation was finally granted in 1838. Many Liberated Africans were not returned to their homelands, instead establishing new lives in places such as Tobago. </p></div>
 
