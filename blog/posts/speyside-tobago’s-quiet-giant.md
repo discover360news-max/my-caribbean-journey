@@ -299,7 +299,7 @@ Before glass-bottom boats became commonplace, he reportedly commissioned a villa
 
 Despite the role the Lau estate played in Speyside’s early tourism development, oral accounts from residents suggest that relations between Egbert Lau and sections of the community became increasingly strained during the social and political upheavals of the late 1960s and early 1970s.
 
-The period coincided with the rise of the Black Power Movement in Trinidad and Tobago, part of a broader global movement that encouraged many people across the Caribbean to speak more openly about inequality, economic hardship, representation, and community rights. 
+This period coincided with the rise of the Black Power Movement in Trinidad and Tobago, part of a broader global movement that encouraged many people across the Caribbean to speak more openly about inequality, economic hardship, representation, and community rights. 
 
 Influenced by activists such as the Moheni brothers, Tuku Moheni and Embau Moheni, as well as organizations like the National Joint Action Committee, public marches and gatherings, including demonstrations in Charlotteville, helped energize many villagers across northeast Tobago and contributed to a growing sense of political consciousness within the region. 
 
@@ -351,13 +351,13 @@ Though much of Connie’s life unfolded abroad, his story reflected the far-reac
 
 The sea surrounding Speyside has not only shaped the village through fishing and tourism, but has also placed it close to moments of international significance. 
 
-One of the most dramatic occurred on July 19, 1979, when two massive oil tankers, the **SS Atlantic Empress** and the Aegean Captain, collided during a severe tropical rain squall roughly eighteen miles off Tobago’s northeastern coast.
+One of the most dramatic occurred on July 19, 1979, when two massive oil tankers, the **SS Atlantic Empress** and the **Aegean Captain**, collided during a severe tropical rain squall roughly eighteen miles off Tobago’s northeastern coast.
 
 ***The collision resulted in one of the largest maritime disasters in history.*** 
 
 The Atlantic Empress would eventually become the largest ship to sink at that time, while the disaster caused what was then the largest ship-sourced oil spill ever recorded, releasing an estimated 287,000 metric tons of oil into the sea. 
 
-*Residents of Speyside vividly recalled the aftermath.* 
+*Residents of Speyside vividly recall the aftermath.* 
 
 Thick smoke drifted across the village and, carried by the northeast trade winds, spread across much of Tobago. 
 
