@@ -203,7 +203,7 @@ Though tourism has brought new opportunities, from employment in hospitality to 
 
 The coastline along Speyside, Tobago, is associated with several closely connected bays, including Tyrrel’s Bay/Speyside Bay, Batteaux Bay, Indian Bay, and smaller inlets such as Lover’s Bay. 
 
-*Collectively, they form part of the sheltered northeastern coastline that helped shape the village’s maritime and tourism identity over generations.*
+***Collectively, they form part of the sheltered northeastern coastline that helped shape the village’s maritime and tourism identity over generations.***
 
 Among these names, however, Tyrrel’s Bay (sometimes spelled Tyrrell’s Bay) and Speyside Bay have carried particular historical and cultural significance, reflecting different layers of Tobago’s colonial, military, and social history.
 
@@ -295,7 +295,7 @@ From longstanding establishments such as Blue Waters Inn and Manta Lodge to newe
 
 Lau is remembered by some residents as an ambitious and forward-thinking figure within Tobago’s early tourism industry. 
 
-Before glass-bottom boats became commonplace, he reportedly commissioned a villager, Mr. Taylor, father of John Taylor, to construct a cedar-framed viewing box fitted with glass at the bottom. Lowered over the side of a vessel, the handmade device allowed visitors to observe coral reefs and marine life beneath the water, offering tourists an early glimpse into Speyside’s underwater world decades before such excursions became commercially widespread.
+Before glass-bottom boats became commonplace, he reportedly commissioned a villager, Mr. Taylor, father of John Taylor, to construct a cedar-framed viewing box fitted with glass at the bottom. Lowered over the side of a vessel, the handmade device allowed visitors to observe coral reefs and marine life beneath the water, offering tourists an early glimpse into Speyside’s underwater world decades before such excursions became commercially commonplace.
 
 Despite the role the Lau estate played in Speyside’s early tourism development, oral accounts from residents suggest that relations between Egbert Lau and sections of the community became increasingly strained during the social and political upheavals of the late 1960s and early 1970s.
 
