@@ -365,7 +365,7 @@ Some remembered clothing left hanging on outdoor lines becoming blackened by soo
 
 One villager, travelling to Barbados on a 4-hour flight during the period, later recalled flying over the site and seeing enormous plumes of fire and smoke rising from the ocean below, an image that remained etched in memory for decades.
 
-*Despite the scale of the disaster, Speyside was largely spared the kind of environmental devastation many feared.* 
+***Despite the scale of the disaster, Speyside was largely spared the kind of environmental devastation many feared.*** 
 
 After burning for weeks, the tanker was eventually towed far out to sea before sinking northeast of Tobago.  
 
@@ -388,7 +388,7 @@ Today, Speyside is also home to one of its own serving as leader of the Tobago H
 
 In some ways, his rise echoes earlier periods of political awakening in Tobago, when figures such as the Moheni brothers encouraged Tobagonians to become more active in demanding representation, fairness, and greater control over their own affairs. 
 
-*It also reflects a deeper tradition within the village itself: one shaped by strong personalities, independent thinking, and a willingness to challenge existing structures.*
+***It also reflects a deeper tradition within the village itself: one shaped by strong personalities, independent thinking, and a willingness to challenge existing structures.***
 
 Though often described through its natural beauty, reefs, bird sanctuaries, and sweeping coastal views, the character of Speyside ultimately rests in its people: resilient, resourceful, independent, and deeply connected to both land and sea.
 
