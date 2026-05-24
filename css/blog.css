@@ -653,8 +653,10 @@
 /* --- Featured Image --- */
 
 .post-featured-image {
-  aspect-ratio: 16 / 9;
-  max-height: 520px;
+  /* No aspect-ratio — images display at their natural proportions so text
+     near the bottom of the image is never cropped by a forced 16:9 box. */
+  min-height: 180px; /* holds the loading gradient before the img appears */
+  max-height: 580px; /* cap for unusually tall images */
   overflow: hidden;
   max-width: 68ch;
   font-size: 1.075rem; /* ch resolves at same size as .prose */
@@ -663,14 +665,12 @@
   position: relative;
   z-index: 2;
   box-shadow: 0 12px 56px rgba(0, 0, 0, 0.45);
-  /* Green fallback while image loads — no collapsed-height CLS */
   background: var(--gradient-card-bg);
 }
 
 .post-featured-image img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto; /* natural proportions — no forced crop */
   display: block;
   opacity: 0;
   transition: opacity 0.45s ease;
