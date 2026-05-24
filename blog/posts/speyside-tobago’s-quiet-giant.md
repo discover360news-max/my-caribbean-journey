@@ -59,6 +59,8 @@ In Tobago, Speyside grew out of five estates — **Trois Rivières**, **Speyside
 
 Remnants of that era still stand, including the massive iron waterwheel at Speyside Estate, one of the most recognizable plantation-era artifacts on Tobago’s windward coast.
 
+<figure class="post-figure"><img src="/blog/images/speyside-waterwheel.webp" alt=""></figure>
+
 *Some accounts suggest that an earlier estate wheel associated with a John Piggot existed in the late eighteenth century, while others maintain that the present iron wheel was imported from Scotland in 1834 to power the crushing of sugar cane.* 
 
 #### Regardless of its exact origins, the structure remains a lasting symbol of Tobago’s sugar plantation economy and colonial past.
