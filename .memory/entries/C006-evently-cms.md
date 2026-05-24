@@ -90,8 +90,11 @@ Must use bullet points (`- ` prefix per item). Plain paragraphs or numbered list
 - The `references` YAML format is non-obvious — see L001
 - audioTracks must be object format `{title, url}` — flat strings will break the audio player
 - Both collections are duplicated in config.yml — update fields in both or they'll diverge
+- Decap's remark serializer pretty-prints HTML blocks on save/reload, adding newlines between tags — patterns must use `\s*` between structural elements or they'll fail after the first round-trip (see L006)
+- `\r\n` line endings from certain browsers/OS in textarea widgets leave bare `\r` if only `\n` is replaced — normalise with `/\r\n?/g` before `/\n/g` in all `toBlock` functions (see L006)
 
 ## Change Log
 - 2026-03-11 Created
 - 2026-04-13 Pinned Decap CMS CDN from @^3.0.0 to @3.11.0
 - 2026-04-30 Bumped to 3.12.2; added SEO Title/Description fields; restructured audioTracks to {title,url} objects; added Spotify and Gallery toolbar components; fixed references and postTags hints
+- 2026-05-24 Fixed callout/pull-quote/definition component bugs: \r\n line endings, strict patterns, <br> variant matching (see L006)

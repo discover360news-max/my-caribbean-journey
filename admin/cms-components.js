@@ -174,12 +174,12 @@ CMS.registerEditorComponent({
     }
   ],
 
-  pattern: /^<div class="callout callout-(tip|fact|note|warning|contributor|contributor-author|contributor-thanks|contributor-about)"><p><strong>[^<]+<\/strong> ([\s\S]*?)<\/p><\/div>$/,
+  pattern: /^<div class="callout callout-(tip|fact|note|warning|contributor|contributor-author|contributor-thanks|contributor-about)">\s*<p>\s*<strong>[^<]+<\/strong>\s*([\s\S]*?)<\/p>\s*<\/div>$/,
 
   fromBlock: function (match) {
     return {
       type:    match[1] || 'tip',
-      content: (match[2] || '').replace(/<br>/g, '\n')
+      content: (match[2] || '').replace(/<br\s*\/?>/gi, '\n').trim()
     };
   },
 
@@ -191,7 +191,7 @@ CMS.registerEditorComponent({
     };
     var type    = data.type || 'tip';
     var label   = labels[type] || 'Tip';
-    var content = (data.content || '').replace(/\n/g, '<br>');
+    var content = (data.content || '').replace(/\r\n?/g, '\n').replace(/\n/g, '<br>');
     return '<div class="callout callout-' + type + '"><p><strong>' + label + '</strong> ' + content + '</p></div>';
   },
 
@@ -326,17 +326,17 @@ CMS.registerEditorComponent({
     }
   ],
 
-  pattern: /^<div class="pull-quote"><p>([\s\S]*?)<\/p>(?:<cite>([\s\S]*?)<\/cite>)?<\/div>$/,
+  pattern: /^<div class="pull-quote">\s*<p>([\s\S]*?)<\/p>\s*(?:<cite>([\s\S]*?)<\/cite>\s*)?<\/div>$/,
 
   fromBlock: function (match) {
     return {
-      quote:       (match[1] || '').replace(/<br>/g, '\n'),
+      quote:       (match[1] || '').replace(/<br\s*\/?>/gi, '\n').trim(),
       attribution: match[2] || ''
     };
   },
 
   toBlock: function (data) {
-    var quote = (data.quote || '').replace(/\n/g, '<br>');
+    var quote = (data.quote || '').replace(/\r\n?/g, '\n').replace(/\n/g, '<br>');
     var out   = '<div class="pull-quote"><p>' + quote + '</p>';
     if (data.attribution) out += '<cite>' + data.attribution + '</cite>';
     out += '</div>';
@@ -396,18 +396,18 @@ CMS.registerEditorComponent({
     }
   ],
 
-  pattern: /^<div class="definition-box"><strong class="definition-term">([^<]+)<\/strong>(?:<span class="definition-lang">([^<]*)<\/span>)?<p>([\s\S]*?)<\/p><\/div>$/,
+  pattern: /^<div class="definition-box">\s*<strong class="definition-term">([^<]+)<\/strong>\s*(?:<span class="definition-lang">([^<]*)<\/span>\s*)?<p>([\s\S]*?)<\/p>\s*<\/div>$/,
 
   fromBlock: function (match) {
     return {
       term:       match[1] || '',
       language:   match[2] || '',
-      definition: (match[3] || '').replace(/<br>/g, '\n')
+      definition: (match[3] || '').replace(/<br\s*\/?>/gi, '\n').trim()
     };
   },
 
   toBlock: function (data) {
-    var def = (data.definition || '').replace(/\n/g, '<br>');
+    var def = (data.definition || '').replace(/\r\n?/g, '\n').replace(/\n/g, '<br>');
     var out = '<div class="definition-box">'
       + '<strong class="definition-term">' + (data.term || '') + '</strong>';
     if (data.language) out += '<span class="definition-lang">' + data.language + '</span>';
@@ -663,9 +663,14 @@ CMS.registerEditorComponent({
 // Both collections (posts, stories) share the same template.
 // -------------------------------------------------------------
 
-CMS.registerPreviewStyle('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap');
-CMS.registerPreviewStyle('/shared/shared.css');
-CMS.registerPreviewStyle('/css/blog.css');
+// raw:true injects a <style> tag instead of a <link> — more stable across
+// preview re-renders in Decap CMS 3.x (link tags can be dropped mid-edit).
+CMS.registerPreviewStyle(
+  '@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap");' +
+  '@import url("/shared/shared.css");' +
+  '@import url("/css/blog.css");',
+  { raw: true }
+);
 
 var PostPreview = createClass({
   render: function () {
