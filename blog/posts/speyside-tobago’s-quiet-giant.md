@@ -211,7 +211,7 @@ Among these names, however, Tyrrel’s Bay (sometimes spelled Tyrrell’s Bay) a
 
 The original and historically official name is Tyrrel’s Bay, named in the mid-18th century after Richard Tyrrell (1716–1766), a prominent Irish officer in the British Royal Navy. 
 
-<figure class="post-figure post-figure--half post-figure--shadow"><img src="/blog/images/rear_admiral_richard_tyrrell.webp" alt=""></figure>
+<figure class="post-figure post-figure--half post-figure--shadow"><img src="/blog/images/rear_admiral_richard_tyrrell.webp" alt=""><figcaption>Portrait of Rear-Admiral Richard Tyrrell by Thomas Hudson, currently held in the collection of the National Maritime Museum, Royal Museums Greenwich, London.</figcaption></figure>
 
 Tyrrell is remembered in Tobagonian history for his role in 1748, when he helped thwart a French attempt to seize Tobago. Commanding a British frigate, he used both naval skill and forceful presence to defend British interests around the island during a period of intense rivalry between European powers in the Caribbean.
 
