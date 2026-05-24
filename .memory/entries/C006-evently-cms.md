@@ -92,9 +92,11 @@ Must use bullet points (`- ` prefix per item). Plain paragraphs or numbered list
 - Both collections are duplicated in config.yml — update fields in both or they'll diverge
 - Decap's remark serializer pretty-prints HTML blocks on save/reload, adding newlines between tags — patterns must use `\s*` between structural elements or they'll fail after the first round-trip (see L006)
 - `\r\n` line endings from certain browsers/OS in textarea widgets leave bare `\r` if only `\n` is replaced — normalise with `/\r\n?/g` before `/\n/g` in all `toBlock` functions (see L006)
+- **Preview styles must use `raw: true`** — `CMS.registerPreviewStyle(url)` injects a `<link>` tag that Decap CMS 3.x drops during live preview re-renders. Use `CMS.registerPreviewStyle('@import url("...");', { raw: true })` instead — `<style>` tags survive re-renders. See `admin/cms-components.js` lines 663–671.
 
 ## Change Log
 - 2026-03-11 Created
 - 2026-04-13 Pinned Decap CMS CDN from @^3.0.0 to @3.11.0
 - 2026-04-30 Bumped to 3.12.2; added SEO Title/Description fields; restructured audioTracks to {title,url} objects; added Spotify and Gallery toolbar components; fixed references and postTags hints
 - 2026-05-24 Fixed callout/pull-quote/definition component bugs: \r\n line endings, strict patterns, <br> variant matching (see L006)
+- 2026-05-24 Switched registerPreviewStyle to raw:true @import — fixes preview losing styles during live editing in Decap CMS 3.x

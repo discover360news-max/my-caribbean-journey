@@ -113,7 +113,8 @@ css/
 **Blog images:**
 - Target: 800px wide, WebP, ~80–130KB (quality 82 via Pillow)
 - `sips` (macOS) cannot write WebP — use `pip3 install Pillow` + Pillow script
-- Fade-in via JS: `opacity: 0` → `.img-loaded` class; CLS fixed via `aspect-ratio` on containers
+- Fade-in via JS: `opacity: 0` → `.img-loaded` class; CLS fixed via `aspect-ratio` on listing card containers
+- **Featured image sizing**: `.post-featured-image` uses `height: auto` (natural proportions) — NOT a fixed `aspect-ratio`. `min-height: 180px` holds the loading gradient; `max-height: 580px` caps very tall images. ⚠️ Do NOT restore `aspect-ratio: 16/9` — it cropped the bottom of images with embedded text.
 
 **Local preview (blog):**
 ```bash
@@ -135,3 +136,4 @@ python3 -m http.server 8888
 - 2026-03-21 Callouts + definition-box: removed left border, added shadow, bumped bg opacity
 - 2026-03-21 References section: collapsible with fade + "Show all references" toggle
 - 2026-03-21 Mobile: share buttons icon-only in hero header; listen anchor pill below excerpt
+- 2026-05-24 Featured image: removed aspect-ratio:16/9, now uses height:auto (natural proportions) to preserve bottom-text in images

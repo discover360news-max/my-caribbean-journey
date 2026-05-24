@@ -1,5 +1,5 @@
 # My Caribbean Journey — Project Memory Index
-Last updated: 2026-05-24 (L006 added — CMS component serializer bugs fixed)
+Last updated: 2026-05-24 (C005 + C006 updated — featured image natural proportions, CMS preview styles raw:true fix)
 Project: Caribbean culture hub — books, island guides, curated resources | Stack: Eleventy 3.x + plain HTML/CSS/JS | Deploy: Cloudflare Pages
 
 ## How to use this index
