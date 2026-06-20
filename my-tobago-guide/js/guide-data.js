@@ -378,12 +378,12 @@ var GUIDE_DATA = {
       ]
     },
     {
-      title: 'Island Girl Tours',
+      title: "Wayne's World Tours",
       description: 'Experience pristine beaches, remarkable waterfalls, stunning nature hikes, bird watching, diving, water sports and activities, local cuisine and a vibrant nightlife\u2026 there is something for everyone.',
-      url: 'https://islandgirltours.com/',
+      url: 'https://waynesworldtour.com/',
       category: 'activities-tours',
       area: 'island-wide',
-      quincyNote: 'If you want someone else to handle the planning — beaches, the Main Ridge, Argyle Waterfall, nightlife — Island Girl puts together a real itinerary. Good for first-timers who want to see the whole island without having to figure it all out themselves.',
+      quincyNote: "If you want someone else to handle the planning — beaches, the Main Ridge, Argyle Waterfall, nightlife — Wayne's World puts together a real itinerary. Good for first-timers who want to see the whole island without having to figure it all out themselves.",
       featured: false,
       image: 'images/island-girl-tours.webp',
       tags: [
