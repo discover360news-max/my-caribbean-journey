@@ -24,7 +24,7 @@ references: >-
 
   * [Discover Blue Waters](https://www.discoverbluewaters.com/) – Penny Strawson
 
-  * Blue Waters Inn [Official Website](https://bluewatersinn.com/)
+  * Blue Waters Inn [Official Website.](https://bluewatersinn.com/)
 
   * “Conrad Lau” – [NIHERST Icons of Trinidad and Tobago](https://niherst.gov.tt/icons/icon/conrad-lau-ch/)
 
