@@ -361,20 +361,19 @@ var GUIDE_DATA = {
     // --- Activities & Tours ---
 
     {
-      title: 'Frankie Tours and Rentals',
-      description: 'A local tour and rental company offering guided tours and vehicle rentals in Tobago.',
-      url: 'https://www.facebook.com/profile.php?id=100076162752587',
+      title: 'Tobago Tours With Keiron',
+      description: 'Cruise excursions, hand-feeding hummingbirds, all-inclusive Nylon Pool boat trips, and Tobago nightlife tours.',
+      url: '/partners/tobago-tours-with-keiron/',
       category: 'activities-tours',
       area: 'island-wide',
-      plusCode: '558G+M2W, Buccoo, Trinidad & Tobago',
-      coords: [11.1704, -60.8229],
-      quincyNote: 'This is who I trust. Frankie knows this island properly, keeps things fair, and genuinely wants to show you the good parts. Whether it\'s a rental car or a guided tour, he\'s who I\'d call first.',
+      quincyNote: 'I\'ve sent friends and family straight off the cruise ship into Keiron\'s hands more times than I can count, and every single time they come back grinning about the hummingbirds. He shows up, he does exactly what he says, and cruise visitors with only a few hours ashore never feel rushed or short-changed. If you want Tobago done right — on land or after dark — Keiron\'s who I call.',
       featured: true,
-      image: 'images/frankie-tours-and-rentals.webp',
+      image: 'images/tobago-tours-with-keiron.webp',
       tags: [
-        'tours', 'car rental', 'vehicle rental', 'guided tour', 'island tour', 'transfers',
-        'taxi', 'sightseeing', 'local guide', 'private tour', 'jeep', 'rental',
-        'airport transfer', 'custom tour', 'day trip', 'affordable', 'local', 'trusted'
+        'tours', 'guided tour', 'cruise excursion', 'hummingbird feeding', 'boat tour',
+        'nylon pool', 'no mans land', 'nature tour', 'snorkeling', 'beach experience',
+        'taxi', 'transfers', 'airport transfer', 'nightlife', 'bar hopping', 'island tour',
+        'sightseeing', 'local guide', 'private tour', 'day trip', 'all inclusive', 'trusted'
       ]
     },
     {

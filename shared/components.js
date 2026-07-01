@@ -86,30 +86,32 @@ var SiteComponents = (function () {
       ? '<div class="site-nav-crumb-bar">' + renderBreadcrumb(crumbs) + '</div>'
       : '';
 
+    var musicPlayerHtml =
+      '<div id="mcj-music-player" class="music-player" title="Jamboul\u00e9 \u2014 Ramajay Intercoastal">' +
+        '<button class="music-player-btn music-player-btn-play" id="mcj-play-btn" aria-label="Play">' +
+          playIcon + pauseIcon +
+          '<span class="music-player-note" id="mcj-music-note">\u266a</span>' +
+        '</button>' +
+        '<button class="music-player-btn music-player-btn-mute" id="mcj-mute-btn" aria-label="Unmute">' +
+          mutedIcon + soundIcon +
+        '</button>' +
+      '</div>';
+
     return (
       '<header class="site-header" id="site-header">' +
         '<nav class="site-nav" id="site-nav-bar">' +
           '<div class="site-nav-inner">' +
             '<a href="/" class="site-nav-logo"><img src="/images/my-caribbean-journey-tpbg-sm.png" alt="" class="site-nav-logo-img" aria-hidden="true">My Caribbean Journey</a>' +
-            '<div class="site-nav-links">' + linksHtml + '</div>' +
-            '<button class="site-nav-toggle" id="site-nav-toggle" aria-label="Toggle menu" aria-controls="site-mobile-menu" aria-expanded="false">' +
-              '<span></span><span></span><span></span>' +
-            '</button>' +
+            '<div class="site-nav-right">' +
+              '<div class="site-nav-links">' + linksHtml + '</div>' +
+              musicPlayerHtml +
+              '<button class="site-nav-toggle" id="site-nav-toggle" aria-label="Toggle menu" aria-controls="site-mobile-menu" aria-expanded="false">' +
+                '<span></span><span></span><span></span>' +
+              '</button>' +
+            '</div>' +
           '</div>' +
         crumbBar +
         '</nav>' +
-        '<div id="mcj-music-player" class="music-player">' +
-          '<span class="music-player-note" id="mcj-music-note">\u266a</span>' +
-          '<span class="music-player-title">Jamboul\u00e9 \u2014 Ramajay Intercoastal</span>' +
-          '<div class="music-player-controls">' +
-            '<button class="music-player-btn" id="mcj-play-btn" aria-label="Play">' +
-              playIcon + pauseIcon +
-            '</button>' +
-            '<button class="music-player-btn" id="mcj-mute-btn" aria-label="Unmute">' +
-              mutedIcon + soundIcon +
-            '</button>' +
-          '</div>' +
-        '</div>' +
       '</header>' +
       '<div class="site-mobile-menu" id="site-mobile-menu" role="navigation" aria-label="Mobile navigation" aria-hidden="true">' +
         mobileLinksHtml +

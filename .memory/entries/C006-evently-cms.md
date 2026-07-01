@@ -3,7 +3,7 @@ id: C006
 type: COMPONENT
 status: ACTIVE
 created: 2026-03-11
-updated: 2026-04-30
+updated: 2026-06-20
 related: C005, L001
 ---
 
@@ -25,8 +25,9 @@ admin/
 ```
 
 **Decap CMS version (pinned):**
-- Loaded via unpkg CDN: `decap-cms@3.12.2` (pinned as of 2026-04-30)
-- To upgrade: test the new version locally first, then update the version in `admin/index.html`
+- Loaded via unpkg CDN: `decap-cms@3.14.1` (pinned as of 2026-06-20)
+- To upgrade: bump the version string in `admin/index.html`, deploy, then do a live save in Evently and confirm the `references` field still uses `>-` scalar + `- ` prefix (per L001)
+- 3.14.1 verified safe: remark tokenizer fix (3.13.0) did not affect `references` serialization — confirmed by live save on 2026-06-20
 
 **Access:**
 - URL: `mycaribbeanjourney.com/admin/`
@@ -100,3 +101,4 @@ Must use bullet points (`- ` prefix per item). Plain paragraphs or numbered list
 - 2026-04-30 Bumped to 3.12.2; added SEO Title/Description fields; restructured audioTracks to {title,url} objects; added Spotify and Gallery toolbar components; fixed references and postTags hints
 - 2026-05-24 Fixed callout/pull-quote/definition component bugs: \r\n line endings, strict patterns, <br> variant matching (see L006)
 - 2026-05-24 Switched registerPreviewStyle to raw:true @import — fixes preview losing styles during live editing in Decap CMS 3.x
+- 2026-06-20 Bumped to 3.14.1; verified references field serialization unchanged after live save

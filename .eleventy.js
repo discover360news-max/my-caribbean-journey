@@ -21,6 +21,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("shared");
   eleventyConfig.addPassthroughCopy("i-am-tobago");
   eleventyConfig.addPassthroughCopy("my-tobago-guide");
+  eleventyConfig.addPassthroughCopy("partners");
   eleventyConfig.addPassthroughCopy("admin");
   eleventyConfig.addPassthroughCopy("contact");
   eleventyConfig.addPassthroughCopy("privacy-policy");

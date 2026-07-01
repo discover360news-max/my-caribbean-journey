@@ -1,5 +1,5 @@
 # My Caribbean Journey — Project Memory Index
-Last updated: 2026-05-24 (C005 + C006 updated — featured image natural proportions, CMS preview styles raw:true fix)
+Last updated: 2026-07-01 (C012 added — Partners section + Tobago Tours With Keiron page; L007 added — music player docked in nav)
 Project: Caribbean culture hub — books, island guides, curated resources | Stack: Eleventy 3.x + plain HTML/CSS/JS | Deploy: Cloudflare Pages
 
 ## How to use this index
@@ -33,3 +33,5 @@ FB001 | FEEDBACK  | ACTIVE      | btn-outline (cream text) is for dark backgroun
 L005  | LEARNING  | ACTIVE      | Leaflet 2.0 has breaking API changes — stay on 1.9.x, do not upgrade without a dedicated migration → .memory/entries/L005-leaflet-version-warning.md
 C011  | COMPONENT | ACTIVE      | Tobago Global Virtual Tour tray: TourMkr iframe, 3 triggers on guide page, 1 on i-am-tobago, lazy-load/unload → .memory/entries/C011-virtual-tour-tray.md
 L006  | LEARNING  | ACTIVE      | CMS component bugs: remark serializer reformats HTML (use \s* in patterns), \r\n line endings (normalise in toBlock), <br> variants (use regex in fromBlock) → .memory/entries/L006-cms-component-serializer-bugs.md
+C012  | COMPONENT | ACTIVE      | Partners section: /partners/ reusable tour-operator/sponsor page template, first entry Tobago Tours With Keiron → .memory/entries/C012-partners-section.md
+L007  | LEARNING  | ACTIVE      | Music player moved from floating notch to docked square nav widget in .site-nav-right → .memory/entries/L007-music-player-nav-dock.md
