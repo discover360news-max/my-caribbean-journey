@@ -382,7 +382,7 @@ var GUIDE_DATA = {
       url: 'https://waynesworldtour.com/',
       category: 'activities-tours',
       area: 'island-wide',
-      quincyNote: "If you want someone else to handle the planning — beaches, the Main Ridge, Argyle Waterfall, nightlife — Wayne's World puts together a real itinerary. Good for first-timers who want to see the whole island without having to figure it all out themselves.",
+      quincyNote: "Wayne's World Tours puts together unforgettable island adventures. What truly sets Wayne apart is his unmatched knowledge of Tobago's plants, wildlife and ecosystems, which transforms every tour into more than sightseeing. Through fascinating stories and insights, he brings the island's natural beauty to life. It's the perfect blend of fun, adventure and education.",
       featured: false,
       image: 'images/island-girl-tours.webp',
       tags: [
