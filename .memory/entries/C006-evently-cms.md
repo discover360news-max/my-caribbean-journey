@@ -25,9 +25,10 @@ admin/
 ```
 
 **Decap CMS version (pinned):**
-- Loaded via unpkg CDN: `decap-cms@3.14.1` (pinned as of 2026-06-20)
+- Loaded via unpkg CDN: `decap-cms@3.16.0` (pinned as of 2026-09-07)
 - To upgrade: bump the version string in `admin/index.html`, deploy, then do a live save in Evently and confirm the `references` field still uses `>-` scalar + `- ` prefix (per L001)
 - 3.14.1 verified safe: remark tokenizer fix (3.13.0) did not affect `references` serialization — confirmed by live save on 2026-06-20
+- 3.16.0 changelog reviewed: only rich-text change is "preserve block images in list items" (3.15.0) — additive, does not touch `references`/YAML serialization. ⚠️ LIVE-SAVE TEST STILL PENDING on a post with a `references` field — do before Quincy relies on it; roll back = revert the one-line version string.
 
 **Access:**
 - URL: `mycaribbeanjourney.com/admin/`
@@ -102,3 +103,4 @@ Must use bullet points (`- ` prefix per item). Plain paragraphs or numbered list
 - 2026-05-24 Fixed callout/pull-quote/definition component bugs: \r\n line endings, strict patterns, <br> variant matching (see L006)
 - 2026-05-24 Switched registerPreviewStyle to raw:true @import — fixes preview losing styles during live editing in Decap CMS 3.x
 - 2026-06-20 Bumped to 3.14.1; verified references field serialization unchanged after live save
+- 2026-09-07 Bumped to 3.16.0 (foundation-updates-2026-09 branch); changelog reviewed, no serializer/YAML changes. LIVE-SAVE TEST on a references-field post still pending.

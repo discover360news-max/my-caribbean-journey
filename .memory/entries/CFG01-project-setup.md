@@ -27,8 +27,10 @@ hub use Eleventy 3.x for templating. Deployed to Cloudflare Pages from the `main
 - No bundler, no framework, no build step for static pages
 
 **Key package versions:**
-- `@11ty/eleventy`: 3.1.5 (upgraded from 2.0.1 on 2026-04-13)
+- `@11ty/eleventy`: 3.1.6 (upgraded from 2.0.1 on 2026-04-13; patch bump since)
 - `alpinejs`: not used (plain JS only)
+- Node: `.nvmrc` = 22 (was 18 — bumped 2026-09-07, Node 18 EOL). Cloudflare Pages reads `.nvmrc`.
+- `npm audit`: clean as of 2026-09-07 (`npm audit fix` cleared 4 transitive high-severity DoS advisories in brace-expansion / js-yaml / linkify-it / liquidjs — all Eleventy sub-deps, patched within semver, no lockfile major bumps)
 
 **Eleventy 3 migration notes (2026-04-13):**
 - Single-line `package.json` change — no other files needed updating
@@ -98,3 +100,4 @@ python3 -m http.server 8888
 ## Change Log
 - 2026-03-11 Created
 - 2026-04-13 Upgraded Eleventy 2.0.1 → 3.1.5; pinned Decap CMS CDN to 3.11.0
+- 2026-09-07 Foundation update pass: `npm audit fix` (4 high DoS advisories → 0), `.nvmrc` 18 → 22, Decap CMS CDN 3.14.1 → 3.16.0 (see C006). Build verified clean on Eleventy 3.1.6.

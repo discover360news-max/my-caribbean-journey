@@ -1,5 +1,5 @@
 # My Caribbean Journey — Project Memory Index
-Last updated: 2026-07-01 (C012 added — Partners section + Tobago Tours With Keiron page; L007 added — music player docked in nav)
+Last updated: 2026-09-07 (foundation update pass: npm audit fix, .nvmrc 18→22, Decap CMS 3.14.1→3.16.0 — see CFG01 + C006)
 Project: Caribbean culture hub — books, island guides, curated resources | Stack: Eleventy 3.x + plain HTML/CSS/JS | Deploy: Cloudflare Pages
 
 ## How to use this index
