@@ -316,4 +316,4 @@ His journey to chocolate was anything but conventional. A petroleum geologist, t
 
 He later studied chocolate making in Orlando before returning to Tobago, where a meeting with Clement Bobb, then president of the Tobago Cocoa Farmers Association, drew him deeper into the island's cocoa heritage. His research and experimentation eventually gave birth to Tobago Chocolate Delights.
 
-Tobago Chocolate Delights is located at Shore Things Café &amp; Craft in Lambeau, a charming seaside breakfast and lunch café and craft shop overlooking the Atlantic Ocean. There, you can find JC and his wife Greta in their small, cozy chocolate shop, discover their handmade chocolates and experience the chocolate-making process for yourself.
+***Tobago Chocolate Delights*** is located at ***Shore Things Café & Craft*** in Lambeau, a charming seaside breakfast and lunch café and craft shop overlooking the Atlantic Ocean. There, you can find JC and his wife Greta in their small, cozy chocolate shop, discover their handmade chocolates and experience the chocolate-making process for yourself.
