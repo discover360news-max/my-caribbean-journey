@@ -104,8 +104,6 @@ The story becomes even more remarkable when we consider the cocoa itself.
 
 Three names regularly appear in discussions of the world's cocoa: Criollo, Forastero and Trinitario.
 
-<figure class="post-figure post-figure--shadow"><img src="/blog/images/cacao-botanical-plate.webp" alt="Botanical plate comparing Criollo, Trinitario and Amelonado cacao pods"></figure>
-
 Criollo is highly flavourful but relatively vulnerable to disease. Forastero, by contrast, became widely cultivated because of its hardiness and productivity, although its flavour is generally less delicate. Trinitario brought those characteristics of the two together.
 
 Its emergence is intimately connected to Trinidad.
@@ -121,6 +119,8 @@ Even the traditional date of 1727 has been questioned, with earlier historical r
 In the years that followed, the more resilient Forastero cocoa was introduced into Trinidad and eventually crossed naturally with surviving Criollo trees.
 
 From that fortuitous crossing emerged something extraordinary: Trinitario.
+
+<figure class="post-figure post-figure--shadow"><img src="/blog/images/cacao-botanical-plate.webp" alt="Botanical plate comparing Criollo, Trinitario and Amelonado cacao pods"></figure>
 
 Believe it or not, remarkably, no one had set out to purposefully create it. Trinitario emerged by chance, through the natural crossing of Forastero and surviving Criollo trees.
 
