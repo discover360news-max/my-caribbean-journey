@@ -7,9 +7,9 @@ featured: false
 featuredImage: /blog/images/tobago-cocoa-hero.webp
 date: 2026-09-09
 author: Quincy Yeates & JC Petit
-excerpt: There was a time when cocoa was king in Tobago. Today an island shaped
-  by cocoa can barely supply its own chocolate makers — yet its heritage points
-  toward possibility.
+excerpt: "There was a time when cocoa was king in Tobago. Today an island shaped
+  by cocoa can barely supply its own chocolate makers: yet its heritage points
+  toward possibility."
 postTags:
   - tobago
   - history
