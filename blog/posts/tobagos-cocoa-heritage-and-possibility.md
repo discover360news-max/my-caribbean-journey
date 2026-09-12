@@ -47,7 +47,7 @@ references: >-
 
 There was a time when cocoa was king.
 
-In the late nineteenth and early twentieth centuries, cocoa estates stretched across the hills of Trinidad and Tobago in numbers difficult to imagine from the landscape today. Hillsides and valleys now associated with forest, villages and other development were once part of an agricultural world in which cocoa was everywhere.
+In the late nineteenth and early twentieth centuries, cocoa estates stretched across the hills of Trinidad and Tobago in numbers difficult to imagine from the landscape today. Hillsides and valleys now associated with forest, villages and other development were once part of an agricultural world in which cocoa was ***everywhere***.
 
 *At least it seemed that way.*
 
@@ -120,11 +120,11 @@ Trinitario brought those characteristics of the two ***together***.
 
 In the 1720s, Trinidad's flourishing Criollo cocoa industry suffered a catastrophic collapse: an event that would later become known as the **Blast**.
 
-*Exactly what happened remains something of a mystery.*
+*Exactly what happened has never fully been agreed upon, and the truth seems largely lost to time.*
 
 Disease, drought, hurricanes and other explanations have all been proposed over the years. Modern research suggests there may never have been a single "Blast" at all. Instead, the vulnerability of Criollo cocoa, agricultural conditions and unusual climatic conditions during the period may have combined to devastate the crop.
 
-Even the traditional date of 1727 has been questioned, with earlier historical records placing the catastrophe in 1725.
+Even the traditional date of 1727 has been questioned, with earlier historical records placing 'a' catastrophe in 1725.
 
 In the years that followed, the more resilient Forastero cocoa was introduced into Trinidad and eventually *crossed naturally* with surviving Criollo trees.
 
@@ -142,7 +142,7 @@ The country became an important center of cocoa development and research, with m
 
 ***The results of that research would eventually travel far beyond Trinidad and Tobago.*** \
 \
-Cocoa selections produced through this research became an integral part of growing and breeding programs across the Caribbean, Latin America, Africa, Asia and the Pacific. Among them were the ***Imperial College Selections*** (ICS), specially selected cocoa clones that can still thrive in countries such as Jamaica, Venezuela, Ecuador, Cameroon, Sri Lanka, Samoa and Papua New Guinea.
+Cocoa selections produced through this research became an integral part of growing and breeding programs across the Caribbean, Latin America, Africa, Asia and the Pacific. Among them were the ***Imperial College Selections*** (ICS), specially selected cocoa clones that still thrive in countries such as Jamaica, Venezuela, Ecuador, Cameroon, Sri Lanka, Samoa and Papua New Guinea.
 
 ***Today, Trinidad and Tobago's fine-flavour cocoa enjoys an enviable international reputation.***
 
@@ -161,7 +161,7 @@ Yet the golden age could not last.
 *Cocoa faced a combination of pressures rather than a single fatal blow.*
 
 Disease reduced yields and made estates increasingly difficult and costly to maintain. International cocoa prices swung unpredictably, adding yet another layer of uncertainty to an industry already buckling.\
-Agricultural labour became increasingly difficult to secure as the cocoa industry found itself competing for workers with Trinidad and Tobago's growing petroleum economy, which offered the prospect of better wages and a more reliable livelihood.
+Agricultural labour became harder to secure as the cocoa industry found itself competing for workers with Trinidad and Tobago's growing petroleum economy, which offered the prospect of better wages and a more reliable livelihood.
 
 ***Tobago, however, faced another significant life-changing catastrophe.***
 
@@ -222,7 +222,7 @@ The answer does not have to be the recreation of Tobago's cocoa industry as it e
 *The world has changed.* \
 *Tobago has changed.*
 
-The more interesting question is what Tobago could do with cocoa now.
+The more interesting question is what Tobago could do with cocoa ***now***.
 
 ## Heritage and Possibility
 
